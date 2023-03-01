@@ -5,7 +5,7 @@ const ROUTES = {
   newCase: "/newcase",
   caseBlog: "/caseblog",
   canvasTool: "canvas-tools",
-  loadCase: "load-case",
+  loadCase: "/loadcase",
   page404: "/*"
 };
 

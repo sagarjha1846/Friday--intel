@@ -1,6 +1,9 @@
 import React from "react";
 import bookmark from "../images/bookmark.svg";
 import "../css/navbar.css";
+import { StyledEngineProvider } from '@mui/material/styles';
+import Demo from "../components/Table"
+
 
 const LoadCase = () => {
   return (
@@ -589,6 +592,9 @@ const LoadCase = () => {
           </div>
         </section>
       </nav>
+      <StyledEngineProvider injectFirst>
+      <Demo />
+    </StyledEngineProvider>
     </>
   );
 };
