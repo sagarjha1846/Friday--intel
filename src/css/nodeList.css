@@ -1,0 +1,26 @@
+.List {
+  display: flex;
+  align-items: center;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.listName {
+  padding: 0px 5px;
+}
+
+.listIcon {
+  min-width: 25px !important;
+  min-height: 25px !important;
+}

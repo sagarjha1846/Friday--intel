@@ -1,0 +1,48 @@
+.case_cards {
+    height: 150px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.case_cards:hover {
+    background: url(../images/case-card.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #fff;
+    border-style: solid;
+  border-image: linear-gradient(to right,
+  #00F0FF, #FF1CF7) 2;
+  
+}
+path:hover{
+    fill: #fff;
+}
+.case_arrow:hover {
+    fill: #fff;
+}
+
+.hover-img {
+    overflow: scroll;
+    object-fit: contain;
+    z-index: -1;
+}
+
+.case_title {
+    font-size: 20px;
+    width: 50px;
+    margin-left: 16px;
+    /* height: 100%; */
+    z-index: 1;
+}
+
+.case_arrow {
+    margin-right: 10px;
+}
