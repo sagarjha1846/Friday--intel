@@ -45,7 +45,7 @@ const Home = () => {
         </article>
         <article
           className="case_cards"
-          onClick={() => navigate(ROUTES.caseBlog)}
+          onClick={() => navigate(ROUTES.loadCase)}
         >
           <h2 className="case_title">Load Case</h2>
           <div className="case_arrow">

@@ -6,11 +6,13 @@ import ToggleSwitch from "../components/ToggleSwitch";
 import ROUTES from "../constant/routesConstant";
 import dayImage from "../images/day.png";
 import forgetpassimg from "../images/forgetpass.jpeg";
-import logo from "../images/logo.png";
+import light from "../images/logo.png";
 import nightImage from "../images/night.png";
+import dark from '../images/svg/darklogo.svg'
 
 const ForgetPassword = () => {
   const [mode, setMode] = useState(true);
+  const [logoo,setLogoo]=useState(light);
   const navigate = useNavigate();
 
   function loggingIn(event) {
@@ -46,6 +48,13 @@ const ForgetPassword = () => {
     htmlElement.style.setProperty("--secondary-color", PRIMARY);
 
     label.style.backgroundSize = "cover";
+    let value = logoo;
+
+    if (value === light) {
+      setLogoo(dark);
+    } else {
+      setLogoo(light);
+    }
   }
 
   return (
@@ -53,7 +62,7 @@ const ForgetPassword = () => {
       <main>
         <navbar className="navbar">
           <section className="logo">
-            <img src={logo} alt="friday-intel logo " />
+            <img src={logoo} alt="friday-intel logo " />
           </section>
           <ToggleSwitch onClick={themeChange} />
         </navbar>

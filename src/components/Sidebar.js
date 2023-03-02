@@ -48,7 +48,7 @@ const Sidenav = (props) => {
   };
 
   return (
-    <Sidebar>
+    <Sidebar style={{zIndex:0}}>
       <main>
         <button
           style={{ textDecoration: "none" }}

@@ -262,7 +262,9 @@ margin-top: 3rem;
     text-decoration: none;
     color: rgba(128, 128, 128);
 }
-
+.contact-us:hover{
+  cursor: pointer;
+}
 .user-img{
     margin-top: 2rem;
     height: 95%;
@@ -296,4 +298,9 @@ margin-top: 3rem;
   font-size: 4rem;
   margin-bottom: 2rem;
 
+}
+.copy_right_text{
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 5rem 0rem 0rem 2rem;
 }

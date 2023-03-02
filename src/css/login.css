@@ -202,13 +202,16 @@ label {
   }
 
 .welcome-back{
-    font-size: 3rem;
-    font-weight: 500;
-    margin-bottom: 2.5rem;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
 }
  .login-credentials-heading{
-    color: rgba(43, 43, 43, 0.5);
-    font-weight: 200;
+    /* color: rgba(43, 43, 43, 0.5); */
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 1.6rem;
+    font-family: sans-serif;
    
  }
  
@@ -229,10 +232,11 @@ label {
  }
 .email-address ,
  .password{
-margin-top: 3rem;
+margin-top: 2.5rem;
+font-weight: 500
 }
 .login-checkbox{
-    margin: 2rem 0rem;
+    margin: 1rem 0rem 1rem 0rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -245,11 +249,15 @@ margin-top: 3rem;
 .remember-me{
     padding: 5px;
     font-size: 1.2rem;
+    font-weight: 500;
 }
 .forgot-password{
     /* margin-left: 12rem; */
     font-size: 1.2rem;
     font-weight: lighter;
+    font-weight: 500;
+}.forgot-password:hover{
+  cursor: pointer;
 }
 .contact-us{
     margin: 1.8rem;
@@ -288,4 +296,7 @@ margin-top: 3rem;
    50% {transform: rotate(0.5turn)}
    75% {transform: rotate(0.75turn)}
    100% {transform: rotate(1turn)}
+  }
+  .inactive{
+    display: none;
   }

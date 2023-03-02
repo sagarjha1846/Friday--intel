@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import { addEdge, useEdgesState, useNodesState } from "reactflow";
 
 import CanvasArea from "../components/CanvasArea";
+// import Footer from "../components/Footer";
 import NodeList from "../components/NodeList";
 import SideNav from "../components/Sidebar";
 import Tool from "../components/Tool";
@@ -127,6 +128,7 @@ const NewCase = () => {
           <Tool onLayout={onLayout} canvasFunc={canvasFunc} />
         </div>
       </div>
+      {/* <Footer/> */}
     </>
   );
 };

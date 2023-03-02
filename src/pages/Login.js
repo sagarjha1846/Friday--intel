@@ -2,10 +2,13 @@ import React, {useState } from 'react'
 import "../css/login.css"
 import nightImage from "../images/night.png";
 import dayImage from "../images/day.png"
-import logo from "../images/logo.png";
+import light from "../images/logo.png";
 import user from "../images/user.png";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+// import dark from "../images/darklogo.jpeg"
+import dark from '../images/svg/darklogo.svg'
+
 
 
 
@@ -18,6 +21,7 @@ const Login = () => {
     const [email, setEmail]= useState("");
     const [password, setPassword] = useState("");
     const [error,setError]=useState("");
+    const [logoo,setLogoo]=useState(light);
     const Navigate = useNavigate();
     function handleforgetpassword(){
     Navigate("/forgot-password")
@@ -85,6 +89,19 @@ const Login = () => {
         htmlElement.style.setProperty("--secondary-color", PRIMARY);
 
         label.style.backgroundSize = "cover";
+        // const logotheme = document.getElementsByClassName(".inactive")
+        // // eslint-disable-next-line no-unused-expressions
+        // logotheme.classList.remove("inactive")
+        
+  
+    let value = logoo;
+
+    if (value === light) {
+      setLogoo(dark);
+    } else {
+      setLogoo(light);
+    }
+  
     }
     
     return (
@@ -93,7 +110,8 @@ const Login = () => {
             <main>
                 <nav className="navbar">
                     <section className='logo'>
-                        <img src={logo} alt="friday-intel logo " />
+                        <img className='active' src={logoo} alt="friday-intel logo " />
+                        {/* <img className='active inactive' src={darklogo} alt="dark logo"/> */}
                     </section>
                     <section className="theme-toggle">
                         <div className="switch-container">
