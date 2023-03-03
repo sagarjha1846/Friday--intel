@@ -16,7 +16,7 @@ const Home = () => {
           onClick={() => navigate(ROUTES.newCase)}
         >
           {/* <img src={img} alt='img' className='hover-img'/> */}
-          <h2 className="case_title">New Case</h2>
+          <h2 className="case_title_home">New Case</h2>
           <div className="case_arrow">
             <svg
               className="case_arrow"
@@ -47,7 +47,7 @@ const Home = () => {
           className="case_cards"
           onClick={() => navigate(ROUTES.loadCase)}
         >
-          <h2 className="case_title">Load Case</h2>
+          <h2 className="case_title_home">Load Case</h2>
           <div className="case_arrow">
             <svg
               width="40"
@@ -77,7 +77,7 @@ const Home = () => {
           className="case_cards"
           onClick={() => navigate(ROUTES.canvasTool)}
         >
-          <h2 className="case_title">Read Case</h2>
+          <h2 className="case_title_home">Read Case</h2>
           <div className="case_arrow">
             <svg
               width="40"

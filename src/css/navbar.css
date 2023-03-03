@@ -3,10 +3,10 @@
     width: 150px;
     margin: 15px 0px 0px 30px;
 }
-.nav_bar{
+.navbar{
     display: flex;
     justify-content: space-between;
-    height: 120px;
+    height: 100px;
     border-bottom:  2px solid black;
 }
 .notification_btn{
@@ -21,7 +21,7 @@
 box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.7);
 border-radius: 30px;
 height: 40px;
-width: 400px;
+width: 480px;
 }
 .search-bar{
     border-radius: 0px 30px 30px 0px;

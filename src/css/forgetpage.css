@@ -61,15 +61,15 @@ body{
     justify-content: space-between;
 }
 
-.login-button{
+.reset-button{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 30rem;
-    height: 3rem;
+    height: 4rem;
     font-size: 1.5rem;
-    color: white;
-    background: #1E1E1E;
+    color: var(--secondary-color);
+    background: var(--primary-color);
     border-radius: 1.4rem;
     border: 1px solid white;
     margin-top: 0;
@@ -230,6 +230,7 @@ label {
 .email-address ,
  .password{
 margin-top: 3rem;
+margin-bottom: 1rem;
 }
 .login-checkbox{
     margin: 2rem 0rem;
@@ -251,18 +252,19 @@ margin-top: 3rem;
     font-size: 1.2rem;
     font-weight: lighter;
 }
-.contact-us{
+.contact-uss{
     margin: 1.8rem;
     text-align: center;
-    margin-left: -5rem;
-    color: rgba(128, 128, 128);
-    font-size: 1.2rem;
+    margin-left: -10rem;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 400;
 }
-.contact-us a{
+.contact-uss a{
     text-decoration: none;
-    color: rgba(128, 128, 128);
+    
 }
-.contact-us:hover{
+.contact-uss:hover{
   cursor: pointer;
 }
 .user-img{
@@ -280,7 +282,7 @@ margin-top: 3rem;
 .footer{
     font-size: 1.6rem;
     font-weight:lighter;
-    margin:7rem ;
+    margin:5rem ;
     margin-left: 3rem;
 }
 /* Animation */

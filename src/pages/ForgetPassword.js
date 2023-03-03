@@ -15,22 +15,22 @@ const ForgetPassword = () => {
   const [logoo,setLogoo]=useState(light);
   const navigate = useNavigate();
 
-  function loggingIn(event) {
-    const arrowSvg = document.querySelector(".login-svg");
-    arrowSvg?.classList.add("login-animation");
-    const apiCall = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("foo");
-      }, 3000);
-    });
+  // function loggingIn(event) {
+  //   const arrowSvg = document.querySelector(".login-svg");
+  //   arrowSvg?.classList.add("login-animation");
+  //   const apiCall = new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       resolve("foo");
+  //     }, 3000);
+  //   });
 
-    apiCall.then(() => {
-      arrowSvg?.classList.toggle("login-animation");
-      arrowSvg.style.display = "none";
-      const checkMark = document.querySelector(".check-mark");
-      checkMark.style.display = "revert";
-    });
-  }
+  //   apiCall.then(() => {
+  //     arrowSvg?.classList.toggle("login-animation");
+  //     arrowSvg.style.display = "none";
+  //     const checkMark = document.querySelector(".check-mark");
+  //     checkMark.style.display = "revert";
+  //   });
+  // }
 
   function themeChange(event) {
     setMode(!mode);
@@ -46,6 +46,7 @@ const ForgetPassword = () => {
 
     htmlElement.style.setProperty("--primary-color", SECONDARY);
     htmlElement.style.setProperty("--secondary-color", PRIMARY);
+    htmlElement.style.setProperty("--primary-color-1", SECONDARY);
 
     label.style.backgroundSize = "cover";
     let value = logoo;
@@ -68,7 +69,7 @@ const ForgetPassword = () => {
         </navbar>
 
         <section className="form">
-          <h3 className="Forgot Password">Welcome back</h3>
+          <h3 className="Forgot Password">Forgot Password</h3>
           <h4 className="login-credentials-heading">
             Please enter registered Email/Mobile number to receive a OTP
           </h4>
@@ -79,41 +80,12 @@ const ForgetPassword = () => {
             type="text"
           />
           <br></br>
-          <button className="login-button" onClick={loggingIn}>
-            Login
-            <div className="login-svg">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                />
-              </svg>
-            </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="#00FFFF"
-              className="check-mark w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4.5 12.75l6 6 9-13.5"
-              />
-            </svg>
+          <button className="reset-button" >
+          Reset Password
+           
           </button>
 
-          <p className="contact-us">
+          <p className="contact-uss">
             Wanna try again?{" "}
             <span onClick={() => navigate(ROUTES.login)}> Log in</span>
           </p>

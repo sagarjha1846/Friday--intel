@@ -2,10 +2,13 @@
 
 html{
     --primary-color: #1E1E1E;
+    --primary-color-1: rgba(43, 43, 43, 0.5);
     --secondary-color: #ffffff;
 
     /* for rem value */
     font-size: 62.5%;
+
+    height: 100vh;
 }
 
 @media screen and (max-width: 800px) {
@@ -36,14 +39,14 @@ body{
     height: 100vh;
     width: 100vw;
 }
-.form{
+.form-login{
     display: flex;
     flex-direction: column;
   
-    margin: 12rem 2rem 0rem 20rem;
+    margin: 10rem 2rem 0rem 20rem;
 }
 
-.navbar{
+.navbar-login{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -202,13 +205,13 @@ label {
   }
 
 .welcome-back{
-    font-size: 4rem;
+    font-size: 4.4rem;
     font-weight: 700;
     margin-bottom: 3rem;
 }
  .login-credentials-heading{
     /* color: rgba(43, 43, 43, 0.5); */
-    color: var(--primary-color);
+    color: var(--primary-color-1);
     font-weight: 400;
     font-size: 1.6rem;
     font-family: sans-serif;
@@ -233,7 +236,8 @@ label {
 .email-address ,
  .password{
 margin-top: 2.5rem;
-font-weight: 500
+font-weight: 500;
+font-size: 1.4rem;
 }
 .login-checkbox{
     margin: 1rem 0rem 1rem 0rem;
@@ -243,13 +247,15 @@ font-weight: 500
     
 } 
 .remember-checkbox{
-   margin-bottom: -5px;
+   margin-right: .5rem;
+   margin-bottom: .5rem;
  
 }
 .remember-me{
     padding: 5px;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 500;
+    display: flex;
 }
 .forgot-password{
     /* margin-left: 12rem; */
@@ -262,9 +268,10 @@ font-weight: 500
 .contact-us{
     margin: 1.8rem;
     text-align: center;
-    margin-left: -5rem;
+    margin-left: -12rem;
     color: rgba(128, 128, 128);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
 }
 .contact-us a{
     text-decoration: none;
@@ -283,10 +290,10 @@ font-weight: 500
     height: 100%;
     width: 100%;
 }
-.footer{
+.footer-login{
     font-size: 1.6rem;
     font-weight:lighter;
-    margin:7rem ;
+    margin:3.5rem 0rem 1rem 1rem ;
     margin-left: 3rem;
 }
 /* Animation */
@@ -299,4 +306,9 @@ font-weight: 500
   }
   .inactive{
     display: none;
+  }
+  .login-error{
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: rgb(174, 15, 15);
   }

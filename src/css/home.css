@@ -3,11 +3,11 @@
     width: 300px;
     border: 2px solid black;
     border-radius: 8px;
-    margin: 15px;
+    margin: 4.5rem 0rem 0rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+   
 }
 
 .case_cards:hover {
@@ -22,12 +22,13 @@
   #00F0FF, #FF1CF7) 2;
   
 }
-path:hover{
+/* path:hover{
     fill: #fff;
-}
-.case_arrow:hover {
+} */
+
+/* .case_arrow:hover {
     fill: #fff;
-}
+} */
 
 .hover-img {
     overflow: scroll;
@@ -35,12 +36,14 @@ path:hover{
     z-index: -1;
 }
 
-.case_title {
-    font-size: 20px;
+.case_title_home {
+    font-size: 4.4rem;
     width: 50px;
-    margin-left: 16px;
+    margin-left: 20px;
     /* height: 100%; */
     z-index: 1;
+    line-height: 4rem;
+    font-weight: 400;
 }
 
 .case_arrow {

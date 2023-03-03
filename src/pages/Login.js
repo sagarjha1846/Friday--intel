@@ -86,6 +86,7 @@ const Login = () => {
         const SECONDARY = getComputedStyle(htmlElement).getPropertyValue("--secondary-color");
 
         htmlElement.style.setProperty("--primary-color", SECONDARY);
+        htmlElement.style.setProperty("--primary-color-1", SECONDARY);
         htmlElement.style.setProperty("--secondary-color", PRIMARY);
 
         label.style.backgroundSize = "cover";
@@ -108,7 +109,7 @@ const Login = () => {
 
         <div className="App">
             <main>
-                <nav className="navbar">
+                <nav className="navbar-login">
                     <section className='logo'>
                         <img className='active' src={logoo} alt="friday-intel logo " />
                         {/* <img className='active inactive' src={darklogo} alt="dark logo"/> */}
@@ -146,7 +147,7 @@ const Login = () => {
                     </section>
                 </nav>
 
-                <section className="form">
+                <section className="form-login">
                     <h3 className="welcome-back">Welcome back</h3>
                     <h4 className="login-credentials-heading">
                         Please enter your login credentials.
@@ -158,7 +159,11 @@ const Login = () => {
                     <br></br> 
                     <span className='login-checkbox'>
                     
-                    <span className="remember-me"><input  className='remember-checkbox' type='checkbox' /> Remember me</span>
+                    {/* <div className="remember-me">
+                        <input  className='remember-checkbox' type='checkbox' /> 
+                        <span>Remember me</span>
+                    </div> */}
+                    <div className="remember-me"><input className='remember-checkbox' type="checkbox" /><div className="checkmark"></div>Remember me</div>
                     <span onClick={handleforgetpassword} className="forgot-password">Forgot password</span>
                     </span>
                    
@@ -175,11 +180,11 @@ const Login = () => {
                         </svg>
 
                     </button>
-                    {error && <div className="error"> {error} </div>}
+                    {error && <div className="login-error"> {error} </div>}
                    
                     <p className='contact-us'>Don't have an account ? <a href="#contact"> Contact Us</a></p>    
                 </section>
-                <footer className='footer'>
+                <footer className='footer-login'>
                     &copy;   2022-23 Friday Intel Pvt. Ltd.
                 </footer>
             </main>

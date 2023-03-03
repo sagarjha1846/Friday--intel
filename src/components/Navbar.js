@@ -140,7 +140,7 @@ const Navbar = () => {
             </defs>
           </svg>
 
-          <input type="search" className='search-bar' placeholder="Type Something|" />
+          <input type="search" className='search-bar' placeholder="Type Something|                                                 &#128269; " />
         </div>
         <div>
           <svg width="45" height="49" viewBox="0 0 45 49" fill="none" xmlns="http://www.w3.org/2000/svg">
