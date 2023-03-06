@@ -16,11 +16,11 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    color: #fff;
+    color: #000;
     border-style: solid;
   border-image: linear-gradient(to right,
   #00F0FF, #FF1CF7) 2;
-  
+  cursor: pointer;
 }
 /* path:hover{
     fill: #fff;
@@ -48,4 +48,7 @@
 
 .case_arrow {
     margin-right: 10px;
+}
+.case_arrow path{
+fill:#1C1C1C ;
 }
