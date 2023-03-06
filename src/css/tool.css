@@ -4,13 +4,14 @@
   width: 3.5rem;
   border-radius: 12px;
   border-color: black;
+  margin: -5px 60px -4px 8px;
   padding: 4px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   /* gap: 0.8rem; */
-  background-color: black;
+  background-color: white;
 }
 
 .navigation:hover {
@@ -29,6 +30,7 @@ nav .menu {
   display: block;
   padding: 5px;
   margin-top: 21px;
+  width: 40px;
 }
 
 /* .btn_fullscreen{
@@ -47,18 +49,3 @@ nav .menu {
     width: -webkit-max-content;
     width: max-content;
     z-index: 2 */
-/* } */
-
-/* .btn{ */
-/* justify-content: center; */
-/* display: flex; */
-/* flex-direction: column;
- margin: 5px;
- border-radius:30%;
- height: 2rem;
- width: 2rem;
- position: fixed;   
- gap: .8rem;
- background-color: black transparent;
-
-} */

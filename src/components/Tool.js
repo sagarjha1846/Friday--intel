@@ -1,12 +1,12 @@
 import React from "react";
-import {
-  AiOutlineCamera,
-  AiOutlineZoomIn,
-  AiOutlineZoomOut,
-} from "react-icons/ai";
-import { BiNetworkChart, BiTargetLock } from "react-icons/bi";
-import { GrNetwork } from "react-icons/gr";
-import { MdOutlineAccountTree } from "react-icons/md";
+import Zoomin from "../images/tools svg/Zoomin.svg"
+import Zoomout from "../images/tools svg/Zoomout.svg"
+import TargetIcon from "../images/tools svg/TargetIcon.svg"
+import Fullscreen from "../images/tools svg/Fullscreen.svg"
+import LayoutIcon from "../images/tools svg/LayoutIcon.svg"
+import TreeIcon from "../images/tools svg/TreeIcon.svg"
+import SnapshotIcon from "../images/tools svg/SnapshotIcon.svg"
+import camera from "../images/tools svg/camera.svg"
 
 import "../css/tool.css";
 
@@ -15,27 +15,22 @@ const Tool = (props) => {
   return (
     <div className="navigation">
       <nav className="menu">
-        <button className="btn" onClick={() => canvasFunc?.zoomIn()}>
-          <AiOutlineZoomIn />
-        </button>
-        <button className="btn" onClick={() => canvasFunc?.zoomOut()}>
-          <AiOutlineZoomOut />
-        </button>
-        <button className="btn" onClick={() => canvasFunc?.fitView()}>
-          <BiTargetLock />
-        </button>
-        <button className="btn">
-          <BiNetworkChart />
-        </button>
-        <button className="btn" onClick={() => onLayout("LR")}>
-          <MdOutlineAccountTree />
-        </button>
-        <button className="btn" onClick={() => onLayout("TB")}>
-          <GrNetwork />
-        </button>
-        <button className="btn">
-          <AiOutlineCamera />
-        </button>
+      <img src={Fullscreen} alt="Fullscreen" className="btn" />
+
+<img  src = {Zoomin} alt ="Zoomin"className="btn" onClick={() => canvasFunc?.zoomIn()} />
+
+<img src = {Zoomout} alt="Zoomout" className="btn" onClick={() => canvasFunc?.zoomOut()} />
+
+<img src={TargetIcon} alt ="Targeticon" className="btn" onClick={() => canvasFunc?.fitView()} />
+
+<img src={LayoutIcon}  alt ="Icon" className="btn" />
+
+<img src ={TreeIcon} alt ="TreeIcon" className="btn" onClick={() => onLayout("LR")} />
+
+<img src={SnapshotIcon}  alt="SnapshotIcon" className="btn" onClick={() => onLayout("TB")} />
+
+<img src={camera} alt="Screenshot" className="btn" />
+
       </nav>
     </div>
   );
