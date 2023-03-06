@@ -1,4 +1,8 @@
-import React from "react";
+// import React from "react";
+import React from 'react';
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
+// import React, { createRef, useState , usecallback} from 'react'
+// import { useScreenshot } from 'use-react-screenshot'
 import Zoomin from "../images/tools svg/Zoomin.svg"
 import Zoomout from "../images/tools svg/Zoomout.svg"
 import TargetIcon from "../images/tools svg/TargetIcon.svg"
@@ -10,14 +14,26 @@ import camera from "../images/tools svg/camera.svg"
 
 import "../css/tool.css";
 
+
+
 const Tool = (props) => {
   const { onLayout, canvasFunc } = props;
+  const handle = useFullScreenHandle();
+  
+  
+
   return (
     <div className="navigation">
       <nav className="menu">
-      <img src={Fullscreen} alt="Fullscreen" className="btn" />
 
-<img  src = {Zoomin} alt ="Zoomin"className="btn" onClick={() => canvasFunc?.zoomIn()} />
+      <img src={Fullscreen} alt="Fullscreen" className="btn" onClick={handle.enter} />
+      <FullScreen
+        handle={handle}>
+          
+              </FullScreen>
+  
+
+ <img  src = {Zoomin} alt ="Zoomin"className="btn" onClick={() => canvasFunc?.zoomIn()} />
 
 <img src = {Zoomout} alt="Zoomout" className="btn" onClick={() => canvasFunc?.zoomOut()} />
 
@@ -30,6 +46,7 @@ const Tool = (props) => {
 <img src={SnapshotIcon}  alt="SnapshotIcon" className="btn" onClick={() => onLayout("TB")} />
 
 <img src={camera} alt="Screenshot" className="btn" />
+
 
       </nav>
     </div>
