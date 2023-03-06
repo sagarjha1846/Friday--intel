@@ -57,7 +57,7 @@ const NodeList = (props) => {
             <span className="listName">{node?.urls || "-"}</span>
             {isChecked[node?.urls] ? (
               <ImCheckboxChecked
-                size={"20px"}
+                size={"25px"}
                 onClick={() => setNodeInCanvas(node?.urls)}
               />
             ) : (
