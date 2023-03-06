@@ -1,11 +1,10 @@
 import axios from "axios";
 
-const getTORDomain = async () => {
+const getTORDomain = async (searchRef) => {
   try {
     const res = await axios.get("https://fridayintel.io/api-dev/darkweb.php", {
       params: {
-        domain:
-          "zsjvvfabm5v45fcokhfraqxvuggijhpmaybxr3fhokmm7wdnni6tyhad.onion",
+        domain: searchRef,
       },
     });
     return res;
@@ -14,10 +13,10 @@ const getTORDomain = async () => {
   }
 };
 
-const getDomain = async () => {
+const getDomain = async (searchRef) => {
   try {
     const res = await axios.get("https://fridayintel.io/api-dev/domain.php", {
-      params: { domain: "0--0.dev" },
+      params: { domain: searchRef },
     });
     return res;
   } catch (error) {
@@ -25,10 +24,10 @@ const getDomain = async () => {
   }
 };
 
-const getUrl = async () => {
+const getUrl = async (searchRef) => {
   try {
     const res = await axios.get("https://fridayintel.io/api-dev/urls.php", {
-      params: { domain: "aaa.aaa" },
+      params: { domain: searchRef },
     });
     return res;
   } catch (error) {
@@ -36,10 +35,10 @@ const getUrl = async () => {
   }
 };
 
-const getFiles = async () => {
+const getFiles = async (searchRef) => {
   try {
     const res = await axios.get("https://fridayintel.io/api-dev/files.php", {
-      params: { hash: "324f9a54a0a25126b6321b40f5dcfa97e2cbe016" },
+      params: { hash: searchRef },
     });
     return res;
   } catch (error) {
