@@ -1,10 +1,11 @@
 .navigation {
   color: rgb(7, 6, 6);
-  border: 1px solid transparent;
-  width: 3.5rem;
+  /* border: 1px solid transparent; */
+  height: 40rem;
+  width: 7rem;
   border-radius: 12px;
   border-color: black;
-  margin: -5px 60px -4px 8px;
+  /* margin: -5px 60px -4px 8px; */
   padding: 4px;
   display: flex;
   justify-content: flex-start;
@@ -24,13 +25,21 @@ nav .menu {
   align-items: center;
   flex-direction: column;
   position: absolute;
+  gap: 1rem;
 }
 
 .btn {
-  display: block;
+  display: flex;
   padding: 5px;
-  margin-top: 21px;
+  margin-top: 1rem;
   width: 40px;
+  gap: 1rem;
+}
+.btn:last-child{
+  margin-bottom: 1rem;
+}
+.btn:first-child{
+  margin-top: .4rem !important;
 }
 
 /* .btn_fullscreen{

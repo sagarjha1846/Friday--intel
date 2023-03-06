@@ -43,7 +43,7 @@ body{
     margin: 12rem 2rem 0rem 20rem;
 }
 
-.navbar{
+.navbar-forgotpage{
     display: flex;
     justify-content: space-between;
     align-items: baseline;

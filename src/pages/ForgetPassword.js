@@ -61,7 +61,7 @@ const ForgetPassword = () => {
   return (
     <div className="App">
       <main>
-        <navbar className="navbar">
+        <navbar className="navbar-forgotpage">
           <section className="logo">
             <img src={logoo} alt="friday-intel logo " />
           </section>
