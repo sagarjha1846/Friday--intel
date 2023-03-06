@@ -154,6 +154,7 @@ import searchLogo from "../images/svg/search-logo.svg";
 import themeIcon from "../images/svg/theme.svg";
 import userIcon from "../images/svg/user.svg";
 import { getLayoutElements } from "../utils";
+// import Footer from "../components/Footer";
 
 const NewCase = () => {
   const searchRef = useRef();
@@ -277,6 +278,7 @@ const NewCase = () => {
           />
         </div>
       </div>
+      {/* <Footer/> */}
     </>
   );
 };

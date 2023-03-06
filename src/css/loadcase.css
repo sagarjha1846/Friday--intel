@@ -1,0 +1,28 @@
+.loadcase-conatiner{display: flex;
+gap: 10px;
+width: 100vw;
+}
+
+.case_cards_loadcase {
+    height: 160px;
+    width: 220px;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin: 4.5rem 0rem 0rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.case_cards_loadcase:hover {
+    background: url(../images/case-card.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #000;
+    border-style: solid;
+  border-image: linear-gradient(to right,
+  #00F0FF, #FF1CF7) 2;
+  cursor: pointer;
+}
