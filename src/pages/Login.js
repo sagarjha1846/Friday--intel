@@ -44,13 +44,13 @@ const Login = () => {
             }
             if(response.data.Login==="Failed") 
             {
-                setError("Please enter valid credentials")
+                setError("Wrong Username or Password! Enter valid credentials.")
                 console.log("dada")
             }
         }
         catch (error) {
             console.log(error);
-            setError("Please enter valid credentials")
+            setError("Wrong Username or Password! Enter valid credentials.")
           
         }
 
@@ -157,6 +157,7 @@ const Login = () => {
                     <p className="password">Password</p>
                     <input className="input-2 input" placeholder="*********" type="password" onChange={(e)=>setPassword(e.target.value)} />
                     <br></br> 
+                    {error && <div className="login-error"> {error} </div>}
                     <span className='login-checkbox'>
                     
                     {/* <div className="remember-me">
@@ -167,25 +168,19 @@ const Login = () => {
                     <span onClick={handleforgetpassword} className="forgot-password">Forgot password</span>
                     </span>
                    
-                    <button className="login-button"   onClick={loggingIn}>
-                        Login
-                        <div className="login-svg">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                            </svg>
-
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#00FFFF" className="check-mark w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    <button className="login-button-slide"   onClick={loggingIn}>
+                        Sign In
+                        <div className="iconbtn">
+                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor">
+                            </path>
                         </svg>
-
-                    </button>
-                    {error && <div className="login-error"> {error} </div>}
-                   
+                        </div>
+                    </button>                   
                     <p className='contact-us'>Don't have an account ? <a href="#contact"> Contact Us</a></p>    
                 </section>
                 <footer className='footer-login'>
-                    &copy;   2022-23 Friday Intel Pvt. Ltd.
+                    &copy;   2023-24 Friday Intel LLP
                 </footer>
             </main>
             <aside className='user-img'>
