@@ -50,6 +50,7 @@
   flex: 1 1 auto;
   height: 82vh;
   max-width: 100vw !important;
+  width: 100vw ;
 }
 .canvas {
   display: flex;
