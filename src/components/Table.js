@@ -22,13 +22,12 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 
-function createData(name, Title, fat, carbs, protein) {
+function createData(name, Title, fat, carbs) {
   return {
     name,
     Title,
     fat,
     carbs,
-    protein,
   };
 }
 
@@ -85,34 +84,34 @@ const headCells = [
     id: 'name',
     numeric: false,
     disablePadding: true,
-    label: 'Dessert (100g serving)',
+    label: 'Title',
   },
   {
     id: 'Tile',
     numeric: true,
     disablePadding: false,
-    label: 'Calories',
+    label: 'Node Count',
   },
   {
     id: 'Node Count',
     numeric: true,
     disablePadding: false,
-    label: 'Fat (g)',
+    label: 'Creation Time (UTC +5:30)',
   },
   {
     id: 'Creation Time',
     numeric: true,
     disablePadding: false,
-    label: 'Carbs (g)',
+    label: 'Last Update (UTC +5:30)',
   },
-  {
-    id: 'Last Update',
-    numeric: true,
-    disablePadding: false,
-    label: 'Protein (g)',
-  },
+  // {
+  //   id: 'Last Update',
+  //   numeric: true,
+  //   disablePadding: false,
+  //   label: 'Protein (g)',
+  // },
 ];
-
+// 
 function EnhancedTableHead(props) {
   const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } =
     props;
@@ -199,7 +198,7 @@ function EnhancedTableToolbar(props) {
           id="tableTitle"
           component="div"
         >
-          Nutrition
+          
         </Typography>
       )}
 
@@ -358,7 +357,7 @@ export default function EnhancedTable() {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[5, 10]}
           component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}
