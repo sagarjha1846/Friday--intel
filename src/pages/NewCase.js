@@ -140,12 +140,18 @@ import React, { useCallback, useRef, useState } from "react";
 import { addEdge, useEdgesState, useNodesState } from "reactflow";
 import { toPng } from "html-to-image";
 
+
+
+import Drawer from 'react-modern-drawer'
+import 'react-modern-drawer/dist/index.css'
+
 import CanvasArea from "../components/CanvasArea";
 import NodeList from "../components/NodeList";
 import SideNav from "../components/Sidebar";
 import Tool from "../components/Tool";
 
 import "../css/newcase.css";
+import "../css/drawer.css";
 
 import bookmark from "../images/bookmark.svg";
 import bookmarkIcon from "../images/svg/bookmarkIcon.svg";
@@ -156,6 +162,11 @@ import userIcon from "../images/svg/user.svg";
 import { getLayoutElements } from "../utils";
 
 const NewCase = () => {
+
+  const [isOpen, setIsOpen] = React.useState(false)
+    const toggleDrawer = () => {
+        setIsOpen((prevState) => !prevState)
+    }
   const searchRef = useRef();
   const [nodeInfo, setNodeInfo] = useState({ list: [], name: "" });
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
@@ -184,7 +195,7 @@ const NewCase = () => {
     },
     [nodes, edges, setNodes, setEdges]
   );
- 
+  // state = { drawerOpen: false }
   return (
     <>
       <nav className="nav_bar">
@@ -197,7 +208,67 @@ const NewCase = () => {
             </div>
           </div>
         </section>
-        <section className="notification_btn">
+        <section className="notification_btn" onClick={toggleDrawer}>
+        <Drawer
+                open={isOpen}
+                onClose={toggleDrawer}
+                direction='right'
+                className='bla bla bla'
+            >
+                <div id="Drawer">
+                  <h2>Search Guidelines</h2>
+                  <hr />
+                  <h1>Keyword Search</h1>
+                  <p>Friday Intel offers full-text search and retrieves recent darkweb content that includes the search keyword.</p>
+                  <p>Just as search engines, put Keybord to search</p>
+
+                  <p>If there are too many results to study, try a more specific keyword search to get more relevant results. To find more specific results, use
+
+the search operator.</p>
+
+<p>Just as search engines, put Keybord to search</p>
+<h1>Search Operator</h1>
+<p>Search operators are special commands that enable advanced full text</p>
+<div className="parent">
+<div className="Diff1">
+<h4>Operator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description</h4>
+<hr />
+<p>""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The search results are exact matches to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the keywords in""</p>
+<hr />
+<p>AND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search results include both X and Y</p>
+<hr />
+<p>OR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search results include X and Y</p>
+<hr />
+<p>NOT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search results include X but exclude &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;results contain Y</p>
+<hr />
+<p>Sites:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filtered site search results Support for &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the darkweb surfaceweh website A site &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; must be a full domain address (perfect &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; match), for example Friday Intel  NOT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inurl:xxxxxxxxxxxxx.onion</p>
+<hr />
+<p>inurl:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search result in filtered URL Support for &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; darkweb/surface URL URL should be &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; match with specific pattern (Like match) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.g.Friday Intel NOT inurl http://xxxxxxxxx.com</p>
+</div>
+<div className="diff2">
+  {/* <h4></h4> */}
+  <p></p>
+  <p></p>
+  <p></p>
+  <p> </p>
+  <p></p>
+  <p></p>
+</div>
+</div>
+<p>The purpose of indicator search is to extract information that is linked to the searched keyword. The keyword or source of the keyword could be used to generate a list of analysis results.
+
+The Monography of Friday Intel button displays a list of indicators that
+
+you can use. To search, click an indicator and enter an exact keyword
+
+for a perfect match.
+</p>
+
+                  
+
+                </div>
+            </Drawer>
+
           <div>
             <img src={bookmarkIcon} alt="bookmark" />
           </div>
