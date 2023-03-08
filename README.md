@@ -5,7 +5,7 @@
 
 1. **Forking repository**
 
-Fork this repository using the **Fork** option at the top-right corner of this page. This will create your own copy of this repository. You'll be redirected to your forked repository. Copy the link of this repository (which will look like `https://github.com/<your-username>/Friday-Intel/`) as you'll need it in the step 2.
+Fork this repository using the **Fork** option at the top-right corner of this page. This will create your own copy of this repository. You'll be redirected to your forked repository. Copy the link of this repository (which will look like `https://github.com/KangarooAgency/Friday--intel.git`) as you'll need it in the step 2.
 
 
 
