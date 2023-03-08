@@ -21,7 +21,7 @@
     border-style: solid;
   border-image: linear-gradient(to right,
   #00F0FF, #FF1CF7) 2;
-  fill: #fff;
+  /* fill: #fff; */
 }
 .case_arrow:hover,path:hover {
     fill: #fff;

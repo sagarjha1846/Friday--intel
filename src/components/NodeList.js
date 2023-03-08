@@ -53,8 +53,9 @@ const NodeList = (props) => {
     <Menu>
       {nodeList.list.map((node, index) => {
         return (
+          <>
           <li className="listItem" key={index}>
-            <span className="listName">{node?.urls || "-"}</span>
+            <ul className="listName">{node?.urls || "-"}</ul>
             {isChecked[node?.urls] ? (
               <ImCheckboxChecked
                 size={"25px"}
@@ -67,6 +68,8 @@ const NodeList = (props) => {
               />
             )}
           </li>
+          <br/>
+          </>
         );
       })}
     </Menu>
@@ -74,3 +77,11 @@ const NodeList = (props) => {
 };
 
 export default NodeList;
+
+
+
+
+
+
+
+
