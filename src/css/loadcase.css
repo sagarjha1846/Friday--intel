@@ -1,6 +1,8 @@
-.loadcase-conatiner{display: flex;
+.loadcase-conatiner{
+  display: flex;
 gap: 10px;
 width: 100vw;
+/* flex: 1 1 20%; */
 }
 
 .case_cards_loadcase {
@@ -8,7 +10,7 @@ width: 100vw;
     width: 220px;
     border: 2px solid black;
     border-radius: 8px;
-    margin: 4.5rem 0rem 0rem 2rem;
+    margin: 3.5rem 0rem 0rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,4 +27,10 @@ width: 100vw;
   border-image: linear-gradient(to right,
   #00F0FF, #FF1CF7) 2;
   cursor: pointer;
+}
+.loadcase-table{
+  height: 70vh;
+  flex: 1 1 20%;
+  margin: 4rem;
+  font-size: 2rem;
 }

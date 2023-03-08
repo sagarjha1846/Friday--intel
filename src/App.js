@@ -10,6 +10,7 @@ import NewCase from "./pages/NewCase";
 import { ProSidebarProvider } from "react-pro-sidebar";
 import LoadCase from "./pages/LoadCase";
 import Page404 from "./pages/Page404"
+import ReadCase from "./pages/ReadCase";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path={ROUTES.caseBlog} element={<CaseBlog />} />
           {/* <Route path={ROUTES.canvasTool} element={<CanvasTools />} /> */}
           <Route path={ROUTES.loadCase} element={<LoadCase />} />
+          <Route path={ROUTES.readCase} element={<ReadCase />} />
           <Route path={ROUTES.page404} element={<Page404/>}/>
         </Routes>
       </ProSidebarProvider>

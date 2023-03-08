@@ -6,6 +6,7 @@ const ROUTES = {
   caseBlog: "/caseblog",
   canvasTool: "canvas-tools",
   loadCase: "/loadcase",
+  readCase: "/readcase",
   page404: "/*"
 };
 

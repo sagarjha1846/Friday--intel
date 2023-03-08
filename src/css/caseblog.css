@@ -17,15 +17,15 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    color: #fff;
+    /* color: #fff; */
     border-style: solid;
   border-image: linear-gradient(to right,
   #00F0FF, #FF1CF7) 2;
   /* fill: #fff; */
 }
-.case_arrow:hover,path:hover {
+/* .case_arrow:hover,path:hover {
     fill: #fff;
-}
+} */
 
 .hover-img {
     overflow: scroll;

@@ -1,17 +1,15 @@
-import React from "react";
+import React from 'react';
 import bookmark from "../images/bookmark.svg";
 import "../css/navbar.css";
-import { StyledEngineProvider } from '@mui/material/styles';
-import Demo from "../components/Table"
 import ROUTES from "../constant/routesConstant";
 import { useNavigate } from "react-router-dom";
 import "../css/loadcase.css"
+import "../css/readcase.css"
 
-
-const LoadCase = () => {
-  const navigate = useNavigate();
+const ReadCase = () => {
+    const navigate = useNavigate();
   return (
-    <>
+<>
       <nav className="nav_bar">
         <section className="logo_box">
           <img src={bookmark} className="logo" alt="logo" />
@@ -596,8 +594,8 @@ const LoadCase = () => {
           </div>
         </section>
       </nav>
-      <section className="loadcase-conatiner">
-      <section className="cases">
+      <section className="readcase-container">
+         <section className="cases">
         <article
           className="case_cards_loadcase newcase-loadcase"
           onClick={() => navigate(ROUTES.newCase)}
@@ -679,15 +677,30 @@ const LoadCase = () => {
           </div>
         </article>
       </section>
-      <section className="loadcase-table">
-      <StyledEngineProvider injectFirst>
-      <Demo />
-    </StyledEngineProvider>
+     
+      <div className="card">
+    <div className="card-img-holder">
+      <img
+        src="https://images.unsplash.com/photo-1640102953836-5651f5d6b240?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80"
+        alt="Blogimage"
+      />
+    </div>
+    <h3 className="blog-title">Learn Microinteraction</h3>
+    <span className="blog-time">Monday Jan 20, 2020</span>
+    <p className="description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis
+      viverra turpis, non cursus ex accumsan at.
+    </p>
+    <div className="options">
+      <span>Read Full Blog</span>
+      <button className="btn">Blog</button>
+    </div>
+  </div>
       </section>
      
-    </section>
-    </>
-  );
-};
 
-export default LoadCase;
+    </>
+  )
+}
+
+export default ReadCase
