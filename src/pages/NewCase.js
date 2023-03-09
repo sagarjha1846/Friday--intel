@@ -294,8 +294,8 @@ const NewCase = () => {
             nodes={nodes}
           />
         </div>
-      </div>
       <Footer/>
+      </div>
     </>
   );
 };

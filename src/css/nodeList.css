@@ -9,10 +9,11 @@
   /* align-items: center; */
   justify-content: space-between;
   /* height: 7rem; */
-  width: 35rem;
+  width: 36rem;
   /* overflow-wrap: break-word;
    */
-   overflow-x: scroll;
+   /* overflow-x: scroll; */
+   overflow-wrap: break-word;
    /* overflow: auto; */
    overflow-y: scroll;
   /* width: 100%; */
@@ -22,7 +23,7 @@
   box-sizing: border-box;
   cursor: pointer;
   padding-right: 20px;
-  padding-left: 9rem;
+  padding-left: 8.5rem;
 }
 .listItem::before{
   content: "*";
@@ -30,6 +31,8 @@
 
 .listName {
   padding: 0px 5px;
+  width: 30rem;
+  word-break: break-word;
 }
 
 .listIcon {
