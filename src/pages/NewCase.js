@@ -262,7 +262,7 @@ const NewCase = () => {
         </section>
       </nav>
 
-      <div className="container" style={{ maxHeight: "550px" }}>
+      <div className="container" >
         <div className="sideNavSection">
           <SideNav setNodeInfo={setNodeInfo} searchRef={searchRef.current} />
           {nodeInfo.list.length ? (
@@ -286,6 +286,7 @@ const NewCase = () => {
             onEdgesChange={onEdgesChange}
           />
         </div>
+        <div className="toolSection-container">
         <div className="toolSection">
           <Tool
             onLayout={onLayout}
@@ -294,6 +295,9 @@ const NewCase = () => {
             nodes={nodes}
           />
         </div>
+
+        </div>
+
       <Footer/>
       </div>
     </>

@@ -17,7 +17,7 @@ code {
     monospace;
 }
 
-.app {
+/* .app {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -25,4 +25,11 @@ code {
   justify-content: flex-start;
   align-items: stretch;
   align-content: stretch;
+} */
+.app{
+  overflow: hidden;
+}
+
+.app::-webkit-scrollbar {
+  display: none;
 }
