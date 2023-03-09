@@ -246,15 +246,6 @@ the search operator.</p>
 <hr />
 <p>inurl:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search result in filtered URL Support for &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; darkweb/surface URL URL should be &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; match with specific pattern (Like match) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.g.Friday Intel NOT inurl http://xxxxxxxxx.com</p>
 </div>
-<div className="diff2">
-  {/* <h4></h4> */}
-  <p></p>
-  <p></p>
-  <p></p>
-  <p> </p>
-  <p></p>
-  <p></p>
-</div>
 </div>
 <p>The purpose of indicator search is to extract information that is linked to the searched keyword. The keyword or source of the keyword could be used to generate a list of analysis results.
 
