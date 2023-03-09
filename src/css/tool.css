@@ -12,11 +12,7 @@
   align-items: center;
   flex-direction: column;
   /* gap: 0.8rem; */
-  background-color: white;
-}
-
-.navigation:hover {
-  border: 2px solid #00ffff;
+  background-color: rgb(255, 255, 255);
 }
 
 nav .menu {
@@ -25,21 +21,13 @@ nav .menu {
   align-items: center;
   flex-direction: column;
   position: absolute;
-  gap: 1rem;
 }
 
-.btn {
-  display: flex;
-  padding: 5px;
-  margin-top: 1rem;
-  width: 40px;
-  gap: 1rem;
+.navigation{
+  border: 2px solid #000000;
 }
-.btn:last-child{
-  margin-bottom: 1rem;
-}
-.btn:first-child{
-  margin-top: .4rem !important;
+.menu{
+  margin-top: 1em;
 }
 
 /* .btn_fullscreen{
@@ -58,3 +46,34 @@ nav .menu {
     width: -webkit-max-content;
     width: max-content;
     z-index: 2 */
+
+    .toolbtn {
+      background-color: #010101;
+      cursor: pointer;
+      border: none;  
+      border-radius: 1em;
+      padding: 0.35em 0.3em 0em 0.35em;
+    }
+    .toolbtn1 {
+      background-color: #010101;
+      cursor: pointer;
+      border: none;  
+      border-radius: 1em;
+      padding: 0.57em;
+    }
+    .toolbtn1:hover svg path{
+      fill: #00ffff;
+    }
+
+    .toolbtn:hover svg path{
+      fill: #00ffff;
+    }
+    
+    .btn {
+      display: flex;
+      gap: 1rem;
+    }
+    .btnicon {
+      display: flex;
+      margin-top: 1rem;
+    }
