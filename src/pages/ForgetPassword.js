@@ -69,28 +69,33 @@ const ForgetPassword = () => {
         </navbar>
 
         <section className="form">
-          <h3 className="Forgot Password">Forgot Password</h3>
+          <h3 className="Forgot-Password">Forgot Password</h3>
           <h4 className="login-credentials-heading">
-            Please enter registered Email/Mobile number to receive a OTP
+            Please enter registered Email/Mobile to request password.
           </h4>
           <p className="email-address">Email address</p>
           <input
-            className="input input-1"
+            className="input-fp"
             placeholder="name@company.com"
             type="text"
           />
           <br></br>
-          <button className="reset-button" >
-          Reset Password
-           
-          </button>
+          <button className="login-button-slide-fp">
+                        Reset Password
+                        <div className="iconbtn">
+                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor">
+                            </path>
+                        </svg>
+                        </div>
+                    </button>                   
 
           <p className="contact-uss">
             Wanna try again?{" "}
             <span onClick={() => navigate(ROUTES.login)}> Log in</span>
           </p>
         </section>
-        <div className="copy_right_text">&copy; 2022-23 Friday Intel Pvt. Ltd.</div>
+        <div className="copy_right_text">&copy; 2022-23 Friday Intel LLP</div>
       </main>
       <aside className="user-img">
         <img src={forgetpassimg} alt="user " className="user-image" />

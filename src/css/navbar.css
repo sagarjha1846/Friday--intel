@@ -1,13 +1,13 @@
 .logo{
-    height: 60px;
-    width: 151px;
-    margin: 0px 0px 0px 30px;
+    height: 45.6px;
+    width: 114px;
+    margin: 20px 0px 0px 30px;
 }
 .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 90px;
     border-bottom:  2px solid black;
 }
 .notification_btn{
