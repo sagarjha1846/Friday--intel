@@ -9,7 +9,7 @@ import terroristprofilling from "../images/svg/terrorist.svg";
 import network from "../images/svg/network.svg";
 import "../css/sidebar.css"
 import React from "react";
-import { getDomain, getFiles, getTORDomain, getUrl } from "../axios";
+import { getDomain, getFiles, getTORDomain, getUrl, getIP } from "../axios";
 import { useState } from "react";
 // import { FiChevronsLeft, FiChevronsRight } from "react-icons/fi/";
 import { BsGlobe2} from "react-icons/bs";
@@ -65,6 +65,15 @@ const Sidenav = (props) => {
       setNodeInfo({list:[...response.data.Result], name:"Result not found"});
       collapseSidebar();
 
+    }
+  };
+
+  const fetchIP = async () => {
+    setNodeInfo({ list: [] });
+    const response = await getIP(searchRef);
+    if (response?.data) {
+      setNodeInfo({ list: [...response.data], name: "IP" });
+      collapseSidebar();
     }
   };
 
@@ -132,6 +141,7 @@ const Sidenav = (props) => {
           <MenuItem onClick={fetchDomain}>Domain</MenuItem>
           <MenuItem>Domain(Suspicious)</MenuItem>
           <MenuItem onClick={fetchUrl}>URL</MenuItem>
+          <MenuItem onClick={fetchIP}>IP</MenuItem>
         </SubMenu>
         <SubMenu  label="File Info" icon={<VscFile/>}>
           <MenuItem>Image</MenuItem>
@@ -139,16 +149,15 @@ const Sidenav = (props) => {
           <MenuItem onClick={fetchFiles}>Other File</MenuItem>
         </SubMenu>
         <SubMenu icon={<IoDocumentLockOutline/>} label="Leaked Info">
-          <MenuItem> Pie charts </MenuItem>
-          <MenuItem> Line charts </MenuItem>
+          <MenuItem> Leaked Email </MenuItem>
+          <MenuItem> Leaked Document </MenuItem>
         </SubMenu>
-        <SubMenu icon={<BiMessageRoundedDots/>} label="SMS Info">
-          <MenuItem> Pie charts </MenuItem>
-          <MenuItem> Line charts </MenuItem>
+        <SubMenu icon={<BiMessageRoundedDots/>} label="SNS Info">
+          <MenuItem> Instagram </MenuItem>
+          <MenuItem> Facebook </MenuItem>
         </SubMenu>
         <SubMenu icon={<GrGroup/>} label="External Search Info">
-          <MenuItem> Pie charts </MenuItem>
-          <MenuItem> Line charts </MenuItem>
+          <MenuItem> Google Search </MenuItem>
         </SubMenu>
       </Menu>
 
