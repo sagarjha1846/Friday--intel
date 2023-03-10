@@ -11,6 +11,7 @@ import { ProSidebarProvider } from "react-pro-sidebar";
 import LoadCase from "./pages/LoadCase";
 import Page404 from "./pages/Page404"
 import ReadCase from "./pages/ReadCase";
+import Member from "./pages/Member";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           {/* <Route path={ROUTES.canvasTool} element={<CanvasTools />} /> */}
           <Route path={ROUTES.loadCase} element={<LoadCase />} />
           <Route path={ROUTES.readCase} element={<ReadCase />} />
+          <Route path={ROUTES.member} element={<Member/>} />
           <Route path={ROUTES.page404} element={<Page404/>}/>
         </Routes>
       </ProSidebarProvider>

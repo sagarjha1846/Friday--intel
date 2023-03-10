@@ -57,6 +57,15 @@ const Sidenav = (props) => {
       setNodeInfo({ list: [...response.data], name: "url" });
       collapseSidebar();
     }
+    // else{
+    //   setNodeInfo("result not found");
+    // collapseSidebar();
+    // }
+    if(response.data.Result === "Not Found"){
+      setNodeInfo({list:[...response.data.Result], name:"Result not found"});
+      collapseSidebar();
+
+    }
   };
 
   const fetchFiles = async () => {
