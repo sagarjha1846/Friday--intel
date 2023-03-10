@@ -2,7 +2,7 @@
     border-bottom: 2px solid var(--primary-color);
     display: flex;
     height: 9rem;
-    position: absolute;
+  
     width: 100vw;
     justify-content: space-between;
 }
@@ -28,6 +28,27 @@
     margin-top: .75rem;
 }
 .member-friday_intel{
+    font-weight: 200;
+    color: var(--primary-color-1);
+}
+
+.account-container{
+height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: unset;
+    margin-left: 7rem;
+}
+.account-heading{
+    font-size: 4.4rem;
+    letter-spacing: 1rem;
+    /* line-height: 1.5; */
+    line-height: 3;
+
+}
+.account-description{
+    font-size: 2.4rem;
     font-weight: 200;
     color: var(--primary-color-1);
 }

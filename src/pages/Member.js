@@ -33,7 +33,8 @@ const Member = () => {
 }
 
 return (
-<>
+    <>
+
 
 
             <nav className="navbar-member">
@@ -87,10 +88,16 @@ return (
                 
             </nav>
 
-<h1>Member Page</h1>
 
-            </>
+<main>
+    <div className='account-container'>
+        <h1 className='account-heading'>Your Account</h1>
+        <p className='account-description'>Manage your account & subscription</p>
+    </div>
+</main>
 
+
+</>
 );
 }
 
