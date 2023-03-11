@@ -7,6 +7,7 @@ import "../css/home.css";
 
 const Home = () => {
   const navigate = useNavigate();
+  
   return (
     <div>
       <Navbar />

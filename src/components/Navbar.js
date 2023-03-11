@@ -3,9 +3,18 @@ import logo from '../images/logo.png'
 import '../css/navbar.css'
 import { useNavigate } from 'react-router-dom';
 import ROUTES from '../constant/routesConstant';
+import { useState } from 'react';
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isshow, setIsshow] = useState(false);
+  const opendrawer = () => {
+    setIsOpen(!isOpen);
+  };
+  const notification = () => {
+    setIsshow(!isshow);
+  };
   return (
     <nav className='nav_bar'>
       <section className='logo_box'>
@@ -14,7 +23,7 @@ const Navbar = () => {
       </section>
       <section className='notification_btn'>
         <div>
-        <button className='btn-icon'>
+        <button className='btn-icon' onClick={opendrawer}>
           <svg width="23" height="23" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M21.9255 12.2275C21.9255 18.0265 17.2245 22.7275 11.4255 22.7275C5.62653 22.7275 0.925537 18.0265 0.925537 12.2275C0.925537 6.42855 5.62653 1.72754 11.4255 1.72754C17.2245 1.72754 21.9255 6.42855 21.9255 12.2275Z" fill="black" fill-opacity="0.1"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4255 0.852539C11.4255 0.852539 13.7392 0.852539 15.8535 1.7468C15.8535 1.7468 17.895 2.61028 19.4689 4.1842C19.4689 4.1842 21.0428 5.75812 21.9063 7.79961C21.9063 7.79961 22.8005 9.91389 22.8005 12.2275C22.8005 12.2275 22.8005 14.5412 21.9063 16.6555C21.9063 16.6555 21.0428 18.697 19.4689 20.2709C19.4689 20.2709 17.895 21.8448 15.8535 22.7083C15.8535 22.7083 13.7392 23.6025 11.4255 23.6025C11.4255 23.6025 9.11189 23.6025 6.99761 22.7083C6.99761 22.7083 4.95612 21.8448 3.3822 20.2709C3.3822 20.2709 1.80827 18.697 0.944801 16.6555C0.944801 16.6555 0.0505371 14.5412 0.0505371 12.2275C0.0505371 12.2275 0.0505371 9.91388 0.944801 7.79961C0.944801 7.79961 1.80828 5.75812 3.3822 4.1842C3.3822 4.1842 4.95612 2.61028 6.99761 1.7468C6.99761 1.7468 9.11188 0.852539 11.4255 0.852539ZM11.4255 2.60254C11.4255 2.60254 9.46676 2.60254 7.67932 3.35856C7.67932 3.35856 5.9522 4.08907 4.61964 5.42164C4.61964 5.42164 3.28707 6.7542 2.55656 8.48132C2.55656 8.48132 1.80054 10.2688 1.80054 12.2275C1.80054 12.2275 1.80054 14.1863 2.55656 15.9738C2.55656 15.9738 3.28707 17.7009 4.61963 19.0334C4.61963 19.0334 5.9522 20.366 7.67932 21.0965C7.67932 21.0965 9.46676 21.8525 11.4255 21.8525C11.4255 21.8525 13.3843 21.8525 15.1718 21.0965C15.1718 21.0965 16.8989 20.366 18.2314 19.0334C18.2314 19.0334 19.564 17.7009 20.2945 15.9738C20.2945 15.9738 21.0505 14.1863 21.0505 12.2275C21.0505 12.2275 21.0505 10.2688 20.2945 8.48132C20.2945 8.48132 19.564 6.7542 18.2314 5.42164C18.2314 5.42164 16.8989 4.08907 15.1718 3.35856C15.1718 3.35856 13.3843 2.60254 11.4255 2.60254Z" fill="#1C1C1C"/>
@@ -22,6 +31,38 @@ const Navbar = () => {
             <path d="M8.15163 7.85258C7.48804 8.84571 7.48804 10.0401 7.48804 10.0401C7.48804 10.5234 7.87979 10.9151 8.36304 10.9151C8.84629 10.9151 9.23804 10.5234 9.23804 10.0401C9.23804 9.37656 9.6067 8.82482 9.6067 8.82482C9.97536 8.27308 10.5884 8.01915 10.5884 8.01915C11.2015 7.76521 11.8523 7.89467 11.8523 7.89467C12.5031 8.02412 12.9723 8.49334 12.9723 8.49334C13.4415 8.96255 13.571 9.61337 13.571 9.61337C13.7005 10.2642 13.4465 10.8773 13.4465 10.8773C13.1926 11.4903 12.6408 11.859 12.6408 11.859C12.0891 12.2276 11.4255 12.2276 11.4255 12.2276C10.9423 12.2276 10.5505 12.6194 10.5505 13.1026V13.9776C10.5505 14.4609 10.9423 14.8526 11.4255 14.8526C11.9088 14.8526 12.3005 14.4609 12.3005 13.9776V13.8826C12.9957 13.7266 13.6131 13.314 13.6131 13.314C14.6062 12.6505 15.0633 11.5469 15.0633 11.5469C15.5204 10.4434 15.2874 9.27196 15.2874 9.27196C15.0544 8.10049 14.2098 7.2559 14.2098 7.2559C13.3652 6.41131 12.1937 6.17829 12.1937 6.17829C11.0222 5.94527 9.91872 6.40236 9.91872 6.40236C8.81521 6.85945 8.15163 7.85258 8.15163 7.85258Z" fill="#1C1C1C"/>
     </svg>    
 </button>
+{isOpen && (
+                <div className="drawer">
+                  <h2>Search Guidelines</h2>
+                  <hr />
+                  <h1>Keyword Search</h1>
+                  <p>Friday Intel offers full-text search and retrieves recent darkweb content that includes the search keyword.</p>
+                  <p>Just as search engines, put Keybord to search</p>
+<p>If there are too many results to study, try a more specific keyword search to get more relevant results. To find more specific results, use the search operator.</p>
+<p>Just as search engines, put Keybord to search</p>
+<h1>Search Operator</h1>
+<p>Search operators are special commands that enable advanced full text</p>
+<div className="parent">
+<div className="Diff1">
+<h4>Operator Description</h4>
+<hr />
+<p>"" The search results are exact matches to the keywords in""</p>
+<hr />
+<p>AND Search results include both X and Y</p>
+<hr />
+<p>OR Search results include X and Y</p>
+<hr />
+<p>NOT Search results include X but exclude results contain Y</p>
+<hr />
+<p>Sites: Filtered site search results Support for the darkweb surfaceweh website A site ; must be a full domain address (perfect match), for example Friday Intel  NOT  inurl:xxxxxxxxxxxxx.onion</p>
+<hr />
+<p>inurl: Search result in filtered URL Support for darkweb/surface URL URL should be match with specific pattern (Like match) e.g.Friday Intel NOT inurl http://xxxxxxxxx.com</p>
+</div>
+</div>
+<p>The purpose of indicator search is to extract information that is linked to the searched keyword. The keyword or source of the keyword could be used to generate a list of analysis results. The Monography of Friday Intel button displays a list of indicators that you can use. To search, click an indicator and enter an exact keyword for a perfect match.
+</p>
+</div>
+)}
         </div>
         <div className='searchbar-box'>
           <svg className='searchbar-logo' width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -163,13 +204,19 @@ const Navbar = () => {
 
         </div>
         <div>
-          <button className='btn-icon'>
+          <button className='btn-icon' onClick={notification}>
             <svg width="23" height="23" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5.2688 9.75009C5.26752 8.86098 5.4422 7.98033 5.78278 7.15901C6.12335 6.33765 6.62305 5.59181 7.25293 4.9644C7.883 4.33699 8.63098 3.84041 9.45367 3.50327C10.2766 3.16617 11.1578 2.99515 12.047 3.00009C15.7595 3.02824 18.7313 6.11261 18.7313 9.83446V10.5001C18.7313 13.8564 19.4344 15.8064 20.0531 16.8751C20.1188 16.9889 20.1536 17.118 20.1536 17.2495C20.1538 17.3809 20.1194 17.51 20.0538 17.6239C19.9883 17.7379 19.894 17.8326 19.7805 17.8987C19.6667 17.9647 19.5377 17.9996 19.4064 18.0001H4.59387C4.4624 17.9996 4.33331 17.9647 4.21979 17.8987C4.10608 17.8326 4.01178 17.7379 3.94623 17.6239C3.88068 17.51 3.84625 17.3809 3.84644 17.2495C3.84662 17.118 3.88123 16.9889 3.94696 16.8751C4.56567 15.8064 5.2688 13.8564 5.2688 10.5001V9.75009Z" fill="black" fill-opacity="0.1"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M4.51879 10.5001V9.75008C4.51879 9.75008 4.51669 8.25437 5.08994 6.87174C5.08994 6.87174 5.66319 5.4891 6.72376 4.43293C6.72376 4.43293 7.78433 3.37676 9.16934 2.80926C9.16934 2.80926 10.5544 2.24176 12.0511 2.25009C12.0511 2.25009 13.573 2.26162 14.9589 2.86961C14.9589 2.86961 16.2922 3.45457 17.3187 4.50894C17.3187 4.50894 18.3411 5.55919 18.9019 6.91345C18.9019 6.91345 19.4813 8.31283 19.4813 9.83445V10.5001C19.4813 10.5001 19.4813 14.3904 20.7022 16.4993C20.7022 16.4993 20.9033 16.8475 20.9037 17.2488C20.9037 17.2488 20.904 17.65 20.704 17.9978C20.704 17.9978 20.504 18.3456 20.1571 18.5471C20.1571 18.5471 19.8102 18.7487 19.4089 18.7501L4.59379 18.7501C4.59379 18.7501 4.18993 18.7487 3.843 18.5471C3.843 18.5471 3.49607 18.3456 3.29608 17.9978C3.29608 17.9978 3.09608 17.65 3.09644 17.2488C3.09644 17.2488 3.09679 16.8475 3.2974 16.5001C3.2974 16.5001 4.51879 14.3904 4.51879 10.5001ZM6.01879 10.5001C6.01879 10.5001 6.01879 14.7933 4.59644 17.2501L19.4036 17.2501C19.4036 17.2501 17.9813 14.7926 17.9813 10.5001V9.83445C17.9813 9.83445 17.9813 7.33991 16.2439 5.55528C16.2439 5.55528 14.5046 3.76872 12.0427 3.75007C12.0427 3.75007 10.8457 3.74341 9.73807 4.19726C9.73807 4.19726 8.63041 4.65112 7.78222 5.49579C7.78222 5.49579 6.93403 6.34046 6.47557 7.44623C6.47557 7.44623 6.01711 8.55199 6.01879 9.75008V10.5001Z" fill="#1C1C1C"/>
               <path d="M15.75 18.75V18C15.75 17.5858 15.4142 17.25 15 17.25C14.5858 17.25 14.25 17.5858 14.25 18V18.75C14.25 19.682 13.591 20.341 13.591 20.341C12.932 21 12 21 12 21C11.068 21 10.409 20.341 10.409 20.341C9.75 19.682 9.75 18.75 9.75 18.75V18C9.75 17.5858 9.41421 17.25 9 17.25C8.58579 17.25 8.25 17.5858 8.25 18L8.25 18.75C8.25 20.3033 9.34835 21.4016 9.34835 21.4016C10.4467 22.5 12 22.5 12 22.5C13.5533 22.5 14.6516 21.4017 14.6516 21.4017C15.75 20.3033 15.75 18.75 15.75 18.75Z" fill="#1C1C1C"/>
             </svg>
           </button>
+          {isshow && (
+            <span className="noti">
+              <h4>notification
+                </h4>
+              </span>
+          )}
 
         </div>
         <div  onClick={() => navigate(ROUTES.member)}>
