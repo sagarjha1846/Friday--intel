@@ -46,4 +46,15 @@ const getFiles = async (searchRef) => {
   }
 };
 
-export { getTORDomain, getDomain, getUrl, getFiles };
+const getIP = async (searchRef) => {
+  try {
+    const res = await axios.get("https://fridayintel.io/api-dev/ips.php", {
+      params: { ip: searchRef },
+    });
+    return res;
+  } catch (error) {
+    return error;
+  }
+};
+
+export { getTORDomain, getDomain, getUrl, getFiles, getIP };

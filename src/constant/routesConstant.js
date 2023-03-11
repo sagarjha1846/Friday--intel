@@ -7,6 +7,7 @@ const ROUTES = {
   canvasTool: "canvas-tools",
   loadCase: "/loadcase",
   readCase: "/readcase",
+  member:"/member",
   page404: "/*"
 };
 
