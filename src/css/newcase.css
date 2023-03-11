@@ -107,3 +107,7 @@ overflow: hidden;
 .react-flow__panel{
   display: none !important;
 }
+.react-flow__node-default{
+  word-break: break-all;
+  
+}

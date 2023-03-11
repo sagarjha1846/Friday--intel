@@ -94,7 +94,7 @@ const ReadCase = () => {
           </div>
         </article>
       </section>
-     
+     <main>
       <div className="card">
     <div className="card-img-holder">
       <img
@@ -113,6 +113,7 @@ const ReadCase = () => {
       <button className="btn">Blog</button>
     </div>
   </div>
+  </main>
       </section>
      
 

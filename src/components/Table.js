@@ -347,7 +347,7 @@ export default function EnhancedTable() {
               {emptyRows > 0 && (
                 <TableRow
                   style={{
-                    height: (dense ? 33 : 53) * emptyRows,
+                    height: (dense ? 50 : 80) * emptyRows,
                   }}
                 >
                   <TableCell colSpan={6} />
@@ -357,7 +357,7 @@ export default function EnhancedTable() {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10]}
+          rowsPerPageOptions={[ 10]}
           component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}
