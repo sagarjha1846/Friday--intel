@@ -36,11 +36,27 @@ const Sidenav = (props) => {
     setToggled(value);
   };
 
-  const fetchTORDomainInfo = async () => {
+  const fetchTORDomainInfo = async (key) => {
     setNodeInfo({ list: [] });
     const response = await getTORDomain(searchRef);
+    console.log(response);
     if (response?.data) {
-      setNodeInfo({ list: [...response.data], name: 'torDomain' });
+      if (key === 'torDomain') {
+        const data = response?.data?.crawls;
+        const mapping = data && Object.keys(data).map((el) => ({ urls: el }));
+        setNodeInfo({
+          list: [...mapping],
+          name: key,
+        });
+      } else {
+        const data = response?.data?.identifierReport?.linkedOnions;
+        const mapping = data && data.map((el) => ({ urls: el }));
+        setNodeInfo({
+          list: [...mapping],
+          name: key,
+        });
+      }
+
       collapseSidebar();
     }
   };
@@ -57,6 +73,7 @@ const Sidenav = (props) => {
     setNodeInfo({ list: [] });
     const response = await getUrl(searchRef);
     if (response?.data) {
+      console.log(response?.data);
       setNodeInfo({ list: [...response.data], name: 'url' });
       collapseSidebar();
     }
@@ -135,8 +152,12 @@ const Sidenav = (props) => {
           Terrorist Profiling
         </MenuItem>
         <SubMenu src={network} icon={<BsGlobe2 />} label="Network Info">
-          <MenuItem onClick={fetchTORDomainInfo}>TOR Domain</MenuItem>
-          <MenuItem>TOR URL</MenuItem>
+          <MenuItem onClick={() => fetchTORDomainInfo('torDomain')}>
+            TOR Domain
+          </MenuItem>
+          <MenuItem onClick={() => fetchTORDomainInfo('torURL')}>
+            TOR URL
+          </MenuItem>
           <MenuItem>I2P Domain</MenuItem>
           <MenuItem>Domain(DEEPWEB)</MenuItem>
           <MenuItem>URL (DEEPWEB)</MenuItem>
