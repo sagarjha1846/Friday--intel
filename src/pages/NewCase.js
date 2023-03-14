@@ -53,12 +53,15 @@ const NewCase = () => {
     },
     [nodes, edges, setNodes, setEdges]
   );
+
   const opendrawer = () => {
     setIsOpen(!isOpen);
   };
+
   const notification = () => {
     setIsshow(!isshow);
   };
+  
   return (
     <>
       <nav className="nav_bar">
