@@ -15,7 +15,6 @@ const getParams = (key, searchQuery) => {
   return { [key]: searchQuery };
 };
 const fetchData = async (endpoint, searchQuery, key) => {
-  console.log(getParams(key, searchQuery));
   const response = await axios.get(`${backendURL}${endpoint}`, {
     params: getParams(key, searchQuery),
   });

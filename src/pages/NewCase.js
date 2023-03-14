@@ -61,7 +61,7 @@ const NewCase = () => {
   const notification = () => {
     setIsshow(!isshow);
   };
-  
+
   return (
     <>
       <nav className="nav_bar">
@@ -137,7 +137,7 @@ const NewCase = () => {
 
       <div className="container">
         <div className="sideNavSection">
-          <SideNav setNodeInfo={setNodeInfo} searchRef={searchRef.current} />
+          <SideNav setNodeInfo={setNodeInfo} nodeInfo={nodeInfo} searchRef={searchRef.current} />
           {nodeInfo.list.length ? (
             <NodeList
               nodes={nodes}

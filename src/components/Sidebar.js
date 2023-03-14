@@ -24,7 +24,7 @@ import {
 } from 'react-icons/md';
 
 const Sidenav = (props) => {
-  const { setNodeInfo, searchRef } = props;
+  const { setNodeInfo, searchRef, nodeInfo } = props;
   const { collapseSidebar } = useProSidebar();
   const [collapsed, setCollapsed] = useState(false);
   const [toggled, setToggled] = useState(false);
@@ -39,7 +39,6 @@ const Sidenav = (props) => {
   const fetchTORDomainInfo = async (key) => {
     setNodeInfo({ list: [] });
     const response = await getTORDomain(searchRef);
-    console.log(response);
     if (response?.data) {
       if (key === 'torDomain') {
         const data = response?.data?.crawls;
@@ -64,7 +63,8 @@ const Sidenav = (props) => {
     setNodeInfo({ list: [] });
     const response = await getDomain(searchRef);
     if (response?.data) {
-      setNodeInfo({ list: [...response.data], name: 'domain' });
+      const data = response?.data.map((el) => ({ ...el, urls: el.email }));
+      setNodeInfo({ list: data, name: 'domain' });
       collapseSidebar();
     }
   };
@@ -73,7 +73,6 @@ const Sidenav = (props) => {
     setNodeInfo({ list: [] });
     const response = await getUrl(searchRef);
     if (response?.data) {
-      console.log(response?.data);
       setNodeInfo({ list: [...response.data], name: 'url' });
       collapseSidebar();
     }
@@ -108,6 +107,7 @@ const Sidenav = (props) => {
     }
   };
 
+  console.log(nodeInfo);
   return (
     <Sidebar
       className="sidebar"
@@ -153,23 +153,32 @@ const Sidenav = (props) => {
         </MenuItem>
         <SubMenu src={network} icon={<BsGlobe2 />} label="Network Info">
           <MenuItem onClick={() => fetchTORDomainInfo('torDomain')}>
-            TOR Domain
+            TOR Domain{' '}
+            {nodeInfo.name === 'torDomain' ? nodeInfo.list.length : null}
           </MenuItem>
           <MenuItem onClick={() => fetchTORDomainInfo('torURL')}>
-            TOR URL
+            TOR URL {nodeInfo.name === 'torURL' ? nodeInfo.list.length : null}
           </MenuItem>
           <MenuItem>I2P Domain</MenuItem>
           <MenuItem>Domain(DEEPWEB)</MenuItem>
           <MenuItem>URL (DEEPWEB)</MenuItem>
-          <MenuItem onClick={fetchDomain}>Domain</MenuItem>
+          <MenuItem onClick={fetchDomain}>
+            Domain{nodeInfo.name === 'domain' ? nodeInfo.list.length : null}
+          </MenuItem>
           <MenuItem>Domain(Suspicious)</MenuItem>
-          <MenuItem onClick={fetchUrl}>URL</MenuItem>
-          <MenuItem onClick={fetchIP}>IP</MenuItem>
+          <MenuItem onClick={fetchUrl}>
+            URL {nodeInfo.name === 'url' ? nodeInfo.list.length : null}
+          </MenuItem>
+          <MenuItem onClick={fetchIP}>
+            IP {nodeInfo.name === 'IP' ? nodeInfo.list.length : null}
+          </MenuItem>
         </SubMenu>
         <SubMenu label="File Info" icon={<VscFile />}>
           <MenuItem>Image</MenuItem>
           <MenuItem>Document</MenuItem>
-          <MenuItem onClick={fetchFiles}>Other File</MenuItem>
+          <MenuItem onClick={fetchFiles}>
+            Other File {nodeInfo.name === 'files' ? nodeInfo.list.length : null}
+          </MenuItem>
         </SubMenu>
         <SubMenu icon={<IoDocumentLockOutline />} label="Leaked Info">
           <MenuItem> Leaked Email </MenuItem>
