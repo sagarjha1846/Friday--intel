@@ -48,10 +48,10 @@
 .search-bar-NC:focus {
   outline: none;
 }
+/* .searchbar-logo{
+  height: 1rem;
+} */
 
-.searchbar-logo {
-  margin: 8px;
-}
 .container {
   display: flex;
   flex: 1 1 auto;
@@ -65,7 +65,7 @@
 }
 
 .sideNavSection {
- height: 92vh;
+ height: 78vh;
  overflow-y: scroll;
 }
 .canvasSection {

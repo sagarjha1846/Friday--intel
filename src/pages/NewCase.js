@@ -9,7 +9,7 @@ import Tool from '../components/Tool';
 
 import '../css/newcase.css';
 import { getLayoutElements } from '../utils';
-import ROUTES from '../constant/routesConstant';
+// import ROUTES from '../constant/routesConstant';
 import { useNavigate } from 'react-router-dom';
 // import { Navigate } from "react-router-dom";
 // import Footer from "../components/Footer";
@@ -20,8 +20,10 @@ import sun from '../images/svg/sun.svg';
 import bell from '../images/svg/bell.svg';
 import user from '../images/svg/userSolid.svg';
 import DrawerInfo from '../components/DrawerInfo';
+import constants from '../constant/routesConstant';
 
 const NewCase = () => {
+  const {ROUTES} = constants;
   const [isOpen, setIsOpen] = useState(false);
   const [isshow, setIsshow] = useState(false);
   const navigate = useNavigate();
@@ -86,7 +88,7 @@ const NewCase = () => {
             {isOpen && <DrawerInfo />}
           </div>
           <div className="searchbar-box">
-            <img src={fridaySearch} alt="star" />
+            <img className='searchbar-logo' src={fridaySearch} alt="star" />
             <input
               type="text"
               className="search-bar-NC"

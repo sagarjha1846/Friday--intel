@@ -2,10 +2,12 @@ import React from 'react';
 import logo from '../images/logo.png';
 import '../css/navbar.css';
 import { useNavigate } from 'react-router-dom';
-import ROUTES from '../constant/routesConstant';
+// import ROUTES from '../constant/routesConstant';
 import { useState } from 'react';
+import constants from '../constant/routesConstant';
 
 const Navbar = () => {
+  const {ROUTES} = constants;
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isshow, setIsshow] = useState(false);
