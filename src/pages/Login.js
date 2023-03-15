@@ -36,16 +36,13 @@ const Login = () => {
                 'password': password
             });
 
-            console.log(response);
-            if (response.data.Login==="Success") {
-                console.log("login successful")
-                // <Navigate to="/products" />
-                Navigate("/home")
+            if (response.data.Login === 'Success') {
+              console.log('login successful');
+              // <Navigate to="/products" />
+              Navigate('/home');
             }
-            if(response.data.Login==="Failed") 
-            {
-                setError("Wrong Username or Password! Enter valid credentials.")
-                console.log("dada")
+            if (response.data.Login === 'Failed') {
+              setError('Wrong Username or Password! Enter valid credentials.');
             }
         }
         catch (error) {
