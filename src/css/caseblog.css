@@ -1,7 +1,7 @@
 .case_cards {
     height: 150px;
     width: 200px;
-    border: 2px solid black;
+    border: 2px solid var(--primary-color);
     border-radius: 8px;
     margin: 30px 0px 0px 25px;
     display: flex;

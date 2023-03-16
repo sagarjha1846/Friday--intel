@@ -64,8 +64,8 @@ body{
 /* Login Button Start */
 
 .login-button-slide-fp {
-  background: #000000;
-  color: white;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   font-family: inherit;
   padding: 0.35em;
   padding-left: 2em;
@@ -86,7 +86,7 @@ body{
  }
  
  .login-button-slide-fp .iconbtn {
-  background: white;
+  background: var(--secondary-color);
   margin-left: 1em;
   position: absolute;
   display: flex;
@@ -107,11 +107,11 @@ body{
  .login-button-slide-fp .iconbtn svg {
   width: 1.5em;
   transition: transform 0.3s;
-  color: #000000;
+  color:var(--primary-color);
  }
 
  .login-button-slide-fp:hover .iconbtn svg path {
-  fill: #000000;
+  fill: var(--primary-color);
  }
  
  .login-button-slide-fp:hover .iconbtn svg {
@@ -161,7 +161,7 @@ label {
     border-radius: 5rem;
     cursor: pointer;
     position: relative;
-    border: inset 1px solid #DEE5F3;
+    border: inset 1px solid var(--secondary-color);
     background-image: url('../images/day.png');
     background-size: cover;
   }
@@ -174,7 +174,7 @@ label {
     padding-top: 0.5rem;
   }
   label .fa-moon {
-    color: #fff;
+    color: var(--secondary-color);
     transition: 0.8s;
     padding-top: 0.5rem;
   }
@@ -187,8 +187,8 @@ label {
     width: 2.6rem;
   }
   label .fa-moon svg > * {
-    fill: white;
-    stroke: white;
+    fill: var(--secondary-color);
+    stroke: var(--secondary-color);
   }
   label .fa-sun svg > * {
     fill: #FFC187;
@@ -249,7 +249,7 @@ label {
   width: 30rem;
   color: rgba(43, 43, 43, 0.4);
   text-align: start;
-  border: 2px solid  rgba(43, 43, 43, 0.146);
+  border: 2px solid  var(--primary-color-1);
   padding: 5px;
   font-size: 1.4rem;
   font-weight: 200;
@@ -297,7 +297,7 @@ margin-bottom: 1rem;
 }
 .contact-uss:hover span{
   cursor: pointer;
-  color: #000000;
+  color: var(--primary-color);
   text-decoration: underline;
 }
 .user-img{

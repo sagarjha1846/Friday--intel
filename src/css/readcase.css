@@ -6,7 +6,7 @@
 .card{
     width: 30rem;
     height: auto;
-    background: #fff;
+    background: var(--secondary-color);
     border-radius: 1.5rem;
     padding: 1.5rem;
     overflow: hidden;
@@ -61,7 +61,7 @@
     padding: .5rem 1rem;
     border-radius: .5rem;
     font-weight: 400;
-    background: #EEF7FE;
+    background: var(--secondary-color);
     color: #22215B;
     cursor: pointer;
   }

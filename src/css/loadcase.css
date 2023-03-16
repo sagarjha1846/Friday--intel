@@ -8,7 +8,7 @@ width: 100vw;
 .case_cards_loadcase {
     height: 160px;
     width: 220px;
-    border: 2px solid black;
+    border: 2px solid var(--primary-color);
     border-radius: 8px;
     margin: 3.5rem 0rem 0rem 2rem;
     display: flex;
@@ -22,7 +22,7 @@ width: 100vw;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    color: #000;
+    color: var(--primary-color);
     border-style: solid;
   border-image: linear-gradient(to right,
   #00F0FF, #FF1CF7) 2;

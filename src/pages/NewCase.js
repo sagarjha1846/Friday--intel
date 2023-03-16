@@ -6,6 +6,9 @@ import CanvasArea from "../components/CanvasArea";
 import NodeList from "../components/NodeList";
 import SideNav from "../components/Sidebar";
 import Tool from "../components/Tool";
+import {BiHistory} from "react-icons/bi";
+import {AiOutlineCloseCircle} from "react-icons/ai";
+
 
 
 import "../css/newcase.css";
@@ -18,6 +21,8 @@ import { useNavigate } from "react-router-dom";
 const NewCase = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isshow, setIsshow] = useState(false);
+  const [isshowDiv, setIsshowDiv] = useState(true);
+  const [isHovering, setIsHovering] = useState(false);
   const navigate = useNavigate();
   const searchRef = useRef();
   const [nodeInfo, setNodeInfo] = useState({ list: [], name: "" });
@@ -53,6 +58,18 @@ const NewCase = () => {
   const notification = () => {
     setIsshow(!isshow);
   };
+  const handleClose = () => {
+    setIsshowDiv(false);
+  };
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+  
   return (
     <>
       <nav className="nav_bar">
@@ -82,38 +99,66 @@ const NewCase = () => {
             <path d="M8.15163 7.85258C7.48804 8.84571 7.48804 10.0401 7.48804 10.0401C7.48804 10.5234 7.87979 10.9151 8.36304 10.9151C8.84629 10.9151 9.23804 10.5234 9.23804 10.0401C9.23804 9.37656 9.6067 8.82482 9.6067 8.82482C9.97536 8.27308 10.5884 8.01915 10.5884 8.01915C11.2015 7.76521 11.8523 7.89467 11.8523 7.89467C12.5031 8.02412 12.9723 8.49334 12.9723 8.49334C13.4415 8.96255 13.571 9.61337 13.571 9.61337C13.7005 10.2642 13.4465 10.8773 13.4465 10.8773C13.1926 11.4903 12.6408 11.859 12.6408 11.859C12.0891 12.2276 11.4255 12.2276 11.4255 12.2276C10.9423 12.2276 10.5505 12.6194 10.5505 13.1026V13.9776C10.5505 14.4609 10.9423 14.8526 11.4255 14.8526C11.9088 14.8526 12.3005 14.4609 12.3005 13.9776V13.8826C12.9957 13.7266 13.6131 13.314 13.6131 13.314C14.6062 12.6505 15.0633 11.5469 15.0633 11.5469C15.5204 10.4434 15.2874 9.27196 15.2874 9.27196C15.0544 8.10049 14.2098 7.2559 14.2098 7.2559C13.3652 6.41131 12.1937 6.17829 12.1937 6.17829C11.0222 5.94527 9.91872 6.40236 9.91872 6.40236C8.81521 6.85945 8.15163 7.85258 8.15163 7.85258Z" fill="#1C1C1C"/>
     </svg>    
 </button>
+{/* HELP BUTTON DATA--------------------------------------------------------------------------------- */}
+  {isshowDiv && (
+  <div>
 {isOpen && (
                 <div className="drawer">
+                  <button onClick={handleClose} className="close-btn">
+                  <AiOutlineCloseCircle/>
+                  </button>
                   <h2>Search Guidelines</h2>
                   <hr />
-                  <h1>Keyword Search</h1>
-                  <p>Friday Intel offers full-text search and retrieves recent darkweb content that includes the search keyword.</p>
+                  <h4>Keyword Search</h4>
+                  <p>Friday Intel offers full-text search and retrieves recent darkweb <br /> content that includes the search keyword.</p>
                   <p>Just as search engines, put Keybord to search</p>
+                  <br />
+                  
 <p>If there are too many results to study, try a more specific keyword search to get more relevant results. To find more specific results, use the search operator.</p>
 <p>Just as search engines, put Keybord to search</p>
 <h1>Search Operator</h1>
 <p>Search operators are special commands that enable advanced full text</p>
 <div className="parent">
 <div className="Diff1">
-<h4>Operator Description</h4>
+<h4>Operator &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Description</h4>
 <hr />
-<p>"" The search results are exact matches to the keywords in""</p>
+<p>"" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The search results are exact matches &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to the keywords in""</p>
 <hr />
-<p>AND Search results include both X and Y</p>
+<p>AND &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search results include both X and Y</p>
 <hr />
-<p>OR Search results include X and Y</p>
+<p>OR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search results include X and Y</p>
 <hr />
-<p>NOT Search results include X but exclude results contain Y</p>
+<p>NOT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search results include X but exclude &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; results contain Y</p>
 <hr />
-<p>Sites: Filtered site search results Support for the darkweb surfaceweh website A site ; must be a full domain address (perfect match), for example Friday Intel  NOT  inurl:xxxxxxxxxxxxx.onion</p>
+<p>Sites:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filtered site search results &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Support for the darkweb/surfaceweb website &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A site ; must be a full domain address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(perfect match), for example Friday Intel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NOT  inurl:xxxxxxxxxxxxx.onion</p>
 <hr />
-<p>inurl: Search result in filtered URL Support for darkweb/surface URL URL should be match with specific pattern (Like match) e.g.Friday Intel NOT inurl http://xxxxxxxxx.com</p>
+<p>inurl: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Search result in filtered URL  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Support for darkweb/surfaceweb  URL  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;should be match with specific pattern &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Like match) e.g.Friday Intel NOT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inurl http://xxxxxxxxx.com</p>
 </div>
 </div>
+<h4>Indicator  Search</h4>
 <p>The purpose of indicator search is to extract information that is linked to the searched keyword. The keyword or source of the keyword could be used to generate a list of analysis results. The Monography of Friday Intel button displays a list of indicators that you can use. To search, click an indicator and enter an exact keyword for a perfect match.
 </p>
+<p>Indicator Remarks:</p>
+<h4>Indicator &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Remarks  </h4>
+<hr />
+<p>tor/i2p:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retrieves all information obtained 
+from &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a dark web site and can perform 
+total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;domain analysis.</p>
+<hr />
+<p>torurl/i2purl: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retrieves all information obtained 
+from a   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dark web URL and performs a 
+total analysis   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on the searched URL</p>
+<hr />
+<p>domain: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It is useful for tracking any mentions 
+of  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a searched site on the dark web.</p>
+<hr />
+<p>hash: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Uses md5/sha1/sha2 to retrieve any 
+files.</p>
 </div>
 )}
+</div>
+)}
+
           </div>
           <div className='searchbar-box'>
           <svg className='searchbar-logo' width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -259,7 +304,11 @@ const NewCase = () => {
               placeholder="Search Keywords, TOR, URL, etc..."
               value={search}
             />
-          </div>   
+          </div> 
+          <button className="activity-icon btn-icon">         
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="30px" width="30px" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v5h5v-2h-3V8z"></path><path d="M21.292 8.497a8.957 8.957 0 0 0-1.928-2.862 9.004 9.004 0 0 0-4.55-2.452 9.09 9.09 0 0 0-3.626 0 8.965 8.965 0 0 0-4.552 2.453 9.048 9.048 0 0 0-1.928 2.86A8.963 8.963 0 0 0 4 12l.001.025H2L5 16l3-3.975H6.001L6 12a6.957 6.957 0 0 1 1.195-3.913 7.066 7.066 0 0 1 1.891-1.892 7.034 7.034 0 0 1 2.503-1.054 7.003 7.003 0 0 1 8.269 5.445 7.117 7.117 0 0 1 0 2.824 6.936 6.936 0 0 1-1.054 2.503c-.25.371-.537.72-.854 1.036a7.058 7.058 0 0 1-2.225 1.501 6.98 6.98 0 0 1-1.313.408 7.117 7.117 0 0 1-2.823 0 6.957 6.957 0 0 1-2.501-1.053 7.066 7.066 0 0 1-1.037-.855l-1.414 1.414A8.985 8.985 0 0 0 13 21a9.05 9.05 0 0 0 3.503-.707 9.009 9.009 0 0 0 3.959-3.26A8.968 8.968 0 0 0 22 12a8.928 8.928 0 0 0-.708-3.503z"></path></svg>
+          
+                </button>  
           <div>
           <button className='btn-icon'>
           <svg width="23" height="23" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -285,15 +334,17 @@ const NewCase = () => {
               <path d="M15.75 18.75V18C15.75 17.5858 15.4142 17.25 15 17.25C14.5858 17.25 14.25 17.5858 14.25 18V18.75C14.25 19.682 13.591 20.341 13.591 20.341C12.932 21 12 21 12 21C11.068 21 10.409 20.341 10.409 20.341C9.75 19.682 9.75 18.75 9.75 18.75V18C9.75 17.5858 9.41421 17.25 9 17.25C8.58579 17.25 8.25 17.5858 8.25 18L8.25 18.75C8.25 20.3033 9.34835 21.4016 9.34835 21.4016C10.4467 22.5 12 22.5 12 22.5C13.5533 22.5 14.6516 21.4017 14.6516 21.4017C15.75 20.3033 15.75 18.75 15.75 18.75Z" fill="#1C1C1C"/>
             </svg>
           </button>
+          {/* NOTIFICATION BUTTON DATA---------------------------------------------------------------- */}
           {isshow && (
             <span className="noti">
-              <h4>notification
-                </h4>
+
+                <div className="shape"></div>
               </span>
           )}
         </div>
-        <div  onClick={() => navigate(ROUTES.member)}>
-          <button className='btn-icon member-icon'>
+        <div  onClick={() => navigate(ROUTES.member)}  onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}>
+          <button className='btn-icon member-icon hover-member'>
             <svg width="23" height="23" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18 9C18 12.3137 15.3137 15 12 15C8.68634 15 6 12.3137 6 9C6 5.68634 8.68634 3 12 3C15.3137 3 18 5.68634 18 9Z" fill="black" fill-opacity="0.1"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.25C12 2.25 13.3728 2.25 14.6276 2.78076C14.6276 2.78076 15.8391 3.29317 16.773 4.22703C16.773 4.22703 17.7068 5.1609 18.2192 6.37236C18.2192 6.37236 18.75 7.62721 18.75 9C18.75 9 18.75 10.3728 18.2192 11.6276C18.2192 11.6276 17.7068 12.8391 16.773 13.773C16.773 13.773 15.8391 14.7068 14.6276 15.2192C14.6276 15.2192 13.3728 15.75 12 15.75C12 15.75 10.6272 15.75 9.37237 15.2192C9.37237 15.2192 8.16089 14.7068 7.22703 13.773C7.22703 13.773 6.29317 12.8391 5.78076 11.6276C5.78076 11.6276 5.25 10.3728 5.25 9C5.25 9 5.25 7.62721 5.78076 6.37236C5.78076 6.37236 6.29317 5.16089 7.22703 4.22703C7.22703 4.22703 8.16089 3.29317 9.37237 2.78076C9.37237 2.78076 10.6272 2.25 12 2.25ZM12 3.75C12 3.75 9.82538 3.75 8.28769 5.28769C8.28769 5.28769 6.75 6.82538 6.75 9C6.75 9 6.75 11.1746 8.28769 12.7123C8.28769 12.7123 9.82538 14.25 12 14.25C12 14.25 14.1746 14.25 15.7123 12.7123C15.7123 12.7123 17.25 11.1746 17.25 9C17.25 9 17.25 6.82538 15.7123 5.28769C15.7123 5.28769 14.1746 3.75 12 3.75Z" fill="#1C1C1C"/>
@@ -303,6 +354,13 @@ const NewCase = () => {
           </div>
         </section>
       </nav>
+      {/* PROFILE HOVER ICON-------------------------------------------------------------------- */}
+      {isHovering && (
+      <span className="hide">
+        <div className="shape2"></div>
+      </span>
+       )} 
+      
 
       <div className="container" >
         <div className="sideNavSection">
@@ -340,7 +398,7 @@ const NewCase = () => {
 
         </div>
 
-      <Footer/>
+      {/* <Footer/> */}
       </div>
     </>
   );
