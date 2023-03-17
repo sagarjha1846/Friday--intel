@@ -26,6 +26,11 @@ import bell from '../images/svg/bell.svg';
 import user from '../images/svg/userSolid.svg';
 import DrawerInfo from '../components/DrawerInfo';
 import constants from '../constant/routesConstant';
+import {AiOutlineMail} from "react-icons/ai"
+import {AiOutlineLogout} from "react-icons/ai"
+import { BiBuildings } from "react-icons/bi";
+import { BiPhoneCall } from "react-icons/bi";
+
 
 const NewCase = () => {
   const {ROUTES} = constants;
@@ -172,7 +177,15 @@ const NewCase = () => {
       {/* PROFILE HOVER ICON-------------------------------------------------------------------- */}
       {isHovering && (
       <span className="pro">
-        <div></div>
+        <div className="pro-data">
+          <h2>UNIT CHARLIE</h2>
+          <p> <span className="pro-icon"><BiBuildings/></span>Kangaroo agency</p>
+          <p><span className="pro-icon"><AiOutlineMail/></span> jhon.doe@fridayintek.io</p>
+          <hr />
+          <p> <span className="pro-icon"><BiPhoneCall/></span> &nbsp; +919999999999</p>
+          <button className="member-btn">Membership info</button>
+          <p><span className="pro-icon"><AiOutlineLogout/> log out</span></p>
+        </div>
         <div className="shape2"></div>
       </span>
        )}

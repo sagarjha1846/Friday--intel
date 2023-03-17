@@ -203,7 +203,30 @@ border-bottom: none;
   z-index: 1;
   margin-left: 1160px;
 border-radius: 10px;
+
 }
+
+.pro-data{
+  display:flex;
+  padding: 20px;
+  flex-direction: column;
+  
+}
+.pri-icon{
+  height: 30px;
+  width: 30px;
+  flex-direction: row;
+}
+.member-btn{
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  
+}
+.logout-btn{
+  border-radius: 20px;
+}
+
 
 .shape2{
   position: absolute;
