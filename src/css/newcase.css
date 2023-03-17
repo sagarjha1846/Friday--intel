@@ -137,6 +137,9 @@ overflow: hidden;
   word-break: break-all;
   
 }
+.help2{
+  overflow-y: scroll;
+}
 
 .shape3{
 position: absolute;
