@@ -103,10 +103,10 @@ const NewCase = () => {
   {isshowDiv && (
   <div>
 {isOpen && (
-                <div className="drawer">
-                  <button onClick={handleClose} className="close-btn">
+                <span className="help">
+                  <div onClick={handleClose} className="close-btn">
                   <AiOutlineCloseCircle/>
-                  </button>
+                  </div>
                   <h2>Search Guidelines</h2>
                   <hr />
                   <h4>Keyword Search</h4>
@@ -154,12 +154,12 @@ of  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 <hr />
 <p>hash: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Uses md5/sha1/sha2 to retrieve any 
 files.</p>
-</div>
+<div className="shape3"></div>
+</span>
 )}
 </div>
 )}
-
-          </div>
+</div>
           <div className='searchbar-box'>
           <svg className='searchbar-logo' width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.2852 9.3595C18.1709 9.82532 17.1123 9.88437 16.568 9.75315C16.0238 9.62194 15.2496 9.16137 15.3625 8.69555C15.4755 8.22973 16.6225 7.16425 17.1681 7.28628C17.7137 7.40831 18.3995 8.89237 18.2852 9.3595Z" fill="#00FFFF" />
@@ -356,10 +356,11 @@ files.</p>
       </nav>
       {/* PROFILE HOVER ICON-------------------------------------------------------------------- */}
       {isHovering && (
-      <span className="hide">
+      <span className="pro">
+        <div></div>
         <div className="shape2"></div>
       </span>
-       )} 
+       )}
       
 
       <div className="container" >
