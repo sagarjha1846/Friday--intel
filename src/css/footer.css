@@ -31,7 +31,7 @@
         border: none;
     }
     .bottom-icon-btn:hover{
-        background-color: #2f2f2f;
+        background-color: var(--primary-color-1);
         border-radius: 1em;
     }
     .bottom-icon-btn:hover svg path {
@@ -39,16 +39,18 @@
     }
     
     .bottom-icon-btn:active{
-        background-color: #2f2f2f;
+        background-color: var(--primary-color-1);
         border-radius: 1em;
+
     }
     .bottom-icon-btn:active svg path {
         fill: #00ffff;
     }
 
     .bottom-icon-btn:focus{
-        background-color: #2f2f2f;
+        background-color: var(--primary-color-1);
         border-radius: 1em;
+
     }
     .bottom-icon-btn:focus svg path {
         fill: #00ffff;
