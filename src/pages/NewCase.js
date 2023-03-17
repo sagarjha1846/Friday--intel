@@ -1,3 +1,4 @@
+
 import React, { useCallback, useRef, useState } from "react";
 import { addEdge, useEdgesState, useNodesState } from "reactflow";
 import { toPng } from "html-to-image";
@@ -6,31 +7,40 @@ import CanvasArea from "../components/CanvasArea";
 import NodeList from "../components/NodeList";
 import SideNav from "../components/Sidebar";
 import Tool from "../components/Tool";
-import {BiHistory} from "react-icons/bi";
 import {AiOutlineCloseCircle} from "react-icons/ai";
 
 
 
-import "../css/newcase.css";
-import { getLayoutElements } from "../utils";
-import ROUTES from "../constant/routesConstant";
-import { useNavigate } from "react-router-dom";
+
+import '../css/newcase.css';
+import { getLayoutElements } from '../utils';
+// import ROUTES from '../constant/routesConstant';
+import { useNavigate } from 'react-router-dom';
 // import { Navigate } from "react-router-dom";
 // import Footer from "../components/Footer";
+import star from '../images/svg/star.svg';
+import bookmark from '../images/svg/questMark.svg';
+import fridaySearch from '../images/svg/fridayLogo.svg';
+import sun from '../images/svg/sun.svg';
+import bell from '../images/svg/bell.svg';
+import user from '../images/svg/userSolid.svg';
+import DrawerInfo from '../components/DrawerInfo';
+import constants from '../constant/routesConstant';
 
 const NewCase = () => {
+  const {ROUTES} = constants;
   const [isOpen, setIsOpen] = useState(false);
   const [isshow, setIsshow] = useState(false);
   const [isshowDiv, setIsshowDiv] = useState(true);
   const [isHovering, setIsHovering] = useState(false);
   const navigate = useNavigate();
   const searchRef = useRef();
-  const [nodeInfo, setNodeInfo] = useState({ list: [], name: "" });
+  const [nodeInfo, setNodeInfo] = useState({ list: [], name: '' });
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [canvasFunc, setCanvasFunc] = useState();
   const [isChecked, setIsChecked] = useState({});
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
 
   const onConnect = useCallback(
     (params) => setEdges((eds) => addEdge(params, eds)),
@@ -52,12 +62,15 @@ const NewCase = () => {
     },
     [nodes, edges, setNodes, setEdges]
   );
+
   const opendrawer = () => {
     setIsOpen(!isOpen);
   };
+
   const notification = () => {
     setIsshow(!isshow);
   };
+
   const handleClose = () => {
     setIsshowDiv(false);
   };
@@ -70,27 +83,26 @@ const NewCase = () => {
     setIsHovering(false);
   };
   
+
   return (
     <>
       <nav className="nav_bar">
         <section className="logo_box">
           <div className="case-dashboard">
             <div>
-          <button className='btn-icon bookmark'>
-          <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path id="f991d79d" d="M11.8951 17.133L16.4231 20.008C17.0071 20.3763 17.7259 19.8283 17.5552 19.1545L16.2435 13.9974C16.208 13.8545 16.2136 13.7044 16.2598 13.5645C16.3058 13.4247 16.3905 13.3007 16.504 13.2068L20.565 9.8197C21.095 9.37948 20.8255 8.49003 20.1337 8.44511L14.8329 8.10368C14.6883 8.09526 14.5492 8.0449 14.4328 7.95874C14.3163 7.87258 14.2274 7.75435 14.1771 7.61853L12.2005 2.6412C12.1482 2.49735 12.0528 2.37311 11.9275 2.28529C11.8022 2.19751 11.6527 2.15039 11.4997 2.15039C11.3466 2.15039 11.1973 2.19751 11.0719 2.28529C10.9465 2.37311 10.8513 2.49735 10.799 2.6412L8.8224 7.61853C8.77204 7.75435 8.68316 7.87258 8.56664 7.95874C8.45021 8.0449 8.31115 8.09526 8.16656 8.10368L2.86578 8.44511C2.17396 8.49003 1.90443 9.37948 2.43446 9.8197L6.49541 13.2068C6.60894 13.3007 6.69361 13.4247 6.73967 13.5645C6.78582 13.7044 6.79144 13.8545 6.75599 13.9974L5.5431 18.7771C5.33648 19.5857 6.19894 20.2416 6.89076 19.8014L11.1044 17.133C11.2226 17.0578 11.3597 17.018 11.4997 17.018C11.6398 17.018 11.7769 17.0578 11.8951 17.133V17.133Z" fill="black" fill-opacity="0.1"></path>
-          <path id="2070ed08" fill-rule="evenodd" clip-rule="evenodd" d="M11.5095 17.7395C11.5095 17.7395 11.5051 17.7367 11.4999 17.7367C11.4999 17.7367 11.4947 17.7367 11.4902 17.7395L7.27544 20.4086C7.27544 20.4086 6.82709 20.6939 6.30936 20.6577C6.30936 20.6577 5.83293 20.6245 5.4452 20.3297C5.4452 20.3297 5.06232 20.0387 4.89571 19.5908C4.89571 19.5908 4.71655 19.1091 4.84688 18.5992L6.05947 13.8206C6.05947 13.8206 6.06291 13.8067 6.05723 13.7895C6.05723 13.7895 6.05156 13.7723 6.03758 13.7607L1.97428 10.3717C1.97428 10.3717 1.6067 10.0664 1.4861 9.60862C1.4861 9.60862 1.37588 9.19029 1.50547 8.77163C1.50547 8.77163 1.6365 8.3483 1.96816 8.06798C1.96816 8.06798 2.33323 7.75942 2.81933 7.72785L8.12049 7.38642C8.12049 7.38642 8.13295 7.38568 8.1394 7.38091C8.1394 7.38091 8.14585 7.37614 8.14864 7.36861L8.15454 7.35326L10.1278 2.3842C10.1278 2.3842 10.2865 1.95804 10.6598 1.69657C10.6598 1.69657 11.0381 1.43164 11.4999 1.43164C11.4999 1.43164 11.9617 1.43164 12.34 1.69657C12.34 1.69657 12.7133 1.95804 12.872 2.3842L14.8452 7.35326L14.8511 7.36861C14.8511 7.36861 14.8539 7.37614 14.8604 7.38091C14.8604 7.38091 14.8668 7.38568 14.8748 7.38615L20.1801 7.72783C20.1801 7.72783 20.6665 7.75942 21.0316 8.06798C21.0316 8.06798 21.3633 8.3483 21.4943 8.77163C21.4943 8.77163 21.6239 9.19029 21.5137 9.60863C21.5137 9.60863 21.3931 10.0664 21.0243 10.3726L16.9646 13.7588C16.9646 13.7588 16.9482 13.7723 16.9425 13.7895C16.9425 13.7895 16.9369 13.8067 16.9412 13.8243L18.2519 18.9773C18.2519 18.9773 18.369 19.4394 18.2058 19.8757C18.2058 19.8757 18.054 20.2817 17.7063 20.545C17.7063 20.545 17.3538 20.812 16.9199 20.8418C16.9199 20.8418 16.4494 20.8742 16.0399 20.6159L11.5105 17.7401L11.5099 17.7398L11.5095 17.7395ZM16.8068 19.4001L12.281 16.5266L12.2805 16.5262C12.2805 16.5262 11.9232 16.2992 11.4999 16.2992C11.4999 16.2992 11.0763 16.2992 10.7189 16.5265L6.50637 19.1941C6.50637 19.1941 6.40854 19.2564 6.31513 19.1853C6.31513 19.1853 6.20263 19.0998 6.23962 18.9551L7.45281 14.1742C7.45281 14.1742 7.55794 13.7506 7.42251 13.3396C7.42251 13.3396 7.28708 12.9286 6.95361 12.6529L2.89503 9.26774C2.89503 9.26774 2.86453 9.24241 2.87869 9.19668C2.87869 9.19668 2.88885 9.16387 2.91248 9.16233L8.21288 8.82095C8.21288 8.82095 8.64374 8.79589 8.99429 8.53658C8.99429 8.53658 9.34102 8.28009 9.49312 7.87732L11.4671 2.90646L11.4746 2.88688C11.4746 2.88688 11.4775 2.87889 11.4844 2.87402C11.4844 2.87402 11.4914 2.86914 11.4999 2.86914C11.4999 2.86914 11.5084 2.86914 11.5154 2.87402C11.5154 2.87402 11.5223 2.87889 11.5252 2.88688L11.5327 2.90646L13.5067 7.87732C13.5067 7.87732 13.6588 8.28009 14.0055 8.53658C14.0055 8.53658 14.356 8.79589 14.7913 8.82122L20.0877 9.16235C20.0877 9.16235 20.1109 9.16387 20.1211 9.19668C20.1211 9.19668 20.1352 9.24241 20.1059 9.26677L16.0438 12.6549C16.0438 12.6549 15.7127 12.9286 15.5773 13.3396C15.5773 13.3396 15.4418 13.7506 15.546 14.1705L16.8588 19.3316C16.8588 19.3316 16.8698 19.3753 16.8384 19.3991C16.8384 19.3991 16.8233 19.4105 16.8068 19.4001Z" fill="#1C1C1C"></path>
-          </svg>
-</button> 
-</div>
+              <button className="btn-icon bookmark">
+                <img src={star} alt="star" />
+              </button>
+            </div>
             <div className="dashboard-cases">
-            <h3 className="dashboard-title">DASHBOARD / </h3>
-            <h3 className="case-no"> Case 1</h3>
+              <h3 className="dashboard-title">DASHBOARD / </h3>
+              <h3 className="case-no"> Case 1</h3>
             </div>
           </div>
         </section>
         <section className="notification_btn">
           <div>
+
           <button className='btn-icon'onClick={opendrawer}>
           <svg width="23" height="23" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path  d="M21.9255 12.2275C21.9255 18.0265 17.2245 22.7275 11.4255 22.7275C5.62653 22.7275 0.925537 18.0265 0.925537 12.2275C0.925537 6.42855 5.62653 1.72754 11.4255 1.72754C17.2245 1.72754 21.9255 6.42855 21.9255 12.2275Z" fill="black" fill-opacity="0.1"/>
@@ -281,29 +293,32 @@ files.</p>
           </svg>
 
           <input
+
+           
               type="text"
               className="search-bar-NC"
               onKeyUp={(e) => {
                 searchRef.current = e.target.value;
-                if (e.code === "Enter") {
+                if (e.code === 'Enter') {
                   const targetId = `${Math.floor(Math.random() * 400)}`;
                   setNodes((prev) => [
                     ...prev,
                     {
-                      id: prev.length <= 0 ? "1" : targetId,
-                      type: "custom",
+                      id: prev.length <= 0 ? '1' : targetId,
+                      type: 'custom',
                       data: { label: e.target.value },
                       position: { x: 250, y: 0 },
                     },
                   ]);
-                  setEdges((prev) => [...prev, { source: "1" }]);
-                  setSearch("");
+                  setEdges((prev) => [...prev, { source: '1' }]);
+                  setSearch('');
                 }
               }}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search Keywords, TOR, URL, etc..."
               value={search}
             />
+
           </div> 
           <button className="activity-icon btn-icon">         
           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="30px" width="30px" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v5h5v-2h-3V8z"></path><path d="M21.292 8.497a8.957 8.957 0 0 0-1.928-2.862 9.004 9.004 0 0 0-4.55-2.452 9.09 9.09 0 0 0-3.626 0 8.965 8.965 0 0 0-4.552 2.453 9.048 9.048 0 0 0-1.928 2.86A8.963 8.963 0 0 0 4 12l.001.025H2L5 16l3-3.975H6.001L6 12a6.957 6.957 0 0 1 1.195-3.913 7.066 7.066 0 0 1 1.891-1.892 7.034 7.034 0 0 1 2.503-1.054 7.003 7.003 0 0 1 8.269 5.445 7.117 7.117 0 0 1 0 2.824 6.936 6.936 0 0 1-1.054 2.503c-.25.371-.537.72-.854 1.036a7.058 7.058 0 0 1-2.225 1.501 6.98 6.98 0 0 1-1.313.408 7.117 7.117 0 0 1-2.823 0 6.957 6.957 0 0 1-2.501-1.053 7.066 7.066 0 0 1-1.037-.855l-1.414 1.414A8.985 8.985 0 0 0 13 21a9.05 9.05 0 0 0 3.503-.707 9.009 9.009 0 0 0 3.959-3.26A8.968 8.968 0 0 0 22 12a8.928 8.928 0 0 0-.708-3.503z"></path></svg>
@@ -351,6 +366,8 @@ files.</p>
               <path d="M16.8754 17.0555C19.138 18.362 20.4442 20.6248 20.4442 20.6248C20.5436 20.7971 20.7074 20.9228 20.8996 20.9743C20.9629 20.9913 21.0282 20.9999 21.0938 20.9999C21.1016 20.9999 21.1095 20.9997 21.1173 20.9995C21.2409 20.9956 21.3616 20.9612 21.4687 20.8994C21.7008 20.7654 21.8438 20.5178 21.8438 20.2499C21.8438 20.2383 21.8435 20.2267 21.8429 20.2151C21.8374 20.0954 21.8032 19.9787 21.7433 19.8749C20.2362 17.264 17.6254 15.7565 17.6254 15.7565C15.0147 14.249 12 14.249 12 14.249C8.98529 14.249 6.37455 15.7565 6.37455 15.7565C3.76401 17.2639 2.25693 19.8745 2.25693 19.8745L2.2567 19.8749C2.19089 19.9889 2.15625 20.1182 2.15625 20.2499L2.15637 20.2634C2.15748 20.3244 2.16602 20.3851 2.18182 20.444C2.23332 20.6362 2.35904 20.8 2.53131 20.8994C2.64531 20.9652 2.77462 20.9999 2.90625 20.9999C2.92013 20.9999 2.93401 20.9995 2.94787 20.9987C3.20063 20.9847 3.42925 20.844 3.5558 20.6248C4.86197 18.362 7.12461 17.0555 7.12461 17.0555C9.38726 15.749 12 15.749 12 15.749C14.6127 15.749 16.8754 17.0555 16.8754 17.0555Z" fill="#1C1C1C"/>
             </svg>
           </button>
+
+         
           </div>
         </section>
       </nav>
@@ -363,9 +380,9 @@ files.</p>
        )}
       
 
-      <div className="container" >
+      <div className="container">
         <div className="sideNavSection">
-          <SideNav setNodeInfo={setNodeInfo} searchRef={searchRef.current} />
+          <SideNav setNodeInfo={setNodeInfo} nodeInfo={nodeInfo} searchRef={searchRef.current} />
           {nodeInfo.list.length ? (
             <NodeList
               nodes={nodes}
@@ -388,22 +405,24 @@ files.</p>
           />
         </div>
         <div className="toolSection-container">
-        <div className="toolSection">
-          <Tool
-            onLayout={onLayout}
-            canvasFunc={canvasFunc}
-            toPng={toPng}
-            nodes={nodes}
-          />
+          <div className="toolSection">
+            <Tool
+              onLayout={onLayout}
+              canvasFunc={canvasFunc}
+              toPng={toPng}
+              nodes={nodes}
+            />
+          </div>
         </div>
 
-        </div>
 
-      {/* <Footer/> */}
+      
+
+        <Footer />
+
       </div>
     </>
   );
 };
 
 export default NewCase;
-

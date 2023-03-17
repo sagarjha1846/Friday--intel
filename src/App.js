@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
 // import CanvasTools from "./components/CanvasTools"; 
-import ROUTES from "./constant/routesConstant";
 import CaseBlog from "./pages/CaseBlog";
 import ForgetPassword from "./pages/ForgetPassword";
 import Home from "./pages/Home";
@@ -12,8 +11,10 @@ import LoadCase from "./pages/LoadCase";
 import Page404 from "./pages/Page404"
 import ReadCase from "./pages/ReadCase";
 import Member from "./pages/Member";
+import constants from './constant/routesConstant';
 
 const App = () => {
+  const { ROUTES } = constants;
   return (
     <div className="app">
       <ProSidebarProvider>
