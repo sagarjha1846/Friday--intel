@@ -20,7 +20,7 @@ import { useNavigate } from 'react-router-dom';
 // import Footer from "../components/Footer";
 import star from '../images/svg/star.svg';
 import bookmark from '../images/svg/questMark.svg';
-import fridaySearch from '../images/svg/fridayLogo.svg';
+import fridaySearch from '../images/svg/search-logo.svg';
 import sun from '../images/svg/sun.svg';
 import bell from '../images/svg/bell.svg';
 import user from '../images/svg/userSolid.svg';
@@ -144,7 +144,7 @@ const NewCase = () => {
    {isOpen && <DrawerInfo />}
 </div>
           <div className='searchbar-box'>
-          <img src={fridaySearch} alt="star" />
+          <img src={fridaySearch} alt="star"   className="searchbar-logo"/>
           <input
           type="text"
               className="search-bar-NC"
