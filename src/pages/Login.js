@@ -31,24 +31,23 @@ const Login = () => {
 
 
         try {
-            const response = await axios.post("https://fridayintel.io/api-dev/login.php",{
-                'username': email,
-                'password': password
-            });
+          const response = await axios.post(
+            'https://fridayintel.io/api-dev/login.php',
+            {
+              username: email,
+              password: password,
+            }
+          );
 
-            if (response.data.Login === 'Success') {
-              console.log('login successful');
-              // <Navigate to="/products" />
-              Navigate('/home');
-            }
-            if (response.data.Login === 'Failed') {
-              setError('Wrong Username or Password! Enter valid credentials.');
-            }
-        }
-        catch (error) {
-            console.log(error);
-            setError("Wrong Username or Password! Enter valid credentials.")
-          
+          if (response.data.Login === 'Success') {
+            // <Navigate to="/products" />
+            Navigate('/home');
+          }
+          if (response.data.Login === 'Failed') {
+            setError('Wrong Username or Password! Enter valid credentials.');
+          }
+        } catch (error) {
+          setError('Wrong Username or Password! Enter valid credentials.');
         }
 
         const arrowSvg = document.querySelector(".login-svg");
