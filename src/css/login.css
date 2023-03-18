@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 
 html{
-    --primary-color: #1E1E1E;
-    --primary-color-1: rgba(43, 43, 43, 0.5);
+    --primary-color: #2B2B2B;
+    --primary-color-1: rgba(43, 43, 43, 0.508);
     --secondary-color: #ffffff;
 
     /* for rem value */

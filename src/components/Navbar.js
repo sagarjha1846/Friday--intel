@@ -34,11 +34,11 @@ const Navbar = () => {
               <path
                 d="M21.9255 12.2275C21.9255 18.0265 17.2245 22.7275 11.4255 22.7275C5.62653 22.7275 0.925537 18.0265 0.925537 12.2275C0.925537 6.42855 5.62653 1.72754 11.4255 1.72754C17.2245 1.72754 21.9255 6.42855 21.9255 12.2275Z"
                 fill="black"
-                fill-opacity="0.1"
+                fillOpacity="0.1"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M11.4255 0.852539C11.4255 0.852539 13.7392 0.852539 15.8535 1.7468C15.8535 1.7468 17.895 2.61028 19.4689 4.1842C19.4689 4.1842 21.0428 5.75812 21.9063 7.79961C21.9063 7.79961 22.8005 9.91389 22.8005 12.2275C22.8005 12.2275 22.8005 14.5412 21.9063 16.6555C21.9063 16.6555 21.0428 18.697 19.4689 20.2709C19.4689 20.2709 17.895 21.8448 15.8535 22.7083C15.8535 22.7083 13.7392 23.6025 11.4255 23.6025C11.4255 23.6025 9.11189 23.6025 6.99761 22.7083C6.99761 22.7083 4.95612 21.8448 3.3822 20.2709C3.3822 20.2709 1.80827 18.697 0.944801 16.6555C0.944801 16.6555 0.0505371 14.5412 0.0505371 12.2275C0.0505371 12.2275 0.0505371 9.91388 0.944801 7.79961C0.944801 7.79961 1.80828 5.75812 3.3822 4.1842C3.3822 4.1842 4.95612 2.61028 6.99761 1.7468C6.99761 1.7468 9.11188 0.852539 11.4255 0.852539ZM11.4255 2.60254C11.4255 2.60254 9.46676 2.60254 7.67932 3.35856C7.67932 3.35856 5.9522 4.08907 4.61964 5.42164C4.61964 5.42164 3.28707 6.7542 2.55656 8.48132C2.55656 8.48132 1.80054 10.2688 1.80054 12.2275C1.80054 12.2275 1.80054 14.1863 2.55656 15.9738C2.55656 15.9738 3.28707 17.7009 4.61963 19.0334C4.61963 19.0334 5.9522 20.366 7.67932 21.0965C7.67932 21.0965 9.46676 21.8525 11.4255 21.8525C11.4255 21.8525 13.3843 21.8525 15.1718 21.0965C15.1718 21.0965 16.8989 20.366 18.2314 19.0334C18.2314 19.0334 19.564 17.7009 20.2945 15.9738C20.2945 15.9738 21.0505 14.1863 21.0505 12.2275C21.0505 12.2275 21.0505 10.2688 20.2945 8.48132C20.2945 8.48132 19.564 6.7542 18.2314 5.42164C18.2314 5.42164 16.8989 4.08907 15.1718 3.35856C15.1718 3.35856 13.3843 2.60254 11.4255 2.60254Z"
                 fill="#1C1C1C"
               />
@@ -367,16 +367,16 @@ const Navbar = () => {
                 r="1"
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(13.1263 11.3662) rotate(94.8246) scale(11.9786 13.14)">
-                <stop offset="0.07" stop-color="#00C8DD" stopOpacity="0.97" />
-                <stop offset="0.19" stop-color="#00D0E2" stopOpacity="0.97" />
-                <stop offset="0.37" stop-color="#00E4EE" stopOpacity="0.99" />
-                <stop offset="0.56" stop-color="#00FFFF" />
-                <stop offset="0.6" stop-color="#00F6F6" />
-                <stop offset="0.67" stop-color="#00DDDE" />
-                <stop offset="0.76" stop-color="#00B5B6" />
-                <stop offset="0.86" stop-color="#007D7F" />
-                <stop offset="0.97" stop-color="#003739" />
-                <stop offset="1" stop-color="#002628" />
+                <stop offset="0.07" stopColor="#00C8DD" stopOpacity="0.97" />
+                <stop offset="0.19" stopColor="#00D0E2" stopOpacity="0.97" />
+                <stop offset="0.37" stopColor="#00E4EE" stopOpacity="0.99" />
+                <stop offset="0.56" stopColor="#00FFFF" />
+                <stop offset="0.6" stopColor="#00F6F6" />
+                <stop offset="0.67" stopColor="#00DDDE" />
+                <stop offset="0.76" stopColor="#00B5B6" />
+                <stop offset="0.86" stopColor="#007D7F" />
+                <stop offset="0.97" stopColor="#003739" />
+                <stop offset="1" stopColor="#002628" />
               </radialGradient>
               <radialGradient
                 id="paint1_radial_156_10958"
@@ -385,18 +385,18 @@ const Navbar = () => {
                 r="1"
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(12.7336 12.064) scale(15.8564 14.1751)">
-                <stop offset="0.01" stop-color="#4DFFFF" stopOpacity="0.66" />
-                <stop offset="0.09" stop-color="#41FFFF" stopOpacity="0.72" />
-                <stop offset="0.23" stop-color="#21FFFF" stopOpacity="0.86" />
-                <stop offset="0.36" stop-color="#00FFFF" />
-                <stop offset="0.41" stop-color="#05FFFF" stopOpacity="0.98" />
-                <stop offset="0.47" stop-color="#14FFFF" stopOpacity="0.92" />
-                <stop offset="0.53" stop-color="#2CFFFF" stopOpacity="0.83" />
-                <stop offset="0.59" stop-color="#4EFFFF" stopOpacity="0.7" />
-                <stop offset="0.66" stop-color="#79FFFF" stopOpacity="0.53" />
-                <stop offset="0.73" stop-color="#AEFFFF" stopOpacity="0.32" />
-                <stop offset="0.8" stop-color="#ECFFFF" stopOpacity="0.08" />
-                <stop offset="0.82" stop-color="white" stopOpacity="0" />
+                <stop offset="0.01" stopColor="#4DFFFF" stopOpacity="0.66" />
+                <stop offset="0.09" stopColor="#41FFFF" stopOpacity="0.72" />
+                <stop offset="0.23" stopColor="#21FFFF" stopOpacity="0.86" />
+                <stop offset="0.36" stopColor="#00FFFF" />
+                <stop offset="0.41" stopColor="#05FFFF" stopOpacity="0.98" />
+                <stop offset="0.47" stopColor="#14FFFF" stopOpacity="0.92" />
+                <stop offset="0.53" stopColor="#2CFFFF" stopOpacity="0.83" />
+                <stop offset="0.59" stopColor="#4EFFFF" stopOpacity="0.7" />
+                <stop offset="0.66" stopColor="#79FFFF" stopOpacity="0.53" />
+                <stop offset="0.73" stopColor="#AEFFFF" stopOpacity="0.32" />
+                <stop offset="0.8" stopColor="#ECFFFF" stopOpacity="0.08" />
+                <stop offset="0.82" stopColor="white" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint2_radial_156_10958"
@@ -405,17 +405,17 @@ const Navbar = () => {
                 r="1"
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(12.275 12.108) scale(13.424 12.0043)">
-                <stop stop-color="#00FFFF" />
-                <stop offset="0.28" stop-color="#00FFFF" stopOpacity="0.99" />
-                <stop offset="0.4" stop-color="#00FFFF" stopOpacity="0.96" />
-                <stop offset="0.5" stop-color="#00FFFF" stopOpacity="0.91" />
-                <stop offset="0.58" stop-color="#00FFFF" stopOpacity="0.84" />
-                <stop offset="0.65" stop-color="#00FFFF" stopOpacity="0.75" />
-                <stop offset="0.71" stop-color="#00FFFF" stopOpacity="0.64" />
-                <stop offset="0.77" stop-color="#00FFFF" stopOpacity="0.5" />
-                <stop offset="0.82" stop-color="#00FFFF" stopOpacity="0.34" />
-                <stop offset="0.87" stop-color="#00FFFF" stopOpacity="0.17" />
-                <stop offset="0.91" stop-color="#00FFFF" stopOpacity="0" />
+                <stop stopColor="#00FFFF" />
+                <stop offset="0.28" stopColor="#00FFFF" stopOpacity="0.99" />
+                <stop offset="0.4" stopColor="#00FFFF" stopOpacity="0.96" />
+                <stop offset="0.5" stopColor="#00FFFF" stopOpacity="0.91" />
+                <stop offset="0.58" stopColor="#00FFFF" stopOpacity="0.84" />
+                <stop offset="0.65" stopColor="#00FFFF" stopOpacity="0.75" />
+                <stop offset="0.71" stopColor="#00FFFF" stopOpacity="0.64" />
+                <stop offset="0.77" stopColor="#00FFFF" stopOpacity="0.5" />
+                <stop offset="0.82" stopColor="#00FFFF" stopOpacity="0.34" />
+                <stop offset="0.87" stopColor="#00FFFF" stopOpacity="0.17" />
+                <stop offset="0.91" stopColor="#00FFFF" stopOpacity="0" />
               </radialGradient>
               <radialGradient
                 id="paint3_radial_156_10958"
@@ -435,15 +435,15 @@ const Navbar = () => {
                 r="1"
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(10.6889 9.92248) scale(13.5481 12.062)">
-                <stop offset="0.33" stop-color="#F6F6F6" />
-                <stop offset="0.38" stop-color="#EFF6F6" />
-                <stop offset="0.46" stop-color="#DAF7F7" />
-                <stop offset="0.55" stop-color="#B9F8F8" />
-                <stop offset="0.66" stop-color="#8BFAFA" />
-                <stop offset="0.77" stop-color="#4FFCFC" />
-                <stop offset="0.9" stop-color="#08FFFF" />
-                <stop offset="0.91" stop-color="#00FFFF" />
-                <stop offset="1" stop-color="#00FFFF" stopOpacity="0.3" />
+                <stop offset="0.33" stopColor="#F6F6F6" />
+                <stop offset="0.38" stopColor="#EFF6F6" />
+                <stop offset="0.46" stopColor="#DAF7F7" />
+                <stop offset="0.55" stopColor="#B9F8F8" />
+                <stop offset="0.66" stopColor="#8BFAFA" />
+                <stop offset="0.77" stopColor="#4FFCFC" />
+                <stop offset="0.9" stopColor="#08FFFF" />
+                <stop offset="0.91" stopColor="#00FFFF" />
+                <stop offset="1" stopColor="#00FFFF" stopOpacity="0.3" />
               </radialGradient>
             </defs>
           </svg>
@@ -465,11 +465,11 @@ const Navbar = () => {
               <path
                 d="M17.627 12.5015C17.627 15.608 15.1085 18.1265 12.002 18.1265C8.89539 18.1265 6.37695 15.608 6.37695 12.5015C6.37695 9.3949 8.89539 6.87646 12.002 6.87646C15.1085 6.87646 17.627 9.3949 17.627 12.5015Z"
                 fill="black"
-                fill-opacity="0.1"
+                fillOpacity="0.1"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M12.002 6.12646C12.002 6.12646 13.2984 6.12646 14.4836 6.62775C14.4836 6.62775 15.6278 7.1117 16.5098 7.99366C16.5098 7.99366 17.3917 8.87562 17.8757 10.0198C17.8757 10.0198 18.377 11.205 18.377 12.5015C18.377 12.5015 18.377 13.798 17.8757 14.9831C17.8757 14.9831 17.3917 16.1273 16.5098 17.0093C16.5098 17.0093 15.6278 17.8912 14.4836 18.3752C14.4836 18.3752 13.2984 18.8765 12.002 18.8765C12.002 18.8765 10.7055 18.8765 9.52029 18.3752C9.52029 18.3752 8.37611 17.8912 7.49415 17.0093C7.49415 17.0093 6.61219 16.1273 6.12824 14.9831C6.12824 14.9831 5.62695 13.798 5.62695 12.5015C5.62695 12.5015 5.62695 11.205 6.12824 10.0198C6.12824 10.0198 6.61219 8.87562 7.49415 7.99366C7.49415 7.99366 8.37611 7.1117 9.52029 6.62775C9.52029 6.62775 10.7055 6.12646 12.002 6.12646ZM12.002 7.62646C12.002 7.62646 9.98266 7.62646 8.55481 9.05432C8.55481 9.05432 7.12695 10.4822 7.12695 12.5015C7.12695 12.5015 7.12695 14.5208 8.55481 15.9486C8.55481 15.9486 9.98266 17.3765 12.002 17.3765C12.002 17.3765 14.0212 17.3765 15.4491 15.9486C15.4491 15.9486 16.877 14.5208 16.877 12.5015C16.877 12.5015 16.877 10.4822 15.4491 9.05432C15.4491 9.05432 14.0212 7.62646 12.002 7.62646Z"
                 fill="#1C1C1C"
               />
@@ -519,11 +519,11 @@ const Navbar = () => {
               <path
                 d="M5.2688 9.75009C5.26752 8.86098 5.4422 7.98033 5.78278 7.15901C6.12335 6.33765 6.62305 5.59181 7.25293 4.9644C7.883 4.33699 8.63098 3.84041 9.45367 3.50327C10.2766 3.16617 11.1578 2.99515 12.047 3.00009C15.7595 3.02824 18.7313 6.11261 18.7313 9.83446V10.5001C18.7313 13.8564 19.4344 15.8064 20.0531 16.8751C20.1188 16.9889 20.1536 17.118 20.1536 17.2495C20.1538 17.3809 20.1194 17.51 20.0538 17.6239C19.9883 17.7379 19.894 17.8326 19.7805 17.8987C19.6667 17.9647 19.5377 17.9996 19.4064 18.0001H4.59387C4.4624 17.9996 4.33331 17.9647 4.21979 17.8987C4.10608 17.8326 4.01178 17.7379 3.94623 17.6239C3.88068 17.51 3.84625 17.3809 3.84644 17.2495C3.84662 17.118 3.88123 16.9889 3.94696 16.8751C4.56567 15.8064 5.2688 13.8564 5.2688 10.5001V9.75009Z"
                 fill="black"
-                fill-opacity="0.1"
+                fillOpacity="0.1"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M4.51879 10.5001V9.75008C4.51879 9.75008 4.51669 8.25437 5.08994 6.87174C5.08994 6.87174 5.66319 5.4891 6.72376 4.43293C6.72376 4.43293 7.78433 3.37676 9.16934 2.80926C9.16934 2.80926 10.5544 2.24176 12.0511 2.25009C12.0511 2.25009 13.573 2.26162 14.9589 2.86961C14.9589 2.86961 16.2922 3.45457 17.3187 4.50894C17.3187 4.50894 18.3411 5.55919 18.9019 6.91345C18.9019 6.91345 19.4813 8.31283 19.4813 9.83445V10.5001C19.4813 10.5001 19.4813 14.3904 20.7022 16.4993C20.7022 16.4993 20.9033 16.8475 20.9037 17.2488C20.9037 17.2488 20.904 17.65 20.704 17.9978C20.704 17.9978 20.504 18.3456 20.1571 18.5471C20.1571 18.5471 19.8102 18.7487 19.4089 18.7501L4.59379 18.7501C4.59379 18.7501 4.18993 18.7487 3.843 18.5471C3.843 18.5471 3.49607 18.3456 3.29608 17.9978C3.29608 17.9978 3.09608 17.65 3.09644 17.2488C3.09644 17.2488 3.09679 16.8475 3.2974 16.5001C3.2974 16.5001 4.51879 14.3904 4.51879 10.5001ZM6.01879 10.5001C6.01879 10.5001 6.01879 14.7933 4.59644 17.2501L19.4036 17.2501C19.4036 17.2501 17.9813 14.7926 17.9813 10.5001V9.83445C17.9813 9.83445 17.9813 7.33991 16.2439 5.55528C16.2439 5.55528 14.5046 3.76872 12.0427 3.75007C12.0427 3.75007 10.8457 3.74341 9.73807 4.19726C9.73807 4.19726 8.63041 4.65112 7.78222 5.49579C7.78222 5.49579 6.93403 6.34046 6.47557 7.44623C6.47557 7.44623 6.01711 8.55199 6.01879 9.75008V10.5001Z"
                 fill="#1C1C1C"
               />
@@ -550,11 +550,11 @@ const Navbar = () => {
               <path
                 d="M18 9C18 12.3137 15.3137 15 12 15C8.68634 15 6 12.3137 6 9C6 5.68634 8.68634 3 12 3C15.3137 3 18 5.68634 18 9Z"
                 fill="black"
-                fill-opacity="0.1"
+                fillOpacity="0.1"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M12 2.25C12 2.25 13.3728 2.25 14.6276 2.78076C14.6276 2.78076 15.8391 3.29317 16.773 4.22703C16.773 4.22703 17.7068 5.1609 18.2192 6.37236C18.2192 6.37236 18.75 7.62721 18.75 9C18.75 9 18.75 10.3728 18.2192 11.6276C18.2192 11.6276 17.7068 12.8391 16.773 13.773C16.773 13.773 15.8391 14.7068 14.6276 15.2192C14.6276 15.2192 13.3728 15.75 12 15.75C12 15.75 10.6272 15.75 9.37237 15.2192C9.37237 15.2192 8.16089 14.7068 7.22703 13.773C7.22703 13.773 6.29317 12.8391 5.78076 11.6276C5.78076 11.6276 5.25 10.3728 5.25 9C5.25 9 5.25 7.62721 5.78076 6.37236C5.78076 6.37236 6.29317 5.16089 7.22703 4.22703C7.22703 4.22703 8.16089 3.29317 9.37237 2.78076C9.37237 2.78076 10.6272 2.25 12 2.25ZM12 3.75C12 3.75 9.82538 3.75 8.28769 5.28769C8.28769 5.28769 6.75 6.82538 6.75 9C6.75 9 6.75 11.1746 8.28769 12.7123C8.28769 12.7123 9.82538 14.25 12 14.25C12 14.25 14.1746 14.25 15.7123 12.7123C15.7123 12.7123 17.25 11.1746 17.25 9C17.25 9 17.25 6.82538 15.7123 5.28769C15.7123 5.28769 14.1746 3.75 12 3.75Z"
                 fill="#1C1C1C"
               />
