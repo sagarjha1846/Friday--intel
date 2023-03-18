@@ -1,23 +1,23 @@
-import React,{useState} from 'react';
-import {AiOutlineCloseCircle} from "react-icons/ai";
+import React from 'react';
+// import {AiOutlineCloseCircle} from "react-icons/ai";
 
 
 
 
 const DrawerInfo = () => {
 
-const [isshowDiv, setIsshowDiv] = useState(true);
+// const [isshowDiv, setIsshowDiv] = useState(true);
 
-    const handleClose = () => {
-        setIsshowDiv(false);
-    };
+    // const handleClose = () => {
+    //     setIsshowDiv(false);
+    // };
 
   return (
                     <span className="help">
                         <div className='help2'>
-                      <button onClick={handleClose} className="close-btn">
-                      <AiOutlineCloseCircle/>
-                      </button>
+                      {/* <button onClick={handleClose} className="close-btn"> */}
+                      {/* <AiOutlineCloseCircle/>
+                      </button> */}
                       <h2>Search Guidelines</h2>
                       <hr />
                       <h4>Keyword Search</h4>

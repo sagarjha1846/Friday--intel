@@ -139,6 +139,8 @@ overflow: hidden;
 }
 .help2{
   overflow-y: scroll;
+  width: 355px;
+  overflow-x: hidden;
 }
 
 .shape3{
@@ -290,6 +292,6 @@ border-radius: 10px;
 }
 
 
-.btnicon svg{
+/* .btnicon svg{
   fill: var(--primary-color);
-}
+} */
