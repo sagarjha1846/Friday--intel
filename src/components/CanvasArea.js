@@ -10,21 +10,20 @@ const OverviewFlow = (props) => {
   const { nodes, edges, onNodesChange, onEdgesChange, onConnect, onInit } =
     props;
 
-  return (
-    <ReactFlow
-      nodes={nodes}
-      edges={edges}
-      onNodesChange={onNodesChange}
-      onEdgesChange={onEdgesChange}
-      onInit={onInit}
-      onConnect={onConnect}
-      fitView
-      attributionPosition="top-right"
-    >
-      <MiniMap style={minimapStyle} zoomable pannable />
-      <Background color="#000" gap={16} />
-    </ReactFlow>
-  );
+    return (
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onInit={onInit}
+        onConnect={onConnect}
+        fitView
+        attributionPosition="top-right">
+        <MiniMap style={minimapStyle} zoomable pannable />
+        <Background color="#000" gap={16} />
+      </ReactFlow>
+    );
 };
 
 export default OverviewFlow;

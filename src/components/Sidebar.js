@@ -41,17 +41,13 @@ const Sidenav = (props) => {
     const response = await getTORDomain(searchRef);
     if (response?.data) {
       if (key === 'torDomain') {
-        const data = response?.data?.crawls;
-        const mapping = data && Object.keys(data).map((el) => ({ urls: el }));
         setNodeInfo({
-          list: [...mapping],
+          list: [...response?.data?.crawls],
           name: key,
         });
       } else {
-        const data = response?.data?.identifierReport?.linkedOnions;
-        const mapping = data && data.map((el) => ({ urls: el }));
         setNodeInfo({
-          list: [...mapping],
+          list: [...response?.data?.identifierReport?.linkedOnions],
           name: key,
         });
       }
@@ -63,8 +59,7 @@ const Sidenav = (props) => {
     setNodeInfo({ list: [] });
     const response = await getDomain(searchRef);
     if (response?.data) {
-      const data = response?.data.map((el) => ({ ...el, urls: el.email }));
-      setNodeInfo({ list: data, name: 'domain' });
+      setNodeInfo({ list: [...response?.data], name: 'domain' });
       collapseSidebar();
     }
   };
@@ -107,7 +102,6 @@ const Sidenav = (props) => {
     }
   };
 
-  console.log(nodeInfo);
   return (
     <Sidebar
       className="sidebar"

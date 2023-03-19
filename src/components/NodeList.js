@@ -7,13 +7,20 @@ import { MarkerType } from "reactflow";
 import "../css/nodeList.css";
 
 const NodeList = (props) => {
-  const { nodes, nodeList, setNodes, setEdges, setIsChecked, isChecked } =
-    props;
+  const {
+    searchRef,
+    nodes,
+    nodeList,
+    setNodes,
+    setEdges,
+    setIsChecked,
+    isChecked,
+  } = props;
 
   const setNodeInCanvas = (data) => {
-    const targetId = `${data}`;
+    const targetId = data;
     const isPrimaryNode = nodes.find((node) => node.data.label === data);
-    if (isPrimaryNode?.id !== "1") {
+    if (isPrimaryNode?.id !== '1') {
       setIsChecked((prev) => ({ ...prev, [data]: !isChecked[data] }));
 
       setNodes((prev) =>
@@ -22,9 +29,9 @@ const NodeList = (props) => {
           : [
               ...prev,
               {
-                id: prev.length <= 0 ? "1" : targetId,
-                type: "custom",
-                data: { label: data },
+                id: data ? data : 'no record',
+                type: 'custom',
+                data: { label: data ? data : undefined },
                 position: {
                   x: Math.floor(Math.random() * 400),
                   y: Math.floor(Math.random() * 400),
@@ -39,9 +46,9 @@ const NodeList = (props) => {
           : [
               ...prev,
               {
-                source: "1",
-                target: targetId,
-                type: "floating",
+                source: searchRef,
+                target: data ? data : 'no record',
+                type: 'floating',
                 markerEnd: { type: MarkerType.Arrow },
               },
             ]

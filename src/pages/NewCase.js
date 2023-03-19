@@ -151,17 +151,15 @@ const NewCase = () => {
               onKeyUp={(e) => {
                 searchRef.current = e.target.value;
                 if (e.code === 'Enter') {
-                  const targetId = `${Math.floor(Math.random() * 400)}`;
                   setNodes((prev) => [
                     ...prev,
                     {
-                      id: prev.length <= 0 ? '1' : targetId,
+                      id: e.target.value,
                       type: 'custom',
                       data: { label: e.target.value },
                       position: { x: 250, y: 0 },
                     },
                   ]);
-                  setEdges((prev) => [...prev, { source: '1' }]);
                   setSearch('');
                 }
               }}
@@ -236,9 +234,14 @@ const NewCase = () => {
 
       <div className="container">
         <div className="sideNavSection">
-          <SideNav setNodeInfo={setNodeInfo} nodeInfo={nodeInfo} searchRef={searchRef.current} />
+          <SideNav
+            setNodeInfo={setNodeInfo}
+            nodeInfo={nodeInfo}
+            searchRef={searchRef.current}
+          />
           {nodeInfo.list.length ? (
             <NodeList
+              searchRef={searchRef.current}
               nodes={nodes}
               nodeList={nodeInfo}
               setNodes={setNodes}
