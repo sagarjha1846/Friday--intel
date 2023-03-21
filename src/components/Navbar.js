@@ -5,18 +5,41 @@ import { useNavigate } from 'react-router-dom';
 // import ROUTES from '../constant/routesConstant';
 import { useState } from 'react';
 import constants from '../constant/routesConstant';
+import DrawerInfo from './DrawerInfo';
+import {AiOutlineMail} from "react-icons/ai"
+import {AiOutlineLogout} from "react-icons/ai"
+import {AiOutlineDelete} from "react-icons/ai"
+import { BiBuildings } from "react-icons/bi";
+import { BiPhoneCall } from "react-icons/bi";
+
+
 
 const Navbar = () => {
   const {ROUTES} = constants;
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isshow, setIsshow] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [isactiv, setIsactiv] = useState(false);
+
   const opendrawer = () => {
     setIsOpen(!isOpen);
   };
+
   const notification = () => {
     setIsshow(!isshow);
   };
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+  const activity = () =>{
+    setIsactiv(!isactiv);
+  }
   return (
     <nav className="nav_bar">
       <section className="logo_box">
@@ -52,68 +75,7 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          {isOpen && (
-            <div className="drawer">
-              <h2>Search Guidelines</h2>
-              <hr />
-              <h1>Keyword Search</h1>
-              <p>
-                Friday Intel offers full-text search and retrieves recent
-                darkweb content that includes the search keyword.
-              </p>
-              <p>Just as search engines, put Keybord to search</p>
-              <p>
-                If there are too many results to study, try a more specific
-                keyword search to get more relevant results. To find more
-                specific results, use the search operator.
-              </p>
-              <p>Just as search engines, put Keybord to search</p>
-              <h1>Search Operator</h1>
-              <p>
-                Search operators are special commands that enable advanced full
-                text
-              </p>
-              <div className="parent">
-                <div className="Diff1">
-                  <h4>Operator Description</h4>
-                  <hr />
-                  <p>
-                    "" The search results are exact matches to the keywords in""
-                  </p>
-                  <hr />
-                  <p>AND Search results include both X and Y</p>
-                  <hr />
-                  <p>OR Search results include X and Y</p>
-                  <hr />
-                  <p>
-                    NOT Search results include X but exclude results contain Y
-                  </p>
-                  <hr />
-                  <p>
-                    Sites: Filtered site search results Support for the darkweb
-                    surfaceweh website A site ; must be a full domain address
-                    (perfect match), for example Friday Intel NOT
-                    inurl:xxxxxxxxxxxxx.onion
-                  </p>
-                  <hr />
-                  <p>
-                    inurl: Search result in filtered URL Support for
-                    darkweb/surface URL URL should be match with specific
-                    pattern (Like match) e.g.Friday Intel NOT inurl
-                    http://xxxxxxxxx.com
-                  </p>
-                </div>
-              </div>
-              <p>
-                The purpose of indicator search is to extract information that
-                is linked to the searched keyword. The keyword or source of the
-                keyword could be used to generate a list of analysis results.
-                The Monography of Friday Intel button displays a list of
-                indicators that you can use. To search, click an indicator and
-                enter an exact keyword for a perfect match.
-              </p>
-            </div>
-          )}
+          {isOpen && <DrawerInfo/>}
         </div>
         <div className="searchbar-box">
           <svg
@@ -454,6 +416,18 @@ const Navbar = () => {
             placeholder="Search Cases, Blogs, etc..."
           />
         </div>
+        <button className="activity-icon btn-icon" onClick={activity}>         
+          <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="30px" width="30px" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v5h5v-2h-3V8z"></path><path d="M21.292 8.497a8.957 8.957 0 0 0-1.928-2.862 9.004 9.004 0 0 0-4.55-2.452 9.09 9.09 0 0 0-3.626 0 8.965 8.965 0 0 0-4.552 2.453 9.048 9.048 0 0 0-1.928 2.86A8.963 8.963 0 0 0 4 12l.001.025H2L5 16l3-3.975H6.001L6 12a6.957 6.957 0 0 1 1.195-3.913 7.066 7.066 0 0 1 1.891-1.892 7.034 7.034 0 0 1 2.503-1.054 7.003 7.003 0 0 1 8.269 5.445 7.117 7.117 0 0 1 0 2.824 6.936 6.936 0 0 1-1.054 2.503c-.25.371-.537.72-.854 1.036a7.058 7.058 0 0 1-2.225 1.501 6.98 6.98 0 0 1-1.313.408 7.117 7.117 0 0 1-2.823 0 6.957 6.957 0 0 1-2.501-1.053 7.066 7.066 0 0 1-1.037-.855l-1.414 1.414A8.985 8.985 0 0 0 13 21a9.05 9.05 0 0 0 3.503-.707 9.009 9.009 0 0 0 3.959-3.26A8.968 8.968 0 0 0 22 12a8.928 8.928 0 0 0-.708-3.503z"></path></svg>
+          </button>  
+          {isactiv && ( 
+            <div className="active">
+              <div className="active-data">
+                <h2>Activity</h2>
+              </div>
+
+              <div className="tri"></div>
+            </div>
+          )}
         <div>
           <button className="btn-icon">
             <svg
@@ -535,11 +509,18 @@ const Navbar = () => {
           </button>
           {isshow && (
             <span className="noti">
-              <h4>notification</h4>
-            </span>
+<span className="noti-data">
+  <h2>Notification</h2>
+  <article>You have a bug that needs to......</article>
+  <article>You have  bug that needs to.......</article>
+  <article>Welcome to friday intel</article>
+  <h4><span className="noti-icon"><AiOutlineDelete/></span>Delete Notification</h4>
+</span>
+                <div className="shape"></div>
+              </span>
           )}
         </div>
-        <div onClick={() => navigate(ROUTES.member)}>
+        <div onClick={() => navigate(ROUTES.member)} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
           <button className="btn-icon member-notification">
             <svg
               width="23"
@@ -564,9 +545,25 @@ const Navbar = () => {
               />
             </svg>
           </button>
+          {isHovering && (
+      <span className="profile">
+        <div className="pro-data">
+          <h2>UNIT CHARLIE</h2>
+          <p> <span className="pro-icon"><BiBuildings/></span>Kangaroo agency</p>
+          <p><span className="pro-icon"><AiOutlineMail/></span> jhon.doe@fridayintek.io</p>
+          <hr />
+          <p> <span className="pro-icon"><BiPhoneCall/></span> &nbsp; +919999999999</p>
+          <button className="member-btn">Membership info</button>
+          <p><span className="pro-icon"><AiOutlineLogout/> log out</span></p>
         </div>
+        <div className="shape2"></div>
+      </span>
+       )}
+        </div>
+        
       </section>
     </nav>
+    
   );
 };
 
