@@ -123,8 +123,8 @@
   flex-direction: column;
   color: var(--primary-color);
   margin-left: 302px;
-  border: 1px solid var(--primary-color);
-  border-radius: 20px;
+  /* border: 1px solid var(--primary-color); */
+  /* border-radius: 20px; */
   z-index: 1;
   word-break: break-all;
 }

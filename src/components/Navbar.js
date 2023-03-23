@@ -16,6 +16,7 @@ import { AiOutlineLogout } from 'react-icons/ai';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { BiBuildings } from 'react-icons/bi';
 import { BiPhoneCall } from 'react-icons/bi';
+import { FiEdit } from 'react-icons/fi';
 
 const Navbar = () => {
   const { ROUTES } = constants;
@@ -81,7 +82,34 @@ const Navbar = () => {
         {isactiv && (
           <div className="active">
             <div className="active-data">
-              <h2>Activity</h2>
+            <article>
+                  <h2>Revision History</h2>
+                  <p>
+                    <BiBuildings />
+                    You have a bug that needs to......
+                  </p>
+                  <p>
+                    <BiBuildings />
+                    You have bug that needs to.......
+                  </p>
+                  <p>
+                    <BiBuildings />
+                    Welcome to friday intel
+                  </p>
+                </article>
+
+                <article>
+                  <h2>Activites</h2>
+                  <p> Edited the details of project X</p>
+                  <p>Changed the status of project Y </p>
+                  <p>Submitted a bug</p>
+                  <h4 className="delete-btn">
+                    <span className="noti-icon">
+                      <AiOutlineDelete />
+                    </span>
+                    Delete activity
+                  </h4>
+                </article>
             </div>
 
             <div className="tri"></div>
@@ -103,7 +131,7 @@ const Navbar = () => {
                 <article>You have a bug that needs to......</article>
                 <article>You have bug that needs to.......</article>
                 <article>Welcome to friday intel</article>
-                <h4>
+                <h4 className='delete-btn'>
                   <span className="noti-icon">
                     <AiOutlineDelete />
                   </span>
@@ -125,34 +153,38 @@ const Navbar = () => {
           {isHovering && (
             <span className="profile">
               <div className="pro-data">
-                <h2>UNIT CHARLIE</h2>
-                <p>
-                  {' '}
-                  <span className="pro-icon">
-                    <BiBuildings />
-                  </span>
-                  Kangaroo agency
-                </p>
-                <p>
-                  <span className="pro-icon">
-                    <AiOutlineMail />
-                  </span>{' '}
-                  jhon.doe@fridayintek.io
-                </p>
-                <hr />
-                <p>
-                  {' '}
-                  <span className="pro-icon">
-                    <BiPhoneCall />
-                  </span>{' '}
-                  &nbsp; +919999999999
-                </p>
-                <button className="member-btn">Membership info</button>
-                <p>
-                  <span className="pro-icon">
-                    <AiOutlineLogout /> log out
-                  </span>
-                </p>
+              <h2>UNIT CHARLIE</h2>
+            <p>
+              {' '}
+              <span className="pro-icon">
+                <BiBuildings />
+              </span>
+              Kangaroo agency
+            </p>
+            <p>
+              <span className="pro-icon">
+                <AiOutlineMail />
+              </span>{' '}
+              jhon.doe@fridayintek.io &nbsp; &nbsp;
+              <span>
+                {' '}
+                <FiEdit />
+              </span>
+            </p>
+            <hr />
+            <p>
+              {' '}
+              <span className="pro-icon">
+                <BiPhoneCall />
+              </span>{' '}
+              &nbsp; +919999999999
+            </p>
+            <button className="member-btn">Membership info</button>
+            <p className="logout-btn">
+              <span className="pro-icon">
+                <AiOutlineLogout /> log out
+              </span>
+            </p>
               </div>
               <div className="shape2"></div>
             </span>

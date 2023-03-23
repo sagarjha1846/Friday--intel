@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {  useRef, useState } from 'react';
+import { useNodesState } from 'reactflow';
+import"../css/DrawerInfo.css"
 // import {AiOutlineCloseCircle} from "react-icons/ai";
-
+import fridaySearch from '../images/svg/search-logo.svg';
 const DrawerInfo = () => {
   // const [isshowDiv, setIsshowDiv] = useState(true);
 
   // const handleClose = () => {
   //     setIsshowDiv(false);
   // };
+  const searchRef = useRef();
+  const [setNodes] = useNodesState([]);
+  const [search, setSearch] = useState('');
 
   return (
     <span className="help">
@@ -23,7 +28,31 @@ const DrawerInfo = () => {
         </p>
         <p>Just as search engines, put Keybord to search</p>
         <br />
-
+        <div className="searchbar-box-help">
+            <img src={fridaySearch} alt="star" className="searchbar-logo" />
+            <input
+              type="text"
+              className="search-bar-NC"
+              onKeyUp={(e) => {
+                searchRef.current = e.target.value;
+                if (e.code === 'Enter') {
+                  setNodes((prev) => [
+                    ...prev,
+                    {
+                      id: e.target.value,
+                      type: 'custom',
+                      data: { label: e.target.value },
+                      position: { x: 250, y: 0 },
+                    },
+                  ]);
+                  setSearch('');
+                }
+              }}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Type something......"
+              value={search}
+            />
+          </div>
         <p>
           If there are too many results to study, try a more specific keyword
           search to get more relevant results. To find more specific results,
