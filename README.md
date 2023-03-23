@@ -1,4 +1,3 @@
-
 # How can you make your first **Pull Request**
 
 **Note**: Steps 1, 2 and 3 are **one-time** steps required for setup. If you have already cloned the repo and added upstream, consider following this documentation from step 4.
@@ -6,8 +5,6 @@
 1. **Forking repository**
 
 Fork this repository using the **Fork** option at the top-right corner of this page. This will create your own copy of this repository. You'll be redirected to your forked repository. Copy the link of this repository (which will look like `https://github.com/KangarooAgency/Friday--intel.git`) as you'll need it in the step 2.
-
-
 
 2. **Cloning repository**
 
@@ -94,7 +91,7 @@ Once we're in develop, it's time to take a pull:
 git pull upstream develop
 ```
 
-Now that our **local** develop branch is in sync with **remote** develop branch (of the Friday-intel  Repository), we should let our branch know about the changes from the develop branch (if any). To do so we first checkout to our branch:
+Now that our **local** develop branch is in sync with **remote** develop branch (of the Friday-intel Repository), we should let our branch know about the changes from the develop branch (if any). To do so we first checkout to our branch:
 
 ```
 git checkout <branch-name>
@@ -125,8 +122,6 @@ The **origin** refers to your GitHub fork. You can check it by entering `git rem
 Your GitHub fork now has the changes, but you want those changes to be merged in thefriday-intel repository, right? There's a twist, you can't directly merge your code in the friday-intel. Imagine you own a company whose code is open sourced, would you like if anyone could code make changes in the directly without asking you? For the same reason, **Pull Requests** exist. You `request` the repository maintainers/admins to `pull` your code in their repository.
 
 To make a pull request, go to your **forked repository** and you'll see **<branch-name> had recent pushes less than a minute ago** . Right next to it will be an option to **Compare & pull request**. Click on it, submit your pull request (also known as _PR_) explaining what you've done. Again, the PR title should be self-explanatory but concise. If you want to write details, you can add it in the description. If you're making some UI (User Interface) changes, please make sure to add a short screen recording. If that's not possible, at least add some screenshots.
-
-
 
 11. **Review stage**
 

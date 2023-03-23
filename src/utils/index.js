@@ -1,4 +1,4 @@
-import dagre from "dagre";
+import dagre from 'dagre';
 
 const degreeGraph = new dagre.graphlib.Graph();
 degreeGraph.setDefaultEdgeLabel(() => ({}));
@@ -6,8 +6,8 @@ degreeGraph.setDefaultEdgeLabel(() => ({}));
 const nodeWidth = 172;
 const nodeHeight = 36;
 
-const getLayoutElements = (nodes, edges, direction = "TB") => {
-  const isHorizontal = direction === "LR";
+const getLayoutElements = (nodes, edges, direction = 'TB') => {
+  const isHorizontal = direction === 'LR';
   degreeGraph.setGraph({ rankdir: direction });
 
   nodes.forEach((node) => {
@@ -22,8 +22,8 @@ const getLayoutElements = (nodes, edges, direction = "TB") => {
 
   nodes.forEach((node) => {
     const nodeWithPosition = degreeGraph.node(node.id);
-    node.targetPosition = isHorizontal ? "left" : "top";
-    node.sourcePosition = isHorizontal ? "right" : "bottom";
+    node.targetPosition = isHorizontal ? 'left' : 'top';
+    node.sourcePosition = isHorizontal ? 'right' : 'bottom';
 
     node.position = {
       x: nodeWithPosition.x - nodeWidth / 2,

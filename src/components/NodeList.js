@@ -1,10 +1,10 @@
-import React from "react";
-import { AiFillPlusSquare } from "react-icons/ai";
-import { ImCheckboxChecked } from "react-icons/im";
-import { Menu } from "react-pro-sidebar";
-import { MarkerType } from "reactflow";
+import React from 'react';
+import { AiFillPlusSquare } from 'react-icons/ai';
+import { ImCheckboxChecked } from 'react-icons/im';
+import { Menu } from 'react-pro-sidebar';
+import { MarkerType } from 'reactflow';
 
-import "../css/nodeList.css";
+import '../css/nodeList.css';
 
 const NodeList = (props) => {
   const {
@@ -37,7 +37,7 @@ const NodeList = (props) => {
                   y: Math.floor(Math.random() * 400),
                 },
               },
-            ]
+            ],
       );
 
       setEdges((prev) =>
@@ -51,7 +51,7 @@ const NodeList = (props) => {
                 type: 'floating',
                 markerEnd: { type: MarkerType.Arrow },
               },
-            ]
+            ],
       );
     }
   };
@@ -61,21 +61,21 @@ const NodeList = (props) => {
       {nodeList.list.map((node, index) => {
         return (
           <>
-          <li className="listItem" key={index}>
-            <ul className="listName">{node?.urls || "-"}</ul>
-            {isChecked[node?.urls] ? (
-              <ImCheckboxChecked
-                size={"25px"}
-                onClick={() => setNodeInCanvas(node?.urls)}
-              />
-            ) : (
-              <AiFillPlusSquare
-                size={"25px"}
-                onClick={() => setNodeInCanvas(node?.urls)}
-              />
-            )}
-          </li>
-          <br/>
+            <li className="listItem" key={index}>
+              <ul className="listName">{node?.urls || '-'}</ul>
+              {isChecked[node?.urls] ? (
+                <ImCheckboxChecked
+                  size={'25px'}
+                  onClick={() => setNodeInCanvas(node?.urls)}
+                />
+              ) : (
+                <AiFillPlusSquare
+                  size={'25px'}
+                  onClick={() => setNodeInCanvas(node?.urls)}
+                />
+              )}
+            </li>
+            <br />
           </>
         );
       })}
@@ -84,11 +84,3 @@ const NodeList = (props) => {
 };
 
 export default NodeList;
-
-
-
-
-
-
-
-
