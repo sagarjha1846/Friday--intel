@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import constants from '../constant/routesConstant';
 
 const { backendURL } = constants;

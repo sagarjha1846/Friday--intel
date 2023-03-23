@@ -1,10 +1,9 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 import constants from '../constant/routesConstant';
-import "../css/home.css";
+import '../css/home.css';
 // import img from '../images/case-card.png'
-
 
 const Home = () => {
   const { ROUTES } = constants;
@@ -16,7 +15,8 @@ const Home = () => {
       <section className="cases">
         <article
           className="case_cards"
-          onClick={() => navigate(ROUTES.newCase)}>
+          onClick={() => navigate(ROUTES.newCase)}
+        >
           {/* <img src={img} alt='img' className='hover-img'/> */}
           <h2 className="case_title_home">New Case</h2>
           <div className="case_arrow">
@@ -26,7 +26,8 @@ const Home = () => {
               height="40"
               viewBox="0 0 40 40"
               fill="white"
-              xmlns="http://www.w3.org/2000/svg">
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -42,7 +43,8 @@ const Home = () => {
         </article>
         <article
           className="case_cards"
-          onClick={() => navigate(ROUTES.loadCase)}>
+          onClick={() => navigate(ROUTES.loadCase)}
+        >
           <h2 className="case_title_home">Load Case</h2>
           <div className="case_arrow">
             <svg
@@ -50,7 +52,8 @@ const Home = () => {
               height="40"
               viewBox="0 0 40 40"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -66,7 +69,8 @@ const Home = () => {
         </article>
         <article
           className="case_cards"
-          onClick={() => navigate(ROUTES.canvasTool)}>
+          onClick={() => navigate(ROUTES.canvasTool)}
+        >
           <h2 className="case_title_home">Read Case</h2>
           <div className="case_arrow">
             <svg
@@ -74,7 +78,8 @@ const Home = () => {
               height="40"
               viewBox="0 0 40 40"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"

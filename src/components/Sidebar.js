@@ -109,19 +109,23 @@ const Sidenav = (props) => {
       collapsed={collapsed}
       toggled={toggled}
       handleToggleSidebar={handleToggleSidebar}
-      handleCollapsedChange={handleCollapsedChange}>
+      handleCollapsedChange={handleCollapsedChange}
+    >
       <main>
         <Menu
           onClick={() => collapseSidebar()}
-          className="collapse-sidebar_btn">
+          className="collapse-sidebar_btn"
+        >
           {collapsed ? (
             <MenuItem
               icon={<MdOutlineKeyboardArrowRight />}
-              onClick={handleCollapsedChange}></MenuItem>
+              onClick={handleCollapsedChange}
+            ></MenuItem>
           ) : (
             <MenuItem
               suffix={<MdOutlineKeyboardArrowLeft />}
-              onClick={handleCollapsedChange}>
+              onClick={handleCollapsedChange}
+            >
               <div
                 style={{
                   padding: '9px',
@@ -129,7 +133,8 @@ const Sidenav = (props) => {
                   fontWeight: 'bold',
                   fontSize: 14,
                   letterSpacing: '1px',
-                }}></div>
+                }}
+              ></div>
             </MenuItem>
           )}
         </Menu>
