@@ -104,7 +104,7 @@ const ReadCase = () => {
               />
             </div>
             <h3 className="blog-title">Learn Microinteraction</h3>
-            <span className="blog-time">Monday Jan 20, 2020</span>
+            <div className="blog-time ">Monday Jan 20, 2020</div>
             <p className="description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
               sagittis viverra turpis, non cursus ex accumsan at.
