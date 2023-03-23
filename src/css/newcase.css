@@ -278,4 +278,12 @@ border-radius: 10px;
   padding: 20px;
 }
 
+.delete-btn{
+  padding-top: 27rem;
+}
+
+
+.logout-btn{
+  padding-top: 3rem;
+}
 
