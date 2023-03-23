@@ -118,19 +118,14 @@ overflow: hidden;
   position: absolute;
   top: 93px;
   width: 380px;
-  height: 490px;
-  /* border-radius: 20px; */
+  height: 516px;
   padding: 20px;
   box-sizing: border-box;
   transition: top 0.5s ease-out;
   flex-direction: column;
   color: var(--primary-color);
-  /* padding: 20px; */
-  /* overflow: hidden; */
-  margin-left: -10px;
-  /* opacity: 1; */
-  border: 2px solid var(--primary-color);
-  /* align-items: center; */
+  margin-left: 302px;
+  border: 1px solid var(--primary-color);
   border-radius: 20px;
   z-index: 1;
   word-break: break-all;
@@ -142,7 +137,7 @@ overflow: hidden;
   overflow-x: hidden;
 }
 
-.shape3{
+/* .shape3{
 position: absolute;
 width: 30px;
 height: 30px;
@@ -153,7 +148,7 @@ top: -16px;
 border-right: none;
 border-bottom: none;
 
-}
+} */
 
 .noti{
   display: flex;
@@ -283,4 +278,12 @@ border-radius: 10px;
   padding: 20px;
 }
 
+.delete-btn{
+  padding-top: 27rem;
+}
+
+
+.logout-btn{
+  padding-top: 3rem;
+}
 
