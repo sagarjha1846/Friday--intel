@@ -194,5 +194,5 @@ const Navbar = () => {
     </nav>
   );
 };
-
+// friday
 export default Navbar;
