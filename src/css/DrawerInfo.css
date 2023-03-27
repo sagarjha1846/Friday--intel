@@ -6,6 +6,7 @@
     height: 33px;
     width: 336px;
     margin-bottom: 7px;
+<<<<<<< HEAD
     margin-inline: auto;
   }
 
@@ -32,4 +33,6 @@
     float: right;
     /* background-color: brown; */
     width: 50%;
+=======
+>>>>>>> 21dc4fc9a3f48739c3a83bd467c2adde83d42786
   }
