@@ -69,7 +69,7 @@ const Home = () => {
         </article>
         <article
           className="case_cards"
-          onClick={() => navigate(ROUTES.canvasTool)}
+          onClick={() => navigate(ROUTES.readCase)}
         >
           <h2 className="case_title_home">Read Case</h2>
           <div className="case_arrow">

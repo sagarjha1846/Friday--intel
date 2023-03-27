@@ -56,7 +56,7 @@ const Login = () => {
 
     apiCall.then(() => {
       arrowSvg?.classList.toggle('login-animation');
-      arrowSvg.style.display = 'none';
+      // arrowSvg.style.display = 'none';
       const checkMark = document.querySelector('.check-mark');
       checkMark.style.display = 'revert';
     });
