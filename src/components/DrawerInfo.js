@@ -64,6 +64,7 @@ const DrawerInfo = () => {
           Search operators are special commands that enable advanced full text
         </p>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div className='parent'>
           <div className='div1'>
             <h4>Operator</h4>
@@ -126,6 +127,8 @@ NOT inurl:http ://xxxxxxxxx.com
 
               </li>
 =======
+=======
+>>>>>>> 21dc4fc9a3f48739c3a83bd467c2adde83d42786
         <div className="parent">
           <div className="Diff1">
             <h4>
@@ -188,6 +191,9 @@ NOT inurl:http ://xxxxxxxxx.com
               (Like match) e.g.Friday Intel NOT
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inurl
               http://xxxxxxxxx.com
+<<<<<<< HEAD
+>>>>>>> 21dc4fc9a3f48739c3a83bd467c2adde83d42786
+=======
 >>>>>>> 21dc4fc9a3f48739c3a83bd467c2adde83d42786
             </p>
           </div>
@@ -202,6 +208,7 @@ NOT inurl:http ://xxxxxxxxx.com
           match.
         </p>
         <p>Indicator Remarks:</p>
+<<<<<<< HEAD
 <<<<<<< HEAD
        <div className='parent2'>
         <div className='div11'>
@@ -240,6 +247,8 @@ files.</p>
        </div>
         
 =======
+=======
+>>>>>>> 21dc4fc9a3f48739c3a83bd467c2adde83d42786
         <h4>
           Indicator
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -285,6 +294,9 @@ files.</p>
           Uses md5/sha1/sha2 to retrieve any files.
         </p>
         <div className="shape3"></div>
+<<<<<<< HEAD
+>>>>>>> 21dc4fc9a3f48739c3a83bd467c2adde83d42786
+=======
 >>>>>>> 21dc4fc9a3f48739c3a83bd467c2adde83d42786
       </div>
     </span>
