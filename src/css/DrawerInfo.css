@@ -6,4 +6,30 @@
     height: 33px;
     width: 336px;
     margin-bottom: 7px;
+    margin-inline: auto;
+  }
+
+  .parent{
+    justify-content: space-between;
+  }
+  .div1{
+    float: left;
+    /* background-color: blue; */
+    width: 50%;
+  }
+  .div2{
+    float: right;
+    /* background-color: brown; */
+    width: 50%;
+  }
+
+  .div11{
+    float: left;
+    /* background-color: blue; */
+    width: 50%;
+  }
+  .div22{
+    float: right;
+    /* background-color: brown; */
+    width: 50%;
   }
