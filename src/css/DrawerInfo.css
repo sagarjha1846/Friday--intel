@@ -6,8 +6,6 @@
     height: 33px;
     width: 336px;
     margin-bottom: 7px;
-<<<<<<< HEAD
-<<<<<<< HEAD
     margin-inline: auto;
   }
 
@@ -16,26 +14,18 @@
   }
   .div1{
     float: left;
-    /* background-color: blue; */
     width: 50%;
   }
   .div2{
     float: right;
-    /* background-color: brown; */
     width: 50%;
   }
 
   .div11{
     float: left;
-    /* background-color: blue; */
     width: 50%;
   }
   .div22{
     float: right;
-    /* background-color: brown; */
     width: 50%;
-=======
->>>>>>> 21dc4fc9a3f48739c3a83bd467c2adde83d42786
-=======
->>>>>>> 21dc4fc9a3f48739c3a83bd467c2adde83d42786
   }
