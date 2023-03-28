@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import '../css/loadcase.css';
 import '../css/readcase.css';
 import constants from '../constant/routesConstant';
+import play from "../images/play.jpg"
 
 const ReadCase = () => {
   const { ROUTES } = constants;
@@ -103,17 +104,25 @@ const ReadCase = () => {
                 alt="Blogimage"
               />
             </div>
-            <h3 className="blog-title">Learn Microinteraction</h3>
+            <div className='caption'>
+
+            
+              <img className='play-img' src={play}
+                alt="play" />
+            
             <div className="blog-time ">Monday Jan 20, 2020</div>
+            <h3 className="blog-title">Learn Microinteraction</h3>
             <p className="description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
               sagittis viverra turpis, non cursus ex accumsan at.
             </p>
             <div className="options">
-              <span>Read Full Blog</span>
+              <button className='btn'>Read Full Blog</button>
               <button className="btn">Blog</button>
             </div>
+            </div>
           </div>
+          
         </main>
       </section>
     </>
