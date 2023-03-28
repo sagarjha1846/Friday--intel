@@ -74,17 +74,22 @@
   cursor: pointer;
 }
 
-.play-img{
+.play-img {
   display: flex;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    position: relative;
-    /* background-color: blue; */
-    left: 220px;
-    /* top: -37px; */
-    bottom: 45px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: relative;
+  /* background-color: blue; */
+  left: 220px;
+  /* top: -37px; */
+  bottom: 45px;
 }
-.caption{
+.caption {
   padding: 1.5rem;
+}
+.readcase-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }

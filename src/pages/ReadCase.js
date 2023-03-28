@@ -5,7 +5,34 @@ import { useNavigate } from 'react-router-dom';
 import '../css/loadcase.css';
 import '../css/readcase.css';
 import constants from '../constant/routesConstant';
-import play from "../images/play.jpg"
+import play from '../images/play.jpg';
+
+const Card = () => {
+  return (
+    <div className="card">
+      <div className="card-img-holder">
+        <img
+          src="https://images.unsplash.com/photo-1640102953836-5651f5d6b240?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80"
+          alt="Blogimage"
+        />
+      </div>
+      <div className="caption">
+        <img className="play-img" src={play} alt="play" />
+
+        <div className="blog-time ">John Doe . 4 Feb 2022</div>
+        <h3 className="blog-title">Nea feature avaialbe on Zalter</h3>
+        <p className="description">
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout.
+        </p>
+        <div className="options">
+          <button className="btn">Security</button>
+          <button className="btn">Backend</button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const ReadCase = () => {
   const { ROUTES } = constants;
@@ -97,32 +124,14 @@ const ReadCase = () => {
           </article>
         </section>
         <main>
-          <div className="card">
-            <div className="card-img-holder">
-              <img
-                src="https://images.unsplash.com/photo-1640102953836-5651f5d6b240?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80"
-                alt="Blogimage"
-              />
-            </div>
-            <div className='caption'>
+          <section className="readcase-cards">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
 
-            
-              <img className='play-img' src={play}
-                alt="play" />
-            
-            <div className="blog-time ">Monday Jan 20, 2020</div>
-            <h3 className="blog-title">Learn Microinteraction</h3>
-            <p className="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-              sagittis viverra turpis, non cursus ex accumsan at.
-            </p>
-            <div className="options">
-              <button className='btn'>Read Full Blog</button>
-              <button className="btn">Blog</button>
-            </div>
-            </div>
-          </div>
-          
+            {/* <Card/> */}
+          </section>
         </main>
       </section>
     </>
