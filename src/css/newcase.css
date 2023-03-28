@@ -114,24 +114,20 @@
   display: flex;
   background-color: var(--secondary-color);
   position: absolute;
-  top: 93px;
-  width: 400px;
-  height: 516px;
-  padding: 10px;
+  top: 95px;
+  width: 420px;
+  height: 80vh;
   box-sizing: border-box;
   transition: top 0.5s ease-out;
   flex-direction: column;
   color: var(--primary-color);
   right: 0;
-  margin-left: 302px;
   z-index: 1;
   word-break: break-all;
 }
 .help2 {
   overflow-y: scroll;
-  width: 400px;
-  overflow-x: hidden;
-  width: 392px;
+  width: 420px;
   overflow-x: hidden;
 }
 
@@ -152,9 +148,9 @@ border-bottom: none;
   display: flex;
   background-color: var(--secondary-color);
   position: absolute;
-  top: 95px;
+  top: 10rem;
   width: 300px;
-  height: 500px;
+  height: 550px;
   border-radius: 40px solid var(--primary-color);
   box-sizing: border-box;
   flex-direction: column;
@@ -163,7 +159,7 @@ border-bottom: none;
   border-radius: 10px;
   border: 2px solid var(--primary-color);
   z-index: 1;
-  right: 1rem;
+  right: 5rem;
 }
 .noti-data {
   padding: 30px;
@@ -176,7 +172,8 @@ border-bottom: none;
   background: var(--secondary-color);
   border: 2px solid var(--primary-color);
   transform: rotate(45deg);
-  top: -22.5px;
+  top: -21px;
+  border-radius: 2px;
   left: 204px;
   border-right: none;
   border-bottom: none;
@@ -186,12 +183,13 @@ border-bottom: none;
   display: flex;
   position: absolute;
   background-color: var(--secondary-color);
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 280px;
   top: 93px;
   border: 2px solid var(--primary-color);
   z-index: 1;
-  margin-left: 1160px;
+  /* margin-left: 1160px; */
+  right: 3.5rem;
   border-radius: 10px;
 }
 
@@ -221,8 +219,9 @@ border-bottom: none;
   border: 2px solid var(--primary-color);
   transform: rotate(45deg);
   background: var(--secondary-color);
-  top: -16px;
-  left: 158px;
+  top: -16.125px;
+  border-radius: 2.2px;
+  left: 200px;
   border-right: none;
   border-bottom: none;
 }
@@ -241,11 +240,14 @@ border-bottom: none;
   position: absolute;
   background-color: var(--secondary-color);
   width: 300px;
-  height: 500px;
-  top: 93px;
+  height: 550px;
+  top: 10rem;
   border: 2px solid var(--primary-color);
   z-index: 1;
-  margin-left: 270px;
+  /* margin-left: 270px;
+   */
+  /* left: 79.5rem; */
+  right: 16rem;
   border-radius: 10px;
 }
 .tri {
@@ -255,8 +257,9 @@ border-bottom: none;
   border: 2px solid var(--primary-color);
   transform: rotate(45deg);
   background: var(--secondary-color);
-  top: -16px;
+  top: -16.125px;
   left: 200px;
+  border-radius: 2px;
   border-bottom: none;
   border-right: none;
 }
