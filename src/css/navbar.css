@@ -79,3 +79,16 @@
 .delete-btn {
   padding-top: 27rem;
 }
+.triangleShape{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--primary-color);
+  transform: rotate(45deg);
+  background: var(--secondary-color);
+  top: -16.125px;
+  border-radius: 2.2px;
+  left: 153px;
+  border-right: none;
+  border-bottom: none;
+}

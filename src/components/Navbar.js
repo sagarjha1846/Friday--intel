@@ -186,7 +186,7 @@ const Navbar = () => {
                   </span>
                 </p>
               </div>
-              <div className="shape2"></div>
+              <div className="triangleShape"></div>
             </span>
           )}
         </div>
