@@ -32,7 +32,7 @@
 }
 .help2 h2 {
   font-size: 3.8rem;
-  padding: 1rem;
+  padding: 1rem 0 1rem 0;
   font-weight: 400;
 }
 .help2 p {
