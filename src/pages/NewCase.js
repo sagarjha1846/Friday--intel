@@ -178,7 +178,7 @@ const NewCase = () => {
           {isactiv && (
             <div className="active">
               <div className="active-data">
-                <article>
+                <article className='history'>
                   <h2>Revision History</h2>
                   <p>
                     <BiBuildings />
@@ -194,12 +194,14 @@ const NewCase = () => {
                   </p>
                 </article>
 
-                <article>
+                <article className='activity'>
                   <h2>Activites</h2>
-                  <p> Edited the details of project X</p>
-                  <p>Changed the status of project Y </p>
-                  <p>Submitted a bug</p>
-                  <h4 className="delete-btn">
+                  <p> <BiBuildings />Edited the details of project X</p>
+                  <p><BiBuildings />Changed the status of project Y </p>
+                  <p><BiBuildings />Submitted a bug</p>
+                  <p><BiBuildings />Modified A data in page x</p>
+                  <p><BiBuildings />Deleted a page in project X</p>
+                  <h4 className="delete-activity-btn">
                     <span className="noti-icon">
                       <AiOutlineDelete />
                     </span>
@@ -222,25 +224,25 @@ const NewCase = () => {
             {/* NOTIFICATION BUTTON DATA---------------------------------------------------------------- */}
             {isshow && (
               <span className="noti">
-                <span className="noti-data">
+                <article className="noti-data">
                   <h2>Notification</h2>
-                  <article>
+                  <p>
                     <BiBuildings />
                     You have a bug that needs to......
-                  </article>
-                  <article>
+                  </p>
+                  <p>
                     <BiBuildings />
                     You have bug that needs to.......
-                  </article>
-                  <article>Welcome to friday intel</article>
-                  <h4 className="delete-btn">
+                  </p>
+                  <p>Welcome to friday intel</p>
+                  <h4 className="delete-noti-btn">
                     <span className="noti-icon">
                       <AiOutlineDelete />
                     </span>
                     Delete Notification
                   </h4>
-                </span>
-                <div className="shape"></div>
+                </article>
+                <div className="noti-triangle"></div>
               </span>
             )}
           </div>
@@ -292,7 +294,7 @@ const NewCase = () => {
               </span>
             </p>
           </div>
-          <div className="shape2"></div>
+          <div className="pro-triangle"></div>
         </span>
       )}
 
