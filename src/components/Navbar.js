@@ -25,7 +25,8 @@ const Navbar = () => {
   const [isshow, setIsshow] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isactiv, setIsactiv] = useState(false);
-
+  const [mode, setMode] = useState(true);
+  
   const opendrawer = () => {
     setIsOpen(!isOpen);
   };
@@ -44,6 +45,28 @@ const Navbar = () => {
   const activity = () => {
     setIsactiv(!isactiv);
   };
+
+  function themeChange(event) {
+    setMode(!mode);
+
+    const htmlElement = document.querySelector('html');
+    // set theme button background
+    const label = document.querySelector('#theme-label');
+    const PRIMARY =
+      getComputedStyle(htmlElement).getPropertyValue('--primary-color');
+    const SECONDARY =
+      getComputedStyle(htmlElement).getPropertyValue('--secondary-color');
+
+    htmlElement.style.setProperty('--primary-color', SECONDARY);
+    htmlElement.style.setProperty('--primary-color-1', SECONDARY);
+    htmlElement.style.setProperty('--secondary-color', PRIMARY);
+
+    label.style.backgroundSize = 'cover';
+    // const logotheme = document.getElementsByClassName(".inactive")
+    // // eslint-disable-next-line no-unused-expressions
+    // logotheme.classList.remove("inactive")
+  }
+
   return (
     <nav className="nav_bar">
       <section className="logo_box">
@@ -116,7 +139,7 @@ const Navbar = () => {
           </div>
         )}
         <div>
-          <button className="btn-icon">
+          <button className="btn-icon" onClick={themeChange}>
             <img src={sun} alt="sun" />
           </button>
         </div>

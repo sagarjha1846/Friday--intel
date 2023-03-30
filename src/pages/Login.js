@@ -46,6 +46,10 @@ const Login = () => {
       setError('Wrong Username or Password! Enter valid credentials.');
     }
 
+    // localStorage.setItem('username', response.data)
+    // console.log(response.data)
+
+
     const arrowSvg = document.querySelector('.login-svg');
     arrowSvg?.classList.add('login-animation');
     const apiCall = new Promise((resolve, reject) => {
@@ -94,6 +98,11 @@ const Login = () => {
     } else {
       setLogoo(light);
     }
+  }
+
+  const remember=()=>{
+    localStorage.setItem("username",email)
+    localStorage.setItem("Password",password)
   }
 
   return (
@@ -234,7 +243,7 @@ const Login = () => {
                         <span>Remember me</span>
                     </div> */}
             <div className="remember-me">
-              <input className="remember-checkbox" type="checkbox" />
+              <input className="remember-checkbox" type="checkbox"  onClick={remember}/>
               <div className="checkmark"></div>Remember me
             </div>
             <span onClick={handleforgetpassword} className="forgot-password">
