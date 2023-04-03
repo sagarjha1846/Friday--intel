@@ -160,11 +160,11 @@ border-bottom: none;
   border-radius: 10px;
   border: 2px solid var(--primary-color);
   z-index: 1;
-  right: 4rem;
+  right: 8.5rem;
 }
-.noti-data p, h2{
+/* .noti-data p, h2{
   margin :1.5rem;
-}
+} */
 
 .noti-triangle {
   position: absolute;
@@ -190,7 +190,7 @@ border-bottom: none;
   border: 2px solid var(--primary-color);
   z-index: 1;
   /* margin-left: 1160px; */
-  right: 0.5rem;
+  right: 5rem;
   border-radius: 10px;
 }
 
@@ -269,18 +269,27 @@ border-bottom: none;
   padding: 30rem 0 0 12rem;
 }
 .delete-activity-btn {
-padding:12rem 0 0 12rem;
+  padding: 12rem 0 0 12rem;
 }
 
 .logout-btn {
   padding-top: 3rem;
 }
 
-.history .noti-data p, h2{
+/* .history .noti-data p, h2{
   margin :1.5rem;
+} */
+
+.activity p,
+h2 {
+  padding: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
-
-.activity p, h2{
-  margin :1.5rem;
-
+.datestamp {
+  color: var(--primary-color-1);
+}
+.notifications,
+.datestamp {
+  font-size: 1.4rem;
 }

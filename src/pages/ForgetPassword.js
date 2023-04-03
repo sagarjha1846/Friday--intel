@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/forgetpage.css';
-
+import constants from '../constant/routesConstant';
 import ToggleSwitch from '../components/ToggleSwitch';
-import ROUTES from '../constant/routesConstant';
 import dayImage from '../images/day.png';
 import forgetpassimg from '../images/forgetpass.jpeg';
 import light from '../images/logo.png';
@@ -14,7 +13,7 @@ const ForgetPassword = () => {
   const [mode, setMode] = useState(true);
   const [logoo, setLogoo] = useState(light);
   const navigate = useNavigate();
-
+  const { ROUTES } = constants;
   // function loggingIn(event) {
   //   const arrowSvg = document.querySelector(".login-svg");
   //   arrowSvg?.classList.add("login-animation");

@@ -35,6 +35,10 @@
   padding: 1rem 0 1rem 0;
   font-weight: 400;
 }
+.help {
+  border-left: 2px solid var(--primary-color);
+  border-bottom: 2x solid var(--primary-color);
+}
 .help2 p {
   font-size: 1rem;
   font-weight: 200;
@@ -42,4 +46,7 @@
 .help2 h4 {
   font-size: 1.8rem;
   font-weight: 400;
+}
+.search-bar-NC {
+  background-color: var(--secondary-color);
 }

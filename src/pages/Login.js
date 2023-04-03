@@ -49,7 +49,6 @@ const Login = () => {
     // localStorage.setItem('username', response.data)
     // console.log(response.data)
 
-
     const arrowSvg = document.querySelector('.login-svg');
     arrowSvg?.classList.add('login-animation');
     const apiCall = new Promise((resolve, reject) => {
@@ -100,10 +99,10 @@ const Login = () => {
     }
   }
 
-  const remember=()=>{
-    localStorage.setItem("username",email)
-    localStorage.setItem("Password",password)
-  }
+  const remember = () => {
+    localStorage.setItem('username', email);
+    localStorage.setItem('Password', password);
+  };
 
   return (
     <div className="App">
@@ -243,7 +242,11 @@ const Login = () => {
                         <span>Remember me</span>
                     </div> */}
             <div className="remember-me">
-              <input className="remember-checkbox" type="checkbox"  onClick={remember}/>
+              <input
+                className="remember-checkbox"
+                type="checkbox"
+                onClick={remember}
+              />
               <div className="checkmark"></div>Remember me
             </div>
             <span onClick={handleforgetpassword} className="forgot-password">
