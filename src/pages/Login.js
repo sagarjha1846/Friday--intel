@@ -271,7 +271,8 @@ const Login = () => {
             </div>
           </button>
           <p className="contact-us">
-            Don't have an account ? <a href="#contact"> Contact Us</a>
+            Don't have an account ?{' '}
+            <a href="https://fridayintel.com/"> Contact Us</a>
           </p>
         </section>
         <footer className="footer-login">

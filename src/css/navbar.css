@@ -101,3 +101,8 @@ input.search-bar::-webkit-input-placeholder {
   color: var(--primary-color);
   /* background-color: var(--secondary-color); */
 }
+.logo_box {
+  margin: 1rem 0 0 1.5rem;
+  height: 6rem;
+  width: 15rem;
+}
