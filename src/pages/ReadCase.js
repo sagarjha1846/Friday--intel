@@ -6,15 +6,14 @@ import '../css/loadcase.css';
 import '../css/readcase.css';
 import constants from '../constant/routesConstant';
 import play from '../images/play.jpg';
+import caseimg_1 from '../images/ReadcaseImg-1.jpeg';
+import caseimg_2 from '../images/ReadcaseImg-2.jpeg';
 
-const Card = () => {
+const Card = (props) => {
   return (
     <div className="card">
       <div className="card-img-holder">
-        <img
-          src="https://images.unsplash.com/photo-1640102953836-5651f5d6b240?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80"
-          alt="Blogimage"
-        />
+        <img src={props.src} alt={props.alt} />
       </div>
       <div className="caption">
         <img className="play-img" src={play} alt="play" />
@@ -27,7 +26,7 @@ const Card = () => {
         </p>
         <div className="options">
           <button className="btn">Security</button>
-          <button className="btn">Backend</button>
+          <button className="btn-2">Back-End</button>
         </div>
       </div>
     </div>
@@ -123,12 +122,12 @@ const ReadCase = () => {
             </div>
           </article>
         </section>
-        <main>
+        <main className="cards-section">
           <section className="readcase-cards">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <Card src={caseimg_1} alt="Image 1" />
+            <Card src={caseimg_2} alt="Image 2" />
+            <Card src={caseimg_1} alt="Image 1" />
+            <Card src={caseimg_2} alt="Image 2" />
 
             {/* <Card/> */}
           </section>

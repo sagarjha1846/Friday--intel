@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/navbar.css';
 import Navbar from '../components/Navbar';
 import { StyledEngineProvider } from '@mui/material/styles';
-import Demo from '../components/Table';
+import Table from '../components/Table';
 import { useNavigate } from 'react-router-dom';
 import '../css/loadcase.css';
 import constants from '../constant/routesConstant';
@@ -98,7 +98,7 @@ const LoadCase = () => {
         </section>
         <section className="loadcase-table">
           <StyledEngineProvider injectFirst>
-            <Demo />
+            <Table />
           </StyledEngineProvider>
         </section>
       </section>

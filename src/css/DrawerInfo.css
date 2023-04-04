@@ -37,7 +37,6 @@
 }
 .help {
   border-left: 2px solid var(--primary-color);
-  border-bottom: 2x solid var(--primary-color);
 }
 .help2 p {
   font-size: 1rem;

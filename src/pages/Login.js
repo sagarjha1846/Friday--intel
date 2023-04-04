@@ -272,7 +272,10 @@ const Login = () => {
           </button>
           <p className="contact-us">
             Don't have an account ?{' '}
-            <a href="https://fridayintel.com/"> Contact Us</a>
+            <a href="https://fridayintel.com/" target="_blank" rel="noreferrer">
+              {' '}
+              Contact Us
+            </a>
           </p>
         </section>
         <footer className="footer-login">

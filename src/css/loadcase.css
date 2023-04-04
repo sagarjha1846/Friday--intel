@@ -29,6 +29,6 @@
 .loadcase-table {
   height: 70vh;
   flex: 1 1 20%;
-  margin: 4rem;
+  /* margin: 4rem; */
   font-size: 2rem;
 }

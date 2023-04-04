@@ -114,7 +114,7 @@
   display: flex;
   background-color: var(--secondary-color);
   position: absolute;
-  top: 95px;
+  top: 9rem;
   width: 420px;
   height: 80vh;
   box-sizing: border-box;
@@ -124,12 +124,14 @@
   right: 0;
   z-index: 1;
   word-break: break-all;
+  border-bottom: 2x solid var(--primary-color);
 }
 .help2 {
   overflow-y: scroll;
   width: 420px;
   overflow-x: hidden;
   padding-left: 5px;
+  border-bottom: 2x solid var(--primary-color);
 }
 
 /* .shape3{
@@ -313,3 +315,6 @@ h2 {
 .datestamp {
   padding-left: 3rem;
 }
+/* .react-flow__pane{
+  background-color: var(--secondary-color);
+} */
