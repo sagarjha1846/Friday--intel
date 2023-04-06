@@ -5,7 +5,7 @@ const Page404 = () => {
   return (
     <div className="main">
       <h1 className="oops">Oops!</h1>
-      <h3>The page you were looking for doesn’t exist.</h3>
+      <h5>The page you were looking for doesn’t exist.</h5>
       <div className="section404">
         <span className="error404">404</span>
         <span className="error">ERROR</span>

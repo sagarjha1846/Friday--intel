@@ -186,8 +186,8 @@ border-bottom: none;
   display: flex;
   position: absolute;
   background-color: var(--secondary-color);
-  width: 250px;
-  height: 226px;
+  width: 25rem;
+  height: 25rem;
   top: 93px;
   border: 2px solid var(--primary-color);
   z-index: 1;
@@ -200,20 +200,41 @@ border-bottom: none;
   display: flex;
   padding: 20px;
   flex-direction: column;
+  position: absolute;
+}
+.pro-data h2 {
+  font-size: 2.4rem;
+  width: 100%;
+  font-family: 'Hammersmith One';
+  padding: 0rem 0rem 1.2rem 1.2rem;
+}
+.pro-data article {
+  display: flex;
+  align-items: center;
+}
+.pro-data article h4 {
+  font-size: 1.4rem;
+  font-weight: 400;
 }
 .pro-icon {
   height: 30px;
   width: 30px;
   flex-direction: row;
 }
-.member-btn {
-  color: var(--secondary-color);
-  background-color: var(--primary-color);
-  border-radius: 8px;
-}
 .logout-btn {
-  border-radius: 20px;
+  display: flex;
+  padding: 3rem 0rem 0rem 13rem;
+  align-items: center;
+  gap: 0.75rem;
+  height: 4rem;
 }
+.logout-btn h4 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+/* .logout-icon{
+  height: 1rem;
+} */
 
 .pro-triangle {
   position: absolute;
@@ -282,20 +303,10 @@ border-bottom: none;
   padding: 12rem 0 0 12rem;
 }
 
-.logout-btn {
-  padding-top: 3rem;
-}
-
 /* .history .noti-data p, h2{
   margin :1.5rem;
 } */
 
-.activity p,
-h2 {
-  padding: 0.8rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-}
 .datestamp {
   color: var(--primary-color-1);
 }
@@ -315,6 +326,42 @@ h2 {
 .datestamp {
   padding-left: 3rem;
 }
+
+.btn_memberHover {
+  border: 2px solid var(--primary-color);
+  outline: none;
+  background-color: var(--secondary-color);
+  padding: 0px 2.5px;
+  border-radius: 100px;
+  transition: all ease 0.1s;
+  box-shadow: 0px 2px 0px 0px var(--primary-color-1);
+  cursor: pointer;
+}
+.member_btn_edit {
+  width: 13.4rem;
+  height: 3.9rem;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  font-weight: 600;
+  border-radius: 1.2rem;
+  position: relative;
+  top: 0.5rem;
+  left: 3.5rem;
+  box-shadow: 0px 3px 0px 0px var(--primary-color);
+}
+.member_btn_membership {
+  width: 18rem;
+  height: 3.9rem;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  font-weight: 600;
+  border-radius: 1.2rem;
+  position: relative;
+  top: 1.5rem;
+  left: 1rem;
+  box-shadow: 0px 3px 0px 0px var(--primary-color-1);
+}
+
 /* .react-flow__pane{
   background-color: var(--secondary-color);
 } */
