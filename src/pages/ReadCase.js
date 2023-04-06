@@ -20,10 +20,11 @@ const Card = (props) => {
 
         <div className="blog-time ">John Doe . 4 Feb 2022</div>
         <h3 className="blog-title">Nea feature avaialbe on Zalter</h3>
-        <p className="description">
+
+        <span className="description">
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout.
-        </p>
+        </span>
         <div className="options">
           <button className="btn">Security</button>
           <button className="btn-2">Back-End</button>
