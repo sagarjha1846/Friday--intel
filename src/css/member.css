@@ -32,7 +32,7 @@
 }
 
 .account-container {
-  height: 20rem;
+  height: 16rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,4 +75,71 @@
   font-size: 1.8rem;
   font-weight: 400;
   margin-bottom: 1rem;
+}
+
+.transaction-details {
+  display: flex;
+  margin: 3rem 5rem 0rem 5rem;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(0, 255, 255, 0.1);
+  height: 25rem;
+}
+.subscription_details {
+  display: flex;
+  flex-direction: column;
+}
+.subscription_details h3 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  /* margin-top: rem; */
+}
+.subscription_details div {
+  display: flex;
+  justify-content: space-around;
+  margin: 2.5rem 0 2.5rem 0;
+}
+.subscription_details h6 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.subscription_details p {
+  color: #ff0000;
+  font-size: 1.4rem;
+}
+.subscription_details button {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  height: 3.3rem;
+  width: 20rem;
+  border-radius: 1.4rem;
+  box-shadow: 0px 4px 0px var(--primary-color-1);
+  margin: 0rem 0rem 2rem 1rem;
+}
+.subscription_details a {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-left: 4rem;
+}
+
+table.GeneratedTable {
+  font-size: 1.4rem;
+  /* border-collapse: collapse; */
+  color: var(--primary-color);
+  font-weight: 400;
+  overflow: auto;
+}
+
+table.GeneratedTable td {
+  padding: 5px 6px 0px 6px;
+}
+
+table.GeneratedTable th {
+  padding: 0.5rem;
+}
+.footer-member {
+  margin-top: 6rem;
+  margin-left: 5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
 }

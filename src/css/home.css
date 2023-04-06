@@ -50,3 +50,6 @@
 .case_arrow path {
   fill: var(--primary-color);
 }
+.noti-data h2 {
+  padding: 2rem 0rem 1.5rem 2rem;
+}

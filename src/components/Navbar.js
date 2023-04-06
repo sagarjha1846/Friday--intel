@@ -11,12 +11,12 @@ import DrawerInfo from './DrawerInfo';
 // import sun from '../images/svg/sun.svg';
 // import bell from '../images/svg/bell.svg';
 // import user from '../images/svg/userSolid.svg';
-import { AiOutlineMail } from 'react-icons/ai';
+// import { AiOutlineMail } from 'react-icons/ai';
 import { AiOutlineLogout } from 'react-icons/ai';
 // import { AiOutlineDelete } from 'react-icons/ai';
-import { BiBuildings } from 'react-icons/bi';
-import { BiPhoneCall } from 'react-icons/bi';
-import { FiEdit } from 'react-icons/fi';
+// import { BiBuildings } from 'react-icons/bi';
+// import { BiPhoneCall } from 'react-icons/bi';
+// import { FiEdit } from 'react-icons/fi';
 import { RiDeleteBinLine } from 'react-icons/ri';
 const Navbar = () => {
   const { ROUTES } = constants;
