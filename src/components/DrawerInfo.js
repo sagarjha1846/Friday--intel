@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import '../css/DrawerInfo.css';
-// import {AiOutlineCloseCircle} from "react-icons/ai";
+import {ImCancelCircle} from "react-icons/im";
 const DrawerInfo = () => {
-  // const [isshowDiv, setIsshowDiv] = useState(true);
+  const [isshowDiv, setIsshowDiv] = useState(true);
 
-  // const handleClose = () => {
-  //     setIsshowDiv(false);
-  // };
+  const handleClose = () => {
+      setIsshowDiv(false);
+  };
   const [search, setSearch] = useState('');
 
   return (
     <section className="help">
       <div className="help2">
-        {/* <button onClick={handleClose} className="close-btn"> */}
-        {/* <AiOutlineCloseCircle/>
-                      </button> */}
+         <button onClick={handleClose} className="close-btn"> 
+         <ImCancelCircle/>
+                      </button> 
+                      
         <h2>Search Guidelines</h2>
         <hr />
         <h4>Keyword Search</h4>
