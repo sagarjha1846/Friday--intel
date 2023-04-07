@@ -68,7 +68,10 @@ const Footer = () => {
             />
           </svg>
         </button>
+      <div className='ushape'> </div>
       </section>
+
+      
     </footer>
   );
 };

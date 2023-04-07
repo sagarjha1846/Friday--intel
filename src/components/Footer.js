@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="footer_container">
         <img className="logo-footer" src={logo2} alt="logo" />
         <img className="vector" src={vector} alt="logo" />
-        <img className="siql" src={siql} alt="logo" />
+        {/* <img className="siql" src={siql} alt="logo" /> */}
         <img className="right" src={right} alt="right" />
         {/* <img  className='logo' src={logo2} alt="logo" />
         <img  className='logo' src={logo2} alt="logo" />
@@ -25,6 +25,8 @@ const Footer = () => {
         <img  className='logo' src={logo2} alt="logo" />
         <img  className='logo' src={logo2} alt="logo" />
         <img  className='logo' src={logo2} alt="logo" /> */}
+
+        
       </div>
     </footer>
   );
