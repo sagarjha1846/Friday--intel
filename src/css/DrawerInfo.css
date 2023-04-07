@@ -49,3 +49,10 @@
 .search-bar-NC {
   background-color: var(--secondary-color);
 }
+
+.close-btn{
+  width: 25px;
+  height: 25px;
+  border-radius: 91px;
+  border: 1px solid var(--secondary-color);
+}
