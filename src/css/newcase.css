@@ -365,8 +365,10 @@ border-bottom: none;
   top: 1.5rem;
   left: 1rem;
   box-shadow: 0px 3px 0px 0px var(--primary-color-1);
+  /* syntax: ; */
 }
 
 /* .react-flow__pane{
   background-color: var(--secondary-color);
 } */
+
