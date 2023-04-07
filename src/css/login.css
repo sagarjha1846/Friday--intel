@@ -43,7 +43,6 @@ body {
 .form-login {
   display: flex;
   flex-direction: column;
-
   margin: 10rem 15rem 0rem 20rem;
 }
 
