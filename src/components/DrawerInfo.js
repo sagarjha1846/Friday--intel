@@ -10,12 +10,15 @@ const DrawerInfo = () => {
   const [search, setSearch] = useState('');
 
   return (
-    <section className="help">
-      <div className="help2">
+    
+    <>
+     
+        {isshowDiv && (
+      <section className="help">
          <button onClick={handleClose} className="close-btn"> 
          <ImCancelCircle/>
                       </button> 
-                      
+      <div className="help2">
         <h2>Search Guidelines</h2>
         <hr />
         <h4>Keyword Search</h4>
@@ -511,7 +514,12 @@ const DrawerInfo = () => {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+      )}
+    
+
+  </>
   );
 };
+
 export default DrawerInfo;
