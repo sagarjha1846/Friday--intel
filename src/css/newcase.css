@@ -116,7 +116,7 @@
   position: absolute;
   top: 9rem;
   width: 425px;
-  height: 73.5vh;
+  height: 75vh;
   box-sizing: border-box;
   transition: top 0.5s ease-out;
   flex-direction: column;

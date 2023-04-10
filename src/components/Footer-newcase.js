@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/footer.css';
-
+import { CiSearch } from "react-icons/ci";
 
 const Footer = () => {
   return (
@@ -455,7 +455,8 @@ const Footer = () => {
         </button>
       </section>
       <div className='footer-searchbox'> 
-      <input type="text"  className='footer-searchbar'/>
+      <i className='search-icon'><CiSearch/></i>
+      <input placeholder='Search...'  type="text"  className='footer-searchbar'/>
       </div>
 
       

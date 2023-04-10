@@ -82,5 +82,16 @@
   left: 20px;
   top: 5px;
   height: 30px;
-  width: 180px;
+  /* width: 180px; */
+}
+.footer-searchbar::placeholder{
+  /* margin-left: 3rem; */
+  padding-left: 3rem;
+  color: var(--primary-color-1);
+}
+.search-icon{
+  position: absolute;
+  left: 3rem;
+  z-index: 1;
+  top: 1rem;
 }
