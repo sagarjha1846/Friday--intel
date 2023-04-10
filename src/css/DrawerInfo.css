@@ -49,3 +49,14 @@
 .search-bar-NC {
   background-color: var(--secondary-color);
 }
+
+.close-btn{
+  display: flex;
+  position: absolute;
+  left: 370px;
+  top: 9px;
+  width: 16px;
+  height: 16px;
+  border-radius: 91px;
+  border: 1px solid var(--secondary-color);
+}

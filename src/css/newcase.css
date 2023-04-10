@@ -260,9 +260,9 @@ border-bottom: none;
   width: 50px;
 }
 
-.close-btn {
-  margin-left: 304px;
-}
+/* .close-btn {
+  margin-left: 304px; */
+/* } */
 
 .active {
   display: flex;
