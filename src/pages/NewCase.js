@@ -8,16 +8,12 @@ import SideNav from '../components/Sidebar';
 import Tool from '../components/Tool';
 import '../css/newcase.css';
 import { getLayoutElements } from '../utils';
-// import ROUTES from '../constant/routesConstant';
 import { useNavigate } from 'react-router-dom';
 import DrawerInfo from '../components/DrawerInfo';
 import constants from '../constant/routesConstant';
-// import { AiOutlineMail } from 'react-icons/ai';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { RiDeleteBinLine } from 'react-icons/ri';
-// import { BiBuildings } from 'react-icons/bi';
-// import { BiPhoneCall } from 'react-icons/bi';
-// import { FiEdit } from 'react-icons/fi';
+import { CiSearch } from 'react-icons/ci';
 
 const NewCase = () => {
   const { ROUTES } = constants;
@@ -511,6 +507,7 @@ const NewCase = () => {
                 </radialGradient>
               </defs>
             </svg>
+
             <input
               type="text"
               className="search-bar-NC"
@@ -533,6 +530,9 @@ const NewCase = () => {
               placeholder="Search Keywords, TOR, URL, etc..."
               value={search}
             />
+            <i className="newcase_search_icon">
+              <CiSearch />
+            </i>
           </div>
           {/* <button className="activity-icon btn-icon" onClick={activity}>
             <svg
@@ -876,8 +876,7 @@ const NewCase = () => {
       </nav>
       {/* PROFILE HOVER ICON-------------------------------------------------------------------- */}
       {isHovering && (
-        <span className="pro" 
-        >
+        <span className="pro">
           <div className="pro-data">
             <h2>Unit Charlie</h2>
 

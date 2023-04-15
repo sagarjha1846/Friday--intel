@@ -6,6 +6,14 @@
   font-size: 1.6rem;
   height: 84vh !important;
   overflow: auto;
+  color: var(--primary-color);
+}
+.sidebar li {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+.sidebar li:hover {
+  color: black;
 }
 .collapse-sidebar_btn {
   border: none;
@@ -22,4 +30,7 @@
 .Terrorist-Profiling-heading {
   font-size: 1.8rem;
   font-weight: 400;
+}
+.css-dip3t8 {
+  background-color: var(--secondary-color) !important;
 }

@@ -1263,7 +1263,10 @@ const Navbar = () => {
                 <button className="member_btn_membership">
                   Membership info
                 </button>
-                <span className="logout-btn"  onClick={() => navigate(ROUTES.login)}>
+                <span
+                  className="logout-btn"
+                  onClick={() => navigate(ROUTES.login)}
+                >
                   <AiOutlineLogout className="logout-icon" />
 
                   <h4>Log Out</h4>

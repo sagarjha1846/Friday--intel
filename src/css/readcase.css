@@ -1,7 +1,7 @@
 .readcase-container {
   display: flex;
   height: 87vh;
-    overflow: hidden;
+  overflow: hidden;
   /* justify-content: center;
     align-items: center; */
 }

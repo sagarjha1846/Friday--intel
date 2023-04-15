@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { createRef } from 'react';
+import { useScreenshot, createFileName } from 'use-react-screenshot';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 
 import CanvasArea from '../components/CanvasArea';
@@ -9,8 +10,22 @@ import '../css/tool.css';
 const Tool = (props) => {
   const { onLayout, canvasFunc } = props;
   const handle = useFullScreenHandle();
+  const ref = createRef(null);
+  const [image, takeScreenshot] = useScreenshot({
+    type: 'image/jpeg',
+    quality: 1.0,
+  });
+  const download = (image, { name = 'img', extension = 'jpg' } = {}) => {
+    const a = document.createElement('a');
+    a.href = image;
+    a.download = createFileName(extension, name);
+    a.click();
+  };
+  const getImage = () => {
+    takeScreenshot(ref.current).then(download);
+  };
   return (
-    <div className="navigation">
+    <div className="navigation" ref={ref}>
       <nav className="menu">
         <button className="toolbtn" onClick={handle.enter}>
           <svg
@@ -345,7 +360,7 @@ const Tool = (props) => {
           </svg>
         </button>
 
-        <button className="toolbtn1 btnicon " onClick={() => onLayout('TB')}>
+        <button className="toolbtn1 btnicon " onClick={getImage}>
           <svg
             width="22"
             height="22"
