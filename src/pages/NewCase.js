@@ -65,13 +65,13 @@ const NewCase = () => {
   //   setIsshowDiv(false);
   // };
 
-  const handleMouseOver = () => {
-    setIsHovering(true);
-  };
+  // const handleMouseOver = () => {
+  //   setIsHovering(true);
+  // };
 
-  const handleMouseOut = () => {
-    setIsHovering(false);
-  };
+  // const handleMouseOut = () => {
+  //   setIsHovering(false);
+  // };
 
   // const activity = () => {
   //   setIsactiv(!isactiv);
