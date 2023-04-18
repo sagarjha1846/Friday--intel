@@ -1023,8 +1023,8 @@ const NewCase = () => {
           </div>
         </div>
 
-        <Footer />
       </div>
+        <Footer />
     </>
   );
 };
