@@ -316,6 +316,9 @@ border-bottom: none;
   display: flex;
   font-size: 1.8rem;
 }
+.delete-noti-btn:hover {
+  cursor: pointer;
+}
 .clear-noti {
   font-weight: 200;
   font-size: 2rem;
@@ -340,6 +343,9 @@ border-bottom: none;
   /* justify-content: space-around;
    */
   align-items: center;
+}
+.notifications svg:hover {
+  cursor: pointer;
 }
 .notification-sections {
   padding-left: 1.5rem;

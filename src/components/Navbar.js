@@ -1,23 +1,13 @@
 import React from 'react';
-// import logo from '../images/logo.png';
 import '../css/navbar.css';
 import { useNavigate } from 'react-router-dom';
-// import ROUTES from '../constant/routesConstant';
-// import bookmark from '../images/svg/questMark.svg';
-// import fridaySearch from '../images/svg/search-logo.svg';
 import { useState } from 'react';
 import constants from '../constant/routesConstant';
 import DrawerInfo from './DrawerInfo';
-// import sun from '../images/svg/sun.svg';
-// import bell from '../images/svg/bell.svg';
-// import user from '../images/svg/userSolid.svg';
-// import { AiOutlineMail } from 'react-icons/ai';
 import { AiOutlineLogout } from 'react-icons/ai';
-// import { AiOutlineDelete } from 'react-icons/ai';
-// import { BiBuildings } from 'react-icons/bi';
-// import { BiPhoneCall } from 'react-icons/bi';
-// import { FiEdit } from 'react-icons/fi';
 import { RiDeleteBinLine } from 'react-icons/ri';
+import { CiSearch } from 'react-icons/ci';
+
 const Navbar = () => {
   const { ROUTES } = constants;
   const navigate = useNavigate();
@@ -825,6 +815,9 @@ const Navbar = () => {
             className="search-bar"
             placeholder="Search Cases, Blogs, etc..."
           />
+          <i className="newcase_search_icon">
+            <CiSearch />
+          </i>
         </div>
         {/* <button className="activity-icon btn-icon" onClick={activity}>
           <svg
