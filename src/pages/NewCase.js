@@ -22,7 +22,7 @@ const NewCase = () => {
   // const [isactiv, setIsactiv] = useState(false);
   const [isshow, setIsshow] = useState(false);
   // const [isshowDiv, setIsshowDiv] = useState(true);
-  const [isHovering, setIsHovering] = useState(false);
+  const [isopenprofile, setIsopenprofile] = useState(false);
   const navigate = useNavigate();
   const searchRef = useRef();
   const [nodeInfo, setNodeInfo] = useState({ list: [], name: '' });
@@ -76,6 +76,10 @@ const NewCase = () => {
   // const activity = () => {
   //   setIsactiv(!isactiv);
   // };
+
+  const openprofile = () => {
+    setIsopenprofile(!isopenprofile);
+  };
 
   function themeChange(event) {
     setMode(!mode);
@@ -842,11 +846,10 @@ const NewCase = () => {
             )}
           </div>
           <div
-            onClick={() => navigate(ROUTES.member)}
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
+            
+          
           >
-            <button className="btn-icon member-icon hover-member">
+            <button className="btn-icon member-icon hover-member" onClick={openprofile}>
               <svg
                 width="23"
                 height="23"
@@ -875,7 +878,7 @@ const NewCase = () => {
         </section>
       </nav>
       {/* PROFILE HOVER ICON-------------------------------------------------------------------- */}
-      {isHovering && (
+      {isopenprofile && (
         <span className="pro">
           <div className="pro-data">
             <h2>Unit Charlie</h2>
@@ -973,8 +976,8 @@ const NewCase = () => {
               </span>
               <h4>Kangaroo Agency</h4>
             </article>
-            <button className="member_btn_edit">Edit Profile</button>
-            <button className="member_btn_membership">Membership info</button>
+            <button className="member_btn_edit" onClick={() => navigate(ROUTES.member)}>Edit Profile</button>
+            <button className="member_btn_membership" onClick={() => navigate(ROUTES.member)}>Membership info</button>
             <span className="logout-btn" onClick={() => navigate(ROUTES.login)}>
               <AiOutlineLogout className="logout-icon" />
               <h4>Log Out</h4>
