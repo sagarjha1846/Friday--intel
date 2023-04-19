@@ -172,7 +172,7 @@ const Member = () => {
             </button>
             {/* NOTIFICATION BUTTON DATA---------------------------------------------------------------- */}
             {isshow && (
-              <span className="noti">
+              <span className="notification_member">
                 <article className="noti-data">
                   <h2>Notifications</h2>
                   <section className="notification-sections">

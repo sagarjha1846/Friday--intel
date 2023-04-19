@@ -376,6 +376,9 @@ border-bottom: none;
   left: 3.5rem;
   box-shadow: 0px 3px 0px 0px var(--primary-color);
 }
+.member_btn_edit:hover{
+  cursor: pointer;
+}
 .member_btn_membership {
   width: 18rem;
   height: 3.9rem;
@@ -389,7 +392,9 @@ border-bottom: none;
   box-shadow: 0px 3px 0px 0px var(--primary-color-1);
   /* syntax: ; */
 }
-
+.member_btn_membership:hover{
+  cursor: pointer;
+}
 /* .react-flow__pane{
   background-color: var(--secondary-color);
 } */

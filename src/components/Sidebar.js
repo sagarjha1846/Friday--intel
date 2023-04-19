@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import {
   Sidebar,
   Menu,
@@ -6,13 +5,11 @@ import {
   SubMenu,
   useProSidebar,
 } from 'react-pro-sidebar';
-// import terroristprofilling from '../images/svg/terrorist.svg';
 import network from '../images/svg/network.svg';
 import '../css/sidebar.css';
 import React from 'react';
 import { getDomain, getFiles, getTORDomain, getUrl, getIP } from '../axios';
 import { useState } from 'react';
-// import { FiChevronsLeft, FiChevronsRight } from "react-icons/fi/";
 import { BsGlobe2 } from 'react-icons/bs';
 import { VscFile } from 'react-icons/vsc';
 import { IoDocumentLockOutline } from 'react-icons/io5';
