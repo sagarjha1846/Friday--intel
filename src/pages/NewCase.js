@@ -6,7 +6,6 @@ import CanvasArea from '../components/CanvasArea';
 import NodeList from '../components/NodeList';
 import SideNav from '../components/Sidebar';
 import Tool from '../components/Tool';
-
 import '../css/newcase.css';
 import { getLayoutElements } from '../utils';
 import ROUTES from '../constant/routesConstant';
@@ -20,18 +19,22 @@ import sun from '../images/svg/sun.svg';
 import bell from '../images/svg/bell.svg';
 import user from '../images/svg/userSolid.svg';
 import DrawerInfo from '../components/DrawerInfo';
+import axios from 'axios';
+import { MagnifyingGlass } from 'react-loader-spinner';
 
 const NewCase = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isshow, setIsshow] = useState(false);
   const navigate = useNavigate();
   const searchRef = useRef();
-  const [nodeInfo, setNodeInfo] = useState({ list: [], name: '' });
+  const [nodeInfo, setNodeInfo] = useState({ query: '', data: null });
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [canvasFunc, setCanvasFunc] = useState();
   const [isChecked, setIsChecked] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState('');
+  const [activeMenu, setActiveMenu] = useState('');
 
   const onConnect = useCallback(
     (params) => setEdges((eds) => addEdge(params, eds)),
@@ -62,6 +65,36 @@ const NewCase = () => {
     setIsshow(!isshow);
   };
 
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setActiveMenu('');
+    setIsLoading(true);
+
+    axios
+      .get(`https://fridayintel.io/api-dev/canvas.php?query=${search}`)
+
+      .then((response) => {
+        setNodeInfo({ query: search, data: response?.data });
+
+        setNodes((prev) => [
+          ...prev,
+          {
+            id: search,
+            type: 'default',
+            data: { label: search },
+            position: { x: 250, y: 0 },
+          },
+        ]);
+
+        setSearch('');
+        setIsLoading(false);
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <>
       <nav className="nav_bar">
@@ -85,31 +118,16 @@ const NewCase = () => {
             </button>
             {isOpen && <DrawerInfo />}
           </div>
-          <div className="searchbar-box">
+          <form onSubmit={handleSubmit} className="searchbar-box">
             <img src={fridaySearch} alt="star" />
             <input
               type="text"
               className="search-bar-NC"
-              onKeyUp={(e) => {
-                searchRef.current = e.target.value;
-                if (e.code === 'Enter') {
-                  setNodes((prev) => [
-                    ...prev,
-                    {
-                      id: e.target.value,
-                      type: 'custom',
-                      data: { label: e.target.value },
-                      position: { x: 250, y: 0 },
-                    },
-                  ]);
-                  setSearch('');
-                }
-              }}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={handleChange}
               placeholder="Search Keywords, TOR, URL, etc..."
               value={search}
             />
-          </div>
+          </form>
           <div>
             <button className="btn-icon">
               <img src={sun} alt="sun" />
@@ -136,12 +154,14 @@ const NewCase = () => {
       <div className="container">
         <div className="sideNavSection">
           <SideNav
-            setNodeInfo={setNodeInfo}
+            setActiveMenu={setActiveMenu}
             nodeInfo={nodeInfo}
             searchRef={searchRef.current}
+            activeMenu={activeMenu}
           />
-          {nodeInfo.list.length ? (
+          {nodeInfo && activeMenu !== '' ? (
             <NodeList
+              activeMenu={activeMenu}
               searchRef={searchRef.current}
               nodes={nodes}
               nodeList={nodeInfo}
@@ -152,15 +172,31 @@ const NewCase = () => {
             />
           ) : null}
         </div>
-        <div className="canvasSection">
-          <CanvasArea
-            nodes={nodes}
-            edges={edges}
-            onInit={onInit}
-            onConnect={onConnect}
-            onNodesChange={onNodesChange}
-            onEdgesChange={onEdgesChange}
-          />
+        <div className="canvasSection ">
+          {isLoading ? (
+            <div className=" w-full h-full grid place-content-center">
+              <MagnifyingGlass
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="MagnifyingGlass-loading"
+                wrapperStyle={{}}
+                wrapperClass="MagnifyingGlass-wrapper"
+                glassColor="#c0efff"
+                color="#e15b64"
+              />
+              <h1 className="p-2 text-4xl">Loading...</h1>
+            </div>
+          ) : (
+            <CanvasArea
+              nodes={nodes}
+              edges={edges}
+              onInit={onInit}
+              onConnect={onConnect}
+              onNodesChange={onNodesChange}
+              onEdgesChange={onEdgesChange}
+            />
+          )}
         </div>
         <div className="toolSection-container">
           <div className="toolSection">
