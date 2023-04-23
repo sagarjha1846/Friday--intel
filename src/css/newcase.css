@@ -83,8 +83,8 @@
   overflow-y: scroll;
 }
 .canvasSection {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -376,7 +376,7 @@ border-bottom: none;
   left: 3.5rem;
   box-shadow: 0px 3px 0px 0px var(--primary-color);
 }
-.member_btn_edit:hover{
+.member_btn_edit:hover {
   cursor: pointer;
 }
 .member_btn_membership {
@@ -392,7 +392,7 @@ border-bottom: none;
   box-shadow: 0px 3px 0px 0px var(--primary-color-1);
   /* syntax: ; */
 }
-.member_btn_membership:hover{
+.member_btn_membership:hover {
   cursor: pointer;
 }
 /* .react-flow__pane{
