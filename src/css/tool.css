@@ -1,18 +1,19 @@
 .navigation {
-  color: rgb(7, 6, 6);
+  color: var(--primary-color);
   /* border: 1px solid transparent; */
   height: 40rem;
   width: 7rem;
   border-radius: 12px;
-  border-color: black;
-  /* margin: -5px 60px -4px 8px; */
+  border-color: var(--primary-color);
+  /* margin: -5px 60
+  px -4px 8px; */
   /* padding: 4px; */
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   /* gap: 0.8rem; */
-  background-color: rgb(255, 255, 255);
+  background-color: var(--secondary-color);
 }
 
 nav .menu {
@@ -23,10 +24,10 @@ nav .menu {
   position: absolute;
 }
 
-.navigation{
-  border: 2px solid #000000;
+.navigation {
+  border: 2px solid var(--primary-color);
 }
-.menu{
+.menu {
   margin-top: 1em;
 }
 
@@ -47,41 +48,41 @@ nav .menu {
     width: max-content;
     z-index: 2 */
 
-    .toolbtn {
-      background-color: #010101;
-      cursor: pointer;
-      border: none;  
-      border-radius: 1em;
-      padding: 0.35em 0.3em 0em 0.35em;
-    }
-    .toolbtn1 {
-      background-color: #010101;
-      cursor: pointer;
-      border: none;  
-      border-radius: 1em;
-      padding: 0.57em;
-    }
-    .toolbtn1:hover svg path{
-      fill: #00ffff;
-    }
+.toolbtn {
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border: none;
+  border-radius: 1em;
+  padding: 0.35em 0.3em 0em 0.35em;
+}
+.toolbtn1 {
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border: none;
+  border-radius: 1em;
+  padding: 0.57em;
+}
+.toolbtn1:hover svg path {
+  fill: #00ffff;
+}
 
-    .toolbtn:hover svg path{
-      fill: #00ffff;
-    }
-    
-    .btn {
-      display: flex;
-      gap: 1rem;
-    }
-    .btnicon {
-      display: flex;
-      margin-top: 1rem;
-    }
+.toolbtn:hover svg path {
+  fill: #00ffff;
+}
 
-    .toolSection-container{
-      height: 83vh;
-      display: flex;
-      align-items: center;
-      position: absolute;
-      right: 1rem;
-    }
+.btn {
+  display: flex;
+  gap: 1rem;
+}
+.btnicon {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.toolSection-container {
+  height: 83vh;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 1rem;
+}

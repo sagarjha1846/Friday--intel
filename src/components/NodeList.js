@@ -48,7 +48,7 @@ const NodeList = (props) => {
                   y: Math.floor(Math.random() * 400),
                 },
               },
-            ]
+            ],
       );
 
       setEdges((prev) =>
@@ -62,7 +62,7 @@ const NodeList = (props) => {
                 type: 'floating',
                 markerEnd: { type: MarkerType.Arrow },
               },
-            ]
+            ],
       );
     }
   };
@@ -85,7 +85,7 @@ const NodeList = (props) => {
 
   const slicedData = nodeList.data[activeMenu]?.slice(
     indexOfFirstPost,
-    indexOfFirstPost + postsPerPage
+    indexOfFirstPost + postsPerPage,
   );
   return (
     <Menu className="w-full">
