@@ -172,7 +172,7 @@ const NewCase = () => {
             {isOpen && <DrawerInfo />}
           </div>
           <form onSubmit={handleSubmit} className="searchbar-box">
-            <img src={fridaySearch} alt="star" />
+            <img src={fridaySearch} alt="star" className="p-3.5" />
             <input
               type="text"
               className="search-bar-NC"
