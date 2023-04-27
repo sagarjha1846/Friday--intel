@@ -12,7 +12,7 @@ import { BsGlobe2 } from 'react-icons/bs';
 import { VscFile } from 'react-icons/vsc';
 import { IoDocumentLockOutline } from 'react-icons/io5';
 import { BiMessageRoundedDots } from 'react-icons/bi';
-import { GrGroup } from 'react-icons/gr';
+import { HiOutlineUserGroup } from 'react-icons/hi';
 import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
@@ -123,7 +123,7 @@ const Sidenav = (props) => {
     {
       label: 'External Search Info',
       key: 'externalsearchinfo',
-      icon: <GrGroup />,
+      icon: <HiOutlineUserGroup />,
       children: [{ label: 'Google Search', key: 'googlesearch', icon: '' }],
     },
   ];

@@ -16,7 +16,7 @@ import constants from '../constant/routesConstant';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { CiSearch } from 'react-icons/ci';
-import star from '../images/svg/star.svg';
+// import star from '../images/svg/star.svg';
 import bookmark from '../images/svg/questMark.svg';
 import fridaySearch from '../images/svg/fridayLogo.svg';
 import sun from '../images/svg/sun.svg';
@@ -172,7 +172,7 @@ const NewCase = () => {
             {isOpen && <DrawerInfo />}
           </div>
           <form onSubmit={handleSubmit} className="searchbar-box">
-            <img src={fridaySearch} alt="star" />
+            <img src={fridaySearch} alt="star" className="p-3.5" />
             <input
               type="text"
               className="search-bar-NC"

@@ -37,7 +37,7 @@
 }
 
 .search-bar-NC {
-  /* border-radius: 0px 30px 30px 0px; */
+  border-radius: 0px 30px 30px 0px;
   border-left: 2px solid var(--primary-color);
   border-right: none;
   border-top: none;
@@ -63,7 +63,11 @@
 }
 .searchbar-logo {
   height: 2.2rem;
+  width: 3rem;
   margin: 1rem;
+}
+.searchbar-logo:hover {
+  cursor: pointer;
 }
 
 .container {
