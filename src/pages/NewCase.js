@@ -165,7 +165,7 @@ const NewCase = () => {
         </section>
         <section className="notification_btn">
           <div>
-            <button className="btn-icon" onClick={opendrawer}>
+            <button className="newcase-noti-icon" onClick={opendrawer}>
               <img src={bookmark} alt="" />
             </button>
 
@@ -183,12 +183,12 @@ const NewCase = () => {
             <CiSearch className="searchbar-logo" />
           </form>
           <div>
-            <button className="btn-icon theme-newcase" onClick={themeChange}>
+            <button className="newcase-noti-icon" onClick={themeChange}>
               <img src={sun} alt="" />
             </button>
           </div>
           <div>
-            <button className="btn-icon" onClick={notification}>
+            <button className="btn-icon newcase-noti-icon" onClick={notification}>
               <img src={bell} alt="" />
             </button>
             {/* NOTIFICATION BUTTON DATA---------------------------------------------------------------- */}
@@ -368,7 +368,7 @@ const NewCase = () => {
           </div>
           <div>
             <button
-              className="btn-icon member-icon hover-member"
+              className="btn-icon member-icon hover-member newcase-noti-icon"
               onClick={openprofile}
             >
               <img src={user} alt="" />

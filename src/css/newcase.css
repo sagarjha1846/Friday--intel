@@ -402,7 +402,7 @@ border-bottom: none;
 /* .react-flow__pane{
   background-color: var(--secondary-color);
 } */
-.theme-newcase {
+.newcase-noti-icon {
   border: 2px solid var(--primary-color);
   outline: none;
   background-color: white;
