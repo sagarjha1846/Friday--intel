@@ -412,3 +412,8 @@ border-bottom: none;
   box-shadow: 0px 5px 0px 0px var(--primary-color-1);
   cursor: pointer;
 }
+.search-logo{
+  background-color: #ffffff;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 1.45rem;
+}
