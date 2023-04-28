@@ -11,7 +11,7 @@ const ROUTES = {
   page404: '/*',
 };
 
-const backendURL = 'https://api.fridayintel.in/api-dev/';
+const backendURL = 'https://fridayintel.io/api-dev/';
 
 const constants = { ROUTES, backendURL };
 

@@ -183,7 +183,7 @@ const NewCase = () => {
             <CiSearch className="searchbar-logo" />
           </form>
           <div>
-            <button className="btn-icon" onClick={themeChange}>
+            <button className="btn-icon theme-newcase" onClick={themeChange}>
               <img src={sun} alt="" />
             </button>
           </div>

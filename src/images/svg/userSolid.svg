@@ -6,7 +6,7 @@
                 xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M18 9C18 12.3137 15.3137 15 12 15C8.68634 15 6 12.3137 6 9C6 5.68634 8.68634 3 12 3C15.3137 3 18 5.68634 18 9Z"
-                  fill="black"
+                  fill="#ffffff"
                   fillOpacity="0.1"
                 />
                 <path
