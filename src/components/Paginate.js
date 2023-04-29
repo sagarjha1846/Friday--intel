@@ -17,13 +17,15 @@ const Paginate = ({
       <div className="pagination flex gap-4 justify-between align-middle content-center self-center items-center">
         <button
           onClick={previousPage}
-          className="page-number border-2 p-2 shadow-md rounded-sm px-10">
+          className="page-number border-2 p-2 shadow-md rounded-sm px-10"
+        >
           Prev
         </button>
 
         <button
           onClick={nextPage}
-          className="page-number border-2 p-2 shadow-md rounded-sm px-10">
+          className="page-number border-2 p-2 shadow-md rounded-sm px-10"
+        >
           Next
         </button>
       </div>

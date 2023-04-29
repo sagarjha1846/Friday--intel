@@ -28,7 +28,7 @@ const DrawerInfo = () => {
             <br />
             <div className="searchbar-box-help">
               <svg
-                className="searchbar-logo"
+                className="pt-2"
                 width="27"
                 height="24"
                 viewBox="0 0 27 24"
@@ -438,7 +438,7 @@ const DrawerInfo = () => {
                 className="search-bar-NC"
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Type something......"
-                value={search}
+                disabled
               />
             </div>
             <p>

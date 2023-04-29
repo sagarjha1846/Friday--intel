@@ -7,6 +7,8 @@
   height: 84vh !important;
   overflow: auto;
   color: var(--primary-color);
+  display: flex;
+  width: 20vw;
 }
 .sidebar li {
   color: var(--primary-color);
@@ -22,7 +24,7 @@
 }
 .terrorist-profiling_logo {
   height: 2.6rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
   margin-left: 0.8rem;
   padding-top: 0.7rem;
 }

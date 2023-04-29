@@ -53,11 +53,11 @@
 .close-btn svg {
   display: flex;
   position: absolute;
-  left: 370px;
+  left: 39.5rem;
   top: 9px;
-  width: 24px;
-  height: 24px;
-  border-radius: 91px;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 9.1rem;
   border: 1px solid var(--secondary-color);
 }
 .close-btn svg {

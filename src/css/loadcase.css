@@ -27,8 +27,15 @@
   cursor: pointer;
 }
 .loadcase-table {
-  height: 70vh;
   flex: 1 1 20%;
   /* margin: 4rem; */
   font-size: 2rem;
+}
+/* .css-8atqhb{
+  overflow: scroll;
+} */
+.css-1mxz8qt-MuiPaper-root {
+  /* height: 80vh; */
+  height: 70vh;
+  overflow: scroll;
 }

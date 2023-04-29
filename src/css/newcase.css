@@ -37,7 +37,7 @@
 }
 
 .search-bar-NC {
-  /* border-radius: 0px 30px 30px 0px; */
+  border-radius: 0px 30px 30px 0px;
   border-left: 2px solid var(--primary-color);
   border-right: none;
   border-top: none;
@@ -63,7 +63,11 @@
 }
 .searchbar-logo {
   height: 2.2rem;
+  width: 3rem;
   margin: 1rem;
+}
+.searchbar-logo:hover {
+  cursor: pointer;
 }
 
 .container {
@@ -131,7 +135,7 @@
   background-color: var(--secondary-color);
   position: absolute;
   top: 9rem;
-  width: 425px;
+  width: 45rem;
   height: 75vh;
   box-sizing: border-box;
   transition: top 0.5s ease-out;
@@ -146,7 +150,7 @@
 }
 .help2 {
   overflow-y: scroll;
-  width: 420px;
+  width: 44.5rem;
   overflow-x: hidden;
   padding-left: 5px;
   /* border-bottom: 2x solid var(--primary-color); */
@@ -398,3 +402,18 @@ border-bottom: none;
 /* .react-flow__pane{
   background-color: var(--secondary-color);
 } */
+.newcase-noti-icon {
+  border: 2px solid var(--primary-color);
+  outline: none;
+  background-color: white;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all ease 0.1s;
+  box-shadow: 0px 5px 0px 0px var(--primary-color-1);
+  cursor: pointer;
+}
+.search-logo{
+  background-color: #ffffff;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 1.45rem;
+}
