@@ -62,7 +62,7 @@ const NewCase = () => {
     htmlElement.style.setProperty('--primary-color-1', SECONDARY);
     htmlElement.style.setProperty('--secondary-color', PRIMARY);
 
-    label.style.backgroundSize = 'cover';
+    // label.style.backgroundSize = 'cover';
     // const logotheme = document.getElementsByClassName(".inactive")
     // // eslint-disable-next-line no-unused-expressions
     // logotheme.classList.remove("inactive")
@@ -106,7 +106,7 @@ const NewCase = () => {
     setIsLoading(true);
 
     axios
-      .get(`https://fridayintel.io/api-dev/canvas.php?query=${search}`)
+      .get(`https://fridayintel.in/api-dev/canvas.php?query=${search}`)
 
       .then((response) => {
         setNodeInfo({ query: search, data: response?.data });
