@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { createRef, useCallback, useRef, useState } from 'react';
 import { addEdge, useEdgesState, useNodesState } from 'reactflow';
 import { toPng } from 'html-to-image';
 import Footer from '../components/Footer-newcase';
@@ -16,7 +16,6 @@ import constants from '../constant/routesConstant';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { CiSearch } from 'react-icons/ci';
-// import star from '../images/svg/star.svg';
 import bookmark from '../images/svg/questMark.svg';
 import fridaySearch from '../images/svg/fridayLogo.svg';
 import sun from '../images/svg/sun.svg';
@@ -24,7 +23,7 @@ import bell from '../images/svg/bell.svg';
 import user from '../images/svg/userSolid.svg';
 
 const NewCase = () => {
-  const { ROUTES } = constants;
+  const { ROUTES, backendURL } = constants;
   const [mode, setMode] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   // const [isactiv, setIsactiv] = useState(false);
@@ -106,8 +105,7 @@ const NewCase = () => {
     setIsLoading(true);
 
     axios
-      .get(`https://fridayintel.in/api-dev/canvas.php?query=${search}`)
-
+      .get(`${backendURL}/canvas.php?query=${search}`)
       .then((response) => {
         setNodeInfo({ query: search, data: response?.data });
 
@@ -516,7 +514,7 @@ const NewCase = () => {
             />
           ) : null}
         </div>
-        <div className="canvasSection ">
+        <div className="canvasSection" >
           {isLoading ? (
             <div className=" w-full h-full grid place-content-center">
               <MagnifyingGlass
@@ -545,6 +543,7 @@ const NewCase = () => {
         <div className="toolSection-container">
           <div className="toolSection">
             <Tool
+            
               onLayout={onLayout}
               canvasFunc={canvasFunc}
               toPng={toPng}
