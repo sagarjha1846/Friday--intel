@@ -494,25 +494,29 @@ const NewCase = () => {
         </span>
       )}
       <div className="container">
-        <div className="sideNavSection">
-          <SideNav
-            setActiveMenu={setActiveMenu}
-            nodeInfo={nodeInfo}
-            searchRef={searchRef.current}
-            activeMenu={activeMenu}
-          />
-          {nodeInfo && activeMenu !== '' ? (
-            <NodeList
-              activeMenu={activeMenu}
+        <div className='flex'>
+          <div className="sideNavSection">
+            <SideNav
+              setActiveMenu={setActiveMenu}
+              nodeInfo={nodeInfo}
               searchRef={searchRef.current}
-              nodes={nodes}
-              nodeList={nodeInfo}
-              setNodes={setNodes}
-              setEdges={setEdges}
-              isChecked={isChecked}
-              setIsChecked={setIsChecked}
+              activeMenu={activeMenu}
             />
-          ) : null}
+          </div>
+          <div>
+            {nodeInfo && activeMenu !== '' ? (
+              <NodeList
+                activeMenu={activeMenu}
+                searchRef={searchRef.current}
+                nodes={nodes}
+                nodeList={nodeInfo}
+                setNodes={setNodes}
+                setEdges={setEdges}
+                isChecked={isChecked}
+                setIsChecked={setIsChecked}
+              />
+            ) : null}
+          </div>
         </div>
         <div className="canvasSection" >
           {isLoading ? (
@@ -543,7 +547,7 @@ const NewCase = () => {
         <div className="toolSection-container">
           <div className="toolSection">
             <Tool
-            
+
               onLayout={onLayout}
               canvasFunc={canvasFunc}
               toPng={toPng}
