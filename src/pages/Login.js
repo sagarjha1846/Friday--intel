@@ -5,7 +5,6 @@ import dayImage from '../images/day.png';
 import light from '../images/logo.png';
 import user from '../images/user.png';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 // import dark from "../images/darklogo.jpeg"
 import dark from '../images/svg/darklogo.svg';
 import LoginContext from '../context/LoginContext';

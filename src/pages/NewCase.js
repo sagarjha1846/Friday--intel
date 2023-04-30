@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, {
   createRef,
   useCallback,
@@ -33,7 +34,7 @@ import LoginContext from '../context/LoginContext';
 const NewCase = () => {
   const { ROUTES, backendURL } = constants;
   const ref = createRef(null);
-  const [image, takeScreenshot] = useScreenshot({
+  const [_, takeScreenshot] = useScreenshot({
     type: 'image/jpeg',
     quality: 1.0,
   });

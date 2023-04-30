@@ -1,11 +1,8 @@
-import * as React from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import constants from '../constant/routesConstant';
 import LoginContext from '../context/LoginContext';
-import { useEffect } from 'react';
-import { useContext } from 'react';
 import axios from 'axios';
-import { useState } from 'react';
 
 const columns = [
   { field: 'id', headerName: 'ID', flex: 1 },
@@ -38,7 +35,7 @@ export default function Table() {
       })
       .then((res) => setRows(res.data.map((el) => ({ ...el, id: el.caseid }))))
       .catch((err) => console.log(err));
-  }, []);
+  }, [backendURL, jwtToken]);
 
   const handlePageChange = (params) => {
     setPage(params.page);

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import '../css/navbar.css';
-import { useNavigate, useNavigation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import constants from '../constant/routesConstant';
 import DrawerInfo from './DrawerInfo';
