@@ -1,4 +1,10 @@
-import React, { createRef, useCallback, useRef, useState } from 'react';
+import React, {
+  createRef,
+  useCallback,
+  useContext,
+  useRef,
+  useState,
+} from 'react';
 import { addEdge, useEdgesState, useNodesState } from 'reactflow';
 import { toPng } from 'html-to-image';
 import Footer from '../components/Footer-newcase';
@@ -22,6 +28,7 @@ import sun from '../images/svg/sun.svg';
 import bell from '../images/svg/bell.svg';
 import user from '../images/svg/userSolid.svg';
 import { createFileName, useScreenshot } from 'use-react-screenshot';
+import LoginContext from '../context/LoginContext';
 
 const NewCase = () => {
   const { ROUTES, backendURL } = constants;
@@ -47,6 +54,7 @@ const NewCase = () => {
   const [search, setSearch] = useState('');
   const [activeMenu, setActiveMenu] = useState('');
   const [mode, setMode] = useState(true);
+  const { logout, jwtToken } = useContext(LoginContext);
   const download = (image, { name = 'img', extension = 'jpg' } = {}) => {
     const a = document.createElement('a');
     a.href = image;
@@ -135,8 +143,10 @@ const NewCase = () => {
         casename: nodeInfo ? nodeInfo.query : 'Sunny',
       };
       axios
-        .post(`${backendURL}/newcase.php`, data, {
-          headers: { sessionid: '' },
+        .post(`${backendURL}newcase.php`, data, {
+          headers: {
+            Authorization: jwtToken,
+          },
         })
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
@@ -169,6 +179,11 @@ const NewCase = () => {
         setIsLoading(false);
       })
       .catch((err) => console.log(err));
+  };
+
+  const handleLogOut = () => {
+    logout();
+    navigate('/login');
   };
   return (
     <>
@@ -534,7 +549,7 @@ const NewCase = () => {
             >
               Membership info
             </button>
-            <span className="logout-btn" onClick={() => navigate(ROUTES.login)}>
+            <span className="logout-btn" onClick={handleLogOut}>
               <AiOutlineLogout className="logout-icon" />
               <h4>Log Out</h4>
             </span>

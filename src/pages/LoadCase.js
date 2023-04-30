@@ -7,16 +7,10 @@ import Table from '../components/Table';
 import { useNavigate } from 'react-router-dom';
 import '../css/loadcase.css';
 import constants from '../constant/routesConstant';
-import axios from 'axios';
 
 const LoadCase = () => {
-  const { ROUTES, backendURL } = constants;
-  useEffect(() => {
-    axios
-      .get(`${backendURL}/caselist.php`)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  }, []);
+  const { ROUTES } = constants;
+  
 
   const navigate = useNavigate();
   return (

@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../css/navbar.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useNavigation } from 'react-router-dom';
 import { useState } from 'react';
 import constants from '../constant/routesConstant';
 import DrawerInfo from './DrawerInfo';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { CiSearch } from 'react-icons/ci';
+import LoginContext from '../context/LoginContext';
 
 const Navbar = () => {
   const { ROUTES } = constants;
@@ -16,6 +17,7 @@ const Navbar = () => {
   const [isHovering, setIsHovering] = useState(false);
   // const [isactiv, setIsactiv] = useState(false);
   const [mode, setMode] = useState(true);
+  const { logout } = useContext(LoginContext);
 
   const opendrawer = () => {
     setIsOpen(!isOpen);
@@ -56,6 +58,11 @@ const Navbar = () => {
     // // eslint-disable-next-line no-unused-expressions
     // logotheme.classList.remove("inactive")
   }
+
+  const handleLogOut = () => {
+    logout();
+    navigate('/login');
+  };
 
   return (
     <nav className="nav_bar">
@@ -1256,10 +1263,7 @@ const Navbar = () => {
                 <button className="member_btn_membership">
                   Membership info
                 </button>
-                <span
-                  className="logout-btn"
-                  onClick={() => navigate(ROUTES.login)}
-                >
+                <span className="logout-btn" onClick={handleLogOut}>
                   <AiOutlineLogout className="logout-icon" />
 
                   <h4>Log Out</h4>

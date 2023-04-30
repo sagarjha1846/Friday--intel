@@ -1,6 +1,6 @@
 const ROUTES = {
-  login: '/',
-  home: '/home',
+  login: '/login',
+  home: '/',
   forgotPassword: '/forgot-password',
   newCase: '/newcase',
   caseBlog: '/caseblog',

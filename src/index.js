@@ -5,17 +5,23 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { BrowserView, MobileView } from 'react-device-detect';
 import Mobile404 from './pages/Mobile404';
+import LoginProvider from './context/LoginProvider';
+import { ProSidebarProvider } from 'react-pro-sidebar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      <BrowserView>
-        <App />
-      </BrowserView>
+      <ProSidebarProvider>
+        <LoginProvider>
+          <BrowserView>
+            <App />
+          </BrowserView>
+          <MobileView>
+            <Mobile404 />
+          </MobileView>
+        </LoginProvider>
+      </ProSidebarProvider>
     </Router>
-    <MobileView>
-      <Mobile404 />
-    </MobileView>
   </React.StrictMode>,
 );
