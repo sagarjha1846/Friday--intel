@@ -21,10 +21,16 @@ import fridaySearch from '../images/svg/fridayLogo.svg';
 import sun from '../images/svg/sun.svg';
 import bell from '../images/svg/bell.svg';
 import user from '../images/svg/userSolid.svg';
+import { createFileName, useScreenshot } from 'use-react-screenshot';
 
 const NewCase = () => {
   const { ROUTES, backendURL } = constants;
-  const [mode, setMode] = useState(true);
+  const ref = createRef(null);
+  const [image, takeScreenshot] = useScreenshot({
+    type: 'image/jpeg',
+    quality: 1.0,
+  });
+
   const [isOpen, setIsOpen] = useState(false);
   // const [isactiv, setIsactiv] = useState(false);
   const [isshow, setIsshow] = useState(false);
@@ -40,6 +46,15 @@ const NewCase = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [activeMenu, setActiveMenu] = useState('');
+  const [mode, setMode] = useState(true);
+  const flowRef = useRef(null);
+  const download = (image, { name = 'img', extension = 'jpg' } = {}) => {
+    const a = document.createElement('a');
+    a.href = image;
+    a.download = createFileName(extension, name);
+    a.click();
+  };
+  const getImage = () => takeScreenshot(ref.current).then(download);
 
   const onConnect = useCallback(
     (params) => setEdges((eds) => addEdge(params, eds)),
@@ -93,6 +108,19 @@ const NewCase = () => {
 
   const notification = () => {
     setIsshow(!isshow);
+  };
+
+  const handleFullScreen = () => {
+    console.log('i was called');
+    if (ref.current) {
+      if (ref.current.requestFullscreen) {
+        ref.current.requestFullscreen();
+      } else if (ref.current.webkitRequestFullscreen) {
+        ref.current.webkitRequestFullscreen();
+      } else if (ref.current.msRequestFullscreen) {
+        ref.current.msRequestFullscreen();
+      }
+    }
   };
 
   const handleChange = (e) => {
@@ -186,7 +214,10 @@ const NewCase = () => {
             </button>
           </div>
           <div>
-            <button className="btn-icon newcase-noti-icon" onClick={notification}>
+            <button
+              className="btn-icon newcase-noti-icon"
+              onClick={notification}
+            >
               <img src={bell} alt="" />
             </button>
             {/* NOTIFICATION BUTTON DATA---------------------------------------------------------------- */}
@@ -494,7 +525,7 @@ const NewCase = () => {
         </span>
       )}
       <div className="container">
-        <div className='flex'>
+        <div className="flex">
           <div className="sideNavSection">
             <SideNav
               setActiveMenu={setActiveMenu}
@@ -518,7 +549,8 @@ const NewCase = () => {
             ) : null}
           </div>
         </div>
-        <div className="canvasSection" >
+
+        <div className="canvasSection" ref={ref}>
           {isLoading ? (
             <div className=" w-full h-full grid place-content-center">
               <MagnifyingGlass
@@ -544,10 +576,12 @@ const NewCase = () => {
             />
           )}
         </div>
+
         <div className="toolSection-container">
           <div className="toolSection">
             <Tool
-
+              zoomAction={handleFullScreen}
+              getImage={getImage}
               onLayout={onLayout}
               canvasFunc={canvasFunc}
               toPng={toPng}
@@ -556,6 +590,7 @@ const NewCase = () => {
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );
