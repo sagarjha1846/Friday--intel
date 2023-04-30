@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from 'react';
 import '../css/navbar.css';
 import Navbar from '../components/Navbar';
 import { StyledEngineProvider } from '@mui/material/styles';
@@ -6,9 +7,17 @@ import Table from '../components/Table';
 import { useNavigate } from 'react-router-dom';
 import '../css/loadcase.css';
 import constants from '../constant/routesConstant';
+import axios from 'axios';
 
 const LoadCase = () => {
-  const { ROUTES } = constants;
+  const { ROUTES, backendURL } = constants;
+  useEffect(() => {
+    axios
+      .get(`${backendURL}/caselist.php`)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }, []);
+
   const navigate = useNavigate();
   return (
     <>

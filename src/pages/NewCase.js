@@ -47,7 +47,6 @@ const NewCase = () => {
   const [search, setSearch] = useState('');
   const [activeMenu, setActiveMenu] = useState('');
   const [mode, setMode] = useState(true);
-  const flowRef = useRef(null);
   const download = (image, { name = 'img', extension = 'jpg' } = {}) => {
     const a = document.createElement('a');
     a.href = image;
@@ -66,7 +65,7 @@ const NewCase = () => {
 
     const htmlElement = document.querySelector('html');
     // set theme button background
-    const label = document.querySelector('#theme-label');
+    // const label = document.querySelector('#theme-label');
     const PRIMARY =
       getComputedStyle(htmlElement).getPropertyValue('--primary-color');
     const SECONDARY =
@@ -111,7 +110,6 @@ const NewCase = () => {
   };
 
   const handleFullScreen = () => {
-    console.log('i was called');
     if (ref.current) {
       if (ref.current.requestFullscreen) {
         ref.current.requestFullscreen();
@@ -125,6 +123,26 @@ const NewCase = () => {
 
   const handleChange = (e) => {
     setSearch(e.target.value);
+  };
+
+  const saveNode = () => {
+    if (nodes.length > 0 && edges.length > 0) {
+      console.log('you want to save the node');
+      const data = {
+        edges,
+        nodes,
+        caseid: 123,
+        casename: nodeInfo ? nodeInfo.query : 'Sunny',
+      };
+      axios
+        .post(`${backendURL}/newcase.php`, data, {
+          headers: { sessionid: '' },
+        })
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+    } else {
+      alert('No node is present in the canvas to be saved!');
+    }
   };
 
   const handleSubmit = (e) => {
@@ -158,7 +176,7 @@ const NewCase = () => {
         <section className="logo_box">
           <div className="case-dashboard">
             <div>
-              <button className="btn-icon bookmark">
+              <button className="btn-icon bookmark" onClick={saveNode}>
                 <svg
                   width="23"
                   height="23"
