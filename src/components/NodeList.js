@@ -41,7 +41,7 @@ const NodeList = (props) => {
               ...prev,
               {
                 id: data ? data : 'no record',
-                type: 'custom',
+                type: 'MyCustomNode',
                 data: { label: data ? data : undefined },
                 position: {
                   x: Math.floor(Math.random() * 400),
@@ -81,7 +81,6 @@ const NodeList = (props) => {
       setCurrentPage(currentPage + 1);
     }
   };
-  console.log(nodeList);
 
   const slicedData = nodeList.data[activeMenu]?.slice(
     indexOfFirstPost,

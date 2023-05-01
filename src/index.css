@@ -37,3 +37,7 @@ code {
 .app::-webkit-scrollbar {
   display: none;
 }
+
+.node {
+  transition: transform 0.3s ease-in-out;
+}

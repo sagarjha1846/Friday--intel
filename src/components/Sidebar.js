@@ -17,11 +17,9 @@ import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
 } from 'react-icons/md';
-import { useEffect } from 'react';
 
 const Sidenav = (props) => {
-  const { nodeInfo, setActiveMenu, activeMenu } = props;
-  console.log(nodeInfo);
+  const { nodeInfo, setActiveMenu } = props;
   const { collapseSidebar } = useProSidebar();
   const [collapsed, setCollapsed] = useState(false);
   const [toggled, setToggled] = useState(false);
@@ -32,12 +30,6 @@ const Sidenav = (props) => {
   const handleToggleSidebar = (value) => {
     setToggled(value);
   };
-
-  useEffect(() => {
-    if (activeMenu !== '') {
-      setToggled(true);
-    }
-  }, [activeMenu]);
 
   const menu = [
     {

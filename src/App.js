@@ -18,7 +18,6 @@ import { useContext } from 'react';
 const App = () => {
   const { ROUTES } = constants;
   const { isLoggedIn } = useContext(LoginContext);
-  console.log(isLoggedIn);
   return (
     <Routes>
       <Route element={<PrivateRoute />}>

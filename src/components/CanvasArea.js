@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactFlow, { MiniMap, Background } from 'reactflow';
+import ReactFlow, { MiniMap, Background, useReactFlow } from 'reactflow';
 
 import 'reactflow/dist/style.css';
 import '../css/canvas.css';
@@ -12,6 +12,9 @@ const OverviewFlow = (props) => {
 
   return (
     <ReactFlow
+      snapToGrid={true}
+      snapGrid={[16, 16]}
+      snapLineDragInterval={50}
       nodes={nodes}
       edges={edges}
       onNodesChange={onNodesChange}
