@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, {
   createRef,
   useCallback,
@@ -6,6 +5,9 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import React, { createRef, useCallback, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet';
+
 import { addEdge, useEdgesState, useNodesState } from 'reactflow';
 import { toPng } from 'html-to-image';
 import Footer from '../components/Footer-newcase';
@@ -188,6 +190,9 @@ const NewCase = () => {
   };
   return (
     <>
+     <Helmet>
+        <title>FridayIntel-NewCase</title>
+      </Helmet>
       <nav className="nav_bar">
         <section className="logo_box">
           <div className="case-dashboard">
