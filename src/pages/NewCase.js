@@ -1,5 +1,13 @@
+import React, {
+  createRef,
+  useCallback,
+  useContext,
+  useRef,
+  useState,
+} from 'react';
 import React, { createRef, useCallback, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
+
 import { addEdge, useEdgesState, useNodesState } from 'reactflow';
 import { toPng } from 'html-to-image';
 import Footer from '../components/Footer-newcase';
@@ -23,11 +31,12 @@ import sun from '../images/svg/sun.svg';
 import bell from '../images/svg/bell.svg';
 import user from '../images/svg/userSolid.svg';
 import { createFileName, useScreenshot } from 'use-react-screenshot';
+import LoginContext from '../context/LoginContext';
 
 const NewCase = () => {
   const { ROUTES, backendURL } = constants;
   const ref = createRef(null);
-  const [image, takeScreenshot] = useScreenshot({
+  const [_, takeScreenshot] = useScreenshot({
     type: 'image/jpeg',
     quality: 1.0,
   });
@@ -48,7 +57,7 @@ const NewCase = () => {
   const [search, setSearch] = useState('');
   const [activeMenu, setActiveMenu] = useState('');
   const [mode, setMode] = useState(true);
-  const flowRef = useRef(null);
+  const { logout, jwtToken } = useContext(LoginContext);
   const download = (image, { name = 'img', extension = 'jpg' } = {}) => {
     const a = document.createElement('a');
     a.href = image;
@@ -67,7 +76,7 @@ const NewCase = () => {
 
     const htmlElement = document.querySelector('html');
     // set theme button background
-    const label = document.querySelector('#theme-label');
+    // const label = document.querySelector('#theme-label');
     const PRIMARY =
       getComputedStyle(htmlElement).getPropertyValue('--primary-color');
     const SECONDARY =
@@ -112,7 +121,6 @@ const NewCase = () => {
   };
 
   const handleFullScreen = () => {
-    console.log('i was called');
     if (ref.current) {
       if (ref.current.requestFullscreen) {
         ref.current.requestFullscreen();
@@ -126,6 +134,28 @@ const NewCase = () => {
 
   const handleChange = (e) => {
     setSearch(e.target.value);
+  };
+
+  const saveNode = () => {
+    if (nodes.length > 0 && edges.length > 0) {
+      console.log('you want to save the node');
+      const data = {
+        edges,
+        nodes,
+        caseid: 123,
+        casename: nodeInfo ? nodeInfo.query : 'Sunny',
+      };
+      axios
+        .post(`${backendURL}newcase.php`, data, {
+          headers: {
+            Authorization: jwtToken,
+          },
+        })
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+    } else {
+      alert('No node is present in the canvas to be saved!');
+    }
   };
 
   const handleSubmit = (e) => {
@@ -153,6 +183,11 @@ const NewCase = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  const handleLogOut = () => {
+    logout();
+    navigate('/login');
+  };
   return (
     <>
      <Helmet>
@@ -162,7 +197,7 @@ const NewCase = () => {
         <section className="logo_box">
           <div className="case-dashboard">
             <div>
-              <button className="btn-icon bookmark">
+              <button className="btn-icon bookmark" onClick={saveNode}>
                 <svg
                   width="23"
                   height="23"
@@ -520,7 +555,7 @@ const NewCase = () => {
             >
               Membership info
             </button>
-            <span className="logout-btn" onClick={() => navigate(ROUTES.login)}>
+            <span className="logout-btn" onClick={handleLogOut}>
               <AiOutlineLogout className="logout-icon" />
               <h4>Log Out</h4>
             </span>

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import '../css/navbar.css';
 import Navbar from '../components/Navbar';
@@ -9,6 +10,8 @@ import constants from '../constant/routesConstant';
 
 const LoadCase = () => {
   const { ROUTES } = constants;
+  
+
   const navigate = useNavigate();
   return (
     <>

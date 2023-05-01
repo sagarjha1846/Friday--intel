@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../css/login.css';
 import nightImage from '../images/night.png';
 import dayImage from '../images/day.png';
 import light from '../images/logo.png';
 import user from '../images/user.png';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 // import dark from "../images/darklogo.jpeg"
 import dark from '../images/svg/darklogo.svg';
+import LoginContext from '../context/LoginContext';
 
 // function handleclick(){
 //     Navigate("/caseBlog")
 // }
 
 const Login = () => {
+  const { login } = useContext(LoginContext);
   const [mode, setMode] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,31 +24,15 @@ const Login = () => {
   function handleforgetpassword() {
     Navigate('/forgot-password');
   }
-  async function loggingIn(event) {
-    console.warn(email, password);
-
-    try {
-      const response = await axios.post(
-        'https://fridayintel.io/api-dev/login.php',
-        {
-          username: email,
-          password: password,
-        },
-      );
-
-      if (response.data.Login === 'Success') {
-        // <Navigate to="/products" />
-        Navigate('/home');
-      }
-      if (response.data.Login === 'Failed') {
+  function loggingIn(event) {
+    event.preventDefault();
+    login(email, password)
+      .then(() => {
+        Navigate('/');
+      })
+      .catch((err) => {
         setError('Wrong Username or Password! Enter valid credentials.');
-      }
-    } catch (error) {
-      setError('Wrong Username or Password! Enter valid credentials.');
-    }
-
-    // localStorage.setItem('username', response.data)
-    // console.log(response.data)
+      });
 
     const arrowSvg = document.querySelector('.login-svg');
     arrowSvg?.classList.add('login-animation');
