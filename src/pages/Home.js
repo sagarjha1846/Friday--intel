@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import constants from '../constant/routesConstant';
@@ -11,6 +12,9 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>FridayIntel-Home</title>
+      </Helmet>
       <Navbar />
       <section className="cases">
         <article
