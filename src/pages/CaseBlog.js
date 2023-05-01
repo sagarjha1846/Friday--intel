@@ -1,10 +1,14 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Navbar from '../components/Navbar';
 import '../css/caseblog.css';
 
 const CaseBlog = () => {
   return (
     <div>
+      <Helmet>
+        <title>FridayIntel-CaseBlog</title>
+      </Helmet>
       <Navbar />
       <section className="cases">
         <article className="case_cards">

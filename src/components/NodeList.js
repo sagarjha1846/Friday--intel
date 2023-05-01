@@ -90,21 +90,21 @@ const NodeList = (props) => {
     <Menu className="w-full">
       {slicedData &&
         slicedData?.map((node, index) => (
-          <div className='node-list'>
-          <ul className="listItem p-1" key={index}>
-            <li className="listName line-clamp-2">{node || '-'}</li>
-            {isChecked[node] ? (
-              <ImCheckboxChecked
-                size={'25px'}
-                onClick={() => setNodeInCanvas(node)}
-              />
-            ) : (
-              <AiFillPlusSquare
-                size={'25px'}
-                onClick={() => setNodeInCanvas(node)}
-              />
-            )}
-          </ul>
+          <div className="node-list">
+            <ul className="listItem p-1" key={index}>
+              <li className="listName line-clamp-2">{node || '-'}</li>
+              {isChecked[node] ? (
+                <ImCheckboxChecked
+                  size={'25px'}
+                  onClick={() => setNodeInCanvas(node)}
+                />
+              ) : (
+                <AiFillPlusSquare
+                  size={'25px'}
+                  onClick={() => setNodeInCanvas(node)}
+                />
+              )}
+            </ul>
           </div>
         ))}
       <div className="grid place-content-center ">

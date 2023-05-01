@@ -31,11 +31,11 @@
   /* margin: 4rem; */
   font-size: 2rem;
 }
-/* .css-8atqhb{
-  overflow: scroll;
-} */
-.css-1mxz8qt-MuiPaper-root {
-  /* height: 80vh; */
-  height: 70vh;
-  overflow: scroll;
+.css-204u17-MuiDataGrid-main,
+.css-rtrcn9-MuiTablePagination-root:last-child,
+.css-zylse7-MuiButtonBase-root-MuiIconButton-root.Mui-disabled,
+.css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon,
+.css-de9k3v-MuiDataGrid-selectedRowCount,
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+  color: var(--primary-color);
 }

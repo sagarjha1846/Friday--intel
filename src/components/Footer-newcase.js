@@ -9,8 +9,8 @@ const Footer = ({ searchTerm, setSearchTerm }) => {
       <section className="footer_container">
         <section className="footer-logo ">
           <svg
-            width="140"
-            height="55"
+            width="113"
+            height="47"
             viewBox="0 0 151 60"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

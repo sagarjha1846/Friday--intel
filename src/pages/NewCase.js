@@ -6,6 +6,7 @@ import React, {
   useState,
 } from 'react';
 import { Helmet } from 'react-helmet';
+<<<<<<< HEAD
 
 import {
   ReactFlowProvider,
@@ -14,6 +15,9 @@ import {
   useEdgesState,
   useNodesState,
 } from 'reactflow';
+=======
+import { addEdge, useEdgesState, useNodesState } from 'reactflow';
+>>>>>>> develop
 import { toPng } from 'html-to-image';
 import Footer from '../components/Footer-newcase';
 import CanvasArea from '../components/CanvasArea';
@@ -81,10 +85,7 @@ const NewCase = () => {
 
   function themeChange(event) {
     setMode(!mode);
-
     const htmlElement = document.querySelector('html');
-    // set theme button background
-    // const label = document.querySelector('#theme-label');
     const PRIMARY =
       getComputedStyle(htmlElement).getPropertyValue('--primary-color');
     const SECONDARY =
@@ -93,11 +94,6 @@ const NewCase = () => {
     htmlElement.style.setProperty('--primary-color', SECONDARY);
     htmlElement.style.setProperty('--primary-color-1', SECONDARY);
     htmlElement.style.setProperty('--secondary-color', PRIMARY);
-
-    // label.style.backgroundSize = 'cover';
-    // const logotheme = document.getElementsByClassName(".inactive")
-    // // eslint-disable-next-line no-unused-expressions
-    // logotheme.classList.remove("inactive")
   }
 
   const openprofile = () => {
@@ -143,7 +139,6 @@ const NewCase = () => {
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
-
   const saveNode = () => {
     if (nodes.length > 0 && edges.length > 0) {
       const data = {
@@ -152,6 +147,7 @@ const NewCase = () => {
         caseid: uuidv4(),
         casename: nodeInfo ? nodeInfo.query : 'Sunny',
       };
+      console.log(data);
       axios
         .post(`${backendURL}newcase.php`, data, {
           headers: {

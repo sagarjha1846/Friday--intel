@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import '../css/forgetpage.css';
 import constants from '../constant/routesConstant';
@@ -14,22 +15,6 @@ const ForgetPassword = () => {
   const [logoo, setLogoo] = useState(light);
   const navigate = useNavigate();
   const { ROUTES } = constants;
-  // function loggingIn(event) {
-  //   const arrowSvg = document.querySelector(".login-svg");
-  //   arrowSvg?.classList.add("login-animation");
-  //   const apiCall = new Promise((resolve, reject) => {
-  //     setTimeout(() => {
-  //       resolve("foo");
-  //     }, 3000);
-  //   });
-
-  //   apiCall.then(() => {
-  //     arrowSvg?.classList.toggle("login-animation");
-  //     arrowSvg.style.display = "none";
-  //     const checkMark = document.querySelector(".check-mark");
-  //     checkMark.style.display = "revert";
-  //   });
-  // }
 
   function themeChange(event) {
     setMode(!mode);
@@ -59,6 +44,9 @@ const ForgetPassword = () => {
 
   return (
     <div className="App">
+      <Helmet>
+        <title>FridayIntel-ForgetPassword</title>
+      </Helmet>
       <main>
         <navbar className="navbar-forgotpage">
           <section className="logo">
