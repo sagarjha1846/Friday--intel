@@ -6,18 +6,13 @@ import React, {
   useState,
 } from 'react';
 import { Helmet } from 'react-helmet';
-<<<<<<< HEAD
 
 import {
   ReactFlowProvider,
   addEdge,
-  isNode,
   useEdgesState,
   useNodesState,
 } from 'reactflow';
-=======
-import { addEdge, useEdgesState, useNodesState } from 'reactflow';
->>>>>>> develop
 import { toPng } from 'html-to-image';
 import Footer from '../components/Footer-newcase';
 import CanvasArea from '../components/CanvasArea';
