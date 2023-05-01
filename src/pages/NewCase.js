@@ -5,9 +5,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import React, { createRef, useCallback, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
-
 import { addEdge, useEdgesState, useNodesState } from 'reactflow';
 import { toPng } from 'html-to-image';
 import Footer from '../components/Footer-newcase';
@@ -32,6 +30,7 @@ import bell from '../images/svg/bell.svg';
 import user from '../images/svg/userSolid.svg';
 import { createFileName, useScreenshot } from 'use-react-screenshot';
 import LoginContext from '../context/LoginContext';
+import { v4 as uuid } from 'uuid';
 
 const NewCase = () => {
   const { ROUTES, backendURL } = constants;
@@ -73,10 +72,7 @@ const NewCase = () => {
 
   function themeChange(event) {
     setMode(!mode);
-
     const htmlElement = document.querySelector('html');
-    // set theme button background
-    // const label = document.querySelector('#theme-label');
     const PRIMARY =
       getComputedStyle(htmlElement).getPropertyValue('--primary-color');
     const SECONDARY =
@@ -85,11 +81,6 @@ const NewCase = () => {
     htmlElement.style.setProperty('--primary-color', SECONDARY);
     htmlElement.style.setProperty('--primary-color-1', SECONDARY);
     htmlElement.style.setProperty('--secondary-color', PRIMARY);
-
-    // label.style.backgroundSize = 'cover';
-    // const logotheme = document.getElementsByClassName(".inactive")
-    // // eslint-disable-next-line no-unused-expressions
-    // logotheme.classList.remove("inactive")
   }
 
   const openprofile = () => {
@@ -135,16 +126,17 @@ const NewCase = () => {
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
-
+  const unique_id = uuid();
   const saveNode = () => {
     if (nodes.length > 0 && edges.length > 0) {
       console.log('you want to save the node');
       const data = {
         edges,
         nodes,
-        caseid: 123,
+        caseid: { unique_id },
         casename: nodeInfo ? nodeInfo.query : 'Sunny',
       };
+      console.log(data);
       axios
         .post(`${backendURL}newcase.php`, data, {
           headers: {
@@ -190,7 +182,7 @@ const NewCase = () => {
   };
   return (
     <>
-     <Helmet>
+      <Helmet>
         <title>FridayIntel-NewCase</title>
       </Helmet>
       <nav className="nav_bar">

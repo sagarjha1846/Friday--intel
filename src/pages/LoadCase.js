@@ -1,5 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import '../css/navbar.css';
 import Navbar from '../components/Navbar';
 import { StyledEngineProvider } from '@mui/material/styles';
@@ -10,11 +10,13 @@ import constants from '../constant/routesConstant';
 
 const LoadCase = () => {
   const { ROUTES } = constants;
-  
 
   const navigate = useNavigate();
   return (
     <>
+      <Helmet>
+        <title>FridayIntel-LoadCase</title>
+      </Helmet>
       <Navbar />
       <section className="loadcase-conatiner">
         <section className="cases">

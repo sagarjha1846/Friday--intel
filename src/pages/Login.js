@@ -5,13 +5,8 @@ import dayImage from '../images/day.png';
 import light from '../images/logo.png';
 import user from '../images/user.png';
 import { useNavigate } from 'react-router-dom';
-// import dark from "../images/darklogo.jpeg"
 import dark from '../images/svg/darklogo.svg';
 import LoginContext from '../context/LoginContext';
-
-// function handleclick(){
-//     Navigate("/caseBlog")
-// }
 
 const Login = () => {
   const { login } = useContext(LoginContext);
@@ -44,7 +39,6 @@ const Login = () => {
 
     apiCall.then(() => {
       arrowSvg?.classList.toggle('login-animation');
-      // arrowSvg.style.display = 'none';
       const checkMark = document.querySelector('.check-mark');
       checkMark.style.display = 'revert';
     });
@@ -54,7 +48,6 @@ const Login = () => {
     setMode(!mode);
 
     const htmlElement = document.querySelector('html');
-    // set theme button background
     const label = document.querySelector('#theme-label');
     if (mode) {
       label.style.background = `url(${nightImage})`;
@@ -71,10 +64,6 @@ const Login = () => {
     htmlElement.style.setProperty('--secondary-color', PRIMARY);
 
     label.style.backgroundSize = 'cover';
-    // const logotheme = document.getElementsByClassName(".inactive")
-    // // eslint-disable-next-line no-unused-expressions
-    // logotheme.classList.remove("inactive")
-
     let value = logoo;
 
     if (value === light) {
@@ -470,7 +459,6 @@ const Login = () => {
                 </radialGradient>
               </defs>
             </svg>
-            {/* <img className='active inactive' src={darklogo} alt="dark logo"/> */}
           </section>
           <section className="theme-toggle">
             <div className="switch-container">
@@ -593,10 +581,6 @@ const Login = () => {
           <br></br>
           {error && <div className="login-error"> {error} </div>}
           <span className="login-checkbox">
-            {/* <div className="remember-me">
-                        <input  className='remember-checkbox' type='checkbox' /> 
-                        <span>Remember me</span>
-                    </div> */}
             <div className="remember-me">
               <input
                 className="remember-checkbox"
@@ -628,7 +612,11 @@ const Login = () => {
           </button>
           <p className="contact-us">
             Don't have an account ?{' '}
-            <a href="https://fridayintel.com/" target="_blank" rel="noreferrer">
+            <a
+              href="https://fridayintel.com/contact/"
+              target="_blank"
+              rel="noreferrer"
+            >
               {' '}
               Contact Us
             </a>

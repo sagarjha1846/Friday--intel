@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useState } from 'react';
 import nightImage from '../images/night.png';
 import dayImage from '../images/day.png';
@@ -17,9 +18,7 @@ const Member = () => {
 
   function themeChange(event) {
     setMode(!mode);
-
     const htmlElement = document.querySelector('html');
-    // set theme button background
     const label = document.querySelector('#theme-label');
     if (mode) {
       label.style.background = `url(${nightImage})`;
@@ -30,19 +29,17 @@ const Member = () => {
       getComputedStyle(htmlElement).getPropertyValue('--primary-color');
     const SECONDARY =
       getComputedStyle(htmlElement).getPropertyValue('--secondary-color');
-
     htmlElement.style.setProperty('--primary-color', SECONDARY);
     htmlElement.style.setProperty('--primary-color-1', SECONDARY);
     htmlElement.style.setProperty('--secondary-color', PRIMARY);
-
     label.style.backgroundSize = 'cover';
-    // const logotheme = document.getElementsByClassName(".inactive")
-    // // eslint-disable-next-line no-unused-expressions
-    // logotheme.classList.remove("inactive")
   }
 
   return (
     <>
+      <Helmet>
+        <title>FridayIntel-Member</title>
+      </Helmet>
       <nav className="navbar-member">
         <section className="member-profile">
           <h2 className="member_profile-name">Profile </h2>
@@ -369,16 +366,16 @@ const Member = () => {
                 cy="39"
                 r="38"
                 fill="black"
-                fill-opacity="0.1"
+                fillOpacity="0.1"
                 stroke="url(#paint0_angular_13_13792)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinecap="round"
               />
               <path
                 d="M49.5 33.75C49.5 39.5489 44.7989 44.25 39 44.25C33.2011 44.25 28.5 39.5489 28.5 33.75C28.5 27.9511 33.2011 23.25 39 23.25C44.7989 23.25 49.5 27.9511 49.5 33.75Z"
                 fill="black"
-                fill-opacity="0.1"
+                fillOpacity="0.1"
               />
               <path
                 fillRule="evenodd"
@@ -396,12 +393,12 @@ const Member = () => {
                 r="12.75"
                 fill="#00F0FF"
                 stroke="white"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               />
               <path
                 d="M62.5 59.9999L66 63.4999L67.6437 61.8562C67.691 61.8097 67.7285 61.7542 67.7541 61.6931C67.7797 61.6319 67.7929 61.5662 67.7929 61.4999C67.7929 61.4337 67.7797 61.368 67.7541 61.3068C67.7285 61.2457 67.691 61.1902 67.6437 61.1437L64.8563 58.3562C64.8097 58.309 64.7543 58.2714 64.6931 58.2458C64.632 58.2202 64.5663 58.207 64.5 58.207C64.4337 58.207 64.368 58.2202 64.3069 58.2458C64.2457 58.2714 64.1903 58.309 64.1437 58.3562L62.5 59.9999Z"
                 fill="white"
-                fill-opacity="0.1"
+                fillOpacity="0.1"
               />
               <path
                 d="M65.6462 63.8533L65.6464 63.8536C65.7402 63.9473 65.8674 64 66 64C66.1326 64 66.2598 63.9473 66.3536 63.8536C66.4473 63.7598 66.5 63.6326 66.5 63.5C66.5 63.3674 66.4473 63.2402 66.3536 63.1464L66.3533 63.1462L62.8536 59.6465C62.7598 59.5527 62.6326 59.5 62.5 59.5C62.3674 59.5 62.2402 59.5527 62.1464 59.6464C62.0527 59.7402 62 59.8674 62 60C62 60.1326 62.0527 60.2598 62.1464 60.3536L65.6462 63.8533Z"
@@ -422,8 +419,8 @@ const Member = () => {
                   gradientUnits="userSpaceOnUse"
                   gradientTransform="translate(39 39) rotate(52.6507) scale(37.6311)"
                 >
-                  <stop stop-color="#00F0FF" />
-                  <stop offset="1" stop-color="#FF1CF7" />
+                  <stop stopColor="#00F0FF" />
+                  <stop offset="1" stopColor="#FF1CF7" />
                 </radialGradient>
               </defs>
             </svg>

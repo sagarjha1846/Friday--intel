@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import '../css/navbar.css';
 import Navbar from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
@@ -39,6 +40,9 @@ const ReadCase = () => {
   const navigate = useNavigate();
   return (
     <>
+      <Helmet>
+        <title>FridayIntel-ReadCase</title>
+      </Helmet>
       <Navbar />
       <section className="readcase-container">
         <section className="cases">
@@ -139,8 +143,6 @@ const ReadCase = () => {
               hii
               <Card />
             </iframe>
-
-            {/* <Card/> */}
           </section>
         </main>
       </section>

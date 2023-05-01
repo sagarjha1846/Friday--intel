@@ -2,10 +2,8 @@
   box-sizing: border-box;
   position: absolute;
   width: 100vw;
-  height: 6.5rem;
-  /* left: calc(50% - 1440px/2); */
+  height: 7rem;
   bottom: 0px;
-  /* background-image: url("data:image/svg+xml,%0A%3Csvg width='1440' height='78' viewBox='0 0 1440 78' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H1014.98H1021.48C1038.05 0 1047.21 16.2379 1058.53 28.3375C1064.62 34.8425 1075.94 39.3546 1096.98 39.3546C1143.88 39.3546 1267.97 39.3546 1308.47 39.3546C1325.88 39.3546 1336.08 34.5634 1342.06 28.0342C1353.24 15.8116 1358.6 0 1375.17 0C1378.92 0 1383.17 0 1387.97 0C1442.97 0 1439.97 0 1439.97 0V78H0V0Z' fill='%23010101'/%3E%3C/svg%3E%0A"); */
   z-index: 9999;
   background-color: var(--primary-color);
   display: flex;
