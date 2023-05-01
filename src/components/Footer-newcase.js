@@ -2,7 +2,8 @@ import React from 'react';
 import '../css/footer.css';
 import { CiSearch } from 'react-icons/ci';
 
-const Footer = () => {
+const Footer = ({ searchTerm, setSearchTerm }) => {
+  
   return (
     <footer id="footer-new-case">
       <section className="footer_container">
@@ -449,8 +450,10 @@ const Footer = () => {
           <CiSearch />
         </i>
         <input
-          placeholder="Search..."
           type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search..."
           className="footer-searchbar"
         />
       </div>

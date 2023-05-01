@@ -6,7 +6,13 @@ import React, {
   useState,
 } from 'react';
 import { Helmet } from 'react-helmet';
-import { addEdge, useEdgesState, useNodesState } from 'reactflow';
+
+import {
+  ReactFlowProvider,
+  addEdge,
+  useEdgesState,
+  useNodesState,
+} from 'reactflow';
 import { toPng } from 'html-to-image';
 import Footer from '../components/Footer-newcase';
 import CanvasArea from '../components/CanvasArea';
@@ -15,7 +21,7 @@ import SideNav from '../components/Sidebar';
 import Tool from '../components/Tool';
 import '../css/newcase.css';
 import { getLayoutElements } from '../utils';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import DrawerInfo from '../components/DrawerInfo';
 import axios from 'axios';
 import { MagnifyingGlass } from 'react-loader-spinner';
@@ -30,7 +36,8 @@ import bell from '../images/svg/bell.svg';
 import user from '../images/svg/userSolid.svg';
 import { createFileName, useScreenshot } from 'use-react-screenshot';
 import LoginContext from '../context/LoginContext';
-import { v4 as uuid } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
+import { useEffect } from 'react';
 
 const NewCase = () => {
   const { ROUTES, backendURL } = constants;
@@ -55,6 +62,7 @@ const NewCase = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [activeMenu, setActiveMenu] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
   const [mode, setMode] = useState(true);
   const { logout, jwtToken } = useContext(LoginContext);
   const download = (image, { name = 'img', extension = 'jpg' } = {}) => {
@@ -126,14 +134,12 @@ const NewCase = () => {
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
-  const unique_id = uuid();
   const saveNode = () => {
     if (nodes.length > 0 && edges.length > 0) {
-      console.log('you want to save the node');
       const data = {
         edges,
         nodes,
-        caseid: { unique_id },
+        caseid: uuidv4(),
         casename: nodeInfo ? nodeInfo.query : 'Sunny',
       };
       console.log(data);
@@ -143,7 +149,7 @@ const NewCase = () => {
             Authorization: jwtToken,
           },
         })
-        .then((res) => console.log(res))
+        .then((res) => alert('Node was saved'))
         .catch((err) => console.log(err));
     } else {
       alert('No node is present in the canvas to be saved!');
@@ -164,7 +170,7 @@ const NewCase = () => {
           ...prev,
           {
             id: search,
-            type: 'default',
+            type: 'MyCustomNode',
             data: { label: search },
             position: { x: 250, y: 0 },
           },
@@ -215,7 +221,9 @@ const NewCase = () => {
               </button>
             </div>
             <div className="dashboard-cases">
-              <h3 className="dashboard-title">DASHBOARD&#160;/</h3>
+              <Link to={ROUTES.home}>
+                <h3 className="dashboard-title">DASHBOARD&#160;/</h3>
+              </Link>
               <h3 className="case-no">Case&#160;1</h3>
             </div>
           </div>
@@ -597,14 +605,17 @@ const NewCase = () => {
               <h1 className="p-2 text-4xl">Loading...</h1>
             </div>
           ) : (
-            <CanvasArea
-              nodes={nodes}
-              edges={edges}
-              onInit={onInit}
-              onConnect={onConnect}
-              onNodesChange={onNodesChange}
-              onEdgesChange={onEdgesChange}
-            />
+            <ReactFlowProvider>
+              <CanvasArea
+                searchTerm={searchTerm}
+                nodes={nodes}
+                edges={edges}
+                onInit={onInit}
+                onConnect={onConnect}
+                onNodesChange={onNodesChange}
+                onEdgesChange={onEdgesChange}
+              />
+            </ReactFlowProvider>
           )}
         </div>
 
@@ -622,7 +633,7 @@ const NewCase = () => {
         </div>
       </div>
 
-      <Footer />
+      <Footer searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
     </>
   );
 };

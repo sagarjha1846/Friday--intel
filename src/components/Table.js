@@ -26,6 +26,7 @@ export default function Table() {
   const [rows, setRows] = useState([]);
   const { backendURL } = constants;
   const { jwtToken } = useContext(LoginContext);
+  
   useEffect(() => {
     axios
       .get(`${backendURL}caselist.php`, {
@@ -35,11 +36,10 @@ export default function Table() {
       })
       .then((res) => setRows(res.data.map((el) => ({ ...el, id: el.caseid }))))
       .catch((err) => console.log(err));
-  }, [backendURL, jwtToken]);
+  }, []);
 
   const handlePageChange = (params) => {
     setPage(params.page);
-    console.log(params);
   };
 
   return (

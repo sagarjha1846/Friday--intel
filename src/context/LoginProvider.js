@@ -31,7 +31,6 @@ function LoginProvider(props) {
   };
 
   const logout = () => {
-    console.log('I am herre sndnn');
     localStorage.removeItem('jwtToken');
     setJwtToken(null);
     setIsLoggedIn(false);
