@@ -66,13 +66,14 @@ const rows = [
 export default function Ransomware() {
   return (
     <div style={{ height: 400, width: '100%' }}>
-      <DataGrid
+      {/* <DataGrid
         rows={rows}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
         checkboxSelection
-      />
+      /> */}
+      <h1>hi</h1>
     </div>
   );
 }

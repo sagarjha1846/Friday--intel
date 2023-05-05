@@ -37,7 +37,8 @@ import user from '../images/svg/userSolid.svg';
 import { createFileName, useScreenshot } from 'use-react-screenshot';
 import LoginContext from '../context/LoginContext';
 import { v4 as uuidv4 } from 'uuid';
-import { useEffect } from 'react';
+import Ransomware from './Ransomware';
+// import { useEffect } from 'react';
 
 const NewCase = () => {
   const { ROUTES, backendURL } = constants;
@@ -48,9 +49,7 @@ const NewCase = () => {
   });
 
   const [isOpen, setIsOpen] = useState(false);
-  // const [isactiv, setIsactiv] = useState(false);
   const [isshow, setIsshow] = useState(false);
-  // const [isshowDiv, setIsshowDiv] = useState(true);
   const [isopenprofile, setIsopenprofile] = useState(false);
   const navigate = useNavigate();
   const searchRef = useRef();
@@ -64,6 +63,11 @@ const NewCase = () => {
   const [activeMenu, setActiveMenu] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [mode, setMode] = useState(true);
+  const [activeTab, setActiveTab] = useState(1);
+
+  const handleTabClick = (tabNumber) => {
+    setActiveTab(tabNumber);
+  };
   const { logout, jwtToken } = useContext(LoginContext);
   const download = (image, { name = 'img', extension = 'jpg' } = {}) => {
     const a = document.createElement('a');
@@ -563,7 +567,79 @@ const NewCase = () => {
           <div className="pro-triangle"></div>
         </span>
       )}
-      <div className="container">
+      {activeTab === 1 && (
+        <div className="container">
+          <div className="flex">
+            <div className="sideNavSection">
+              <SideNav
+                setActiveMenu={setActiveMenu}
+                nodeInfo={nodeInfo}
+                searchRef={searchRef.current}
+                activeMenu={activeMenu}
+              />
+            </div>
+            <div>
+              {nodeInfo && activeMenu !== '' ? (
+                <NodeList
+                  activeMenu={activeMenu}
+                  searchRef={searchRef.current}
+                  nodes={nodes}
+                  nodeList={nodeInfo}
+                  setNodes={setNodes}
+                  setEdges={setEdges}
+                  isChecked={isChecked}
+                  setIsChecked={setIsChecked}
+                />
+              ) : null}
+            </div>
+          </div>
+
+          <div className="canvasSection" ref={ref}>
+            {isLoading ? (
+              <div className=" w-full h-full grid place-content-center">
+                <MagnifyingGlass
+                  visible={true}
+                  height="80"
+                  width="80"
+                  ariaLabel="MagnifyingGlass-loading"
+                  wrapperStyle={{}}
+                  wrapperClass="MagnifyingGlass-wrapper"
+                  glassColor="#c0efff"
+                  color="#e15b64"
+                />
+                <h1 className="p-2 text-4xl">Loading...</h1>
+              </div>
+            ) : (
+              <ReactFlowProvider>
+                <CanvasArea
+                  searchTerm={searchTerm}
+                  nodes={nodes}
+                  edges={edges}
+                  onInit={onInit}
+                  onConnect={onConnect}
+                  onNodesChange={onNodesChange}
+                  onEdgesChange={onEdgesChange}
+                />
+              </ReactFlowProvider>
+            )}
+          </div>
+
+          <div className="toolSection-container">
+            <div className="toolSection">
+              <Tool
+                zoomAction={handleFullScreen}
+                getImage={getImage}
+                onLayout={onLayout}
+                canvasFunc={canvasFunc}
+                toPng={toPng}
+                nodes={nodes}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+      {activeTab === 2 && <Ransomware />}
+      {/* <div className="container">
         <div className="flex">
           <div className="sideNavSection">
             <SideNav
@@ -631,9 +707,14 @@ const NewCase = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <Footer searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <Footer
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        activeTab={activeTab}
+        handleTabClick={handleTabClick}
+      />
     </>
   );
 };

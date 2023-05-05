@@ -26,7 +26,7 @@ export default function Table() {
   const [rows, setRows] = useState([]);
   const { backendURL } = constants;
   const { jwtToken } = useContext(LoginContext);
-  
+
   useEffect(() => {
     axios
       .get(`${backendURL}caselist.php`, {
