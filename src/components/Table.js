@@ -43,7 +43,7 @@ export default function Table() {
   };
 
   return (
-    <div className="p-10" style={{ height: 500, width: '100%' }}>
+    <div className="p-10" style={{ height: 600, width: '100%' }}>
       <DataGrid
         rows={rows}
         columns={columns}

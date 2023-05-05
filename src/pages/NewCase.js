@@ -194,6 +194,7 @@ const NewCase = () => {
     <>
       <Helmet>
         <title>FridayIntel-NewCase</title>
+        <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
       </Helmet>
       <nav className="nav_bar">
         <section className="logo_box">
