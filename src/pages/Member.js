@@ -371,6 +371,7 @@ const Member = () => {
                 stroke="url(#paint0_angular_13_13792)"
                 strokeWidth="2"
                 strokeLinecap="round"
+
                 
               />
               <path
