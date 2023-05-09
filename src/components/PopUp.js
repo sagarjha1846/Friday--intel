@@ -11,6 +11,7 @@ function PopUp(){
         setPop(false)
     }
     return(
+        
         <div>
             <button onClick={handleClickOpen}>Open popup</button>
             <div>
