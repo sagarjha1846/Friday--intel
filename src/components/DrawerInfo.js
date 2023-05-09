@@ -7,7 +7,6 @@ const DrawerInfo = () => {
   const handleClose = () => {
     setIsshowDiv(false);
   };
-  const [search, setSearch] = useState('');
 
   return (
     <>
@@ -436,7 +435,6 @@ const DrawerInfo = () => {
               <input
                 type="text"
                 className="search-bar-NC"
-                onChange={(e) => setSearch(e.target.value)}
                 placeholder="Type something......"
                 disabled
               />

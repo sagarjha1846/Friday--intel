@@ -7,6 +7,7 @@ import '../css/member.css';
 import { BsTelephone } from 'react-icons/bs';
 import { MdAlternateEmail } from 'react-icons/md';
 import { RiDeleteBinLine } from 'react-icons/ri';
+import PopUp from '../components/PopUp';
 
 const Member = () => {
   const [mode, setMode] = useState(true);
@@ -370,7 +371,6 @@ const Member = () => {
                 stroke="url(#paint0_angular_13_13792)"
                 strokeWidth="2"
                 strokeLinecap="round"
-                strokeLinecap="round"
               />
               <path
                 d="M49.5 33.75C49.5 39.5489 44.7989 44.25 39 44.25C33.2011 44.25 28.5 39.5489 28.5 33.75C28.5 27.9511 33.2011 23.25 39 23.25C44.7989 23.25 49.5 27.9511 49.5 33.75Z"
@@ -490,7 +490,7 @@ const Member = () => {
           </article>
         </section>
       </main>
-
+<PopUp/>
       <footer className="footer-member ">
         &copy; 2023-24 Friday Intel LLP
       </footer>
