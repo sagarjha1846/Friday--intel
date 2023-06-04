@@ -4,43 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import '../css/forgetpage.css';
 import constants from '../constant/routesConstant';
 import ToggleSwitch from '../components/ToggleSwitch';
-import dayImage from '../images/day.png';
 import forgetpassimg from '../images/forgetpass.jpeg';
 import light from '../images/logo.png';
-import nightImage from '../images/night.png';
-import dark from '../images/svg/darklogo.svg';
+import { themeChange } from '../utils';
 
 const ForgetPassword = () => {
   const [mode, setMode] = useState(true);
-  const [logoo, setLogoo] = useState(light);
+  const [logoo] = useState(light);
   const navigate = useNavigate();
   const { ROUTES } = constants;
-
-  function themeChange(event) {
-    setMode(!mode);
-
-    const htmlElement = document.querySelector('html');
-    const label = document.querySelector('#theme-label');
-    label.style.background = `url(${mode ? nightImage : dayImage})`;
-
-    const PRIMARY =
-      getComputedStyle(htmlElement).getPropertyValue('--primary-color');
-    const SECONDARY =
-      getComputedStyle(htmlElement).getPropertyValue('--secondary-color');
-
-    htmlElement.style.setProperty('--primary-color', SECONDARY);
-    htmlElement.style.setProperty('--secondary-color', PRIMARY);
-    htmlElement.style.setProperty('--primary-color-1', SECONDARY);
-
-    label.style.backgroundSize = 'cover';
-    let value = logoo;
-
-    if (value === light) {
-      setLogoo(dark);
-    } else {
-      setLogoo(light);
-    }
-  }
 
   return (
     <div className="App">
@@ -52,7 +24,9 @@ const ForgetPassword = () => {
           <section className="logo">
             <img src={logoo} alt="friday-intel logo " />
           </section>
-          <ToggleSwitch onClick={themeChange} />
+          <ToggleSwitch
+            onClick={(event) => themeChange({ event, setMode, mode })}
+          />
         </navbar>
 
         <section className="form">

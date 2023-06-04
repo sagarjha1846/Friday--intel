@@ -1,10 +1,5 @@
-import React, {
-  createRef,
-  useCallback,
-  useContext,
-  useRef,
-  useState,
-} from 'react';
+/* eslint-disable no-unused-vars */
+import React, { createRef, useCallback, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 
 import {
@@ -20,7 +15,7 @@ import NodeList from '../components/NodeList';
 import SideNav from '../components/Sidebar';
 import Tool from '../components/Tool';
 import '../css/newcase.css';
-import { getLayoutElements } from '../utils';
+import { getLayoutElements, themeChange } from '../utils';
 import { Link, useNavigate } from 'react-router-dom';
 import DrawerInfo from '../components/DrawerInfo';
 import axios from 'axios';
@@ -35,9 +30,10 @@ import sun from '../images/svg/sun.svg';
 import bell from '../images/svg/bell.svg';
 import user from '../images/svg/userSolid.svg';
 import { createFileName, useScreenshot } from 'use-react-screenshot';
-import LoginContext from '../context/LoginContext';
 import { v4 as uuidv4 } from 'uuid';
 import Ransomware from './Ransomware';
+import { logOut } from '../store/features/auth/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
 // import { useEffect } from 'react';
 
 const NewCase = () => {
@@ -64,11 +60,12 @@ const NewCase = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [mode, setMode] = useState(true);
   const [activeTab, setActiveTab] = useState(1);
+  const dispatch = useDispatch();
 
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
   };
-  const { logout, jwtToken } = useContext(LoginContext);
+  const { token } = useSelector((state) => state.auth);
   const download = (image, { name = 'img', extension = 'jpg' } = {}) => {
     const a = document.createElement('a');
     a.href = image;
@@ -81,19 +78,6 @@ const NewCase = () => {
     (params) => setEdges((eds) => addEdge(params, eds)),
     [setEdges],
   );
-
-  function themeChange(event) {
-    setMode(!mode);
-    const htmlElement = document.querySelector('html');
-    const PRIMARY =
-      getComputedStyle(htmlElement).getPropertyValue('--primary-color');
-    const SECONDARY =
-      getComputedStyle(htmlElement).getPropertyValue('--secondary-color');
-
-    htmlElement.style.setProperty('--primary-color', SECONDARY);
-    htmlElement.style.setProperty('--primary-color-1', SECONDARY);
-    htmlElement.style.setProperty('--secondary-color', PRIMARY);
-  }
 
   const openprofile = () => {
     setIsopenprofile(!isopenprofile);
@@ -150,7 +134,7 @@ const NewCase = () => {
       axios
         .post(`${backendURL}newcase.php`, data, {
           headers: {
-            Authorization: jwtToken,
+            Authorization: token,
           },
         })
         .then((res) => alert('Node was saved'))
@@ -166,7 +150,11 @@ const NewCase = () => {
     setIsLoading(true);
 
     axios
-      .get(`${backendURL}/canvas.php?query=${search}`)
+      .get(`${backendURL}/canvas.php?query=${search}`, {
+        headers: {
+          Authorization: token,
+        },
+      })
       .then((response) => {
         setNodeInfo({ query: search, data: response?.data });
 
@@ -187,7 +175,7 @@ const NewCase = () => {
   };
 
   const handleLogOut = () => {
-    logout();
+    dispatch(logOut());
     navigate('/login');
   };
   return (
@@ -253,7 +241,10 @@ const NewCase = () => {
             <CiSearch className="searchbar-logo" />
           </form>
           <div>
-            <button className="newcase-noti-icon" onClick={themeChange}>
+            <button
+              className="newcase-noti-icon"
+              onClick={(e) => themeChange(e, mode, setMode)}
+            >
               <img src={sun} alt="" />
             </button>
           </div>

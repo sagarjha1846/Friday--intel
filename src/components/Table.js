@@ -1,8 +1,8 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import constants from '../constant/routesConstant';
-import LoginContext from '../context/LoginContext';
 import axios from 'axios';
+import { useSelect } from '@mui/base';
 
 const columns = [
   { field: 'id', headerName: 'ID', flex: 1 },
@@ -25,18 +25,18 @@ export default function Table() {
   const [page, setPage] = useState(1);
   const [rows, setRows] = useState([]);
   const { backendURL } = constants;
-  const { jwtToken } = useContext(LoginContext);
+  const { token } = useSelect((state) => state.auth);
 
   useEffect(() => {
     axios
       .get(`${backendURL}caselist.php`, {
         headers: {
-          Authorization: jwtToken,
+          Authorization: token,
         },
       })
       .then((res) => setRows(res.data.map((el) => ({ ...el, id: el.caseid }))))
       .catch((err) => console.log(err));
-  }, []);
+  }, [backendURL, token]);
 
   const handlePageChange = (params) => {
     setPage(params.page);

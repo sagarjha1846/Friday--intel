@@ -1,77 +1,58 @@
-import React, { useContext, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/login.css';
 import nightImage from '../images/night.png';
 import dayImage from '../images/day.png';
 import light from '../images/logo.png';
-import user from '../images/user.png';
+import users from '../images/user.png';
 import { useNavigate } from 'react-router-dom';
 import dark from '../images/svg/darklogo.svg';
-import LoginContext from '../context/LoginContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { themeChange } from '../utils';
+import { login, reset } from '../store/features/auth/authSlice';
 
 const Login = () => {
-  const { login } = useContext(LoginContext);
   const [mode, setMode] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [logoo, setLogoo] = useState(light);
+  const dispatch = useDispatch();
+  const { isError, isSuccess, message, token } = useSelector(
+    (state) => state.auth,
+  );
+
   const Navigate = useNavigate();
   function handleforgetpassword() {
     Navigate('/forgot-password');
   }
   function loggingIn(event) {
     event.preventDefault();
-    login(email, password)
-      .then(() => {
-        Navigate('/');
-      })
-      .catch((err) => {
-        setError('Wrong Username or Password! Enter valid credentials.');
+    dispatch(login({ username: email, password }));
+  }
+
+  //tracking error and success
+  useEffect(() => {
+    if (isError) {
+      setError(message);
+    }
+    if (token || isSuccess) {
+      const arrowSvg = document.querySelector('.login-svg');
+      arrowSvg?.classList.add('login-animation');
+      const apiCall = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('foo');
+        }, 3000);
       });
 
-    const arrowSvg = document.querySelector('.login-svg');
-    arrowSvg?.classList.add('login-animation');
-    const apiCall = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve('foo');
-      }, 3000);
-    });
-
-    apiCall.then(() => {
-      arrowSvg?.classList.toggle('login-animation');
-      const checkMark = document.querySelector('.check-mark');
-      checkMark.style.display = 'revert';
-    });
-  }
-
-  function themeChange(event) {
-    setMode(!mode);
-
-    const htmlElement = document.querySelector('html');
-    const label = document.querySelector('#theme-label');
-    if (mode) {
-      label.style.background = `url(${nightImage})`;
-    } else {
-      label.style.background = `url(${dayImage})`;
+      apiCall.then(() => {
+        arrowSvg?.classList.toggle('login-animation');
+        const checkMark = document.querySelector('.check-mark');
+        checkMark.style.display = 'revert';
+      });
+      Navigate('/');
     }
-    const PRIMARY =
-      getComputedStyle(htmlElement).getPropertyValue('--primary-color');
-    const SECONDARY =
-      getComputedStyle(htmlElement).getPropertyValue('--secondary-color');
-
-    htmlElement.style.setProperty('--primary-color', SECONDARY);
-    htmlElement.style.setProperty('--primary-color-1', SECONDARY);
-    htmlElement.style.setProperty('--secondary-color', PRIMARY);
-
-    label.style.backgroundSize = 'cover';
-    let value = logoo;
-
-    if (value === light) {
-      setLogoo(dark);
-    } else {
-      setLogoo(light);
-    }
-  }
+    dispatch(reset());
+  }, [token, isError, isSuccess, message, dispatch, Navigate]);
 
   const remember = () => {
     localStorage.setItem('username', email);
@@ -462,7 +443,23 @@ const Login = () => {
           </section>
           <section className="theme-toggle">
             <div className="switch-container">
-              <input type="checkbox" id="switch" onClick={themeChange} />
+              <input
+                type="checkbox"
+                id="switch"
+                onClick={(event) =>
+                  themeChange({
+                    event,
+                    setMode,
+                    mode,
+                    nightImage,
+                    dayImage,
+                    setLogoo,
+                    logoo,
+                    light,
+                    dark,
+                  })
+                }
+              />
               <label htmlFor="switch" id="theme-label">
                 <i className="fas fa-sun">
                   <svg
@@ -627,7 +624,7 @@ const Login = () => {
         </footer>
       </main>
       <aside className="user-img">
-        <img src={user} alt="user " className="user-image" />
+        <img src={users} alt="user " className="user-image" />
       </aside>
     </div>
   );

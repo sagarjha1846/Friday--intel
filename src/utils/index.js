@@ -36,4 +36,55 @@ const getLayoutElements = (nodes, edges, direction = 'TB') => {
   return { nodes, edges };
 };
 
+
+export const reduceErrorHandler = (error) => {
+  return (
+    (error.response &&
+      error.response.data &&
+      error.response.data.error &&
+      error.response.data.error.message) ||
+    error.message ||
+    error.toString() ||
+    error.response.data.error.message
+  );
+};
+export function themeChange({
+  event,
+  setMode,
+  mode,
+  nightImage,
+  dayImage,
+  setLogoo,
+  logoo,
+  light,
+  dark,
+}) {
+  setMode(!mode);
+
+  const htmlElement = document.querySelector('html');
+  const label = document.querySelector('#theme-label');
+  if (mode) {
+    label.style.background = `url(${nightImage})`;
+  } else {
+    label.style.background = `url(${dayImage})`;
+  }
+  const PRIMARY =
+    getComputedStyle(htmlElement).getPropertyValue('--primary-color');
+  const SECONDARY =
+    getComputedStyle(htmlElement).getPropertyValue('--secondary-color');
+
+  htmlElement.style.setProperty('--primary-color', SECONDARY);
+  htmlElement.style.setProperty('--primary-color-1', SECONDARY);
+  htmlElement.style.setProperty('--secondary-color', PRIMARY);
+
+  label.style.backgroundSize = 'cover';
+  let value = logoo;
+
+  if (value === light) {
+    setLogoo(dark);
+  } else {
+    setLogoo(light);
+  }
+}
+
 export { getLayoutElements };

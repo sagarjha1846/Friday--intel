@@ -11,13 +11,13 @@ import Page404 from './pages/Page404';
 import ReadCase from './pages/ReadCase';
 import Member from './pages/Member';
 import constants from './constant/routesConstant';
-import { PrivateRoute } from './context/PrivateRoute';
-import LoginContext from './context/LoginContext';
-import { useContext } from 'react';
+
+import { useSelector } from 'react-redux';
+import { PrivateRoute } from './store/PrivateRoute';
 
 const App = () => {
   const { ROUTES } = constants;
-  const { isLoggedIn } = useContext(LoginContext);
+  const { token } = useSelector((state) => state.auth);
   return (
     <Routes>
       <Route element={<PrivateRoute />}>
@@ -30,12 +30,12 @@ const App = () => {
       </Route>
       <Route
         path={ROUTES.login}
-        element={isLoggedIn ? <Navigate to="/" /> : <Login />}
+        element={token ? <Navigate to="/" /> : <Login />}
       />
 
       <Route
         path={ROUTES.forgotPassword}
-        element={isLoggedIn ? <Navigate to="/" /> : <ForgetPassword />}
+        element={token ? <Navigate to="/" /> : <ForgetPassword />}
       />
 
       <Route path="*" element={<Page404 />} />

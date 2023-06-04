@@ -1,13 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useState } from 'react';
-import nightImage from '../images/night.png';
-import dayImage from '../images/day.png';
 import '../css/member.css';
 import { BsTelephone } from 'react-icons/bs';
 import { MdAlternateEmail } from 'react-icons/md';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import PopUp from '../components/PopUp';
+import { themeChange } from '../utils';
 
 const Member = () => {
   const [mode, setMode] = useState(true);
@@ -16,25 +15,6 @@ const Member = () => {
   const notification = () => {
     setIsshow(!isshow);
   };
-
-  function themeChange(event) {
-    setMode(!mode);
-    const htmlElement = document.querySelector('html');
-    const label = document.querySelector('#theme-label');
-    if (mode) {
-      label.style.background = `url(${nightImage})`;
-    } else {
-      label.style.background = `url(${dayImage})`;
-    }
-    const PRIMARY =
-      getComputedStyle(htmlElement).getPropertyValue('--primary-color');
-    const SECONDARY =
-      getComputedStyle(htmlElement).getPropertyValue('--secondary-color');
-    htmlElement.style.setProperty('--primary-color', SECONDARY);
-    htmlElement.style.setProperty('--primary-color-1', SECONDARY);
-    htmlElement.style.setProperty('--secondary-color', PRIMARY);
-    label.style.backgroundSize = 'cover';
-  }
 
   return (
     <>
@@ -50,7 +30,11 @@ const Member = () => {
         <section className="theme-notification"></section>
         <section className="theme-toggle-notification">
           <div className="switch-container-member">
-            <input type="checkbox" id="switch" onClick={themeChange} />
+            <input
+              type="checkbox"
+              id="switch"
+              onClick={(event) => themeChange({ event, setMode, mode })}
+            />
             <label htmlFor="switch" id="theme-label">
               <i className="fas fa-sun">
                 <svg
@@ -371,8 +355,6 @@ const Member = () => {
                 stroke="url(#paint0_angular_13_13792)"
                 strokeWidth="2"
                 strokeLinecap="round"
-
-                
               />
               <path
                 d="M49.5 33.75C49.5 39.5489 44.7989 44.25 39 44.25C33.2011 44.25 28.5 39.5489 28.5 33.75C28.5 27.9511 33.2011 23.25 39 23.25C44.7989 23.25 49.5 27.9511 49.5 33.75Z"
@@ -492,7 +474,7 @@ const Member = () => {
           </article>
         </section>
       </main>
-<PopUp/>
+      <PopUp />
       <footer className="footer-member ">
         &copy; 2023-24 Friday Intel LLP
       </footer>
