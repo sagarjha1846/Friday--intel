@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactFlow, { MiniMap, Background, useReactFlow } from 'reactflow';
+import ReactFlow, { MiniMap, Background } from 'reactflow';
 
 import 'reactflow/dist/style.css';
 import '../css/canvas.css';

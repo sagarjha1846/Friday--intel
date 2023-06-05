@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import '../css/navbar.css';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -7,7 +7,9 @@ import DrawerInfo from './DrawerInfo';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { CiSearch } from 'react-icons/ci';
-import LoginContext from '../context/LoginContext';
+import { themeChange } from '../utils';
+import { useDispatch } from 'react-redux';
+import { logOut } from '../store/features/auth/authSlice';
 
 const Navbar = () => {
   const { ROUTES } = constants;
@@ -17,7 +19,7 @@ const Navbar = () => {
   const [isopenprofile, setIsopenprofile] = useState(false);
   // const [isactiv, setIsactiv] = useState(false);
   const [mode, setMode] = useState(true);
-  const { logout } = useContext(LoginContext);
+  const dispatch = useDispatch();
 
   const opendrawer = () => {
     setIsOpen(!isOpen);
@@ -33,31 +35,8 @@ const Navbar = () => {
   // const activity = () => {
   //   setIsactiv(!isactiv);
   // };
-
-  function themeChange(event) {
-    setMode(!mode);
-
-    const htmlElement = document.querySelector('html');
-    // set theme button background
-    // const label = document.querySelector('#theme-label');
-    const PRIMARY =
-      getComputedStyle(htmlElement).getPropertyValue('--primary-color');
-    const SECONDARY =
-      getComputedStyle(htmlElement).getPropertyValue('--secondary-color');
-
-    htmlElement.style.setProperty('--primary-color', SECONDARY);
-    htmlElement.style.setProperty('--primary-color-1', SECONDARY);
-    htmlElement.style.setProperty('--secondary-color', PRIMARY);
-
-    // label.style.backgroundSize = 'cover';
-    // const logotheme = document.getElementsByClassName(".inactive")
-    // // eslint-disable-next-line no-unused-expressions
-    // logotheme.classList.remove("inactive")
-  }
-
   const handleLogOut = () => {
-    logout();
-    navigate('/login');
+    dispatch(logOut());
   };
 
   return (
@@ -873,7 +852,10 @@ const Navbar = () => {
           </div>
         )} */}
         <div>
-          <button className="btn-icon" onClick={themeChange}>
+          <button
+            className="btn-icon"
+            onClick={(event) => themeChange({ event, setMode, mode })}
+          >
             <svg
               width="23"
               height="23"
