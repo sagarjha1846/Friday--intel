@@ -235,12 +235,6 @@ input:checked + label .fa-moon {
   font-weight: 500;
   margin-bottom: 2.5rem;
 }
-.login-credentials-heading {
-  color: var(--primary-color-1);
-  font-weight: 400;
-  font-size: 1.6rem;
-  font-family: sans-serif;
-}
 
 .input-fp {
   border-radius: 1rem;
@@ -341,5 +335,5 @@ input:checked + label .fa-moon {
 .copy_right_text {
   font-size: 1.6rem;
   font-weight: 400;
-  margin: 5rem 0rem 0rem 2rem;
+  margin: 10rem 0rem 0rem 2rem;
 }

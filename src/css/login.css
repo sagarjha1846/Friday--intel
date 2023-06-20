@@ -268,12 +268,11 @@ input:checked + label .fa-moon {
 .welcome-back {
   font-size: 4.4rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .login-credentials-heading {
-  /* color: rgba(43, 43, 43, 0.5); */
   color: var(--primary-color-1);
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1.6rem;
   font-family: sans-serif;
 }
@@ -398,4 +397,7 @@ input:checked + label .fa-moon {
   100% {
     opacity: 1;
   }
+}
+#theme-label {
+  background-size: cover;
 }
