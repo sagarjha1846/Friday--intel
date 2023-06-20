@@ -87,6 +87,12 @@
   overflow-y: scroll;
   flex-shrink: 0;
 }
+
+.sideNavSections {
+  height: 78vh;
+  /* overflow-y: scroll; */
+  flex-shrink: 0;
+}
 .canvasSection {
   height: 100%;
   width: 100%;
