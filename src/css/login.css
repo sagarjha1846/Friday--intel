@@ -2,7 +2,7 @@
 
 html {
   --primary-color: #1c1c1c;
-  --primary-color-1: rgba(0, 0, 0, 0.4);
+  --primary-color-1: rgb(0, 0, 0);
   --secondary-color: #ffffff;
 
   /* for rem value */

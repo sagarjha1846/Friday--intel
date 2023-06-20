@@ -425,3 +425,6 @@ border-bottom: none;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 1.45rem;
 }
+.ant-btn-default svg {
+  fill: var(--primary-color);
+}
