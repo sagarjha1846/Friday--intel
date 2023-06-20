@@ -87,6 +87,12 @@
   overflow-y: scroll;
   flex-shrink: 0;
 }
+
+.sideNavSections {
+  height: 78vh;
+  /* overflow-y: scroll; */
+  flex-shrink: 0;
+}
 .canvasSection {
   height: 100%;
   width: 100%;
@@ -418,4 +424,7 @@ border-bottom: none;
   background-color: #ffffff;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 1.45rem;
+}
+.ant-btn-default svg {
+  fill: var(--primary-color);
 }
