@@ -2,7 +2,7 @@
 
 html {
   --primary-color: #1c1c1c;
-  --primary-color-1: rgb(0, 0, 0);
+  --primary-color-1: rgba(43, 43, 43, 0.5);
   --secondary-color: #ffffff;
 
   /* for rem value */
@@ -266,21 +266,25 @@ input:checked + label .fa-moon {
 }
 
 .welcome-back {
-  font-size: 4.4rem;
-  font-weight: 700;
+  font-size: 4.8rem;
+  font-weight: 400;
   margin-bottom: 3rem;
+  word-spacing: 5px;
+  letter-spacing: 2px;
 }
 .login-credentials-heading {
   color: var(--primary-color-1);
-  font-weight: 600;
-  font-size: 1.6rem;
+  font-weight: 400;
+  font-size: 1.8rem;
   font-family: sans-serif;
+  /* word-spacing: 2px;  */
+  letter-spacing: 1px;
 }
 
 .input {
   border-radius: 1rem;
   height: 4rem;
-  width: 30rem;
+  /* width: 30rem; */
   color: var(--primary-color-1);
   text-align: start;
   border: 2px solid var(--primary-color-1);
@@ -344,21 +348,14 @@ input:checked + label .fa-moon {
 }
 
 .user-img {
-  margin-top: 2rem;
-  height: 95%;
-  width: 50%;
-  justify-content: flex-end;
-}
-
-.user-image {
-  height: 100%;
-  width: 100%;
+  margin: 2.5rem;
 }
 .footer-login {
   font-size: 1.6rem;
   font-weight: lighter;
   margin: 3.5rem 0rem 1rem 1rem;
   margin-left: 3rem;
+  width: 35rem;
 }
 /* Animation */
 @keyframes loading {
