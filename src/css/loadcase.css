@@ -39,3 +39,6 @@
 .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
   color: var(--primary-color);
 }
+.css-1kwdphh-MuiDataGrid-virtualScrollerContent {
+  width: 100% !important;
+}

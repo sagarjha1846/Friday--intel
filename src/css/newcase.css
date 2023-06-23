@@ -400,5 +400,5 @@ border-bottom: none;
   border-bottom-left-radius: 1.45rem;
 }
 .ant-btn-default svg {
-  fill: var(--primary-color);
+  fill: var(--primary-color-2);
 }
