@@ -132,13 +132,13 @@ const ReadCase = () => {
             <Card src={caseimg_1} alt="Image 1" />
             <Card src={caseimg_2} alt="Image 2" />
             <Card src={caseimg_1} alt="Image 1" />
-            {/* <Card src={caseimg_2} alt="Image 2" /> */}
-            <iframe
+            <Card src={caseimg_2} alt="Image 2" />
+            {/* <iframe
               src="/readcase"
               width="500"
               height="500"
               title="read Cases"
-            />
+            /> */}
             {/* <iframe title="cards">
               hii
               <Card />

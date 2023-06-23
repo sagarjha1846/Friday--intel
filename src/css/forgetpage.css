@@ -339,7 +339,7 @@ input:checked + label .fa-moon {
   width: 70rem;
   height: 100%;
 }
-main {
+.login-container {
   width: 50% !important;
 }
 .login-credentials-heading-for {

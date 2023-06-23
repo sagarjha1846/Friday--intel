@@ -21,6 +21,7 @@
   border: none;
   height: 4rem;
   font-size: 3rem;
+  color: var(--primary-color-2);
 }
 .terrorist-profiling_logo {
   height: 2.6rem;
