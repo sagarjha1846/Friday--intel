@@ -139,10 +139,10 @@ const ReadCase = () => {
               height="500"
               title="read Cases"
             />
-            <iframe title="cards">
+            {/* <iframe title="cards">
               hii
               <Card />
-            </iframe>
+            </iframe> */}
           </section>
         </main>
       </section>

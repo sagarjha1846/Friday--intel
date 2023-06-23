@@ -18,25 +18,40 @@ const Navbar = () => {
   const [isshow, setIsshow] = useState(false);
   const [isopenprofile, setIsopenprofile] = useState(false);
   // const [isactiv, setIsactiv] = useState(false);
+  const [activeButton, setActiveButton] = useState(null);
   const [mode, setMode] = useState(true);
   const dispatch = useDispatch();
 
   const opendrawer = () => {
     setIsOpen(!isOpen);
+    setActiveButton('opendrawer'); // Set active button
   };
 
   const notification = () => {
     setIsshow(!isshow);
+    setActiveButton('notification');
   };
 
   const openprofile = () => {
     setIsopenprofile(!isopenprofile);
+    setActiveButton('openprofile');
+    setActiveButton('openprofile');
   };
   // const activity = () => {
   //   setIsactiv(!isactiv);
   // };
   const handleLogOut = () => {
     dispatch(logOut());
+  };
+  // const handleButtonClick = (button) => {
+  //   if (activeButton === button) {
+  //     setActiveButton(null);
+  //   } else {
+  //     setActiveButton(button);
+  //   }
+  // };
+  const handleButtonClick = (button) => {
+    setActiveButton((prevButton) => (prevButton === button ? null : button));
   };
 
   return (
@@ -422,7 +437,10 @@ const Navbar = () => {
       </section>
       <section className="notification_btn">
         <div>
-          <button className="btn-icon" onClick={opendrawer}>
+          <button
+            className="btn-icon"
+            onClick={() => handleButtonClick('opendrawer')}
+          >
             <svg
               width="23"
               height="23"
@@ -451,7 +469,7 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          {isOpen && <DrawerInfo />}
+          {activeButton === 'opendrawer' && <DrawerInfo />}
         </div>
         <div className="searchbar-box">
           <svg
@@ -801,56 +819,6 @@ const Navbar = () => {
             <CiSearch />
           </i>
         </div>
-        {/* <button className="activity-icon btn-icon" onClick={activity}>
-          <svg
-            stroke="currentColor"
-            fill="currentColor"
-            strokeWidth="0"
-            viewBox="0 0 24 24"
-            height="30px"
-            width="30px"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M12 8v5h5v-2h-3V8z"></path>
-            <path d="M21.292 8.497a8.957 8.957 0 0 0-1.928-2.862 9.004 9.004 0 0 0-4.55-2.452 9.09 9.09 0 0 0-3.626 0 8.965 8.965 0 0 0-4.552 2.453 9.048 9.048 0 0 0-1.928 2.86A8.963 8.963 0 0 0 4 12l.001.025H2L5 16l3-3.975H6.001L6 12a6.957 6.957 0 0 1 1.195-3.913 7.066 7.066 0 0 1 1.891-1.892 7.034 7.034 0 0 1 2.503-1.054 7.003 7.003 0 0 1 8.269 5.445 7.117 7.117 0 0 1 0 2.824 6.936 6.936 0 0 1-1.054 2.503c-.25.371-.537.72-.854 1.036a7.058 7.058 0 0 1-2.225 1.501 6.98 6.98 0 0 1-1.313.408 7.117 7.117 0 0 1-2.823 0 6.957 6.957 0 0 1-2.501-1.053 7.066 7.066 0 0 1-1.037-.855l-1.414 1.414A8.985 8.985 0 0 0 13 21a9.05 9.05 0 0 0 3.503-.707 9.009 9.009 0 0 0 3.959-3.26A8.968 8.968 0 0 0 22 12a8.928 8.928 0 0 0-.708-3.503z"></path>
-          </svg>
-        </button> */}
-        {/* {isactiv && (
-          <div className="active">
-            <div className="active-data">
-              <article>
-                <h2>Revision History</h2>
-                <p>
-                  <BiBuildings />
-                  You have a bug that needs to......
-                </p>
-                <p>
-                  <BiBuildings />
-                  You have bug that needs to.......
-                </p>
-                <p>
-                  <BiBuildings />
-                  Welcome to friday intel
-                </p>
-              </article>
-
-              <article>
-                <h2>Activites</h2>
-                <p> Edited the details of project X</p>
-                <p>Changed the status of project Y </p>
-                <p>Submitted a bug</p>
-                <h4 className="delete-btn">
-                  <span className="noti-icon">
-                    <AiOutlineDelete />
-                  </span>
-                  Delete activity
-                </h4>
-              </article>
-            </div>
-
-            <div className="tri"></div>
-          </div>
-        )} */}
         <div>
           <button
             className="btn-icon"
@@ -910,7 +878,10 @@ const Navbar = () => {
           </button>
         </div>
         <div>
-          <button className="btn-icon" onClick={notification}>
+          <button
+            className="btn-icon"
+            onClick={() => handleButtonClick('notification')}
+          >
             <svg
               width="23"
               height="23"
@@ -935,7 +906,7 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          {isshow && (
+          {activeButton === 'notification' && (
             <span className="noti">
               <article className="noti-data">
                 <h2>Notifications</h2>
@@ -1109,7 +1080,7 @@ const Navbar = () => {
             </span>
           )}
         </div>
-        <div onClick={openprofile}>
+        <div onClick={() => handleButtonClick('openprofile')}>
           <button className="btn-icon member-notification">
             <svg
               width="23"
@@ -1135,7 +1106,7 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          {isopenprofile && (
+          {activeButton === 'openprofile' && (
             <span className="pro">
               <div className="pro-data">
                 <h2>Unit Charlie</h2>
