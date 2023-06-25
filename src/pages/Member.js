@@ -5,7 +5,6 @@ import '../css/member.css';
 import { BsTelephone } from 'react-icons/bs';
 import { MdAlternateEmail } from 'react-icons/md';
 import { RiDeleteBinLine } from 'react-icons/ri';
-import PopUp from '../components/PopUp';
 import { themeChange } from '../utils';
 import nightImage from '../images/night.png';
 import dayImage from '../images/day.png';
@@ -498,7 +497,6 @@ const Member = () => {
           </article>
         </section>
       </main>
-      <PopUp />
       <footer className="footer-member ">
         &copy; 2023-24 Friday Intel LLP
       </footer>
