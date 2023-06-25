@@ -43,9 +43,16 @@ code {
 }
 
 .ant-menu-dark {
-  background-color: #1c1c1c;
+  background-color: var(--secondary-color);
 }
 
 .ant-menu-dark > .ant-menu-sub {
-  background-color: #1c1c1c;
+  background-color:var(--secondary-color);
+}
+.ant-menu-sub{
+  background: var(--secondary-color) !important;
+}
+.ant-menu-light{
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }

@@ -5,10 +5,11 @@
   height: 7rem;
   bottom: 0px;
   z-index: 9999;
-  background-color: var(--primary-color);
+  background-color: #010101;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: 1px solid var(--primary-color-2);
 }
 .bottom-icon-grp {
   display: flex;
@@ -32,7 +33,7 @@
   border: none;
 }
 .bottom-icon-btn:hover {
-  background-color: var(--primary-color-1);
+  /* background-color: var(--primary-color-1); */
   border-radius: 1em;
 }
 .bottom-icon-btn:hover svg path {
@@ -74,11 +75,11 @@
 
 .footer-searchbar {
   position: relative;
-  border: 2px solid var(--primary-color-1);
+  border: 2px solid var(--primary-color-2);
   border-radius: 23px;
   left: 20px;
   height: 38px;
-  box-shadow: 0px 2px 0px var(--primary-color-1);
+  box-shadow: 0px 2px 0px var(--primary-color-2);
   width: 230px;
   padding-left: 3.5rem;
   background-color: var(--secondary-color);

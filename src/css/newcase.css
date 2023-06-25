@@ -86,7 +86,7 @@
   height: 78vh;
   overflow-y: scroll;
   flex-shrink: 0;
-  border-right: 2px  solid var(--primary-color-2);
+  
 }
 .sideNavSection::-webkit-scrollbar {
   width: 6px;
@@ -101,7 +101,7 @@
   height: 78vh;
   overflow-y: scroll;
   flex-shrink: 0;
-  /* border-right: 2px solid var(--primary-color-2); */
+  border-right: 2px solid var(--primary-color-2);
 }
 .sideNavSections::-webkit-scrollbar {
   width: 6px;
@@ -446,4 +446,13 @@ border-bottom: none;
 }
 .place-content-center li span {
   color: var(--primary-color);
+}
+.ant-btn-primary{
+  width: 18rem;
+  background-color: black;
+  color: white;
+}
+.ant-btn-primary:hover{
+  border: 1px solid var(--primary-color-2);
+  background-color: black;
 }

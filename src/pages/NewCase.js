@@ -229,6 +229,11 @@ const NewCase = () => {
         onOk={handleOk}
         confirmLoading={confirmLoading}
         onCancel={handleCancel}
+        okButtonProps={{
+          children: "Custom OK"
+        }}
+        okText="Save"
+        className='save-modal'
       >
         <Input
           onChange={(e) => setModalText(e.target.value)}
