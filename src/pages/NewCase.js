@@ -16,7 +16,7 @@ import SideNav from '../components/Sidebar';
 import Tool from '../components/Tool';
 import '../css/newcase.css';
 import { getLayoutElements, themeChange } from '../utils';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import DrawerInfo from '../components/DrawerInfo';
 import axios from 'axios';
 import { MagnifyingGlass } from 'react-loader-spinner';
@@ -40,6 +40,9 @@ import PopUp from '../components/PopUp';
 // import { useEffect } from 'react';
 
 const NewCase = () => {
+  const location = useLocation();
+
+  console.log(location.state.values.nodeName);
   const { ROUTES, backendURL } = constants;
   const ref = createRef(null);
   const [_, takeScreenshot] = useScreenshot({
@@ -69,9 +72,6 @@ const NewCase = () => {
   const [modalText, setModalText] = useState('');
   const [nodeInfoList, setNodeInfoList] = useState([]);
   const [activeButton, setActiveButton] = useState(null);
-  const showModal = () => {
-    setOpen(true);
-  };
 
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
@@ -127,7 +127,7 @@ const NewCase = () => {
         edges,
         nodes,
         caseid: uuidv4(),
-        casename: modalText,
+        casename: location.state.values.nodeName,
       };
       const result = await axios.post(`${backendURL}newcase.php`, data, {
         headers: {
@@ -173,10 +173,6 @@ const NewCase = () => {
       })
       .catch((err) => console.log(err));
   };
-
-  console.log('====================================');
-  console.log(nodeInfoList);
-  console.log('====================================');
 
   const handleLogOut = () => {
     dispatch(logOut());
@@ -244,7 +240,7 @@ const NewCase = () => {
         <section className="logo_box">
           <div className="case-dashboard">
             <div>
-              <button className="btn-icon bookmark" onClick={showModal}>
+              <button className="btn-icon bookmark" onClick={handleOk}>
                 <svg
                   width="23"
                   height="23"
@@ -273,7 +269,7 @@ const NewCase = () => {
               <Link to={ROUTES.home}>
                 <h3 className="dashboard-title">DASHBOARD&#160;/</h3>
               </Link>
-              <h3 className="case-no">Case&#160;1</h3>
+              <h3 className="case-no">{location.state.values.nodeName}</h3>
             </div>
           </div>
         </section>
@@ -717,7 +713,7 @@ const NewCase = () => {
               </ReactFlowProvider>
             )}
           </div>
-            <PopUp />
+          <PopUp />
 
           <div className="toolSection-container">
             <div className="toolSection">
