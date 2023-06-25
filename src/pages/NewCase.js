@@ -219,19 +219,6 @@ const NewCase = () => {
   };
   return (
     <>
-      <Modal
-        title="Save Node"
-        open={open}
-        onOk={handleOk}
-        confirmLoading={confirmLoading}
-        onCancel={handleCancel}
-      >
-        <Input
-          onChange={(e) => setModalText(e.target.value)}
-          value={modalText}
-          placeholder="Enter Node Name"
-        ></Input>
-      </Modal>
       <Helmet>
         <title>FridayIntel-NewCase</title>
         <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
