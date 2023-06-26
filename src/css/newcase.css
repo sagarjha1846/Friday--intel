@@ -452,7 +452,16 @@ border-bottom: none;
   background-color: black;
   color: white;
 }
+.ant-btn-default{
+  width: 18rem;
+  margin-right: 10rem;
+}
 .ant-btn-primary:hover{
   border: 1px solid var(--primary-color-2);
   background-color: black;
+}
+.anticon-close{
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 2px;
 }

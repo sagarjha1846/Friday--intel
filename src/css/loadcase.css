@@ -42,9 +42,9 @@
 .css-1kwdphh-MuiDataGrid-virtualScrollerContent {
   width: 100% !important;
 }
-.css-6h1dhi-MuiDataGrid-root {
+/* .css-6h1dhi-MuiDataGrid-root {
   border-color: var(--primary-color-2) !important;
-}
+} */
 .css-axafay-MuiDataGrid-virtualScroller::-webkit-scrollbar {
   width: 6px;
 }

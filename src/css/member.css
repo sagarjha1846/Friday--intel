@@ -111,8 +111,8 @@
   font-size: 1.4rem;
 }
 .subscription_details button {
-  color: var(--secondary-color);
-  background-color: var(--primary-color);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
   height: 3.3rem;
   width: 20rem;
   border-radius: 1.4rem;
@@ -134,7 +134,7 @@ table.GeneratedTable {
 }
 
 table.GeneratedTable td {
-  padding: 5px 6px 0px 6px;
+  padding: 5px 35px 0px 39px;
 }
 
 table.GeneratedTable th {
