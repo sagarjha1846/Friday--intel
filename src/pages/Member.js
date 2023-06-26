@@ -236,7 +236,7 @@ const Member = () => {
                       </svg>
                       &#160; You have a bug that needs to......
                     </p>
-                    <p className="datestamp">5m ago</p>
+                    {/* <p className="datestamp">5m ago</p> */}
                   </section>
                   <section className="notification-sections">
                     <p className="notifications">
@@ -294,7 +294,7 @@ const Member = () => {
                       </svg>
                       &#160; You have bug that needs to.......
                     </p>
-                    <p className="datestamp">0:32 AM</p>
+                    {/* <p className="datestamp">0:32 AM</p> */}
                   </section>
                   <section className="notification-sections">
                     <p className="notifications">
@@ -336,7 +336,7 @@ const Member = () => {
                       </svg>
                       &#160; Welcome to friday intel &#128075;
                     </p>
-                    <p className="datestamp">Yesterday 12:39 AM</p>
+                    {/* <p className="datestamp">Yesterday 12:39 AM</p> */}
                   </section>
 
                   <section className="delete-noti-btn">

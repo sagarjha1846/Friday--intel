@@ -573,7 +573,7 @@ const DrawerInfo = () => {
               <div className="div22">
                 <h4>Remarks</h4>
                 <hr />
-                <p>
+                <p className='tor-ip2-desc'>
                   Retrieves all information obtained <br />
                   from a dark web site and can perform <br />
                   total domain analysis.
