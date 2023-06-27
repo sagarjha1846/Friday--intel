@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-// import { ImCancelCircle } from 'react-icons/im';
-// import { BsGlobe2 } from 'react-icons/bs';
+
 import '../css/PopUp.css';
 function PopUp() {
   const [popup, setPop] = useState(false);
