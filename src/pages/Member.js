@@ -10,16 +10,63 @@ import nightImage from '../images/night.png';
 import dayImage from '../images/day.png';
 import dark from '../images/svg/darklogo.svg';
 import light from '../images/logo.png';
+import Box from '@mui/joy/Box';
+import CircularProgress from '@mui/joy/CircularProgress';
+
+
+function Table({ data }) {
+  return (
+    <table className="GeneratedTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Invoice No.</th>
+          <th>₹ Total</th>
+          <th>Payment Method</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((row, index) => (
+          <tr key={index}>
+            <td>{row.column1}</td>
+            <td>{row.column2}</td>
+            <td>{row.column3}</td>
+            <td>{row.column4}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+
 
 const Member = () => {
+
   const [mode, setMode] = useState(true);
   const [isshow, setIsshow] = useState(false);
   const [logoo, setLogoo] = useState(light);
+  const [progress, setProgress] = React.useState(0);
 
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
+    }, 800);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
   const notification = () => {
     setIsshow(!isshow);
   };
-
+  const data = [
+    { column1: '20-11-2022', column2: 'CID001', column3: '20,00,000', column4: 'Cheque - 666666...' },
+    { column1: '20-12-2022', column2: 'CID002', column3: '20,00,000', column4: 'Cheque - 666666...' },
+    { column1: '20-01-2023', column2: 'CID003', column3: '20,00,000', column4: 'Cheque - 666666...' },
+    { column1: '20-02-2023', column2: 'CID004', column3: '20,00,000', column4: 'Cheque - 666666...' },
+    // More rows...
+  ];
   return (
     <>
       <Helmet>
@@ -353,112 +400,115 @@ const Member = () => {
         </section>
       </nav>
 
-      <main>
-        <section className="account-container">
-          <h1 className="account-heading">Your Account</h1>
-          <p className="account-description">
-            Manage your account & subscription
-          </p>
-        </section>
-        <section className="member_details">
-          <article>
-            <svg
-              width="78"
-              height="78"
-              viewBox="0 0 78 78"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="39"
-                cy="39"
-                r="38"
-                fill="black"
-                fillOpacity="0.1"
-                stroke="url(#paint0_angular_13_13792)"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <path
-                d="M49.5 33.75C49.5 39.5489 44.7989 44.25 39 44.25C33.2011 44.25 28.5 39.5489 28.5 33.75C28.5 27.9511 33.2011 23.25 39 23.25C44.7989 23.25 49.5 27.9511 49.5 33.75Z"
-                fill="black"
-                fillOpacity="0.1"
-              />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M39 21.9375C39 21.9375 41.4024 21.9375 43.5984 22.8663C43.5984 22.8663 45.7184 23.763 47.3527 25.3973C47.3527 25.3973 48.987 27.0316 49.8837 29.1516C49.8837 29.1516 50.8125 31.3476 50.8125 33.75C50.8125 33.75 50.8125 36.1524 49.8837 38.3484C49.8837 38.3484 48.987 40.4684 47.3527 42.1027C47.3527 42.1027 45.7184 43.737 43.5984 44.6337C43.5984 44.6337 41.4024 45.5625 39 45.5625C39 45.5625 36.5976 45.5625 34.4016 44.6337C34.4016 44.6337 32.2816 43.737 30.6473 42.1027C30.6473 42.1027 29.013 40.4684 28.1163 38.3484C28.1163 38.3484 27.1875 36.1524 27.1875 33.75C27.1875 33.75 27.1875 31.3476 28.1163 29.1516C28.1163 29.1516 29.013 27.0316 30.6473 25.3973C30.6473 25.3973 32.2816 23.763 34.4016 22.8663C34.4016 22.8663 36.5976 21.9375 39 21.9375ZM39 24.5625C39 24.5625 35.1944 24.5625 32.5035 27.2535C32.5035 27.2535 29.8125 29.9444 29.8125 33.75C29.8125 33.75 29.8125 37.5556 32.5035 40.2465C32.5035 40.2465 35.1944 42.9375 39 42.9375C39 42.9375 42.8056 42.9375 45.4965 40.2465C45.4965 40.2465 48.1875 37.5556 48.1875 33.75C48.1875 33.75 48.1875 29.9444 45.4965 27.2535C45.4965 27.2535 42.8056 24.5625 39 24.5625Z"
-                fill="var(--primary-color)"
-              />
-              <path
-                d="M47.5319 47.8474C51.4916 50.1337 53.7773 54.0936 53.7773 54.0936C53.9514 54.3951 54.238 54.6151 54.5742 54.7052C54.6851 54.735 54.7993 54.75 54.9141 54.75C54.9278 54.75 54.9416 54.7498 54.9553 54.7493C55.1716 54.7425 55.3828 54.6824 55.5702 54.5742C55.9764 54.3398 56.2266 53.9065 56.2266 53.4375C56.2266 53.4172 56.2261 53.397 56.2252 53.3767C56.2154 53.1672 56.1557 52.963 56.0508 52.7814C53.4133 48.2122 48.8445 45.5741 48.8445 45.5741C44.2757 42.936 39 42.936 39 42.936C33.7243 42.936 29.1555 45.5741 29.1555 45.5741C24.587 48.212 21.9496 52.7806 21.9496 52.7806L21.9492 52.7814C21.8341 52.9809 21.7734 53.2071 21.7734 53.4375L21.7737 53.4613C21.7756 53.568 21.7905 53.6742 21.8182 53.7773C21.9083 54.1135 22.1283 54.4002 22.4298 54.5742C22.6293 54.6894 22.8556 54.75 23.0859 54.75C23.1102 54.75 23.1345 54.7493 23.1588 54.748C23.6011 54.7234 24.0012 54.4773 24.2227 54.0936C26.5084 50.1337 30.4681 47.8474 30.4681 47.8474C34.4277 45.561 39 45.561 39 45.561C43.5723 45.561 47.5319 47.8474 47.5319 47.8474Z"
-                fill="var(--primary-color)"
-              />
-              <circle
-                cx="62"
-                cy="64"
-                r="12.75"
-                fill="#00F0FF"
-                stroke="white"
-                strokeWidth="1.5"
-              />
-              <path
-                d="M62.5 59.9999L66 63.4999L67.6437 61.8562C67.691 61.8097 67.7285 61.7542 67.7541 61.6931C67.7797 61.6319 67.7929 61.5662 67.7929 61.4999C67.7929 61.4337 67.7797 61.368 67.7541 61.3068C67.7285 61.2457 67.691 61.1902 67.6437 61.1437L64.8563 58.3562C64.8097 58.309 64.7543 58.2714 64.6931 58.2458C64.632 58.2202 64.5663 58.207 64.5 58.207C64.4337 58.207 64.368 58.2202 64.3069 58.2458C64.2457 58.2714 64.1903 58.309 64.1437 58.3562L62.5 59.9999Z"
-                fill="white"
-                fillOpacity="0.1"
-              />
-              <path
-                d="M65.6462 63.8533L65.6464 63.8536C65.7402 63.9473 65.8674 64 66 64C66.1326 64 66.2598 63.9473 66.3536 63.8536C66.4473 63.7598 66.5 63.6326 66.5 63.5C66.5 63.3674 66.4473 63.2402 66.3536 63.1464L66.3533 63.1462L62.8536 59.6465C62.7598 59.5527 62.6326 59.5 62.5 59.5C62.3674 59.5 62.2402 59.5527 62.1464 59.6464C62.0527 59.7402 62 59.8674 62 60C62 60.1326 62.0527 60.2598 62.1464 60.3536L65.6462 63.8533Z"
-                fill="white"
-              />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M57 69.9999H59.7929L59.7938 69.9999C59.7938 69.9999 59.9907 70.0003 60.173 69.9254C60.173 69.9254 60.3561 69.8502 60.4964 69.7106L67.9973 62.2097C67.9973 62.2097 68.1377 62.0715 68.2153 61.8862C68.2153 61.8862 68.2929 61.7008 68.2929 61.4999C68.2929 61.4999 68.2929 61.299 68.2153 61.1137C68.2153 61.1137 68.1377 60.9284 67.9946 60.7874L65.2098 58.0026C65.2098 58.0026 65.0715 57.8622 64.8862 57.7846C64.8862 57.7846 64.7009 57.707 64.5 57.707C64.5 57.707 64.2991 57.707 64.1138 57.7846C64.1138 57.7846 63.9285 57.8622 63.7875 58.0054L56.2902 65.5026C56.2902 65.5026 56.1497 65.6438 56.0745 65.8269C56.0745 65.8269 55.9993 66.01 56 66.2079L56 68.9999C56 68.9999 56 69.4142 56.2929 69.7071C56.2929 69.7071 56.5858 69.9999 57 69.9999ZM67.2902 61.5026L59.7929 68.9999H57L57 66.2071L64.5 58.707L64.5027 58.7097L67.2929 61.4999L67.2902 61.5026Z"
-                fill="white"
-              />
-              <defs>
-                <radialGradient
-                  id="paint0_angular_13_13792"
-                  cx="0"
-                  cy="0"
-                  r="1"
-                  gradientUnits="userSpaceOnUse"
-                  gradientTransform="translate(39 39) rotate(52.6507) scale(37.6311)"
+      <main className='member-main-container'>
+        <div>
+          <div className='member_deatils_container'>
+            <section className="account-container">
+              <h1 className="account-heading">Your Account</h1>
+              <p className="account-description">
+                Manage your account & subscription
+              </p>
+            </section>
+            <section className="member_details">
+              <article>
+                <svg
+                  width="78"
+                  height="78"
+                  viewBox="0 0 78 78"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <stop stopColor="#00F0FF" />
-                  <stop offset="1" stopColor="#FF1CF7" />
-                </radialGradient>
-              </defs>
-            </svg>
-          </article>
+                  <circle
+                    cx="39"
+                    cy="39"
+                    r="38"
+                    fill="black"
+                    fillOpacity="0.1"
+                    stroke="url(#paint0_angular_13_13792)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M49.5 33.75C49.5 39.5489 44.7989 44.25 39 44.25C33.2011 44.25 28.5 39.5489 28.5 33.75C28.5 27.9511 33.2011 23.25 39 23.25C44.7989 23.25 49.5 27.9511 49.5 33.75Z"
+                    fill="black"
+                    fillOpacity="0.1"
+                  />
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M39 21.9375C39 21.9375 41.4024 21.9375 43.5984 22.8663C43.5984 22.8663 45.7184 23.763 47.3527 25.3973C47.3527 25.3973 48.987 27.0316 49.8837 29.1516C49.8837 29.1516 50.8125 31.3476 50.8125 33.75C50.8125 33.75 50.8125 36.1524 49.8837 38.3484C49.8837 38.3484 48.987 40.4684 47.3527 42.1027C47.3527 42.1027 45.7184 43.737 43.5984 44.6337C43.5984 44.6337 41.4024 45.5625 39 45.5625C39 45.5625 36.5976 45.5625 34.4016 44.6337C34.4016 44.6337 32.2816 43.737 30.6473 42.1027C30.6473 42.1027 29.013 40.4684 28.1163 38.3484C28.1163 38.3484 27.1875 36.1524 27.1875 33.75C27.1875 33.75 27.1875 31.3476 28.1163 29.1516C28.1163 29.1516 29.013 27.0316 30.6473 25.3973C30.6473 25.3973 32.2816 23.763 34.4016 22.8663C34.4016 22.8663 36.5976 21.9375 39 21.9375ZM39 24.5625C39 24.5625 35.1944 24.5625 32.5035 27.2535C32.5035 27.2535 29.8125 29.9444 29.8125 33.75C29.8125 33.75 29.8125 37.5556 32.5035 40.2465C32.5035 40.2465 35.1944 42.9375 39 42.9375C39 42.9375 42.8056 42.9375 45.4965 40.2465C45.4965 40.2465 48.1875 37.5556 48.1875 33.75C48.1875 33.75 48.1875 29.9444 45.4965 27.2535C45.4965 27.2535 42.8056 24.5625 39 24.5625Z"
+                    fill="var(--primary-color)"
+                  />
+                  <path
+                    d="M47.5319 47.8474C51.4916 50.1337 53.7773 54.0936 53.7773 54.0936C53.9514 54.3951 54.238 54.6151 54.5742 54.7052C54.6851 54.735 54.7993 54.75 54.9141 54.75C54.9278 54.75 54.9416 54.7498 54.9553 54.7493C55.1716 54.7425 55.3828 54.6824 55.5702 54.5742C55.9764 54.3398 56.2266 53.9065 56.2266 53.4375C56.2266 53.4172 56.2261 53.397 56.2252 53.3767C56.2154 53.1672 56.1557 52.963 56.0508 52.7814C53.4133 48.2122 48.8445 45.5741 48.8445 45.5741C44.2757 42.936 39 42.936 39 42.936C33.7243 42.936 29.1555 45.5741 29.1555 45.5741C24.587 48.212 21.9496 52.7806 21.9496 52.7806L21.9492 52.7814C21.8341 52.9809 21.7734 53.2071 21.7734 53.4375L21.7737 53.4613C21.7756 53.568 21.7905 53.6742 21.8182 53.7773C21.9083 54.1135 22.1283 54.4002 22.4298 54.5742C22.6293 54.6894 22.8556 54.75 23.0859 54.75C23.1102 54.75 23.1345 54.7493 23.1588 54.748C23.6011 54.7234 24.0012 54.4773 24.2227 54.0936C26.5084 50.1337 30.4681 47.8474 30.4681 47.8474C34.4277 45.561 39 45.561 39 45.561C43.5723 45.561 47.5319 47.8474 47.5319 47.8474Z"
+                    fill="var(--primary-color)"
+                  />
+                  <circle
+                    cx="62"
+                    cy="64"
+                    r="12.75"
+                    fill="#00F0FF"
+                    stroke="white"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    d="M62.5 59.9999L66 63.4999L67.6437 61.8562C67.691 61.8097 67.7285 61.7542 67.7541 61.6931C67.7797 61.6319 67.7929 61.5662 67.7929 61.4999C67.7929 61.4337 67.7797 61.368 67.7541 61.3068C67.7285 61.2457 67.691 61.1902 67.6437 61.1437L64.8563 58.3562C64.8097 58.309 64.7543 58.2714 64.6931 58.2458C64.632 58.2202 64.5663 58.207 64.5 58.207C64.4337 58.207 64.368 58.2202 64.3069 58.2458C64.2457 58.2714 64.1903 58.309 64.1437 58.3562L62.5 59.9999Z"
+                    fill="white"
+                    fillOpacity="0.1"
+                  />
+                  <path
+                    d="M65.6462 63.8533L65.6464 63.8536C65.7402 63.9473 65.8674 64 66 64C66.1326 64 66.2598 63.9473 66.3536 63.8536C66.4473 63.7598 66.5 63.6326 66.5 63.5C66.5 63.3674 66.4473 63.2402 66.3536 63.1464L66.3533 63.1462L62.8536 59.6465C62.7598 59.5527 62.6326 59.5 62.5 59.5C62.3674 59.5 62.2402 59.5527 62.1464 59.6464C62.0527 59.7402 62 59.8674 62 60C62 60.1326 62.0527 60.2598 62.1464 60.3536L65.6462 63.8533Z"
+                    fill="white"
+                  />
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M57 69.9999H59.7929L59.7938 69.9999C59.7938 69.9999 59.9907 70.0003 60.173 69.9254C60.173 69.9254 60.3561 69.8502 60.4964 69.7106L67.9973 62.2097C67.9973 62.2097 68.1377 62.0715 68.2153 61.8862C68.2153 61.8862 68.2929 61.7008 68.2929 61.4999C68.2929 61.4999 68.2929 61.299 68.2153 61.1137C68.2153 61.1137 68.1377 60.9284 67.9946 60.7874L65.2098 58.0026C65.2098 58.0026 65.0715 57.8622 64.8862 57.7846C64.8862 57.7846 64.7009 57.707 64.5 57.707C64.5 57.707 64.2991 57.707 64.1138 57.7846C64.1138 57.7846 63.9285 57.8622 63.7875 58.0054L56.2902 65.5026C56.2902 65.5026 56.1497 65.6438 56.0745 65.8269C56.0745 65.8269 55.9993 66.01 56 66.2079L56 68.9999C56 68.9999 56 69.4142 56.2929 69.7071C56.2929 69.7071 56.5858 69.9999 57 69.9999ZM67.2902 61.5026L59.7929 68.9999H57L57 66.2071L64.5 58.707L64.5027 58.7097L67.2929 61.4999L67.2902 61.5026Z"
+                    fill="white"
+                  />
+                  <defs>
+                    <radialGradient
+                      id="paint0_angular_13_13792"
+                      cx="0"
+                      cy="0"
+                      r="1"
+                      gradientUnits="userSpaceOnUse"
+                      gradientTransform="translate(39 39) rotate(52.6507) scale(37.6311)"
+                    >
+                      <stop stopColor="#00F0FF" />
+                      <stop offset="1" stopColor="#FF1CF7" />
+                    </radialGradient>
+                  </defs>
+                </svg>
+              </article>
 
-          <article className="agency_description">
-            <h3>Unit Charlie</h3>
-            <h4>Kangaroo Agency</h4>
-          </article>
+              <article className="agency_description">
+                <h3>Unit Charlie</h3>
+                <h4>Kangaroo Agency</h4>
+              </article>
 
-          <article className="member_contact">
-            <h4>
-              <MdAlternateEmail /> john.doe@fridayintel.io
-            </h4>
-            <h4>
-              <BsTelephone /> +91 99999 99999
-            </h4>
-          </article>
-        </section>
-        <section className="transaction-details">
-          <article className="subscription_details">
-            <h3>Subscription Validity</h3>
-            <div>
+              <article className="member_contact">
+                <h4>
+                  <MdAlternateEmail /> john.doe@fridayintel.io
+                </h4>
+                <h4>
+                  <BsTelephone /> +91 99999 99999
+                </h4>
+              </article>
+            </section>
+          </div>
+          <section className="transaction-details">
+            <article className="subscription_details">
+              <h3>TRANSACTION HISTORY</h3>
+              {/* <div>
               <h6>Annually </h6>
               <p>(27 days remaining)</p>
-            </div>
-            <button>Renew Activation</button>
-            <a href="#cancel subscription">Cancel Subscription</a>
-          </article>
-          <article>
-            <table className="GeneratedTable">
+            </div> */}
+              <button>Renew Activation</button>
+              {/* <a href="#cancel subscription">Cancel Subscription</a> */}
+            </article>
+            <article>
+              {/* <table className="GeneratedTable">
               <thead>
                 <tr>
                   <th>Date</th>
@@ -493,9 +543,48 @@ const Member = () => {
                   <td>Cheque - 666666</td>
                 </tr>
               </tbody>
-            </table>
-          </article>
-        </section>
+            </table> */}
+              <Table data={data} />
+            </article>
+          </section>
+        </div>
+        <div className='right-query-links'>
+          <section className='query-limit'>
+            <h2>QUERY LIMIT</h2>
+            <div><h3>Package : </h3>
+              <span>GOLD</span>
+            </div>
+
+            <span className='query-limit-number'>
+              <p>Available
+                <p>100000</p>
+                from <span>1000000</span>
+              </p>
+            </span>
+            <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', flexWrap: 'wrap' }}>
+              {/* <CircularProgress determinate value={25} /> */}
+              {/* <CircularProgress determinate value={50} /> */}
+              <CircularProgress color="primary" sx={{
+                "--CircularProgress-size": "250px",
+                "--CircularProgress-trackThickness": "10px",
+                "--CircularProgress-progressThickness": "15px",
+
+              }} determinate value={75} />
+              {/* <CircularProgress determinate value={100} /> */}
+              {/* <CircularProgress determinate value={progress} /> */}
+            </Box>
+          </section>
+          <section className='quick-links'>
+            <h2>QUICK LINKS</h2>
+            <div className='links-profile'>
+              <ul>Website</ul>
+              <ul>
+                Helpdesk
+              </ul>
+              <ul>Dashboard</ul>
+            </div>
+          </section>
+        </div>
       </main>
       <footer className="footer-member ">
         &copy; 2023-24 Friday Intel LLP
