@@ -38,10 +38,11 @@ const Navbar = ({
   setIsLoading,
   mode,
   setMode,
+  activeButton,
+  setActiveButton,
 }) => {
   const [logoo, setLogoo] = useState(light);
   const [search, setSearch] = useState('');
-  const [activeButton, setActiveButton] = useState(null);
   const { ROUTES, backendURL } = constants;
   const { token } = useSelector((state) => state.auth);
 
@@ -52,8 +53,10 @@ const Navbar = ({
   const saveNode = async () => {
     if (nodes.length > 0 && edges.length > 0) {
       const data = {
-        edges,
-        nodes,
+        data: {
+          edges,
+          nodes,
+        },
         caseid: uuidv4(),
         casename: caseName,
       };

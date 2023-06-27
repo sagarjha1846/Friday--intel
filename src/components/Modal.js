@@ -1,8 +1,8 @@
 import { Button, Form, Input, Modal } from 'antd';
 import React from 'react';
-import { CloseIcon } from '../pages/Home';
 import { useNavigate } from 'react-router';
 import constants from '../constant/routesConstant';
+import { ReactComponent as CloseIcon } from '../images/svg/close.svg';
 
 const ModalView = ({
   setOpenModal,

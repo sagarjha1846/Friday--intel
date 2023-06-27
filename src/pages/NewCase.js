@@ -42,35 +42,20 @@ const NewCase = ({
   onEdgesChange,
   canvasFunc,
   mode,
+  setCaseName,
+  activeButton,
 }) => {
-  const location = useLocation();
-
   const ref = createRef(null);
   const [_, takeScreenshot] = useScreenshot({
     type: 'image/jpeg',
     quality: 1.0,
   });
 
+  const location = useLocation();
   const navigate = useNavigate();
-  // const searchRef = useRef();
-  // const [nodeInfo, setNodeInfo] = useState({ query: '', data: null });
-  // const [nodes, setNodes, onNodesChange] = useNodesState([]);
-  // const [edges, setEdges, onEdgesChange] = useEdgesState([]);
-  // const [canvasFunc, setCanvasFunc] = useState();
-  // const [isChecked, setIsChecked] = useState({});
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [search, setSearch] = useState('');
-  // const [activeMenu, setActiveMenu] = useState('');
+
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState(1);
-  // const dispatch = useDispatch();
-  // const [open, setOpen] = useState(false);
-  // const [confirmLoading, setConfirmLoading] = useState(false);
-  // const [modalText, setModalText] = useState('');
-  // const [nodeInfoList, setNodeInfoList] = useState([]);
-  const [activeButton, setActiveButton] = useState(null);
-
-  const [caseName, setCaseName] = useState('');
 
   useEffect(() => {
     if (location?.state?.values?.nodeName) {
@@ -78,12 +63,11 @@ const NewCase = ({
     } else {
       navigate('/');
     }
-  }, [location, navigate]);
+  }, [location, navigate, setCaseName]);
 
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
   };
-  const { token } = useSelector((state) => state.auth);
   const download = (image, { name = 'img', extension = 'jpg' } = {}) => {
     const a = document.createElement('a');
     a.href = image;

@@ -36,6 +36,8 @@ const App = () => {
   const [mode, setMode] = useState(true);
   const [nodeInfoList, setNodeInfoList] = useState([]);
   const [caseName, setCaseName] = useState('');
+  const [activeButton, setActiveButton] = useState(null);
+
   return (
     <>
       {token && (
@@ -52,13 +54,15 @@ const App = () => {
             setCaseName={setCaseName}
             setMode={setMode}
             mode={mode}
+            activeButton={activeButton}
+            setActiveButton={setActiveButton}
           />
         </nav>
       )}
       <Routes>
         <Route element={<PrivateRoute />}>
           <Route
-            path={ROUTES.home}
+            path="/*"
             element={
               <Home
                 caseName={caseName}
@@ -91,6 +95,9 @@ const App = () => {
                 onNodesChange={onNodesChange}
                 onEdgesChange={onEdgesChange}
                 canvasFunc={canvasFunc}
+                activeButton={activeButton}
+                setActiveButton={setActiveButton}
+                setCaseName={setCaseName}
               />
             }
           />
@@ -98,14 +105,7 @@ const App = () => {
             path={ROUTES.caseBlog}
             element={<CaseBlog setMode={setMode} mode={mode} />}
           />
-          <Route
-            path={ROUTES.loadCase}
-            element={<LoadCase setMode={setMode} mode={mode} />}
-          />
-          <Route
-            path={ROUTES.readCase}
-            element={<ReadCase setMode={setMode} mode={mode} />}
-          />
+
           <Route
             path={ROUTES.member}
             element={<Member setMode={setMode} mode={mode} />}
