@@ -3,14 +3,11 @@ import { Helmet } from 'react-helmet';
 import '../css/member.css';
 import { BsTelephone } from 'react-icons/bs';
 import { MdAlternateEmail } from 'react-icons/md';
-import light from '../images/logo.png';
 import Box from '@mui/joy/Box';
 import CircularProgress from '@mui/joy/CircularProgress';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { ReactComponent as User } from '../images/svg/usercheck.svg';
-import { ReactComponent as Building } from '../images/svg/building.svg';
-import { ReactComponent as Exit } from '../images/svg/exit.svg';
 
 function Table({ data }) {
   return (
@@ -54,9 +51,7 @@ const Member = () => {
       clearInterval(timer);
     };
   }, []);
-  const notification = () => {
-    setIsshow(!isshow);
-  };
+
   const data = [
     {
       column1: '20-11-2022',
