@@ -6,9 +6,7 @@ import ForgetPassword from './pages/ForgetPassword';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import NewCase from './pages/NewCase';
-import LoadCase from './pages/LoadCase';
 import Page404 from './pages/Page404';
-import ReadCase from './pages/ReadCase';
 import Member from './pages/Member';
 import constants from './constant/routesConstant';
 
