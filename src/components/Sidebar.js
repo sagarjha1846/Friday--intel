@@ -136,16 +136,16 @@ const Sidenav = (props) => {
 
   return (
     <div>
-      <Button
+      <button
         onClick={toggleCollapsed}
-        className=" relative right-0 mt-5 ml-5 flex justify-start collapse-sidebar_btn"
+        className="  w-auto right-0 mt-5 ml-10 flex justify-start collapse-sidebar_btn"
       >
         {collapsed ? (
           <MdOutlineKeyboardArrowRight size={25} />
         ) : (
           <MdOutlineKeyboardArrowLeft size={25} />
         )}
-      </Button>
+      </button>
       <Menu
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
