@@ -86,7 +86,7 @@
   height: 78vh;
   overflow-y: scroll;
   flex-shrink: 0;
-  border-right: 2px  solid var(--primary-color-2);
+  
 }
 .sideNavSection::-webkit-scrollbar {
   width: 6px;
@@ -101,7 +101,7 @@
   height: 78vh;
   overflow-y: scroll;
   flex-shrink: 0;
-  /* border-right: 2px solid var(--primary-color-2); */
+  border-right: 2px solid var(--primary-color-2);
 }
 .sideNavSections::-webkit-scrollbar {
   width: 6px;
@@ -432,7 +432,27 @@ border-bottom: none;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 1.45rem;
 }
-.ant-btn-default svg {
+.MuiDataGrid-main{
+  color: var(--primary-color);
+}
+/* input[type='checkbox'] {
+  accent-color: red;
+}
+.MuiCheckbox-root{
+  color: var(--primary-color);
+}
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root{
+  color: var(--primary-color);
+}
+.MuiDataGrid-checkboxInput{
+  color: var(--primary-color);
+} */
+.MuiDataGrid-cellCheckbox span{
+  color: var(--primary-color);
+}
+.MuiDataGrid-columnHeaderTitleContainer span{
+  color: var(--primary-color);
+}.ant-btn-default svg {
   fill: var(--primary-color-2);
 }
 .noti-icon-delete {
@@ -446,4 +466,22 @@ border-bottom: none;
 }
 .place-content-center li span {
   color: var(--primary-color);
+}
+.ant-btn-primary{
+  width: 18rem;
+  background-color: black;
+  color: white;
+}
+.ant-btn-default{
+  width: 18rem;
+  margin-right: 10rem;
+}
+.ant-btn-primary:hover{
+  border: 1px solid var(--primary-color-2);
+  background-color: black;
+}
+.anticon-close{
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 2px;
 }

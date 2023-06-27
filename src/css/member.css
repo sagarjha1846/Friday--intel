@@ -32,7 +32,7 @@
 }
 
 .account-container {
-  height: 16rem;
+  height: 15rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,25 +41,25 @@
 }
 .account-heading {
   font-size: 4.4rem;
-  letter-spacing: 1rem;
+  letter-spacing: 1px;
   /* line-height: 1.5; */
-  line-height: 2;
+  line-height: 1.5;
 }
 .account-description {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 200;
   color: var(--primary-color-1);
 }
 .member_details {
   display: flex;
-  margin-left: 14rem;
+  margin-left: 9rem;
 }
 .agency_description {
   margin-left: 2.5rem;
   margin-top: 1.8rem;
 }
 .agency_description h3 {
-  font-size: 4rem;
+  font-size: 2.4rem;
   font-weight: 400;
   margin-bottom: 1rem;
 }
@@ -68,7 +68,7 @@
   font-weight: 400;
 }
 .member_contact {
-  margin-left: 32rem;
+  margin-left: 15rem;
   margin-top: 1rem;
 }
 .member_contact h4 {
@@ -86,15 +86,23 @@
   justify-content: space-around;
   align-items: center;
   background: rgba(0, 255, 255, 0.1);
-  height: 25rem;
+  height: 26rem;
+  width: 77rem;
+  flex-direction: column;
+  background-color:var(--members-color-1);
+  border-radius: 1rem;
 }
 .subscription_details {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  justify-content: space-evenly;
+  /* flex-direction: column; */
 }
 .subscription_details h3 {
   font-size: 2.4rem;
   font-weight: 400;
+  margin-top: 1rem;
+  /* align-items: baseline; */
   /* margin-top: rem; */
 }
 .subscription_details div {
@@ -111,13 +119,14 @@
   font-size: 1.4rem;
 }
 .subscription_details button {
-  color: var(--secondary-color);
-  background-color: var(--primary-color);
+  color: white;
+  background-color: rgb(0, 0, 0);
   height: 3.3rem;
   width: 20rem;
   border-radius: 1.4rem;
-  box-shadow: 0px 4px 0px var(--primary-color-1);
-  margin: 0rem 0rem 2rem 1rem;
+  border: 1PX solid var(--primary-color);
+  box-shadow: 0px 4px 0px rgba(43, 43, 43, 0.5);
+  /* margin: 0rem 0rem 2rem 1rem; */
 }
 .subscription_details a {
   color: var(--primary-color);
@@ -131,17 +140,18 @@ table.GeneratedTable {
   color: var(--primary-color);
   font-weight: 400;
   overflow: auto;
+  height: 1rem;
 }
 
 table.GeneratedTable td {
-  padding: 5px 6px 0px 6px;
+  padding: 5px 35px 0px 39px;
 }
 
 table.GeneratedTable th {
   padding: 0.5rem;
 }
 .footer-member {
-  margin-top: 6rem;
+  margin-top: 2rem;
   margin-left: 5rem;
   font-size: 1.6rem;
   font-weight: 400;
@@ -162,4 +172,63 @@ table.GeneratedTable th {
   border: 2px solid var(--primary-color);
   z-index: 1;
   right: -2.5rem;
+}
+.member_deatils_container{
+  width: 77rem;
+  height: 26rem;
+  background-color: var(--members-color-1);
+  margin: 3rem 5rem 0rem 5rem;
+  border-radius: 1rem;
+}
+.member-main-container{
+  display: flex;
+}
+.query-limit{
+  height: 38.5rem;
+  width: 41rem;
+  margin: 3rem 0rem 1.5rem 3rem;
+  background-color: var(--members-color-1);
+  border-radius: 1rem;
+}
+.query-limit h2{
+  font-size: 2.4rem;
+  padding: 2rem 0rem 1rem 1.5rem;
+}
+.query-limit h3{
+  font-size: 2.4rem;
+  padding-left: 1.5rem;
+  display: inline;
+}
+.query-limit span{
+  font-size: 1.8rem;
+}
+.MuiCircularProgress-colorPrimary {
+  color: green !important;
+}
+.css-mjha5m{
+margin: 4rem 8rem;
+}
+.quick-links{
+  height: 15rem;
+  width: 41rem;
+  background-color: var(--members-color-1);
+  border-radius: 1rem;
+  margin-left: 3rem;
+}
+.quick-links h2{
+  font-size: 2.4rem;
+  padding: 2.5rem 0rem 1.5rem 2.5rem;
+}
+.links-profile{
+  font-size: 1.8rem;
+  padding-left: 4rem;
+}
+.links-profile ul{
+  padding-bottom: .5rem;
+}
+.query-limit-number{
+  position: absolute;
+  top: 33rem;
+  right: -8rem;
+  text-align: center;
 }

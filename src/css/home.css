@@ -8,6 +8,9 @@
   justify-content: space-between;
   align-items: center;
 }
+.home-container{
+  display: flex;
+}
 
 .case_cards:hover {
   background: url(../images/case-card.png);
@@ -61,4 +64,31 @@
   align-items: center;
   gap: 0.75rem;
   cursor: pointer;
+}
+.search-analysis{
+  margin: 4rem 0rem 0rem 3rem;
+  width: 75%;
+  border: 2px solid var(--primary-color);
+  border-radius: 1rem;
+}
+.home-analysis-head{
+  font-size: 3.6rem;
+  margin: 2rem 0rem 1rem 1.8rem;
+}
+.analysis-table{
+  height: 22rem;
+}
+.analysis-card-home {
+  width: 20rem;
+  width: 30rem;
+  height: auto;
+  background: var(--secondary-color);
+  /* border-radius: 1.5rem; */
+  /* padding: 1.5rem; */
+  overflow: hidden;
+  /* position: relative; */
+  /* box-shadow: 2px 10px 20px var(--primary-color-1); */
+  border-radius: 7px;
+  margin: 1rem;
+  border: 2px solid var(--primary-color);
 }

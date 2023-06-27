@@ -126,6 +126,13 @@
 .cards-section {
   overflow-y: auto;
 }
+.cards-section::-webkit-scrollbar {
+  width: 8px;
+}
+.cards-section::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-2);
+  /* outline: 1px solid var(--primary-color-1); */
+}
 .cases {
   position: sticky;
 }

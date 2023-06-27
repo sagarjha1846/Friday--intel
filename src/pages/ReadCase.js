@@ -7,7 +7,7 @@ import play from '../images/play.jpg';
 import caseimg_1 from '../images/ReadcaseImg-1.jpeg';
 import caseimg_2 from '../images/ReadcaseImg-2.jpeg';
 
-const Card = (props) => {
+export const Card = (props) => {
   return (
     <div className="card">
       <div className="card-img-holder">
