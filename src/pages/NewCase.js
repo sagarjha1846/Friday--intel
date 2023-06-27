@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { createRef, useCallback, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
@@ -11,7 +12,7 @@ import SideNav from '../components/Sidebar';
 import Tool from '../components/Tool';
 import '../css/newcase.css';
 import { getLayoutElements } from '../utils';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { MagnifyingGlass } from 'react-loader-spinner';
 
 import { createFileName, useScreenshot } from 'use-react-screenshot';
@@ -20,6 +21,9 @@ import { useSelector } from 'react-redux';
 import PopUp from '../components/PopUp';
 
 import Profile from '../components/Profile';
+import axios from 'axios';
+import constants from '../constant/routesConstant';
+import { message } from 'antd/es';
 
 // import { useEffect } from 'react';
 
@@ -50,6 +54,9 @@ const NewCase = ({
     type: 'image/jpeg',
     quality: 1.0,
   });
+  const { token } = useSelector((state) => state.auth);
+  let { id } = useParams();
+  const { ROUTES, backendURL } = constants;
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -106,6 +113,37 @@ const NewCase = ({
       }
     }
   };
+
+  const saveNode = async () => {
+    if (nodes.length > 0 && edges.length > 0) {
+      const data = {
+        data: {
+          edges,
+          nodes,
+        },
+        caseid: id,
+      };
+      const result = await axios.post(`${backendURL}savecase.php`, data, {
+        headers: {
+          Authorization: token,
+        },
+      });
+      return result;
+    } else {
+      const error = 'No node is present in the canvas to be saved!';
+      throw error;
+    }
+  };
+
+  useEffect(() => {
+    saveNode()
+      .then((res) => {
+        console.log('Node was saved');
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [nodes, edges]);
 
   return (
     <>

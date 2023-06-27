@@ -1,4 +1,4 @@
-import { Button, Menu } from 'antd';
+import { Menu } from 'antd';
 import '../css/sidebar.css';
 import React from 'react';
 import { useState } from 'react';

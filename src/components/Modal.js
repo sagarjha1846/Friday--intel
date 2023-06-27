@@ -3,37 +3,57 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 import constants from '../constant/routesConstant';
 import { ReactComponent as CloseIcon } from '../images/svg/close.svg';
+import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { message } from 'antd/es';
 
-const ModalView = ({
-  setOpenModal,
-  openModal,
-  form,
-  caseName,
-  setCaseName,
-}) => {
+const ModalView = ({ setOpenModal, openModal, form, setCaseName }) => {
+  const { backendURL } = constants;
   const navigate = useNavigate();
+  const { token } = useSelector((state) => state.auth);
   const handleCancel = () => {
     setOpenModal(false);
   };
 
+  const saveNode = async (value, id) => {
+    const data = {
+      caseid: id,
+      casename: value,
+    };
+    const result = await axios.post(`${backendURL}newcase.php`, data, {
+      headers: {
+        Authorization: token,
+      },
+    });
+    return result;
+  };
+
   const onFinish = (values) => {
     if (values) {
-      setCaseName(values.nodeName);
-      navigate(constants.ROUTES.newCase, { state: { values } });
+      const id = uuidv4();
+      saveNode(values.nodeName, id)
+        .then((res) => {
+          setCaseName(values.nodeName);
+          message.success(res);
+          navigate(`${constants.ROUTES.newCase}/${values.nodeName}/${id}`, {
+            state: { values },
+          });
+        })
+        .catch((err) => {
+          message.success(err);
+        });
     }
   };
 
   return (
     <Modal
       closable={false}
-      title=<div className="text-[#2b2b2b] w-full flex justify-between items-center align-middle self-center content-center ">
-        <div>Save Node</div>
-        <Button
-          onClick={handleCancel}
-          className=" p-0 m-0  border-none hover:bg-none"
-        >
+      title=<div className="text-[#2b2b2b] w-full flex justify-between ">
+        <div className="w-[100%] ">Save Node</div>
+        <button onClick={handleCancel} className="  border-none hover:bg-none">
           <CloseIcon />
-        </Button>
+        </button>
       </div>
       open={openModal}
       footer={

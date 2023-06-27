@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import '../css/navbar.css';
 import DrawerInfo from './DrawerInfo';
@@ -12,8 +13,6 @@ import { useState } from 'react';
 import '../css/newcase.css';
 import { themeChange } from '../utils';
 import constants from '../constant/routesConstant';
-import { v4 as uuidv4 } from 'uuid';
-import { message } from 'antd';
 import { ReactComponent as Logo } from '../images/svg/firdayIntel.svg';
 import { ReactComponent as BookMark } from '../images/svg/bookmarkIcon.svg';
 import { ReactComponent as Sun } from '../images/svg/sun.svg';
@@ -50,43 +49,13 @@ const Navbar = ({
     setActiveButton((prevButton) => (prevButton === button ? null : button));
   };
 
-  const saveNode = async () => {
-    if (nodes.length > 0 && edges.length > 0) {
-      const data = {
-        data: {
-          edges,
-          nodes,
-        },
-        caseid: uuidv4(),
-        casename: caseName,
-      };
-      const result = await axios.post(`${backendURL}newcase.php`, data, {
-        headers: {
-          Authorization: token,
-        },
-      });
-      return result;
-    } else {
-      const error = 'No node is present in the canvas to be saved!';
-      throw error;
-    }
-  };
-
-  const handleOk = () => {
-    saveNode()
-      .then((res) => {
-        message.success('Node was saved');
-      })
-      .catch((err) => {
-        message.error(err);
-      });
-  };
+  const handleOk = () => {};
 
   const location = useLocation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (location.pathname === '/newcase') {
+    if (location.pathname.split('/')[1] === `${ROUTES.newCase.split('/')[1]}`) {
       setIsLoading(true);
 
       axios
@@ -115,7 +84,6 @@ const Navbar = ({
           setIsLoading(false);
         })
         .catch((err) => {
-          console.log(err);
           setIsLoading(true);
         });
     }
@@ -123,7 +91,6 @@ const Navbar = ({
 
   const handleChange = (e) => {
     setSearch(e.target.value);
-    console.log(search);
   };
 
   return (
@@ -185,7 +152,8 @@ const Navbar = ({
       ) : (
         <>
           <section className="logo_box">
-            {location.pathname === '/newcase' ? (
+            {location.pathname.split('/')[1] ===
+            `${ROUTES.newCase.split('/')[1]}` ? (
               <div className="case-dashboard">
                 <div>
                   <button className="btn-icon bookmark" onClick={handleOk}>

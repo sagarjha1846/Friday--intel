@@ -71,7 +71,7 @@ const App = () => {
             }
           />
           <Route
-            path={ROUTES.newCase}
+            path={`${ROUTES.newCase}/:casename/:id`}
             element={
               <NewCase
                 setEdges={setEdges}
@@ -134,7 +134,7 @@ const App = () => {
         <Route path="*" element={<Page404 setMode={setMode} mode={mode} />} />
       </Routes>
 
-      {token && location.pathname === '/newcase' && (
+      {token && location.pathname === `${ROUTES.newCase}/:casename/:id` && (
         <footer>
           <Footer />
         </footer>
