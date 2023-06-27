@@ -35,7 +35,6 @@ function Table({ data }) {
 }
 
 const Member = () => {
-  const [isshow, setIsshow] = useState(false);
   const [progress, setProgress] = useState(0);
 
   console.log(progress);
