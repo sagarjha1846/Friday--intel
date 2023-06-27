@@ -56,7 +56,28 @@ const NewCase = ({
   });
   const { token } = useSelector((state) => state.auth);
   let { id } = useParams();
-  const { ROUTES, backendURL } = constants;
+  const { backendURL } = constants;
+
+  useEffect(() => {
+    if (id) {
+      axios
+        .get(`${backendURL}/loadcase.php/?caseid=${id}`, {
+          headers: {
+            Authorization: token,
+          },
+        })
+        .then((res) => {
+          console.log(JSON.parse(res.data[0].data));
+          console.log(res.data[0].data.nodes);
+          console.log(res.data[0].data.edges);
+          setNodes(JSON.parse(res.data[0].data).nodes);
+          setEdges(JSON.parse(res.data[0].data).edges);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [id]);
 
   const location = useLocation();
   const navigate = useNavigate();

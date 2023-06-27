@@ -74,7 +74,7 @@ const Navbar = ({
             ...prev,
             {
               id: search,
-              type: 'MyCustomNode',
+              type: 'default',
               data: { label: search },
               position: { x: Math.random() * 500, y: Math.random() * 500 },
             },
