@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { Table } from 'antd';
 import { useState } from 'react';
-import constants from '../constant/routesConstant';
-import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { httpCall } from '../axios/httpService';
 
@@ -35,8 +33,6 @@ export default function Ransomware({ search, setSearch }) {
     },
   });
 
-  const { token } = useSelector((state) => state.auth);
-  const { backendURL } = constants;
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -50,7 +46,7 @@ export default function Ransomware({ search, setSearch }) {
         setIsLoading(false);
         console.log(err);
       });
-  }, [backendURL, token, search]);
+  }, [search]);
 
   const handleTableChange = (pagination, filters, sorter) => {
     setTableParams({
