@@ -36,8 +36,8 @@ const NodeList = (props) => {
               ...prev,
               {
                 id: data ? data : 'no record',
-                type: 'MyCustomNode',
                 data: { label: data ? data : undefined },
+                type: 'default',
                 position: {
                   x: Math.floor(Math.random() * 400),
                   y: Math.floor(Math.random() * 400),

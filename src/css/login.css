@@ -273,8 +273,8 @@ input:checked + label .fa-moon {
   font-size: 4.8rem;
   font-weight: 400;
   margin-bottom: 3rem;
-  word-spacing: 5px;
-  letter-spacing: 2px;
+  /* word-spacing: 5px;
+  letter-spacing: 2px; */
 }
 .login-credentials-heading {
   color: var(--primary-color-1);
@@ -289,7 +289,7 @@ input:checked + label .fa-moon {
   border-radius: 1rem;
   height: 4rem;
   /* width: 30rem; */
-  color: rgba(43, 43, 43, 0.5);
+  color: rgb(0, 0, 0);
   text-align: start;
   border: 2px solid var(--primary-color-1);
   padding: 5px;
@@ -357,8 +357,8 @@ input:checked + label .fa-moon {
 .footer-login {
   font-size: 1.6rem;
   font-weight: lighter;
-  margin: 3.5rem 0rem 1rem 1rem;
-  margin-left: 3rem;
+  margin: 7rem 0rem 1rem 1rem;
+  margin-left: 55px;
   width: 35rem;
 }
 /* Animation */
