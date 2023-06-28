@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Menu } from 'antd';
 import '../css/sidebar.css';
 import React from 'react';

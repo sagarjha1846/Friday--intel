@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import constants from '../constant/routesConstant';
 import { useSelector } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const LoadCaseTable = () => {
   const [rows, setRows] = useState([]);
