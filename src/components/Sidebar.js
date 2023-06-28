@@ -11,9 +11,11 @@ import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineKeyboardArrowRight,
 } from 'react-icons/md';
+import { useEffect } from 'react';
 const Sidenav = (props) => {
   const { nodeInfo, setActiveMenu, mode } = props;
 
+  const [menuRendered, setMenuRendered] = useState([]);
   const [collapsed, setCollapsed] = useState(false);
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
@@ -134,6 +136,10 @@ const Sidenav = (props) => {
     });
   };
 
+  useEffect(() => {
+    setMenuRendered(getMappedMenu(menu));
+  }, [JSON.stringify(nodeInfo)]);
+
   return (
     <div>
       <button
@@ -153,7 +159,7 @@ const Sidenav = (props) => {
         theme={mode ? 'light' : 'dark'}
         onClick={(e) => setActiveMenu(e.key)}
         inlineCollapsed={collapsed}
-        items={getMappedMenu(menu)}
+        items={menuRendered}
       />
     </div>
   );

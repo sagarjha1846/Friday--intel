@@ -32,7 +32,6 @@ const OverviewFlow = (props) => {
     <ReactFlow
       snapToGrid={true}
       snapGrid={[16, 16]}
-      snapLineDragInterval={50}
       nodes={nodes}
       edges={edges}
       onNodesChange={onNodesChange}

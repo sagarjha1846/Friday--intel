@@ -36,7 +36,7 @@ const ModalView = ({ setOpenModal, openModal, form, setCaseName }) => {
         .then((res) => {
           setCaseName(values.nodeName);
           message.success(res);
-          navigate(`${constants.ROUTES.newCase}/${values.nodeName}/${id}`, {
+          navigate(`${constants.ROUTES.newCase}/${id}`, {
             state: { values },
           });
         })

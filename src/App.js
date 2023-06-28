@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux';
 import { PrivateRoute } from './store/PrivateRoute';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer-newcase';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useEdgesState, useNodesState } from 'reactflow';
 
 const App = () => {
@@ -23,7 +23,6 @@ const App = () => {
   const location = useLocation();
   const { ROUTES } = constants;
 
-  const searchRef = useRef();
   const [nodeInfo, setNodeInfo] = useState({ query: '', data: null });
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
@@ -71,7 +70,7 @@ const App = () => {
             }
           />
           <Route
-            path={`${ROUTES.newCase}/:casename/:id`}
+            path={`${ROUTES.newCase}/:id`}
             element={
               <NewCase
                 setEdges={setEdges}
@@ -81,7 +80,6 @@ const App = () => {
                 edges={edges}
                 setActiveMenu={setActiveMenu}
                 nodeInfo={nodeInfo}
-                searchRef={searchRef}
                 activeMenu={activeMenu}
                 setMode={setMode}
                 mode={mode}

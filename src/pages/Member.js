@@ -37,8 +37,6 @@ function Table({ data }) {
 const Member = () => {
   const [progress, setProgress] = useState(0);
 
-  console.log(progress);
-
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prevProgress) =>
