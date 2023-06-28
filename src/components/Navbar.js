@@ -138,14 +138,14 @@ const Navbar = ({
                 </i>
               </label>
             </div>
-            <div>
+            <div className='member-noti-icon'>
               <button
                 className="btn-icon"
                 onClick={() => handleButtonClick('notification')}
               >
                 <Bell style={{ fill: 'var(--primary-color)' }} />
               </button>
-              {activeButton === 'notification' && <Notication />}
+              {activeButton === 'notification' && <Notication className="notification-component"/>}
             </div>
           </section>
         </nav>

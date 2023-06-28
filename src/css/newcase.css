@@ -220,7 +220,7 @@ border-bottom: none;
   height: 27rem;
   top: 93px;
   border: 2px solid var(--primary-color-2);
-  z-index: 1;
+  z-index: 99;
   /* margin-left: 1160px; */
   right: 5rem;
   border-radius: 10px;
@@ -484,4 +484,8 @@ border-bottom: none;
   border: 1px solid black;
   border-radius: 50%;
   padding: 2px;
+}
+.css-zylse7-MuiButtonBase-root-MuiIconButton-root.Mui-disabled{
+  background-color: none !important;
+  color: var(--primary-color);
 }

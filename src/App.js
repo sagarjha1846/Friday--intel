@@ -106,7 +106,7 @@ const App = () => {
 
           <Route
             path={ROUTES.member}
-            element={<Member setMode={setMode} mode={mode} />}
+            element={<Member setMode={setMode} mode={mode}  />}
           />
         </Route>
         <Route

@@ -202,9 +202,9 @@ table.GeneratedTable th {
 .query-limit span{
   font-size: 1.8rem;
 }
-.MuiCircularProgress-colorPrimary {
+/* .MuiCircularProgress-colorPrimary {
   color: green !important;
-}
+} */
 .css-mjha5m{
 margin: 4rem 8rem;
 }
@@ -228,7 +228,14 @@ margin: 4rem 8rem;
 }
 .query-limit-number{
   position: absolute;
-  top: 33rem;
-  right: -8rem;
+  top: 21rem;
+  right: 14rem;
   text-align: center;
+}
+.notification-component{
+  height: 10rem;
+}
+.member-noti-icon .notifications{
+  right: -3rem;
+  top: 7rem;
 }

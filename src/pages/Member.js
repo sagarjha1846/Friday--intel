@@ -124,42 +124,6 @@ const Member = () => {
               {/* <a href="#cancel subscription">Cancel Subscription</a> */}
             </article>
             <article>
-              {/* <table className="GeneratedTable">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Invoice No.</th>
-                  <th>₹ Total</th>
-                  <th>Payment Method</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>20-11-2022</td>
-                  <td>CID001</td>
-                  <td>20,00,000</td>
-                  <td>Cheque - 666666</td>
-                </tr>
-                <tr>
-                  <td>20-12-2022</td>
-                  <td>CID002</td>
-                  <td>20,00,000</td>
-                  <td>Cheque - 666666</td>
-                </tr>
-                <tr>
-                  <td>20-01-2023</td>
-                  <td>CID003</td>
-                  <td>20,00,000</td>
-                  <td>Cheque - 666666</td>
-                </tr>
-                <tr>
-                  <td>20-02-2023</td>
-                  <td>CID004</td>
-                  <td>20,00,000</td>
-                  <td>Cheque - 666666</td>
-                </tr>
-              </tbody>
-            </table> */}
               <Table data={data} />
             </article>
           </section>

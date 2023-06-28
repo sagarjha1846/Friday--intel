@@ -357,9 +357,10 @@ input:checked + label .fa-moon {
 .footer-login {
   font-size: 1.6rem;
   font-weight: lighter;
-  margin: 7rem 0rem 1rem 1rem;
+  margin: 6rem 0rem 1rem 1rem;
   margin-left: 55px;
   width: 35rem;
+  color: var(--primary-color-2);
 }
 /* Animation */
 @keyframes loading {
