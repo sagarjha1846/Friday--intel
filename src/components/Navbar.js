@@ -8,11 +8,11 @@ import Profile from './Profile';
 import { Link, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import { ReactComponent as FILogo } from '../images/svg/fridayLogo.svg';
 import { useState } from 'react';
 import '../css/newcase.css';
 import { themeChange } from '../utils';
 import constants from '../constant/routesConstant';
+import { ReactComponent as FILogo } from '../images/svg/fridayLogo.svg';
 import { ReactComponent as Logo } from '../images/svg/firdayIntel.svg';
 import { ReactComponent as BookMark } from '../images/svg/bookmarkIcon.svg';
 import { ReactComponent as Sun } from '../images/svg/sun.svg';
@@ -138,14 +138,16 @@ const Navbar = ({
                 </i>
               </label>
             </div>
-            <div className='member-noti-icon'>
+            <div className="member-noti-icon">
               <button
                 className="btn-icon"
                 onClick={() => handleButtonClick('notification')}
               >
                 <Bell style={{ fill: 'var(--primary-color)' }} />
               </button>
-              {activeButton === 'notification' && <Notication className="notification-component"/>}
+              {activeButton === 'notification' && (
+                <Notication className="notification-component" />
+              )}
             </div>
           </section>
         </nav>
@@ -182,7 +184,12 @@ const Navbar = ({
               {activeButton === 'opendrawer' && <DrawerInfo />}
             </div>
             <form onSubmit={handleSubmit} className="searchbar-box">
-              <FILogo style={{ fill: 'var(--primary-color)' }} />
+              <FILogo
+                style={{
+                  fill: 'var(--primary-color)',
+                  stroke: 'var(--primary-color)',
+                }}
+              />
               <input
                 type="text"
                 className="search-bar-NC"

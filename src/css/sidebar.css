@@ -36,8 +36,6 @@
 .css-dip3t8 {
   background-color: var(--secondary-color) !important;
 }
-.ant-menu-submenu-selected:hover{
+.ant-menu-submenu-selected:hover {
   color: var(--primary-color-2);
-
-
 }

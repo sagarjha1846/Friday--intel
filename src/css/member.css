@@ -89,7 +89,7 @@
   height: 26rem;
   width: 77rem;
   flex-direction: column;
-  background-color:var(--members-color-1);
+  background-color: var(--members-color-1);
   border-radius: 1rem;
 }
 .subscription_details {
@@ -124,7 +124,7 @@
   height: 3.3rem;
   width: 20rem;
   border-radius: 1.4rem;
-  border: 1PX solid var(--primary-color);
+  border: 1px solid var(--primary-color);
   box-shadow: 0px 4px 0px rgba(43, 43, 43, 0.5);
   /* margin: 0rem 0rem 2rem 1rem; */
 }
@@ -173,69 +173,69 @@ table.GeneratedTable th {
   z-index: 1;
   right: -2.5rem;
 }
-.member_deatils_container{
+.member_deatils_container {
   width: 77rem;
   height: 26rem;
   background-color: var(--members-color-1);
   margin: 3rem 5rem 0rem 5rem;
   border-radius: 1rem;
 }
-.member-main-container{
+.member-main-container {
   display: flex;
 }
-.query-limit{
+.query-limit {
   height: 38.5rem;
   width: 41rem;
   margin: 3rem 0rem 1.5rem 3rem;
   background-color: var(--members-color-1);
   border-radius: 1rem;
 }
-.query-limit h2{
+.query-limit h2 {
   font-size: 2.4rem;
   padding: 2rem 0rem 1rem 1.5rem;
 }
-.query-limit h3{
+.query-limit h3 {
   font-size: 2.4rem;
   padding-left: 1.5rem;
   display: inline;
 }
-.query-limit span{
+.query-limit span {
   font-size: 1.8rem;
 }
 /* .MuiCircularProgress-colorPrimary {
   color: green !important;
 } */
-.css-mjha5m{
-margin: 4rem 8rem;
+.css-mjha5m {
+  margin: 4rem 8rem;
 }
-.quick-links{
+.quick-links {
   height: 15rem;
   width: 41rem;
   background-color: var(--members-color-1);
   border-radius: 1rem;
   margin-left: 3rem;
 }
-.quick-links h2{
+.quick-links h2 {
   font-size: 2.4rem;
   padding: 2.5rem 0rem 1.5rem 2.5rem;
 }
-.links-profile{
+.links-profile {
   font-size: 1.8rem;
   padding-left: 4rem;
 }
-.links-profile ul{
-  padding-bottom: .5rem;
+.links-profile ul {
+  padding-bottom: 0.5rem;
 }
-.query-limit-number{
+.query-limit-number {
   position: absolute;
   top: 21rem;
   right: 14rem;
   text-align: center;
 }
-.notification-component{
+.notification-component {
   height: 10rem;
 }
-.member-noti-icon .notifications{
+.member-noti-icon .notifications {
   right: -3rem;
   top: 7rem;
 }

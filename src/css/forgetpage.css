@@ -339,7 +339,7 @@ input:checked + label .fa-moon {
 .user-image {
   width: 70rem;
   height: 100%;
-  border-radius: 4rem;
+  border-radius: 5rem;
 }
 .login-container {
   width: 50% !important;
