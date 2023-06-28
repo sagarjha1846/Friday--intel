@@ -4,14 +4,11 @@ import { useNavigate } from 'react-router';
 import constants from '../constant/routesConstant';
 import { ReactComponent as CloseIcon } from '../images/svg/close.svg';
 import { v4 as uuidv4 } from 'uuid';
-import axios from 'axios';
-import { useSelector } from 'react-redux';
 import { message } from 'antd/es';
+import { httpCall } from '../axios/httpService';
 
 const ModalView = ({ setOpenModal, openModal, form, setCaseName }) => {
-  const { backendURL } = constants;
   const navigate = useNavigate();
-  const { token } = useSelector((state) => state.auth);
   const handleCancel = () => {
     setOpenModal(false);
   };
@@ -21,11 +18,7 @@ const ModalView = ({ setOpenModal, openModal, form, setCaseName }) => {
       caseid: id,
       casename: value,
     };
-    const result = await axios.post(`${backendURL}newcase.php`, data, {
-      headers: {
-        Authorization: token,
-      },
-    });
+    const result = await httpCall('newcase.php', 'POST', data, {});
     return result;
   };
 

@@ -34,7 +34,7 @@ const App = () => {
   const [nodeInfoList, setNodeInfoList] = useState([]);
   const [caseName, setCaseName] = useState('');
   const [activeButton, setActiveButton] = useState(null);
-
+  const [search, setSearch] = useState('');
   return (
     <>
       {token && (
@@ -53,6 +53,8 @@ const App = () => {
             mode={mode}
             activeButton={activeButton}
             setActiveButton={setActiveButton}
+            search={search}
+            setSearch={setSearch}
           />
         </nav>
       )}
@@ -94,6 +96,8 @@ const App = () => {
                 activeButton={activeButton}
                 setActiveButton={setActiveButton}
                 setCaseName={setCaseName}
+                search={search}
+                setSearch={setSearch}
               />
             }
           />

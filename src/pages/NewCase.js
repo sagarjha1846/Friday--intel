@@ -24,6 +24,7 @@ import Profile from '../components/Profile';
 import axios from 'axios';
 import constants from '../constant/routesConstant';
 import { message } from 'antd/es';
+import { httpCall } from '../axios/httpService';
 
 // import { useEffect } from 'react';
 
@@ -46,8 +47,9 @@ const NewCase = ({
   canvasFunc,
   mode,
   activeButton,
-  caseName,
   setCaseName,
+  search,
+  setSearch,
 }) => {
   const ref = createRef(null);
   const [_, takeScreenshot] = useScreenshot({
@@ -66,16 +68,11 @@ const NewCase = ({
       setNodeInfo([]);
       setActiveMenu('');
 
-      axios
-        .get(`${backendURL}/loadcase.php/?caseid=${id}`, {
-          headers: {
-            Authorization: token,
-          },
-        })
+      httpCall(`loadcase.php/?caseid=${id}`, 'GET', {}, {})
         .then((res) => {
-          setCaseName(res.data[0].casename);
-          setNodes(JSON.parse(res.data[0].data).nodes);
-          setEdges(JSON.parse(res.data[0].data).edges);
+          setCaseName(res[0].casename);
+          setNodes(JSON.parse(res[0].data).nodes);
+          setEdges(JSON.parse(res[0].data).edges);
         })
         .catch((err) => {
           console.log(err);
@@ -137,11 +134,7 @@ const NewCase = ({
         },
         caseid: id,
       };
-      const result = await axios.post(`${backendURL}savecase.php`, data, {
-        headers: {
-          Authorization: token,
-        },
-      });
+      const result = await httpCall('savecase.php', 'POST', data, {});
       return result;
     } else {
       const error = 'No node is present in the canvas to be saved!';
@@ -239,7 +232,7 @@ const NewCase = ({
           </div>
         </div>
       )}
-      {activeTab === 2 && <Ransomware />}
+      {activeTab === 2 && <Ransomware search={search} />}
 
       <Footer
         searchTerm={searchTerm}

@@ -1,10 +1,9 @@
 import { Table } from 'antd';
-import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import constants from '../constant/routesConstant';
-import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { httpCall } from '../axios/httpService';
 
 const LoadCaseTable = () => {
   const [rows, setRows] = useState([]);
@@ -87,27 +86,21 @@ const LoadCaseTable = () => {
       pageSize: 10,
     },
   });
-  const { token } = useSelector((state) => state.auth);
-  const { backendURL } = constants;
+
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    axios
-      .get(`${backendURL}caselist.php`, {
-        headers: {
-          Authorization: token,
-        },
-      })
+    httpCall(`caselist.php`, 'GET', {}, {})
       .then((res) => {
-        setRows(res.data.map((el) => ({ ...el, key: el.caseid })));
+        setRows(res.map((el) => ({ ...el, key: el.caseid })));
         setIsLoading(false);
       })
       .catch((err) => {
         setIsLoading(false);
         console.log(err);
       });
-  }, [backendURL, token]);
+  }, []);
 
   const handleTableChange = (pagination, filters, sorter) => {
     setTableParams({
