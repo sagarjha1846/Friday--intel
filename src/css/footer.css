@@ -60,8 +60,9 @@
   background-color: var(--secondary-color);
   width: 26.6rem;
   height: 45px;
-  border-radius: 15px;
+  border-radius: 100px;
   /* left: -121px; */
+  border-bottom: 2px solid var(--primary-color-2);
   right: 77px;
   position: relative;
   bottom: 22px;

@@ -86,7 +86,6 @@
   height: 78vh;
   overflow-y: scroll;
   flex-shrink: 0;
-  
 }
 .sideNavSection::-webkit-scrollbar {
   width: 6px;
@@ -150,7 +149,7 @@
 .react-flow__panel {
   display: none !important;
 }
-.react-flow__handle{
+.react-flow__handle {
   border: 1px solid var(--primary-color-2);
   background-color: var(--secondary-color);
 }
@@ -160,7 +159,7 @@
   color: var(--primary-color);
   background-color: var(--secondary-color);
 }
-.react-flow__edge-path{
+.react-flow__edge-path {
   stroke: var(--primary-color-2);
 }
 
@@ -220,7 +219,7 @@ border-bottom: none;
   height: 27rem;
   top: 93px;
   border: 2px solid var(--primary-color-2);
-  z-index: 1;
+  z-index: 99;
   /* margin-left: 1160px; */
   right: 5rem;
   border-radius: 10px;
@@ -432,7 +431,7 @@ border-bottom: none;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 1.45rem;
 }
-.MuiDataGrid-main{
+.MuiDataGrid-main {
   color: var(--primary-color);
 }
 /* input[type='checkbox'] {
@@ -447,12 +446,13 @@ border-bottom: none;
 .MuiDataGrid-checkboxInput{
   color: var(--primary-color);
 } */
-.MuiDataGrid-cellCheckbox span{
+.MuiDataGrid-cellCheckbox span {
   color: var(--primary-color);
 }
-.MuiDataGrid-columnHeaderTitleContainer span{
+.MuiDataGrid-columnHeaderTitleContainer span {
   color: var(--primary-color);
-}.ant-btn-default svg {
+}
+.ant-btn-default svg {
   fill: var(--primary-color-2);
 }
 .noti-icon-delete {
@@ -467,21 +467,25 @@ border-bottom: none;
 .place-content-center li span {
   color: var(--primary-color);
 }
-.ant-btn-primary{
+.ant-btn-primary {
   width: 18rem;
   background-color: black;
   color: white;
 }
-.ant-btn-default{
+.ant-btn-default {
   width: 18rem;
   margin-right: 10rem;
 }
-.ant-btn-primary:hover{
+.ant-btn-primary:hover {
   border: 1px solid var(--primary-color-2);
   background-color: black;
 }
-.anticon-close{
+.anticon-close {
   border: 1px solid black;
   border-radius: 50%;
   padding: 2px;
+}
+.css-zylse7-MuiButtonBase-root-MuiIconButton-root.Mui-disabled {
+  background-color: none !important;
+  color: var(--primary-color);
 }

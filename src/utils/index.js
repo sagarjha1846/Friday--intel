@@ -70,12 +70,10 @@ export function themeChange({
   );
   const PRIMARY_2 =
     getComputedStyle(htmlElement).getPropertyValue('--primary-color-2');
-    const members_color1 = getComputedStyle(htmlElement).getPropertyValue(
-      '--members-color-1',
-    );
-    const members_color2 = getComputedStyle(htmlElement).getPropertyValue(
-      '--members-color-2',
-    );
+  const members_color1 =
+    getComputedStyle(htmlElement).getPropertyValue('--members-color-1');
+  const members_color2 =
+    getComputedStyle(htmlElement).getPropertyValue('--members-color-2');
 
   htmlElement.style.setProperty('--primary-color', SECONDARY);
   htmlElement.style.setProperty('--secondary-color', PRIMARY);
@@ -85,7 +83,6 @@ export function themeChange({
   htmlElement.style.setProperty('--primary-color-2', SECONDARY_2);
   htmlElement.style.setProperty('--members-color-1', members_color2);
   htmlElement.style.setProperty('--members-color-2', members_color1);
-  
 
   // let value = logoo;
 

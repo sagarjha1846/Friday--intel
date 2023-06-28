@@ -13,19 +13,19 @@ const Notication = () => {
     {
       message: 'You have a bug that needs to......',
     },
-    {
-      message: 'You have a bug that needs to......',
-    },
-    {
-      message: 'You have a bug that needs to......',
-    },
-    {
-      message: 'You have a bug that needs to......',
-    },
+    // {
+    //   message: 'You have a bug that needs to......',
+    // },
+    // {
+    //   message: 'You have a bug that needs to......',
+    // },
+    // {
+    //   message: 'You have a bug that needs to......',
+    // },
   ];
   return (
     <div>
-      <span className="noti">
+      <span className="noti notifications">
         <article className="noti-data">
           <h2>Notifications</h2>
           {items.map((el) => (
