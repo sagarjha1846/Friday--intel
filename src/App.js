@@ -10,12 +10,14 @@ import Page404 from './pages/Page404';
 import Member from './pages/Member';
 import constants from './constant/routesConstant';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { PrivateRoute } from './store/PrivateRoute';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer-newcase';
 import { useState } from 'react';
 import { useEdgesState, useNodesState } from 'reactflow';
+import { useEffect } from 'react';
+import { userDetails } from './store/features/user/userSlice';
 
 const App = () => {
   const { token } = useSelector((state) => state.auth);
@@ -36,6 +38,15 @@ const App = () => {
   const [activeButton, setActiveButton] = useState(null);
   const [search, setSearch] = useState('');
   const [ransomeData, setRansomeData] = useState([]);
+
+  const { user } = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (!user) dispatch(userDetails());
+  }, []);
+
+  console.log();
   return (
     <>
       {token && (
@@ -57,6 +68,7 @@ const App = () => {
             search={search}
             setSearch={setSearch}
             setRansomeData={setRansomeData}
+            profileDetail={user}
           />
         </nav>
       )}
@@ -112,7 +124,9 @@ const App = () => {
 
           <Route
             path={ROUTES.member}
-            element={<Member setMode={setMode} mode={mode} />}
+            element={
+              <Member profileDetail={user} setMode={setMode} mode={mode} />
+            }
           />
         </Route>
         <Route

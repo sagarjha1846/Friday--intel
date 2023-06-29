@@ -9,33 +9,9 @@ import CircularProgress from '@mui/joy/CircularProgress';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { ReactComponent as User } from '../images/svg/usercheck.svg';
+import { Table } from 'antd';
 
-function Table({ data }) {
-  return (
-    <table className="GeneratedTable">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Invoice No.</th>
-          <th>₹ Total</th>
-          <th>Payment Method</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((row, index) => (
-          <tr key={index}>
-            <td>{row.column1}</td>
-            <td>{row.column2}</td>
-            <td>{row.column3}</td>
-            <td>{row.column4}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-}
-
-const Member = () => {
+const Member = ({ profileDetail }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -50,32 +26,27 @@ const Member = () => {
     };
   }, []);
 
-  const data = [
+  const columns = [
     {
-      column1: '20-11-2022',
-      column2: 'CID001',
-      column3: '20,00,000',
-      column4: 'Cheque - 666666...',
+      title: 'Date',
+      dataIndex: 'date',
+      key: 'date',
     },
     {
-      column1: '20-12-2022',
-      column2: 'CID002',
-      column3: '20,00,000',
-      column4: 'Cheque - 666666...',
+      title: 'Invoice No.',
+      dataIndex: 'invoice_no',
+      key: 'invoice_no',
     },
     {
-      column1: '20-01-2023',
-      column2: 'CID003',
-      column3: '20,00,000',
-      column4: 'Cheque - 666666...',
+      title: 'Amount.',
+      dataIndex: 'amount',
+      key: 'amount',
     },
     {
-      column1: '20-02-2023',
-      column2: 'CID004',
-      column3: '20,00,000',
-      column4: 'Cheque - 666666...',
+      title: 'Method.',
+      dataIndex: 'method',
+      key: 'method',
     },
-    // More rows...
   ];
   return (
     <>
@@ -83,99 +54,107 @@ const Member = () => {
         <title>FridayIntel-Member</title>
       </Helmet>
 
-      <main className="member-main-container">
-        <div>
-          <div className="member_deatils_container">
-            <section className="account-container">
-              <h1 className="account-heading">Your Account</h1>
-              <p className="account-description">
-                Manage your account & subscription
-              </p>
-            </section>
-            <section className="member_details">
-              <article>
-                <User />
-              </article>
+      {profileDetail && (
+        <main className="p-2 w-full flex justify-center align-middle content-center items-center self-center">
+          <div>
+            <div className="member_deatils_container">
+              <section className="account-container">
+                <h1 className="account-heading">Your Account</h1>
+                <p className="account-description">
+                  Manage your account & subscription
+                </p>
+              </section>
+              <section className="member_details">
+                <article>
+                  <User />
+                </article>
 
-              <article className="agency_description">
-                <h3>Unit Charlie</h3>
-                <h4>Kangaroo Agency</h4>
-              </article>
+                <article className="agency_description">
+                  <h3>{profileDetail[0].fullname}</h3>
+                  <h4>{profileDetail[0].agency_name}</h4>
+                </article>
 
-              <article className="member_contact">
-                <h4>
-                  <MdAlternateEmail /> john.doe@fridayintel.io
-                </h4>
-                <h4>
-                  <BsTelephone /> +91 99999 99999
-                </h4>
-              </article>
-            </section>
-          </div>
-          <section className="transaction-details">
-            <article className="subscription_details">
-              <h3>TRANSACTION HISTORY</h3>
-              {/* <div>
+                <article className="member_contact">
+                  <h4>
+                    <MdAlternateEmail /> {profileDetail[0].email}
+                  </h4>
+                  <h4>
+                    <BsTelephone /> {profileDetail[0].phone_no}
+                  </h4>
+                </article>
+              </section>
+            </div>
+            <section className="transaction-details p-10">
+              <article className="subscription_details">
+                <h3>TRANSACTION HISTORY</h3>
+                {/* <div>
               <h6>Annually </h6>
               <p>(27 days remaining)</p>
             </div> */}
-              <button>Renew Activation</button>
-              {/* <a href="#cancel subscription">Cancel Subscription</a> */}
-            </article>
-            <article>
-              <Table data={data} />
-            </article>
-          </section>
-        </div>
-        <div className="right-query-links ">
-          <section className="query-limit relative">
-            <h2>QUERY LIMIT</h2>
-            <div>
-              <h3>Package : </h3>
-              <span>GOLD</span>
-            </div>
+                <button>Renew Activation</button>
+                {/* <a href="#cancel subscription">Cancel Subscription</a> */}
+              </article>
+              <article className="p-5 w-full">
+                <Table
+                  style={{ width: '100%' }}
+                  dataSource={profileDetail[1]}
+                  columns={columns}
+                  pagination={false}
+                />
+              </article>
+            </section>
+          </div>
+          <div className="right-query-links ">
+            <section className="query-limit relative">
+              <h2>QUERY LIMIT</h2>
+              <div>
+                <h3>Package : </h3>
+                <span>GOLD</span>
+              </div>
 
-            <span className="query-limit-number absolute right-[100] top-[500px]">
-              <p>
-                Available
-                <p>100000</p>
-                from <span>1000000</span>
-              </p>
-            </span>
-            <Box
-              sx={{
-                display: 'flex',
-                gap: 2,
-                alignItems: 'center',
-                flexWrap: 'wrap',
-              }}
-            >
-              {/* <CircularProgress determinate value={25} /> */}
-              {/* <CircularProgress determinate value={50} /> */}
-              <CircularProgress
-                color="primary"
+              <span className="query-limit-number absolute right-[100] top-[500px]">
+                <p>
+                  Available
+                  <p>{profileDetail[0].quries}</p>
+                  from <span>1000000</span>
+                </p>
+              </span>
+              <Box
                 sx={{
-                  '--CircularProgress-size': '250px',
-                  '--CircularProgress-trackThickness': '10px',
-                  '--CircularProgress-progressThickness': '15px',
+                  display: 'flex',
+                  gap: 2,
+                  alignItems: 'center',
+                  flexWrap: 'wrap',
                 }}
-                determinate
-                value={75}
-              />
-              {/* <CircularProgress determinate value={100} /> */}
-              {/* <CircularProgress determinate value={progress} /> */}
-            </Box>
-          </section>
-          <section className="quick-links">
-            <h2>QUICK LINKS</h2>
-            <div className="links-profile">
-              <ul>Website</ul>
-              <ul>Helpdesk</ul>
-              <ul>Dashboard</ul>
-            </div>
-          </section>
-        </div>
-      </main>
+              >
+                {/* <CircularProgress determinate value={25} /> */}
+                {/* <CircularProgress determinate value={50} /> */}
+                <CircularProgress
+                  color="primary"
+                  sx={{
+                    '--CircularProgress-size': '250px',
+                    '--CircularProgress-trackThickness': '10px',
+                    '--CircularProgress-progressThickness': '15px',
+                  }}
+                  determinate
+                  value={75}
+                />
+                {/* <CircularProgress determinate value={100} /> */}
+                {/* <CircularProgress determinate value={progress} /> */}
+              </Box>
+            </section>
+            <section className="quick-links">
+              <h2>QUICK LINKS</h2>
+              <div className="links-profile">
+                <ul>Website</ul>
+                <ul>Helpdesk</ul>
+                <ul>Dashboard</ul>
+              </div>
+            </section>
+          </div>
+        </main>
+      )}
+
       <footer className="footer-member ">
         &copy; 2023-24 Friday Intel LLP
       </footer>

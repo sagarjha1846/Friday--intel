@@ -7,21 +7,22 @@ import { ReactComponent as Email } from '../images/svg/email.svg';
 import { ReactComponent as Building } from '../images/svg/building.svg';
 import { ReactComponent as Exit } from '../images/svg/exit.svg';
 
-const Profile = () => {
+const Profile = ({ profileDetail }) => {
   const { ROUTES } = constants;
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   return (
     <div>
       <span className="pro">
         <div className="pro-data">
-          <h2>Unit Charlie</h2>
+          <h2>{profileDetail[0].fullname}</h2>
 
           <article>
             <span className="pro-icon">
               <Email style={{ fill: 'var(--primary-color)' }} />
             </span>
-            <h4> jhon.doe@fridayintek.io</h4>
+            <h4> {profileDetail[0].email}</h4>
           </article>
           <article>
             <span className="pro-icon">
@@ -29,7 +30,7 @@ const Profile = () => {
                 <Building style={{ fill: 'var(--primary-color)' }} />
               </button>
             </span>
-            <h4>Kangaroo Agency</h4>
+            <h4>{profileDetail[0].agency_name}</h4>
           </article>
           <button
             className="member_btn_edit"
