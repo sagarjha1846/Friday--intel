@@ -11,7 +11,7 @@ import ReadCase from './ReadCase';
 import { ReactComponent as Arrow } from '../images/svg/arrow.svg';
 
 
-const Home = ({ caseName, setCaseName }) => {
+const Home = ({ caseName, setCaseName, search }) => {
   const [activeArticle, setActiveArticle] = useState('');
   const [form] = Form.useForm();
   const [openModal, setOpenModal] = useState(false);
@@ -21,7 +21,7 @@ const Home = ({ caseName, setCaseName }) => {
   const handleLoadNewCase = () => {
     setOpenModal(true);
   };
-  
+
   const handleArticleClick = (articleId) => {
     setActiveArticle(articleId);
   };
@@ -66,31 +66,6 @@ const Home = ({ caseName, setCaseName }) => {
               <Arrow />
             </article>
           ))}
-          <article className={`case_cards ${activeArticle === 'newCase' ? 'actives' : ''}`} onClick={handleLoadNewCase}>
-            {/* <img src={img} alt='img' className='hover-img'/> */}
-            <h2 className="case_title_home">New Case</h2>
-            <Arrow />
-          </article>
-          <article
-            className={`case_cards ${activeArticle === 'loadCase' ? 'actives' : ''}`}
-            onClick={() => {
-              handleArticleClick('loadCase');
-              navigate(ROUTES.loadCase);
-            }}
-          >
-            <h2 className="case_title_home">Load Case</h2>
-            <Arrow />
-          </article>
-          <article
-           className={`case_cards ${activeArticle === 'readCase' ? 'actives' : ''}`}
-           onClick={() => {
-             handleArticleClick('readCase');
-             navigate(ROUTES.readCase);
-           }}
-          >
-            <h2 className="case_title_home">Read Case</h2>
-            <Arrow />
-          </article>
         </section>
 
         <Routes>
@@ -132,7 +107,7 @@ const Home = ({ caseName, setCaseName }) => {
         </Routes>
       </div>
     </>
-    );
+  );
 };
 
 export default Home;
