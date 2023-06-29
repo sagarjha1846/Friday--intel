@@ -4,16 +4,17 @@ import '../css/navbar.css';
 import Table from '../components/Table';
 import '../css/loadcase.css';
 
-const LoadCase = () => {
+const LoadCase = ({ search }) => {
   return (
-    <div className=" w-full overflow-hidden">
+    <>
       <Helmet>
         <title>FridayIntel-LoadCase</title>
       </Helmet>
-      <div className=" w-full p-10">
-        <Table />
-      </div>
-    </div>
+
+      <section className="readcase-container p-10 ">
+        <Table search={search} />
+      </section>
+    </>
   );
 };
 

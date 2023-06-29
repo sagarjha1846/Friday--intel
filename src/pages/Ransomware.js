@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { Table } from 'antd';
 import { useState } from 'react';
-import { useEffect } from 'react';
-import { httpCall } from '../axios/httpService';
 
 const columns = [
   { dataIndex: 'id', title: 'Ransomware Gang', flex: 1 },
@@ -23,30 +21,13 @@ const columns = [
   },
 ];
 
-export default function Ransomware({ search, setSearch }) {
-  const [rows, setRows] = useState([]);
-
+export default function Ransomware({ ransomeData }) {
   const [tableParams, setTableParams] = useState({
     pagination: {
       current: 1,
       pageSize: 10,
     },
   });
-
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    httpCall(`ransomesearch.php?group=${search}`, 'GET', {}, {})
-      .then((res) => {
-        setRows(res);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        setIsLoading(false);
-        console.log(err);
-      });
-  }, [search]);
 
   const handleTableChange = (pagination, filters, sorter) => {
     setTableParams({
@@ -56,9 +37,6 @@ export default function Ransomware({ search, setSearch }) {
     });
 
     // `dataSource` is useless since `pageSize` changed
-    if (pagination.pageSize !== tableParams.pagination?.pageSize) {
-      setRows([]);
-    }
   };
 
   return (
@@ -66,8 +44,7 @@ export default function Ransomware({ search, setSearch }) {
       <Table
         bordered
         columns={columns}
-        dataSource={rows}
-        loading={isLoading}
+        dataSource={ransomeData}
         showSorterTooltip={false}
         pagination={tableParams.pagination}
         onChange={handleTableChange}

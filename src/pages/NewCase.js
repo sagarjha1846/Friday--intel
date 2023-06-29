@@ -36,6 +36,7 @@ const NewCase = ({
   edges,
   setActiveMenu,
   nodeInfo,
+  ransomeData,
   activeMenu,
   isChecked,
   setIsChecked,
@@ -232,7 +233,7 @@ const NewCase = ({
           </div>
         </div>
       )}
-      {activeTab === 2 && <Ransomware search={search} />}
+      {activeTab === 2 && <Ransomware ransomeData={ransomeData} />}
 
       <Footer
         searchTerm={searchTerm}
