@@ -330,7 +330,8 @@ input:checked + label .fa-moon {
 .copy_right_text {
   font-size: 1.6rem;
   font-weight: 400;
-  margin: 16.2rem 0rem 0rem 5.5rem;
+  margin: 15rem 0rem 0rem 5.5rem;
+  color: var(--primary-color-2);
 }
 .user-img-forget {
   margin: 2.5rem;
@@ -338,12 +339,13 @@ input:checked + label .fa-moon {
 .user-image {
   width: 70rem;
   height: 100%;
+  border-radius: 5rem;
 }
 .login-container {
   width: 50% !important;
 }
 .login-credentials-heading-for {
-  color: var(--primary-color-1);
+  color: rgba(128, 128, 128);
   font-weight: 400;
   font-size: 1.8rem;
   font-family: sans-serif;
