@@ -6,8 +6,6 @@ import { CiSearch } from 'react-icons/ci';
 import Notication from './Notication';
 import Profile from './Profile';
 import { Link, useLocation } from 'react-router-dom';
-import axios from 'axios';
-import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import '../css/newcase.css';
 import { themeChange } from '../utils';
@@ -25,10 +23,9 @@ import nightImage from '../images/night.png';
 import dayImage from '../images/day.png';
 import dark from '../images/svg/darklogo.svg';
 import light from '../images/logo.png';
+import { httpCall } from '../axios/httpService';
 
 const Navbar = ({
-  nodes,
-  edges,
   caseName,
   setNodeInfo,
   setNodeInfoList,
@@ -39,11 +36,11 @@ const Navbar = ({
   setMode,
   activeButton,
   setActiveButton,
+  search,
+  setSearch,
 }) => {
   const [logoo, setLogoo] = useState(light);
-  const [search, setSearch] = useState('');
-  const { ROUTES, backendURL } = constants;
-  const { token } = useSelector((state) => state.auth);
+  const { ROUTES } = constants;
 
   const handleButtonClick = (button) => {
     setActiveButton((prevButton) => (prevButton === button ? null : button));
@@ -58,18 +55,10 @@ const Navbar = ({
     if (location.pathname.split('/')[1] === `${ROUTES.newCase.split('/')[1]}`) {
       setIsLoading(true);
 
-      axios
-        .get(`${backendURL}canvas.php?query=${search}`, {
-          headers: {
-            Authorization: token,
-          },
-        })
+      httpCall(`canvas.php?query=${search}`, 'GET', {}, {})
         .then((response) => {
-          setNodeInfo({ query: search, data: response?.data });
-          setNodeInfoList([
-            ...nodeInfoList,
-            { query: search, data: response?.data },
-          ]);
+          setNodeInfo({ query: search, data: response });
+          setNodeInfoList([...nodeInfoList, { query: search, data: response }]);
           setNodes((prev) => [
             ...prev,
             {

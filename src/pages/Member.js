@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import '../css/member.css';
@@ -36,8 +37,6 @@ function Table({ data }) {
 
 const Member = () => {
   const [progress, setProgress] = useState(0);
-
-  console.log(progress);
 
   useEffect(() => {
     const timer = setInterval(() => {

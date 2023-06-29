@@ -24,6 +24,7 @@ import Profile from '../components/Profile';
 import axios from 'axios';
 import constants from '../constant/routesConstant';
 import { message } from 'antd/es';
+import { httpCall } from '../axios/httpService';
 
 // import { useEffect } from 'react';
 
@@ -35,7 +36,6 @@ const NewCase = ({
   edges,
   setActiveMenu,
   nodeInfo,
-  searchRef,
   activeMenu,
   isChecked,
   setIsChecked,
@@ -46,8 +46,10 @@ const NewCase = ({
   onEdgesChange,
   canvasFunc,
   mode,
-  setCaseName,
   activeButton,
+  setCaseName,
+  search,
+  setSearch,
 }) => {
   const ref = createRef(null);
   const [_, takeScreenshot] = useScreenshot({
@@ -60,18 +62,17 @@ const NewCase = ({
 
   useEffect(() => {
     if (id) {
-      axios
-        .get(`${backendURL}/loadcase.php/?caseid=${id}`, {
-          headers: {
-            Authorization: token,
-          },
-        })
+      setNodes([]);
+      setEdges([]);
+      setCaseName('');
+      setNodeInfo([]);
+      setActiveMenu('');
+
+      httpCall(`loadcase.php/?caseid=${id}`, 'GET', {}, {})
         .then((res) => {
-          console.log(JSON.parse(res.data[0].data));
-          console.log(res.data[0].data.nodes);
-          console.log(res.data[0].data.edges);
-          setNodes(JSON.parse(res.data[0].data).nodes);
-          setEdges(JSON.parse(res.data[0].data).edges);
+          setCaseName(res[0].casename);
+          setNodes(JSON.parse(res[0].data).nodes);
+          setEdges(JSON.parse(res[0].data).edges);
         })
         .catch((err) => {
           console.log(err);
@@ -79,19 +80,8 @@ const NewCase = ({
     }
   }, [id]);
 
-  const location = useLocation();
-  const navigate = useNavigate();
-
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState(1);
-
-  useEffect(() => {
-    if (location?.state?.values?.nodeName) {
-      setCaseName(location?.state?.values?.nodeName);
-    } else {
-      navigate('/');
-    }
-  }, [location, navigate, setCaseName]);
 
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
@@ -144,11 +134,7 @@ const NewCase = ({
         },
         caseid: id,
       };
-      const result = await axios.post(`${backendURL}savecase.php`, data, {
-        headers: {
-          Authorization: token,
-        },
-      });
+      const result = await httpCall('savecase.php', 'POST', data, {});
       return result;
     } else {
       const error = 'No node is present in the canvas to be saved!';
@@ -158,9 +144,7 @@ const NewCase = ({
 
   useEffect(() => {
     saveNode()
-      .then((res) => {
-        console.log('Node was saved');
-      })
+      .then((res) => {})
       .catch((err) => {
         console.log(err);
       });
@@ -182,7 +166,6 @@ const NewCase = ({
               <SideNav
                 setActiveMenu={setActiveMenu}
                 nodeInfo={nodeInfo}
-                searchRef={searchRef.current}
                 activeMenu={activeMenu}
                 mode={mode}
               />
@@ -191,7 +174,6 @@ const NewCase = ({
               {nodeInfo && activeMenu !== '' ? (
                 <NodeList
                   activeMenu={activeMenu}
-                  searchRef={searchRef.current}
                   nodes={nodes}
                   nodeList={nodeInfo}
                   setNodes={setNodes}
@@ -250,7 +232,7 @@ const NewCase = ({
           </div>
         </div>
       )}
-      {activeTab === 2 && <Ransomware />}
+      {activeTab === 2 && <Ransomware search={search} />}
 
       <Footer
         searchTerm={searchTerm}

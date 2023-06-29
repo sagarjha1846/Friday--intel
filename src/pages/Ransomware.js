@@ -1,55 +1,81 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import { DataGrid } from '@mui/x-data-grid';
+import { Table } from 'antd';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { httpCall } from '../axios/httpService';
 
 const columns = [
-  { field: 'id', headerName: 'Ransomware Gang', flex: 1 },
+  { dataIndex: 'id', title: 'Ransomware Gang', flex: 1 },
   {
-    field: 'lastName',
-    headerName: 'Claimed Victim',
+    dataIndex: 'lastName',
+    title: 'Claimed Victim',
     flex: 1,
   },
   {
-    field: 'age',
-    headerName: 'Creation Time',
+    dataIndex: 'age',
+    title: 'Creation Time',
     flex: 1,
   },
   {
-    field: 'firstName',
-    headerName: 'Last Update',
+    dataIndex: 'firstName',
+    title: 'Last Update',
     flex: 1,
   },
 ];
 
-const rows = [
-  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-  { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-  { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-  { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-  { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-  { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-  { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-  { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-];
+export default function Ransomware({ search, setSearch }) {
+  const [rows, setRows] = useState([]);
 
-export default function Ransomware() {
+  const [tableParams, setTableParams] = useState({
+    pagination: {
+      current: 1,
+      pageSize: 10,
+    },
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    httpCall(`ransomesearch.php?group=${search}`, 'GET', {}, {})
+      .then((res) => {
+        setRows(res);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        console.log(err);
+      });
+  }, [search]);
+
+  const handleTableChange = (pagination, filters, sorter) => {
+    setTableParams({
+      pagination,
+      filters,
+      ...sorter,
+    });
+
+    // `dataSource` is useless since `pageSize` changed
+    if (pagination.pageSize !== tableParams.pagination?.pageSize) {
+      setRows([]);
+    }
+  };
+
   return (
-    <Box sx={{ height: 530, width: '100%' }}>
-      <DataGrid
-        rows={rows}
+    <div className="p-10">
+      <Table
+        bordered
         columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: {
-              pageSize: 8,
-            },
-          },
+        dataSource={rows}
+        loading={isLoading}
+        showSorterTooltip={false}
+        pagination={tableParams.pagination}
+        onChange={handleTableChange}
+        rowKey={(record) => record.caseid}
+        scroll={{
+          x: 1300,
         }}
-        pageSizeOptions={[8]}
-        checkboxSelection
-        disableRowSelectionOnClick
       />
-    </Box>
+    </div>
   );
 }
