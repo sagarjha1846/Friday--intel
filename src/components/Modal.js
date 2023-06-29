@@ -2,7 +2,6 @@ import { Button, Form, Input, Modal } from 'antd';
 import React from 'react';
 import { useNavigate } from 'react-router';
 import constants from '../constant/routesConstant';
-import { ReactComponent as CloseIcon } from '../images/svg/close.svg';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
@@ -51,8 +50,8 @@ const ModalView = ({ setOpenModal, openModal, form, setCaseName }) => {
       closable={false}
       title=<div className="text-[#2b2b2b] w-full flex justify-between ">
         <div className="w-[100%] ">Save Node</div>
-        <button onClick={handleCancel} className="  border-none hover:bg-none">
-          <CloseIcon />
+        <button onClick={handleCancel} className="border-none hover:bg-none model-newcase-cancel">
+          X
         </button>
       </div>
       open={openModal}
@@ -63,7 +62,7 @@ const ModalView = ({ setOpenModal, openModal, form, setCaseName }) => {
               onClick={handleCancel}
               className="w-[180px] font-[600] text-[12px] text-[#000000] h-[39px] rounded-[14px] border-[1px] border-[#00000]"
             >
-              Close
+              Cancel
             </Button>
           </Form.Item>
 
@@ -76,7 +75,7 @@ const ModalView = ({ setOpenModal, openModal, form, setCaseName }) => {
               className="w-[180px] h-[39px] font-[600] text-[12px] text-[#ffffff] rounded-[14px] border-[1px] border-[#ffffff] bg-[#1c1c1cb3]"
               onClick={form.submit}
             >
-              Submit
+              Save
             </Button>
           </Form.Item>
         </div>

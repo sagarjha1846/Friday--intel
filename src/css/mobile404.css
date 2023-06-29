@@ -4,16 +4,39 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
   font-family: Hammersmith One;
 }
 .paragraph {
-  font-size: 40px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
 }
 .device {
   color: #00f0ff;
-  font-size: 40px;
+  font-size: 18px;
+}
+.logo-icon-mobile{
+  /* height: 18rem; */
+  width: 18rem;
+}
+.mobile-footer{
+  font-size: 1.4rem;
+  position: absolute;
+  bottom: 2rem;
+}
+.mobile-404-btn{
+  height: 3rem;
+  width: 16rem;
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+.mobile-404-btn a{ 
+ padding-bottom: 2px;
+ font-size: 1.4rem
 }
