@@ -39,6 +39,7 @@ const Navbar = ({
   search,
   setSearch,
   setRansomeData,
+  profileDetail,
 }) => {
   const [logoo, setLogoo] = useState(light);
   const { ROUTES } = constants;
@@ -62,7 +63,6 @@ const Navbar = ({
         {},
         {},
       );
-     
 
       const loadRansomData = await httpCall(
         `ransomesearch.php?group=${search}`,
@@ -230,7 +230,9 @@ const Navbar = ({
               <button className="btn-icon member-notification">
                 <User style={{ fill: 'var(--primary-color)' }} />
               </button>
-              {activeButton === 'openprofile' && <Profile />}
+              {activeButton === 'openprofile' && (
+                <Profile profileDetail={profileDetail} />
+              )}
             </div>
           </section>
         </>
