@@ -23,6 +23,17 @@
   border-image: linear-gradient(to right, #00f0ff, #ff1cf7) 2;
   cursor: pointer;
 }
+.case_cards:active .case_cards:focus {
+  background: url(../images/case-card.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: var(--primary-color);
+  border-style: solid;
+  border-image: linear-gradient(to right, #00f0ff, #ff1cf7) 2;
+  cursor: pointer;
+}
 /* path:hover{
     fill: #fff;
 } */
@@ -91,4 +102,33 @@
   border-radius: 7px;
   margin: 1rem;
   border: 2px solid var(--primary-color);
+}
+.actives {
+  border: 2px solid var(--primary-color-2);
+  background: url(../images/case-card.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: var(--primary-color);
+  border-style: solid;
+  border-image: linear-gradient(to right, #00f0ff, #ff1cf7) 2;
+  cursor: pointer;
+}
+.ant-modal-content{
+  background-color: var(--secondary-color) !important;
+}
+.w-\[100\%\]{
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.model-newcase-cancel{
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  background-color: var(--secondary-color);
+  padding: 0px 5px;
+  border-radius: 50%;
+}
+.text-\[\#2b2b2b\]{
+  background-color: var(--secondary-color);
 }

@@ -84,13 +84,7 @@ export function themeChange({
   htmlElement.style.setProperty('--members-color-1', members_color2);
   htmlElement.style.setProperty('--members-color-2', members_color1);
 
-  // let value = logoo;
-
-  // if (value === light) {
-  //   setLogoo(dark);
-  // } else {
-  //   setLogoo(light);
-  // }
+ 
 }
 
 export { getLayoutElements };
