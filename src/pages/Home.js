@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { Helmet } from 'react-helmet';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import constants from '../constant/routesConstant';
 import '../css/home.css';
@@ -47,7 +46,6 @@ const Home = ({ caseName, setCaseName }) => {
 
   return (
     <>
-    <div className='home-main'>
       <Helmet>
         <title>FridayIntel-Home</title>
       </Helmet>
@@ -134,7 +132,7 @@ const Home = ({ caseName, setCaseName }) => {
         </Routes>
       </div>
     </>
-  );
+    );
 };
 
 export default Home;
