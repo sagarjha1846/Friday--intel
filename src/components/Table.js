@@ -5,7 +5,7 @@ import constants from '../constant/routesConstant';
 import { useNavigate } from 'react-router-dom';
 import { httpCall } from '../axios/httpService';
 
-const LoadCaseTable = () => {
+const LoadCaseTable = ({ search }) => {
   const [rows, setRows] = useState([]);
   const navigate = useNavigate();
   const { ROUTES } = constants;
@@ -103,31 +103,27 @@ const LoadCaseTable = () => {
   }, []);
 
   const handleTableChange = (pagination, filters, sorter) => {
+    console.log(pagination, filters, sorter);
     setTableParams({
       pagination,
       filters,
       ...sorter,
     });
-
-    // `dataSource` is useless since `pageSize` changed
-    if (pagination.pageSize !== tableParams.pagination?.pageSize) {
-      setRows([]);
-    }
   };
 
+  console.log(tableParams.pagination);
   return (
     <Table
       bordered
       columns={columns}
-      dataSource={rows}
+      dataSource={
+        search ? rows.filter((el) => el.casename.includes(search)) : rows
+      }
       loading={isLoading}
       showSorterTooltip={false}
       pagination={tableParams.pagination}
       onChange={handleTableChange}
       rowKey={(record) => record.caseid}
-      scroll={{
-        x: 1300,
-      }}
     />
   );
 };

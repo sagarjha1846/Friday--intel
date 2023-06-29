@@ -38,6 +38,7 @@ const Navbar = ({
   setActiveButton,
   search,
   setSearch,
+  setRansomeData,
 }) => {
   const [logoo, setLogoo] = useState(light);
   const { ROUTES } = constants;
@@ -50,15 +51,31 @@ const Navbar = ({
 
   const location = useLocation();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (location.pathname.split('/')[1] === `${ROUTES.newCase.split('/')[1]}`) {
       setIsLoading(true);
 
-      httpCall(`canvas.php?query=${search}`, 'GET', {}, {})
-        .then((response) => {
-          setNodeInfo({ query: search, data: response });
-          setNodeInfoList([...nodeInfoList, { query: search, data: response }]);
+      const loadCanvasData = await httpCall(
+        `canvas.php?query=${search}`,
+        'GET',
+        {},
+        {},
+      );
+     
+
+      const loadRansomData = await httpCall(
+        `ransomesearch.php?group=${search}`,
+        'GET',
+        {},
+        {},
+      );
+
+      Promise.all([loadCanvasData, loadRansomData])
+        .then((res) => {
+          console.log(res);
+          setNodeInfo({ query: search, data: res[0] });
+          setNodeInfoList([...nodeInfoList, { query: search, data: res[0] }]);
           setNodes((prev) => [
             ...prev,
             {
@@ -68,13 +85,17 @@ const Navbar = ({
               position: { x: Math.random() * 500, y: Math.random() * 500 },
             },
           ]);
-
+          setRansomeData(res[1]);
           setSearch('');
+          setIsLoading(false);
+
           setIsLoading(false);
         })
         .catch((err) => {
-          setIsLoading(true);
+          setIsLoading(false);
+          console.log(err);
         });
+    } else {
     }
   };
 

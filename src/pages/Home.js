@@ -11,6 +11,7 @@ import { PrivateRoute } from '../store/PrivateRoute';
 import ReadCase from './ReadCase';
 import { ReactComponent as Arrow } from '../images/svg/arrow.svg';
 
+
 const Home = ({ caseName, setCaseName }) => {
   const [activeArticle, setActiveArticle] = useState('');
   const [form] = Form.useForm();
@@ -26,7 +27,26 @@ const Home = ({ caseName, setCaseName }) => {
     setActiveArticle(articleId);
   };
 
+  const menu = [
+    {
+      title: 'New Case',
+      key: 'newCase',
+      action: handleLoadNewCase,
+    },
+    {
+      title: 'Load Case',
+      key: 'loadCase',
+      action: () => navigate(ROUTES.loadCase),
+    },
+    {
+      title: 'Read Case',
+      key: 'readCase',
+      action: () => navigate(ROUTES.readCase),
+    },
+  ];
+
   return (
+    <>
     <div className='home-main'>
       <Helmet>
         <title>FridayIntel-Home</title>
@@ -39,8 +59,15 @@ const Home = ({ caseName, setCaseName }) => {
         caseName={caseName}
         setCaseName={setCaseName}
       />
-      <div className="flex">
+      <div className="flex w-full ">
         <section className="cases">
+          {menu.map((el) => (
+            <article key={el.key} className="case_cards" onClick={el.action}>
+              {/* <img src={img} alt='img' className='hover-img'/> */}
+              <h2 className="case_title_home">{el.title}</h2>
+              <Arrow />
+            </article>
+          ))}
           <article className={`case_cards ${activeArticle === 'newCase' ? 'actives' : ''}`} onClick={handleLoadNewCase}>
             {/* <img src={img} alt='img' className='hover-img'/> */}
             <h2 className="case_title_home">New Case</h2>
@@ -67,18 +94,46 @@ const Home = ({ caseName, setCaseName }) => {
             <Arrow />
           </article>
         </section>
-        <>
-          <Routes>
-            <Route element={<PrivateRoute />}>
-              <Route path={ROUTES.loadCase} element={<LoadCase />}></Route>
-            </Route>
-            <Route element={<PrivateRoute />}>
-              <Route path={ROUTES.readCase} element={<ReadCase />}></Route>
-            </Route>
-          </Routes>
-        </>
+
+        <Routes>
+          <Route element={<PrivateRoute />}>
+            <Route
+              path={ROUTES.home}
+              element={
+                <section className="p-10 w-full flex flex-col">
+                  {search ? (
+                    <>
+                      <div className=" !w-[100%] overflow-x-hidden">
+                        <h1 className=" text-4xl">Load case</h1>
+                        <div className=" w-full overflow-hidden">
+                          <LoadCase search={search} />
+                        </div>
+                      </div>
+
+                      <div>
+                        <h1 className=" text-4xl">Read case</h1>
+                        <ReadCase search={search} />
+                      </div>
+                    </>
+                  ) : null}
+                </section>
+              }
+            ></Route>
+
+            <Route
+              path={ROUTES.loadCase}
+              element={<LoadCase search={search} />}
+            ></Route>
+          </Route>
+          <Route element={<PrivateRoute />}>
+            <Route
+              path={ROUTES.readCase}
+              element={<ReadCase search={search} />}
+            ></Route>
+          </Route>
+        </Routes>
       </div>
-    </div>
+    </>
   );
 };
 

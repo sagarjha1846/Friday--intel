@@ -35,6 +35,7 @@ const App = () => {
   const [caseName, setCaseName] = useState('');
   const [activeButton, setActiveButton] = useState(null);
   const [search, setSearch] = useState('');
+  const [ransomeData, setRansomeData] = useState([]);
   return (
     <>
       {token && (
@@ -55,6 +56,7 @@ const App = () => {
             setActiveButton={setActiveButton}
             search={search}
             setSearch={setSearch}
+            setRansomeData={setRansomeData}
           />
         </nav>
       )}
@@ -64,6 +66,7 @@ const App = () => {
             path="/*"
             element={
               <Home
+                search={search}
                 caseName={caseName}
                 setCaseName={setCaseName}
                 setMode={setMode}
@@ -98,6 +101,7 @@ const App = () => {
                 setCaseName={setCaseName}
                 search={search}
                 setSearch={setSearch}
+                ransomeData={ransomeData}
               />
             }
           />
