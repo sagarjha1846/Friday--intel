@@ -469,16 +469,19 @@ border-bottom: none;
 }
 .ant-btn-primary {
   width: 18rem;
-  background-color: black;
+  background-color: #1c1c1c;
   color: white;
 }
 .ant-btn-default {
   width: 18rem;
   margin-right: 10rem;
+  border: 2px solid var(--primary-color-2) !important;
+  color: var(--primary-color);
 }
 .ant-btn-primary:hover {
-  border: 1px solid var(--primary-color-2);
-  background-color: black;
+  border: 2px solid var(--primary-color-2);
+  background-color: black !important;
+  color: #00ffff !important;
 }
 .anticon-close {
   border: 1px solid black;

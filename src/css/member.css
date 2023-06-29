@@ -225,6 +225,10 @@ table.GeneratedTable th {
 }
 .links-profile ul {
   padding-bottom: 0.5rem;
+  cursor: pointer;
+}
+.links-profile ul svg {
+  display: inline !important;
 }
 .query-limit-number {
   position: absolute;

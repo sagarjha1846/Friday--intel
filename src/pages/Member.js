@@ -9,6 +9,15 @@ import CircularProgress from '@mui/joy/CircularProgress';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { ReactComponent as User } from '../images/svg/usercheck.svg';
+import { BiLink } from "react-icons/bi";
+import { Link, Navigate } from 'react-router-dom';
+
+
+
+function navigateToDashboard() {
+  Navigate('/');
+}
+
 
 function Table({ data }) {
   return (
@@ -169,9 +178,25 @@ const Member = () => {
           <section className="quick-links">
             <h2>QUICK LINKS</h2>
             <div className="links-profile">
-              <ul>Website</ul>
-              <ul>Helpdesk</ul>
-              <ul>Dashboard</ul>
+            <ul><BiLink color="#00F0FF"/><a
+                href="https://fridayintel.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {' '}
+                Website
+              </a></ul>
+          <ul> <BiLink color="#00F0FF"/><a
+                href="https://fridayintel.com/contact"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {' '}
+                Helpdesk
+              </a></ul>
+              <Link to="/">
+           <ul onClick={navigateToDashboard}><BiLink color="#00F0FF"/> Dashboard</ul>
+           </Link>
             </div>
           </section>
         </div>
