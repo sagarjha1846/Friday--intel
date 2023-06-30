@@ -485,6 +485,12 @@ border-bottom: none;
   margin-right: 10rem;
   border: 2px solid var(--primary-color-2) !important;
   color: var(--primary-color);
+  box-shadow: none !important;
+}
+.ant-btn-default:hover{
+  /* border: 2px solid var(--primary-color-2); */
+  background-color: black !important;
+  color: #00ffff !important;
 }
 .ant-btn-primary:hover {
   border: 2px solid var(--primary-color-2);

@@ -8,7 +8,7 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color-light);
 }
 
 nav .menu {

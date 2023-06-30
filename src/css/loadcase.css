@@ -55,3 +55,9 @@
 .ant-table-cell-fix-right-first , .ant-table-cell{
   z-index: 0 !important;
 }
+.ant-pagination-item-link{
+color: var(--primary-color-2) !important;
+}
+.readcase-table{
+  background-color: blue;
+}

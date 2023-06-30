@@ -18,7 +18,7 @@ const LoadCaseTable = ({ search }) => {
       key: 'caseid',
     },
     {
-      title: 'Case Name',
+      title: 'Title',
       width: 200,
       dataIndex: 'casename',
       key: 'casename',

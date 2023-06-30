@@ -120,6 +120,7 @@
 }
 .ant-modal-content{
   background-color: var(--secondary-color) !important;
+  border: 2px solid var(--primary-color);
 }
 .w-\[100\%\]{
   background-color: var(--secondary-color);
