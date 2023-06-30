@@ -44,7 +44,7 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     if (!user) dispatch(userDetails());
-  }, []);
+  },[]);
 
   console.log();
   return (

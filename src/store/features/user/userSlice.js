@@ -16,7 +16,9 @@ export const userDetails = createAsyncThunk(
   'auth/user-details',
   async (_, thunkAPI) => {
     try {
+      console.log("await-----")
       const resp = await userService.userDetails();
+      console.log(resp);
       return resp;
     } catch (error) {
       const message = reduceErrorHandler(error);

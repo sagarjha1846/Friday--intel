@@ -52,3 +52,6 @@
   background-color: var(--primary-color-2);
   /* outline: 1px solid var(--primary-color-1); */
 }
+.ant-table-cell-fix-right-first , .ant-table-cell{
+  z-index: 0 !important;
+}
