@@ -63,17 +63,26 @@ export function themeChange({
   const htmlElement = document.querySelector('html');
   const PRIMARY =
     getComputedStyle(htmlElement).getPropertyValue('--primary-color');
+ 
   const SECONDARY =
     getComputedStyle(htmlElement).getPropertyValue('--secondary-color');
   const SECONDARY_2 = getComputedStyle(htmlElement).getPropertyValue(
     '--secondary-color-1',
   );
+
+
   const PRIMARY_2 =
     getComputedStyle(htmlElement).getPropertyValue('--primary-color-2');
+    
   const members_color1 =
     getComputedStyle(htmlElement).getPropertyValue('--members-color-1');
   const members_color2 =
     getComputedStyle(htmlElement).getPropertyValue('--members-color-2');
+
+    const PRIMARY_Dark =
+    getComputedStyle(htmlElement).getPropertyValue('--primary-color-dark');
+  const PRIMARY_light =
+    getComputedStyle(htmlElement).getPropertyValue('--primary-color-light');
 
   htmlElement.style.setProperty('--primary-color', SECONDARY);
   htmlElement.style.setProperty('--secondary-color', PRIMARY);
@@ -83,8 +92,10 @@ export function themeChange({
   htmlElement.style.setProperty('--primary-color-2', SECONDARY_2);
   htmlElement.style.setProperty('--members-color-1', members_color2);
   htmlElement.style.setProperty('--members-color-2', members_color1);
+  htmlElement.style.setProperty('--primary-color-dark', PRIMARY_light);
+  htmlElement.style.setProperty('--primary-color-light', PRIMARY_Dark);
 
- 
+
 }
 
 export { getLayoutElements };

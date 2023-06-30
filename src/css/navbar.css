@@ -53,7 +53,7 @@
 .btn-icon {
   border: 2px solid var(--primary-color);
   outline: none;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color-light);
   padding: 8px;
   border-radius: 50%;
   transition: all ease 0.1s;
@@ -122,3 +122,11 @@ input.search-bar::-webkit-input-placeholder {
   height: 6rem;
   width: 15rem;
 }
+
+.notification-list::-webkit-scrollbar {
+  width: 6px;
+}
+.notification-list-webkit-scrollbar-thumb {
+  background-color: var(--primary-color--2);
+}
+

@@ -13,7 +13,7 @@ const Profile = ({ profileDetail }) => {
   const dispatch = useDispatch();
   if (!profileDetail) {
     // Render dummy data or loading state if profileDetail is not available
-    return <div>Loading...</div>; // or render a dummy profile data
+    return <div></div>; // or render a dummy profile data
   }
 
   return (

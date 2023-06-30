@@ -8,6 +8,8 @@ html {
   --primary-color-2: #000000e6;
   --members-color-1: #e4e4e4;
   --members-color-2: #2b2b2b;
+  --primary-color-dark : #000000;
+  --primary-color-light: #ffffff;
 
   /* for rem value */
   font-size: 62.5%;

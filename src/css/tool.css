@@ -44,7 +44,7 @@ nav .menu {
     z-index: 2 */
 
 .toolbtn {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-dark);
   cursor: pointer;
   border: none;
   border-radius: 1em;
