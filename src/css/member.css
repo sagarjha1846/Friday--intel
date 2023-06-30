@@ -61,7 +61,8 @@
 .agency_description h3 {
   font-size: 2.4rem;
   font-weight: 400;
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  margin-top: -5px;
 }
 .agency_description h4 {
   font-size: 1.8rem;
@@ -74,7 +75,7 @@
 .member_contact h4 {
   font-size: 1.8rem;
   font-weight: 400;
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -82,11 +83,11 @@
 
 .transaction-details {
   display: flex;
-  margin: 3rem 5rem 0rem 5rem;
+  margin: 1.5rem 5rem 0rem 5rem;
   justify-content: space-around;
   align-items: center;
   background: rgba(0, 255, 255, 0.1);
-  height: 26rem;
+  height: 27.5rem;
   width: 77rem;
   flex-direction: column;
   background-color: var(--members-color-1);
@@ -95,7 +96,7 @@
 .subscription_details {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-between;
   /* flex-direction: column; */
 }
 .subscription_details h3 {
@@ -125,7 +126,7 @@
   width: 20rem;
   border-radius: 1.4rem;
   border: 1px solid var(--primary-color);
-  box-shadow: 0px 4px 0px rgba(43, 43, 43, 0.5);
+  box-shadow: 0px 4px 0px var(--primary-color);
   /* margin: 0rem 0rem 2rem 1rem; */
 }
 .subscription_details a {
@@ -151,7 +152,7 @@ table.GeneratedTable th {
   padding: 0.5rem;
 }
 .footer-member {
-  margin-top: 2rem;
+  margin-top: .5rem;
   margin-left: 5rem;
   font-size: 1.6rem;
   font-weight: 400;
@@ -175,9 +176,9 @@ table.GeneratedTable th {
 }
 .member_deatils_container {
   width: 77rem;
-  height: 26rem;
+  height: 27.5rem;
   background-color: var(--members-color-1);
-  margin: 3rem 5rem 0rem 5rem;
+  margin: 1.5rem 5rem 0rem 5rem;
   border-radius: 1rem;
 }
 .member-main-container {
@@ -186,7 +187,7 @@ table.GeneratedTable th {
 .query-limit {
   height: 38.5rem;
   width: 41rem;
-  margin: 3rem 0rem 1.5rem 3rem;
+  margin: 0.5rem 0rem 1.5rem 3rem;
   background-color: var(--members-color-1);
   border-radius: 1rem;
 }
@@ -195,7 +196,7 @@ table.GeneratedTable th {
   padding: 2rem 0rem 1rem 1.5rem;
 }
 .query-limit h3 {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   padding-left: 1.5rem;
   display: inline;
 }
@@ -209,10 +210,11 @@ table.GeneratedTable th {
   margin: 4rem 8rem;
 }
 .quick-links {
-  height: 15rem;
+  height: 16rem;
   width: 41rem;
   background-color: var(--members-color-1);
   border-radius: 1rem;
+  margin-top: 2.5rem;
   margin-left: 3rem;
 }
 .quick-links h2 {
@@ -243,3 +245,27 @@ table.GeneratedTable th {
   right: -3rem;
   top: 7rem;
 }
+.ant-table-thead>tr>th{
+  padding: 8px 8px !important;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+.ant-table-thead>tr>th{
+  background: var(--members-color-1) !important;
+  color:  var(--primary-color) !important;
+}
+.ant-table-tbody>tr>td{
+  background: var(--members-color-1) !important;
+  color:  var(--primary-color) !important;
+}
+.ant-empty-description{
+  color: var(--primary-color-2) !important;
+}
+.ant-table-empty{
+  background-color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
+}
+.ant-table-content {
+  background-color: var(--members-color-1);
+  /* color: rgb(127, 127, 127); */
+ }

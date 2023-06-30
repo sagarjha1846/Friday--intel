@@ -11,39 +11,45 @@ const Profile = ({ profileDetail }) => {
   const { ROUTES } = constants;
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  if (!profileDetail) {
+    // Render dummy data or loading state if profileDetail is not available
+    return <div>Loading...</div>; // or render a dummy profile data
+  }
 
   return (
     <div>
       <span className="pro">
-        <div className="pro-data">
-          <h2>{profileDetail[0].fullname}</h2>
+        <div>
+          <div className="pro-data">
+            <h2>{profileDetail[0]?.fullname || 'Dummy Fullname'}</h2>
 
-          <article>
-            <span className="pro-icon">
-              <Email style={{ fill: 'var(--primary-color)' }} />
-            </span>
-            <h4> {profileDetail[0].email}</h4>
-          </article>
-          <article>
-            <span className="pro-icon">
-              <button className="">
-                <Building style={{ fill: 'var(--primary-color)' }} />
-              </button>
-            </span>
-            <h4>{profileDetail[0].agency_name}</h4>
-          </article>
-          <button
-            className="member_btn_edit"
-            onClick={() => navigate(ROUTES.member)}
-          >
-            Edit Profile
-          </button>
-          <button
-            className="member_btn_membership"
-            onClick={() => navigate(ROUTES.member)}
-          >
-            Membership info
-          </button>
+            <article>
+              <span className="pro-icon">
+                <Email style={{ fill: 'var(--primary-color)' }} />
+              </span>
+              <h4>{profileDetail[0]?.email || 'dummy@example.com'}</h4>
+            </article>
+            <article>
+              <span className="pro-icon">
+                <button className="">
+                  <Building style={{ fill: 'var(--primary-color)' }} />
+                </button>
+              </span>
+              <h4>{profileDetail[0]?.agency_name || 'Dummy Agency'}</h4>
+            </article>
+            <button
+              className="member_btn_edit"
+              onClick={() => navigate(ROUTES.member)}
+            >
+              Edit Profile
+            </button>
+            <button
+              className="member_btn_membership"
+              onClick={() => navigate(ROUTES.member)}
+            >
+              Membership info
+            </button>
+          </div>
           <span
             className="logout-bn"
             onClick={() => {
@@ -51,7 +57,6 @@ const Profile = ({ profileDetail }) => {
             }}
           >
             <Exit style={{ fill: 'var(--primary-color)' }} />
-
             <h4>Log Out</h4>
           </span>
         </div>
@@ -62,3 +67,10 @@ const Profile = ({ profileDetail }) => {
 };
 
 export default Profile;
+
+
+
+
+
+
+

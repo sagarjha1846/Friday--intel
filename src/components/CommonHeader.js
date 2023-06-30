@@ -36,7 +36,7 @@ const CommonHeader = ({ setMode, mode }) => {
                 backgroundSize: 'cover',
               }}
             >
-              <i className="fas fa-sun">
+              <i className=" fa-sun">
                 <SunShine />
               </i>
               <i className="fas fa-moon">
