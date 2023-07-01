@@ -151,7 +151,12 @@ const App = () => {
           }
         />
 
-        <Route path="*" element={<Page404 setMode={setMode} mode={mode} />} />
+        {/* <Route path="*" element={<Page404 setMode={setMode} mode={mode} />} /> */}
+        <Route
+          path="/*"
+          element={<Navigate to="/404" replace />}
+        />
+
       </Routes>
 
       {token && location.pathname === `${ROUTES.newCase}/:casename/:id` && (

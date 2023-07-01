@@ -33,11 +33,11 @@ const OverviewFlow = (props) => {
       setIsPopUpOpen(false);
     }
   }, [nodeClicked, nodeInfoList, setNodeInfo]);
-  // const handleNodeClick = (e) => {
-  //   const clickedNodeId = e.target.attributes.getNamedItem('data-id').value;
-  //   setNodeClicked(clickedNodeId);
-  //   setIsPopUpOpen(true);
-  // };
+  const handleNodeClick = (e) => {
+    const clickedNodeId = e.target.attributes.getNamedItem('data-id').value;
+    setNodeClicked(clickedNodeId);
+    setIsPopUpOpen(true);
+  };
   return (
     <ReactFlow
       snapToGrid={true}

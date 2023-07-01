@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import constants from '../constant/routesConstant';
 import { useNavigate } from 'react-router-dom';
 import { httpCall } from '../axios/httpService';
+import { TiEyeOutline } from "react-icons/ti";
 
 const LoadCaseTable = ({ search }) => {
   const [rows, setRows] = useState([]);
@@ -49,8 +50,9 @@ const LoadCaseTable = ({ search }) => {
       fixed: 'right',
       width: 100,
       render: (row) => (
-        <button onClick={() => navigate(`${ROUTES.newCase}/${row.caseid}`)}>
-          <i className="fa-regular fa-eye"></i>
+        <button className='view-icon' onClick={() => navigate(`${ROUTES.newCase}/${row.caseid}`)}>
+          {/* <i className="fa-regular fa-eye"></i> */}
+          <TiEyeOutline/>
         </button>
       ),
     },

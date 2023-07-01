@@ -10,6 +10,7 @@ import { useState } from 'react';
 import '../css/newcase.css';
 import { themeChange } from '../utils';
 import constants from '../constant/routesConstant';
+import { ReactComponent as FIEYE } from '../images/svg/fiEyeLogo.svg';
 import { ReactComponent as FILogo } from '../images/svg/fridayLogo.svg';
 import { ReactComponent as Logo } from '../images/svg/firdayIntel.svg';
 import { ReactComponent as BookMark } from '../images/svg/bookmarkIcon.svg';
@@ -224,12 +225,12 @@ const Navbar = ({
               {activeButton === 'opendrawer' && <DrawerInfo />}
             </div>
             <form onSubmit={handleSubmit} className="searchbar-box">
-              <FILogo
-                style={{
-                  fill: 'var(--primary-color)',
-                  stroke: 'var(--primary-color)',
-                }}
-              />
+            {mode ? (
+      <FILogo
+      />
+    ) : (
+      <FIEYE style={{ fill: 'var(--primary-color)' }} />
+    )}
               <input
                 type="text"
                 className="search-bar-NC"
