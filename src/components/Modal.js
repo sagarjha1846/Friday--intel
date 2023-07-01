@@ -40,6 +40,7 @@ const ModalView = ({ setOpenModal, openModal, form, setCaseName }) => {
 
   return (
     <Modal
+    className='save-modal'
       closable={false}
       title=<div className="text-[#2b2b2b] w-full flex justify-between ">
         <div className="w-[100%] ">Save Node</div>

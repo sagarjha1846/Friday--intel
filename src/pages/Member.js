@@ -58,7 +58,7 @@ const Member = ({ profileDetail }) => {
 
   if (!profileDetail) {
     // Render dummy data or loading state if profileDetail is not available
-    return <div>Loading...</div>; // or render a dummy member data
+    return <div></div>; // or render a dummy member data
   }
   return (
     <>

@@ -78,3 +78,13 @@ color: var(--primary-color-2) !important;
 .ant-pagination-item-active{
   background-color: var(--secondary-color) !important;
 }
+.view-icon{
+  height: 3rem;
+  width: 3rem;
+  padding-left: 1rem;
+}
+.view-icon svg{
+  height: 3rem;
+  width: 3rem;
+ 
+}
