@@ -10,6 +10,8 @@ html {
   --members-color-2: #2b2b2b;
   --primary-color-dark : #000000;
   --primary-color-light: #ffffff;
+  --grey-color-dark: #00000066;
+  --grey-color-light: #ffffff;
 
   /* for rem value */
   font-size: 62.5%;

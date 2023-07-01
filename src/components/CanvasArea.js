@@ -20,14 +20,24 @@ const OverviewFlow = (props) => {
   } = props;
 
   const [nodeClicked, setNodeClicked] = useState('');
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+
 
   useEffect(() => {
     const node =
       nodeInfoList && nodeInfoList.filter((el) => el.query === nodeClicked);
     if (node?.length === 1) {
       setNodeInfo(node[0]);
+      setIsPopUpOpen(true);
+    } else {
+      setIsPopUpOpen(false);
     }
   }, [nodeClicked, nodeInfoList, setNodeInfo]);
+  // const handleNodeClick = (e) => {
+  //   const clickedNodeId = e.target.attributes.getNamedItem('data-id').value;
+  //   setNodeClicked(clickedNodeId);
+  //   setIsPopUpOpen(true);
+  // };
   return (
     <ReactFlow
       snapToGrid={true}
@@ -46,7 +56,18 @@ const OverviewFlow = (props) => {
     >
       <MiniMap style={minimapStyle} zoomable pannable />
       <Background color="#000" gap={16} />
+      {isPopUpOpen && (
+        <div>
+          {/* Content of the pop-up */}
+          <div>
+            <h1>huhdhdeidjeidjoejdoej</h1>
+            {/* Additional information */}
+            {/* ... */}
+          </div>
+        </div>
+      )}
     </ReactFlow>
+
   );
 };
 

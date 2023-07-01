@@ -26,7 +26,8 @@
   border-radius: 30px;
   height: 43px;
   width: 480px;
-  margin-bottom: 7px;
+  /* margin-bottom: 7px; */
+  margin-top: 8px;
 }
 
 .search-bar-NC::-webkit-input-placeholder {
@@ -145,7 +146,10 @@
   font-size: 2.4rem;
   font-weight: 400;
   letter-spacing: 1px;
-  color: var(--primary-color-1);
+  color: var(--grey-color-dark);
+}
+.dashboard-title:hover{
+  color: var(--primary-color-2);
 }
 
 .react-flow__panel {
@@ -477,8 +481,9 @@ border-bottom: none;
 }
 .ant-btn-primary {
   width: 18rem;
-  background-color: #1c1c1c;
+  background-color: black;
   color: white;
+  box-shadow: 0px 5px 0px 0px #1C1C1C;
 }
 .ant-btn-default {
   width: 18rem;
@@ -489,13 +494,14 @@ border-bottom: none;
 }
 .ant-btn-default:hover{
   /* border: 2px solid var(--primary-color-2); */
-  background-color: black !important;
-  color: #00ffff !important;
+  /* background-color: black !important; */
+  color: var(--primary-color) !important;
 }
 .ant-btn-primary:hover {
   border: 2px solid var(--primary-color-2);
   background-color: black !important;
-  color: #00ffff !important;
+  /* color: #00ffff !important; */
+  transform: translateY(1px);
 }
 .anticon-close {
   border: 1px solid black;

@@ -50,22 +50,22 @@ const ModalView = ({ setOpenModal, openModal, form, setCaseName }) => {
       open={openModal}
       footer={
         <div className=" w-full flex justify-between items-center align-middle self-center content-center">
-          <Form.Item className="w-[180px] font-[600] text-[12px] text-[#000000] h-[39px] rounded-[14px] border-[1px] border-[#00000]">
+          <Form.Item className="w-[180px] font-[600] text-[12px] text-[#000000] h-[39px] rounded-[14px] ">
             <Button
               onClick={handleCancel}
-              className="w-[180px] btn-squared font-[600] text-[12px] text-[#000000] h-[39px] rounded-[14px] border-[1px] border-[#00000]"
+              className="w-[180px] btn-squared font-[600] text-[12px] text-[#000000] h-[39px] rounded-[14px] "
             >
               Cancel
             </Button>
           </Form.Item>
 
-          <Form.Item className="w-[180px] h-[39px] font-[600] text-[12px] text-[#ffffff] rounded-[14px] border-[1px] border-[#ffffff] bg-[#1c1c1cb3]">
+          <Form.Item className="w-[180px] h-[39px] font-[600] text-[12px] text-[#ffffff] rounded-[14px]  bg-[#1c1c1cb3]">
             <Button
               type="primary"
               name="submit"
               value="submit"
               htmlType="submit"
-              className="w-[180px] btn-squared h-[39px] font-[600] text-[12px] text-[#ffffff] rounded-[14px] border-[1px] border-[#ffffff] bg-[#1c1c1cb3]"
+              className="w-[180px] btn-squared h-[39px] font-[600] text-[12px] text-[#ffffff] rounded-[14px]   bg-[#1c1c1cb3]"
               onClick={form.submit}
             >
               Save
