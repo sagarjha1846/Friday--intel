@@ -12,7 +12,7 @@ const LoadCase = ({ search }) => {
       </Helmet>
 
       <section className="readcase-container p-10 ">
-        <Table search={search} />
+        <Table className="readcase-table" search={search} />
       </section>
     </>
   );

@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../css/navbar.css';
 import DrawerInfo from './DrawerInfo';
 import { CiSearch } from 'react-icons/ci';
@@ -44,11 +44,15 @@ const Navbar = ({
   const [logoo, setLogoo] = useState(light);
   const { ROUTES } = constants;
 
+
+  const profileRef = useRef(null);
+  const notificationRef = useRef(null);
+
   const handleButtonClick = (button) => {
     setActiveButton((prevButton) => (prevButton === button ? null : button));
   };
 
-  const handleOk = () => {};
+  const handleOk = () => { };
 
   const location = useLocation();
 
@@ -102,6 +106,32 @@ const Navbar = ({
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        profileRef.current &&
+        !profileRef.current.contains(event.target) &&
+        activeButton === 'openprofile'
+      ) {
+        setActiveButton(null);
+      }
+
+      if (
+        notificationRef.current &&
+        !notificationRef.current.contains(event.target) &&
+        activeButton === 'notification'
+      ) {
+        setActiveButton(null);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [activeButton]);
 
   return (
     <nav className="nav_bar">
@@ -165,7 +195,7 @@ const Navbar = ({
         <>
           <section className="logo_box">
             {location.pathname.split('/')[1] ===
-            `${ROUTES.newCase.split('/')[1]}` ? (
+              `${ROUTES.newCase.split('/')[1]}` ? (
               <div className="case-dashboard">
                 <div>
                   <button className="btn-icon bookmark" onClick={handleOk}>
@@ -220,18 +250,30 @@ const Navbar = ({
             <div>
               <button
                 className="btn-icon"
-                onClick={() => handleButtonClick('notification')}
+                onClick={(event) => {
+                  event.stopPropagation(); // Prevent event propagation
+                  handleButtonClick('notification');
+                }}
               >
                 <Bell style={{ fill: 'var(--primary-color)' }} />
               </button>
-              {activeButton === 'notification' && <Notication />}
+              {activeButton === 'notification' && (
+                <div ref={notificationRef}>
+                  <Notication />
+                </div>
+              )}
             </div>
-            <div onClick={() => handleButtonClick('openprofile')}>
+            <div  onClick={(event) => {
+                  event.stopPropagation(); // Prevent event propagation
+                  handleButtonClick('openprofile');
+                }}>
               <button className="btn-icon member-notification">
                 <User style={{ fill: 'var(--primary-color)' }} />
               </button>
               {activeButton === 'openprofile' && (
-                <Profile profileDetail={profileDetail} />
+                <div ref={profileRef}>
+                  <Profile profileDetail={profileDetail} />
+                </div>
               )}
             </div>
           </section>

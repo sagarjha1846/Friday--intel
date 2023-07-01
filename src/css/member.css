@@ -265,7 +265,7 @@ table.GeneratedTable th {
   background-color: var(--secondary-color) !important;
   color: var(--primary-color) !important;
 }
-.ant-table-content {
+/* .ant-table-content {
   background-color: var(--members-color-1);
-  /* color: rgb(127, 127, 127); */
- }
+  color: rgb(127, 127, 127);
+ } */

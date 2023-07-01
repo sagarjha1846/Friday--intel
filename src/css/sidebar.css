@@ -39,3 +39,7 @@
 .ant-menu-submenu-selected:hover {
   color: var(--primary-color-2);
 }
+
+.ant-menu-item:hover{
+  background-color: var(--secondary-color) !important;
+}

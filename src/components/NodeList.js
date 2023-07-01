@@ -61,6 +61,10 @@ const NodeList = (props) => {
       );
     }
   };
+  // const handleDeleteNode = (nodeId) => {
+  //   setNodes((prev) => prev.filter((node) => node.data.label !== nodeId));
+  //   setEdges((prev) => prev.filter((edge) => edge.target !== nodeId));
+  // };
 
   const slicedData =
     nodeList.query !== ''
@@ -111,6 +115,7 @@ const NodeList = (props) => {
                       onClick={() => setNodeInCanvas(el)}
                     />
                   )}
+                  {/* <button onClick={() => handleDeleteNode(el)}>Delete</button> */}
                 </div>
               </div>
             ))}

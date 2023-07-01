@@ -55,3 +55,26 @@
 .ant-table-cell-fix-right-first , .ant-table-cell{
   z-index: 0 !important;
 }
+.ant-pagination-item-link{
+color: var(--primary-color-2) !important;
+}
+/* .readcase-table{
+  background-color: blue;
+} */
+.ant-table-wrapper{
+  overflow-y: auto;
+}
+.ant-table-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+.ant-table-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-2);
+  /* outline: 1px solid var(--primary-color-1); */
+}
+.ant-pagination-item a{
+  color: var(--primary-color) !important;
+  
+}
+.ant-pagination-item-active{
+  background-color: var(--secondary-color) !important;
+}
