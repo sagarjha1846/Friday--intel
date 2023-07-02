@@ -78,7 +78,6 @@ const Navbar = ({
 
       Promise.all([loadCanvasData, loadRansomData])
         .then((res) => {
-          console.log(res);
           setNodeInfo({ query: search, data: res[0] });
           setNodeInfoList([...nodeInfoList, { query: search, data: res[0] }]);
           setNodes((prev) => [

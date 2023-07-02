@@ -46,7 +46,6 @@ const App = () => {
     if (!user) dispatch(userDetails());
   },[]);
 
-  console.log();
   return (
     <>
       {token && (
@@ -151,12 +150,7 @@ const App = () => {
           }
         />
 
-        {/* <Route path="*" element={<Page404 setMode={setMode} mode={mode} />} /> */}
-        <Route
-          path="/*"
-          element={<Navigate to="/404" replace />}
-        />
-
+        <Route path="*" element={<Page404 setMode={setMode} mode={mode} />} />
       </Routes>
 
       {token && location.pathname === `${ROUTES.newCase}/:casename/:id` && (

@@ -105,7 +105,6 @@ const LoadCaseTable = ({ search }) => {
   }, []);
 
   const handleTableChange = (pagination, filters, sorter) => {
-    console.log(pagination, filters, sorter);
     setTableParams({
       pagination,
       filters,
@@ -113,7 +112,6 @@ const LoadCaseTable = ({ search }) => {
     });
   };
 
-  console.log(tableParams.pagination);
   return (
     <Table
       bordered

@@ -11,7 +11,6 @@ const Notication = () => {
 
   useEffect(() => {
     if (isDeleteSuccess === true || isDeleteSuccess === '') {
-      console.log(isDeleteSuccess);
       httpCall('notification.php', 'GET', {}, {})
         .then((resp) => {
           setIsDeleteSuccess(false);
