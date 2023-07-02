@@ -22,7 +22,6 @@ const OverviewFlow = (props) => {
   const [nodeClicked, setNodeClicked] = useState('');
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
 
-
   useEffect(() => {
     const node =
       nodeInfoList && nodeInfoList.filter((el) => el.query === nodeClicked);
@@ -33,6 +32,7 @@ const OverviewFlow = (props) => {
       setIsPopUpOpen(false);
     }
   }, [nodeClicked, nodeInfoList, setNodeInfo]);
+
   const handleNodeClick = (e) => {
     const clickedNodeId = e.target.attributes.getNamedItem('data-id').value;
     setNodeClicked(clickedNodeId);
@@ -67,7 +67,6 @@ const OverviewFlow = (props) => {
         </div>
       )}
     </ReactFlow>
-
   );
 };
 

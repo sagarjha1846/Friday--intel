@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import constants from '../constant/routesConstant';
 import '../css/home.css';
 import { Form } from 'antd';
@@ -9,21 +9,19 @@ import LoadCase from './LoadCase';
 import { PrivateRoute } from '../store/PrivateRoute';
 import ReadCase from './ReadCase';
 import { ReactComponent as Arrow } from '../images/svg/arrow.svg';
-
+import Page404 from './Page404';
 
 const Home = ({ caseName, setCaseName, search }) => {
-  const [activeArticle, setActiveArticle] = useState('');
+  const location = useLocation();
+  const [activeArticle, setActiveArticle] = useState(location.pathname);
   const [form] = Form.useForm();
   const [openModal, setOpenModal] = useState(false);
   const { ROUTES } = constants;
   const navigate = useNavigate();
 
   const handleLoadNewCase = () => {
+    setActiveArticle(ROUTES.newCase);
     setOpenModal(true);
-  };
-
-  const handleArticleClick = (articleId) => {
-    setActiveArticle(articleId);
   };
 
   const menu = [
@@ -35,12 +33,18 @@ const Home = ({ caseName, setCaseName, search }) => {
     {
       title: 'Load Case',
       key: 'loadCase',
-      action: () => navigate(ROUTES.loadCase),
+      action: () => {
+        navigate(ROUTES.loadCase);
+        setActiveArticle(ROUTES.loadCase);
+      },
     },
     {
       title: 'Read Case',
       key: 'readCase',
-      action: () => navigate(ROUTES.readCase),
+      action: () => {
+        navigate(ROUTES.readCase);
+        setActiveArticle(ROUTES.readCase);
+      },
     },
   ];
 
@@ -60,9 +64,14 @@ const Home = ({ caseName, setCaseName, search }) => {
       <div className="flex w-full ">
         <section className="cases">
           {menu.map((el) => (
-            <article key={el.key} className="case_cards" onClick={el.action}>
-              {/* <img src={img} alt='img' className='hover-img'/> */}
-              <h2 className="case_title_home">{el.title}</h2>
+            <article
+              key={el.key}
+              className={`case_cards  ${
+                activeArticle === ROUTES[el.key] ? 'actives' : ' '
+              }`}
+              onClick={el.action}
+            >
+              <h2 className={`case_title_home`}>{el.title}</h2>
               <Arrow />
             </article>
           ))}
@@ -104,6 +113,7 @@ const Home = ({ caseName, setCaseName, search }) => {
               element={<ReadCase search={search} />}
             ></Route>
           </Route>
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </div>
     </>

@@ -12,21 +12,13 @@ import SideNav from '../components/Sidebar';
 import Tool from '../components/Tool';
 import '../css/newcase.css';
 import { getLayoutElements } from '../utils';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { MagnifyingGlass } from 'react-loader-spinner';
-
 import { createFileName, useScreenshot } from 'use-react-screenshot';
 import Ransomware from './Ransomware';
-import { useSelector } from 'react-redux';
 import PopUp from '../components/PopUp';
-
 import Profile from '../components/Profile';
-import axios from 'axios';
-import constants from '../constant/routesConstant';
-import { message } from 'antd/es';
 import { httpCall } from '../axios/httpService';
-
-// import { useEffect } from 'react';
 
 const NewCase = ({
   setEdges,
@@ -49,26 +41,18 @@ const NewCase = ({
   mode,
   activeButton,
   setCaseName,
-  search,
-  setSearch,
 }) => {
   const ref = createRef(null);
   const [_, takeScreenshot] = useScreenshot({
     type: 'image/jpeg',
     quality: 1.0,
   });
-  const { token } = useSelector((state) => state.auth);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [activeTab, setActiveTab] = useState(1);
   let { id } = useParams();
-  const { backendURL } = constants;
 
   useEffect(() => {
     if (id) {
-      setNodes([]);
-      setEdges([]);
-      setCaseName('');
-      setNodeInfo([]);
-      setActiveMenu('');
-
       httpCall(`loadcase.php/?caseid=${id}`, 'GET', {}, {})
         .then((res) => {
           setCaseName(res[0].casename);
@@ -80,9 +64,6 @@ const NewCase = ({
         });
     }
   }, [id]);
-
-  const [searchTerm, setSearchTerm] = useState('');
-  const [activeTab, setActiveTab] = useState(1);
 
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
@@ -112,7 +93,7 @@ const NewCase = ({
       setNodes([...layoutNodes]);
       setEdges([...layoutEdges]);
     },
-    [nodes, edges, setNodes, setEdges],
+    [JSON.stringify(nodes)],
   );
   const handleFullScreen = () => {
     if (ref.current) {
@@ -149,7 +130,7 @@ const NewCase = ({
       .catch((err) => {
         console.log(err);
       });
-  }, [nodes, edges]);
+  }, [JSON.stringify(nodes)]);
 
   return (
     <>

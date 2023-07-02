@@ -159,7 +159,7 @@ const Sidenav = (props) => {
         defaultOpenKeys={['sub1']}
         mode="inline"
         theme={mode ? 'light' : 'dark'}
-        onClick={(e) => setActiveMenu(e.key)}
+        onClick={(e) => (nodeInfo ? setActiveMenu(e.key) : {})}
         inlineCollapsed={collapsed}
         items={menuRendered}
       />

@@ -105,11 +105,9 @@ export const notificationSlice = createSlice({
       })
 
       .addCase(deleteAllNotifications.pending, (state) => {
-        console.log('i amsdbsqnjn');
         state.isLoading = true;
       })
       .addCase(deleteAllNotifications.fulfilled, (state, action) => {
-        console.log('i amsdbsqnjn');
         state.isLoading = false;
         state.isSuccess = true;
         state.message = 'updated';
