@@ -130,7 +130,7 @@ const NewCase = ({
       .catch((err) => {
         console.log(err);
       });
-  }, [nodes, edges]);
+  }, [JSON.stringify(nodes)]);
 
   return (
     <>
