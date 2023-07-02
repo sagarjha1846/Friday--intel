@@ -26,6 +26,7 @@ const Sidenav = (props) => {
       label: 'Terrorist Profilling',
       key: 'terroristprofilling',
       disabled: true,
+      onclick: null,
       icon: (
         <svg
           className="terrorist-profiling_logo"

@@ -44,6 +44,9 @@
   background-color: var(--primary-color-1);
   border-radius: 1em;
 }
+/* .newcase-footer-icon svg path{
+  fill: #00ffff;
+} */
 .bottom-icon-btn:active svg path {
   fill: #00ffff;
 }

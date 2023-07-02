@@ -387,7 +387,7 @@ const Footer = ({ searchTerm, setSearchTerm, activeTab, handleTabClick }) => {
       </section>
       <section className="bottom-icon-grp">
         <div>
-          <button className="bottom-icon-btn" onClick={() => handleTabClick(1)}>
+          <button className="bottom-icon-btn newcase-footer-icon" onClick={() => handleTabClick(1)}>
             <svg
               width="22"
               height="18"
