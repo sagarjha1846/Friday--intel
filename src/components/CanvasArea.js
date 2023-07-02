@@ -50,9 +50,10 @@ const OverviewFlow = (props) => {
       onConnect={onConnect}
       fitView
       attributionPosition="top-right"
-      onClick={(e) =>
-        setNodeClicked(e.target.attributes.getNamedItem('data-id').value)
+      onClick={() =>
+        handleNodeClick()
       }
+
     >
       <MiniMap style={minimapStyle} zoomable pannable />
       <Background color="#000" gap={16} />
