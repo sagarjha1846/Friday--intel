@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import '../css/PopUp.css';
-// import Draggable from 'react-draggable';
 import { VscGlobe } from "react-icons/vsc";
 import { BiLink } from "react-icons/bi";
 
@@ -58,7 +57,6 @@ function PopUp() {
 </button>
 {popups.map((popup) => (
   <div className="popup-container">
-    {/* <Draggable handle=".popup-header" key={popup.id} animation={false}> */}
       <div className={`popup ${popup.minimized ? 'minimized' : ''}`}>
         <div className="popup-header">
           <div className="globe-icon-popup">
@@ -69,12 +67,20 @@ function PopUp() {
           </div>
           <div className="globe-popup">
             {popup.minimized ? (
+              <>
               <button
                 className="restore-button"
                 onClick={() => restorePopup(popup.id)}
               >
                 Restore
               </button>
+              <button
+                  className="close-button"
+                  onClick={() => closePopup(popup.id)}
+                >
+                  X
+                </button>
+              </>
             ) : (
               <>
                 <button
@@ -118,7 +124,6 @@ function PopUp() {
               </section>
             </div>
       </div>
-    {/* </Draggable> */}
   </div>
 ))}
 </div>

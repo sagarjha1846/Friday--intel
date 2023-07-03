@@ -23,7 +23,6 @@
   height: 3rem;
   display: flex;
   justify-content: space-between;
-  /* padding: 10px 30px 15px 15px; */
   background-color: var(--secondary-color);
   border-bottom: 2px solid var(--primary-color-2);
   margin-top: .7rem;
@@ -107,25 +106,31 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 3rem;
+ 
 }
 
-.popup.minimized .minimize-button .close-button{
-  display: none;
-}
 .minimized {
   width: 200px;
-  height: 40px;
+  height: 38px;
   overflow: hidden;
+  position: absolute;
+  top: 59rem;
+  left: 45rem;
 }
 
 .minimized .restore-button {
   display: block;
   position: absolute;
   top: 0;
-  width: 10rem;
+  width: 75%;
   height: 100%;
   color: var(--primary-color-2);
   background-color: var(--secondary-color);
+  opacity: 0;
+  margin-right: 6rem;
+}
+.minimized .close-button{
+  height: 2rem;
 }
 
 .close-button {
@@ -148,21 +153,8 @@
   margin: 0px 0px 0px 5px;
 }
 
-.restore-button {
-  display: none;
-}
-
-.minimized .restore-button {
-  display: inline-block;
-  margin-right: 5px;
-}
 .popup.minimized .pop-header-heading {
   white-space: initial;
   overflow: initial;
   text-overflow: initial;
 }
-
-/* .popup-container {
-  position: relative;
-  overflow: hidden;
-} */
