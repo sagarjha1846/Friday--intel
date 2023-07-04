@@ -122,11 +122,17 @@ input.search-bar::-webkit-input-placeholder {
   height: 6rem;
   width: 15rem;
 }
-
+.notification-list{
+  overflow-y: scroll;
+}
 .notification-list::-webkit-scrollbar {
   width: 6px;
+  border-radius: 1rem;
 }
-.notification-list-webkit-scrollbar-thumb {
-  background-color: var(--primary-color--2);
+
+.notification-list::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-2);
+  border-radius: 1rem;
+  /* outline: 1px solid var(--primary-color-1); */
 }
 
