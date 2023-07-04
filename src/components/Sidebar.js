@@ -27,6 +27,13 @@ const Sidenav = (props) => {
       key: 'terroristprofilling',
       disabled: true,
       onclick: null,
+      // className: 'terroristprofilling-menu-item',
+      style: {
+        // Apply the desired CSS styles here
+        color: 'red !important',
+        backgroundColor: 'blue !important',
+        // ... other CSS properties
+      },
       icon: (
         <svg
           className="terrorist-profiling_logo"

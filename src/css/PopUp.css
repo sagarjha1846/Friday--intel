@@ -131,6 +131,9 @@
 }
 .minimized .close-button{
   height: 2rem;
+  /* width: 2.5rem; */
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .close-button {

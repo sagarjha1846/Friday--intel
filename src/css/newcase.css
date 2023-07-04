@@ -92,10 +92,12 @@
 }
 .sideNavSection::-webkit-scrollbar {
   width: 6px;
+  border-radius: 1rem;
 }
 
 .sideNavSection::-webkit-scrollbar-thumb {
   background-color: var(--primary-color-2);
+  border-radius: 1rem;
   /* outline: 1px solid var(--primary-color-1); */
 }
 
@@ -162,8 +164,8 @@
 .react-flow__node-default {
   word-break: break-all;
   border: 2px solid var(--primary-color-2) !important;
-  color: var(--primary-color);
-  background-color: var(--secondary-color);
+  color: var(--primary-color) !important;
+  background-color: var(--secondary-color) !important;
 }
 .react-flow__node-default:active {
 
