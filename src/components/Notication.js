@@ -67,7 +67,7 @@ const Notication = () => {
       <span className="noti notifications ">
         <article className="noti-data h-full w-full">
           <h2>Notifications {notification.length}</h2>
-          <div className="overflow-y-scroll w-full h-[80%]  py-10 notification-list">
+          <div className=" w-full h-[80%]  py-8 notification-list">
             {notification && notification.length > 0 ? (
               notification.map((el) => (
                 <section
