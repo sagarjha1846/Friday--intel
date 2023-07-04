@@ -19,7 +19,7 @@ const Mobile404 = () => {
               Back to friday Intel
             </a>
 </button>
-      <footer className='mobile-footer'>© 2022-23 Friday Intel Pvt. Ltd.</footer>
+      <footer className='mobile-footer'>© 2022-23 Friday Intel LLP</footer>
     </div>
   );
 };

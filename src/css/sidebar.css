@@ -36,10 +36,48 @@
 .css-dip3t8 {
   background-color: var(--secondary-color) !important;
 }
-.ant-menu-submenu-selected:hover {
+/* .ant-menu-submenu-selected:hover {
+  color: var(--primary-color-2) !important;
+} */
+.ant-menu-submenu-selected{
+  background-color: rgba(0, 0, 0, 0.47) !important;
+  color: var(--primary-color-2) !important;
+}
+.ant-menu-item-selected{
+  background-color: rgba(128, 128, 128, 0.79) !important;
+  color: var(--primary-color-2) !important;
+}
+.ant-menu-submenu-active{
+  background-color: rgba(128, 128, 128, 0.79) !important;
+  color: var(--primary-color-2) !important;
+}
+.ant-menu-item-active{
+  background-color: rgba(128, 128, 128, 0.79) !important;
+  color: var(--primary-color-2) !important;
+}
+.ant-menu-item:hover{
+  background-color: rgba(128, 128, 128, 0.79) !important;
   color: var(--primary-color-2);
 }
-
-.ant-menu-item:hover{
+.ant-menu-submenu-title:hover{
+  color: var(--primary-color-2) !important;
+}
+.ant-menu-submenu-title:active{
+  background-color: rgba(128, 128, 128, 0.79) !important;
+  color: var(--primary-color-2) !important;
+}
+.sideNavSection > li:first-child {
   background-color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
+}
+.ant-menu-submenu-title{
+  color: var(--primary-color) !important;
+}
+.terrorist-profilling-menu-item{
+  background-color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
+}
+.terrorist-profilling-menu-item:hover{
+  background-color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
 }
