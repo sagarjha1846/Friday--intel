@@ -99,7 +99,7 @@ const Notication = () => {
 
           <section className="delete-noti-btn">
             <button onClick={seenAllNotification} className="noti-icon-delete">
-              <i class="fa-solid fa-check-double"></i>
+              <i className ="fa-solid fa-check-double"></i>
             </button>
             <button
               onClick={deleteAllNotification}

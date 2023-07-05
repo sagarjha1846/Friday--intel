@@ -56,7 +56,7 @@ const OverviewFlow = (props) => {
 
     >
       <MiniMap style={minimapStyle} zoomable pannable />
-      <Background color="#000" gap={16} />
+      <Background color="var(--primary-color-2)" gap={16} />
       {isPopUpOpen && (
         <div>
           {/* Content of the pop-up */}

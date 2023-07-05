@@ -59,6 +59,10 @@
   margin-top: 5px;
   font-size: 10px;
 }
-.react-flow__pane{
+/* .react-flow__pane{
   background-color: var(--primary-color-light);
+} */
+.react-flow{
+  background-color: var(--primary-color-light);
+  color: var(--primary-color-2) !important;
 }
