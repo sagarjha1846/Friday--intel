@@ -133,6 +133,9 @@
   background-color: var(--secondary-color);
   padding: 0px 5px;
   border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 1rem;
 }
 .text-\[\#2b2b2b\]{
   background-color: var(--secondary-color);
