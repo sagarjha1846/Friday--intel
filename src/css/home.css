@@ -136,3 +136,25 @@
 .text-\[\#2b2b2b\]{
   background-color: var(--secondary-color);
 }
+.case_new {
+  background-color: blue !important;
+}
+
+.case_read {
+  border: 2px solid var(--primary-color-2);
+  background: url(../images/svg/newcase.svg) !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: var(--primary-color);
+  border-style: solid;
+  border-image: linear-gradient(to right, #00f0ff, #ff1cf7) 2;
+  cursor: pointer;
+}
+
+.case_load {
+
+  background: url(../images/svg/loadcase.svg) !important;
+  
+}
