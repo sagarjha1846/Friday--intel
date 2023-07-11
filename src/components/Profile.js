@@ -18,7 +18,7 @@ const Profile = ({ profileDetail }) => {
 
   return (
     <div>
-      <span className="pro">
+      <div className="pro">
         <div>
           <div className="pro-data">
             <h2>{profileDetail[0]?.fullname || 'Dummy Fullname'}</h2>
@@ -61,7 +61,7 @@ const Profile = ({ profileDetail }) => {
           </span>
         </div>
         <div className="pro-triangle"></div>
-      </span>
+      </div>
     </div>
   );
 };

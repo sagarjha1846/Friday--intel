@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import constants from '../constant/routesConstant';
 import '../css/home.css';
@@ -13,14 +13,17 @@ import Page404 from './Page404';
 
 const Home = ({ caseName, setCaseName, search }) => {
   const location = useLocation();
-  const [activeArticle, setActiveArticle] = useState(location.pathname);
+  const navigate = useNavigate();
+  const { ROUTES } = constants;
   const [form] = Form.useForm();
   const [openModal, setOpenModal] = useState(false);
-  const { ROUTES } = constants;
-  const navigate = useNavigate();
+  const [activeRoute, setActiveRoute] = useState('');
+
+  useEffect(() => {
+    setActiveRoute(location.pathname);
+  }, [location]);
 
   const handleLoadNewCase = () => {
-    setActiveArticle(ROUTES.newCase);
     setOpenModal(true);
   };
 
@@ -29,22 +32,23 @@ const Home = ({ caseName, setCaseName, search }) => {
       title: 'New Case',
       key: 'newCase',
       action: handleLoadNewCase,
+      cssClass: 'case_new'
     },
     {
       title: 'Load Case',
       key: 'loadCase',
       action: () => {
         navigate(ROUTES.loadCase);
-        setActiveArticle(ROUTES.loadCase);
       },
+      cssClass: 'case_load'
     },
     {
       title: 'Read Case',
       key: 'readCase',
       action: () => {
         navigate(ROUTES.readCase);
-        setActiveArticle(ROUTES.readCase);
       },
+      cssClass: 'case_read'
     },
   ];
 
@@ -66,9 +70,7 @@ const Home = ({ caseName, setCaseName, search }) => {
           {menu.map((el) => (
             <article
               key={el.key}
-              className={`case_cards  ${
-                activeArticle === ROUTES[el.key] ? 'actives' : ' '
-              }`}
+              className={`case_cards ${activeRoute === ROUTES[el.key] ? el.cssClass + ' actives' : ''}`}
               onClick={el.action}
             >
               <h2 className={`case_title_home`}>{el.title}</h2>
@@ -85,15 +87,15 @@ const Home = ({ caseName, setCaseName, search }) => {
                 <section className="p-10 w-full flex flex-col">
                   {search ? (
                     <>
-                      <div className=" !w-[100%] overflow-x-hidden">
-                        <h1 className=" text-4xl">Load case</h1>
-                        <div className=" w-full overflow-hidden">
+                      <div className="!w-[100%] overflow-x-hidden">
+                        <h1 className="text-4xl">Load case</h1>
+                        <div className="w-full overflow-hidden">
                           <LoadCase search={search} />
                         </div>
                       </div>
 
                       <div>
-                        <h1 className=" text-4xl">Read case</h1>
+                        <h1 className="text-4xl">Read case</h1>
                         <ReadCase search={search} />
                       </div>
                     </>
