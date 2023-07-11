@@ -3,7 +3,7 @@
   width: 300px;
   border: 2px solid var(--primary-color);
   border-radius: 8px;
-  margin: 4.5rem 0rem 0rem 2rem;
+  margin: 4.25rem 0rem 0rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -157,4 +157,13 @@
 
   background: url(../images/svg/loadcase.svg) !important;
   
+}
+.ant-table-cell{
+  border: 1px solid var(--primary-color-2) !important;
+}
+.ant-table-thead{
+  border: 1px solid var(--primary-color-2) !important;
+}
+.ant-table-container{
+  border: 1px solid var(--primary-color-2) !important;
 }

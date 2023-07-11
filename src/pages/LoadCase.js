@@ -11,7 +11,7 @@ const LoadCase = ({ search }) => {
         <title>FridayIntel-LoadCase</title>
       </Helmet>
 
-      <section className="readcase-container p-10 ">
+      <section className="readcase-container p-10 pt-16 pb-20">
         <Table className="readcase-table" search={search} />
       </section>
     </>

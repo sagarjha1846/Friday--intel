@@ -10,20 +10,7 @@
   margin-top: 2rem;
 }
 
-.case_cards:hover {
-  background: url(../images/caseblog.svg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  /* color: #fff; */
-  border-style: solid;
-  border-image: linear-gradient(to right, #00f0ff, #ff1cf7) 2;
-  /* fill: #fff; */
-}
-/* .case_arrow:hover,path:hover {
-    fill: #fff;
-} */
+
 
 .hover-img {
   overflow: scroll;
