@@ -121,6 +121,7 @@
 .ant-modal-content{
   background-color: var(--secondary-color) !important;
   border: 2px solid var(--primary-color-2) !important;
+  border-radius: 1.4rem !important;
 }
 .w-\[100\%\]{
   background-color: var(--secondary-color);
@@ -132,6 +133,9 @@
   background-color: var(--secondary-color);
   padding: 0px 5px;
   border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 1rem;
 }
 .text-\[\#2b2b2b\]{
   background-color: var(--secondary-color);
@@ -166,4 +170,7 @@
 }
 .ant-table-container{
   border: 1px solid var(--primary-color-2) !important;
+}
+.ant-btn >span{
+  font-weight: bold;
 }
