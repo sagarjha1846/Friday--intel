@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
 // import CanvasTools from "./components/CanvasTools";
@@ -17,7 +18,7 @@ import Footer from './components/Footer-newcase';
 import { useState } from 'react';
 import { useEdgesState, useNodesState } from 'reactflow';
 import { useEffect } from 'react';
-import { userDetails } from './store/features/user/userSlice';
+import { reset, userDetails } from './store/features/user/userSlice';
 
 const App = () => {
   const { token } = useSelector((state) => state.auth);
@@ -43,8 +44,9 @@ const App = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    if (!user) dispatch(userDetails());
-  },[]);
+    dispatch(userDetails());
+    reset();
+  }, [user]);
 
   return (
     <>
@@ -68,6 +70,7 @@ const App = () => {
             setSearch={setSearch}
             setRansomeData={setRansomeData}
             profileDetail={user}
+            setEdges={setEdges}
           />
         </nav>
       )}
@@ -113,6 +116,7 @@ const App = () => {
                 search={search}
                 setSearch={setSearch}
                 ransomeData={ransomeData}
+                setNodeInfoList={setNodeInfoList}
               />
             }
           />
@@ -150,12 +154,14 @@ const App = () => {
           }
         />
 
-        <Route path={Routes.Page404} element={<Page404 setMode={setMode} mode={mode} />} />
+        <Route
+          path={Routes.Page404}
+          element={<Page404 setMode={setMode} mode={mode} />}
+        />
         {/* <Route
           path="/*"
           element={<Navigate to="/404" replace />}
         /> */}
-
       </Routes>
 
       {token && location.pathname === `${ROUTES.newCase}/:casename/:id` && (

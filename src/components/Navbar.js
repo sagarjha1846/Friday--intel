@@ -25,6 +25,8 @@ import dayImage from '../images/day.png';
 import dark from '../images/svg/darklogo.svg';
 import light from '../images/logo.png';
 import { httpCall } from '../axios/httpService';
+import { useDispatch } from 'react-redux';
+import { getNodesResults } from '../store/features/nodes/nodeSlice';
 
 const Navbar = ({
   caseName,
@@ -45,7 +47,6 @@ const Navbar = ({
   const [logoo, setLogoo] = useState(light);
   const { ROUTES } = constants;
 
-
   const profileRef = useRef(null);
   const notificationRef = useRef(null);
 
@@ -53,10 +54,10 @@ const Navbar = ({
     setActiveButton((prevButton) => (prevButton === button ? null : button));
   };
 
-  const handleOk = () => { };
+  const handleOk = () => {};
 
   const location = useLocation();
-
+  const dispatch = useDispatch();
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (location.pathname.split('/')[1] === `${ROUTES.newCase.split('/')[1]}`) {
@@ -76,10 +77,14 @@ const Navbar = ({
         {},
       );
 
+      // dispatch(getNodesResults(search));
       Promise.all([loadCanvasData, loadRansomData])
         .then((res) => {
-          setNodeInfo({ query: search, data: res[0] });
-          setNodeInfoList([...nodeInfoList, { query: search, data: res[0] }]);
+          setNodeInfo({ query: search, data: res[0].data });
+          setNodeInfoList([
+            ...nodeInfoList,
+            { query: search, data: res[0].data },
+          ]);
           setNodes((prev) => [
             ...prev,
             {
@@ -195,7 +200,7 @@ const Navbar = ({
         <>
           <section className="logo_box">
             {location.pathname.split('/')[1] ===
-              `${ROUTES.newCase.split('/')[1]}` ? (
+            `${ROUTES.newCase.split('/')[1]}` ? (
               <div className="case-dashboard">
                 <div>
                   <button className="btn-icon bookmark" onClick={handleOk}>
@@ -224,12 +229,11 @@ const Navbar = ({
               {activeButton === 'opendrawer' && <DrawerInfo />}
             </div>
             <form onSubmit={handleSubmit} className="searchbar-box">
-            {mode ? (
-      <FILogo
-      />
-    ) : (
-      <FIEYE style={{ fill: 'var(--primary-color)' }} />
-    )}
+              {mode ? (
+                <FILogo />
+              ) : (
+                <FIEYE style={{ fill: 'var(--primary-color)' }} />
+              )}
               <input
                 type="text"
                 className="search-bar-NC"
@@ -263,10 +267,12 @@ const Navbar = ({
                 </div>
               )}
             </div>
-            <div  onClick={(event) => {
-                  event.stopPropagation(); // Prevent event propagation
-                  handleButtonClick('openprofile');
-                }}>
+            <div
+              onClick={(event) => {
+                event.stopPropagation(); // Prevent event propagation
+                handleButtonClick('openprofile');
+              }}
+            >
               <button className="btn-icon member-notification">
                 <User style={{ fill: 'var(--primary-color)' }} />
               </button>

@@ -5,6 +5,7 @@ import userReducer from './features/user/userSlice';
 
 import storage from 'redux-persist/lib/storage';
 import notificationReducer from './features/notification/notificationSlice';
+import nodeReducer from './features/nodes/nodeSlice';
 
 const persistConfig = {
   key: 'root',
@@ -16,6 +17,7 @@ const reducer = combineReducers({
   auth: authReducer,
   user: userReducer,
   notifications: notificationReducer,
+  nodes: nodeReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
