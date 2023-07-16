@@ -46,6 +46,7 @@ const App = () => {
   useEffect(() => {
     dispatch(userDetails());
     reset();
+    
   }, [user]);
 
   return (
